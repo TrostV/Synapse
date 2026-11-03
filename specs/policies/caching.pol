@@ -35,11 +35,8 @@ Policy WB_INCL {
 // is discarded by the sequencer) and is answered with whatever this level holds, without fetching.
 Policy WT_INCL {
     // Write-through of a child without ownership: take write permission here, keep the bytes dirty
-    Local( S(_,_,_),     M(Wr,Dirty,nco), S(RdWr,Dirty,_) );
     // Request of a child that reads nothing (non-temporal load): nothing to do at the client
-    Rule( S(_,_,_),      M(None,NP,nco),  S(_,_,_) );
-    Rule( S(RdWr,_,_),   M(Wr,Dirty,_),  S(RdWr,Dirty,_) );
-    Rule( S(_,_,_),      M(Wr,Dirty,_),  S(_,_,_) );
+    Rule( S(_,_,_),      M(Wr,Dirty,_),  S(_   ,NP,_) );
     Rule( S(_,_,_),      M(Wr,_,_),      S(RdWr,P,_) );
     Rule( S(_,NP,_),     M(Rd,None,_),   S(Rd,P,_) );
     Rule( S(Rd,P,_),     M(Rd,None,_),   S(Rd,P,_) );

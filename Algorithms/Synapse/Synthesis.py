@@ -68,6 +68,10 @@ class SynthesisError(Exception):
 
 class SynapseDirArchitecture(HHDirArchitecture):
 
+    # A continuation crosses a stable boundary, so keep the bound small: these are protocol
+    # transactions that are part of serving one request, not an unrestricted request search.
+    MAX_MANAGER_STABLE_HOPS = 2
+
     def __init__(self, lower_level: Level, higher_level: Level, policy: Policy, gdbg: bool = False):
         # HHDirArchitecture.__init__ runs HeteroGen; only its helper methods are reused here.
         self.gdbg = gdbg
@@ -233,6 +237,23 @@ class SynapseDirArchitecture(HHDirArchitecture):
         self.prune_non_reachable_states_graph(fsm_graph)
         return self.get_transitions_from_graph(fsm_graph)
 
+    def _invalid_stable_compound(self, state: State_v2) -> bool:
+        """Whether a stable compound state violates inclusion.
+
+        The manager describes the permissions/data that its children may hold. The client must
+        cover that label; otherwise a composed continuation can expose an impossible endpoint.
+        """
+        if not isinstance(state, CompoundState) or not state.stable:
+            return False
+        manager_state, client_state = self.sort_states_by_architecture(state.base_states)
+        return not self._covers(self.client_label(client_state), self.manager_label(manager_state))
+
+    def _valid_generated_transitions(self, transitions: List[Transition_v2]) -> List[Transition_v2]:
+        """Keep impossible stable endpoints out of the generated transition set."""
+        out = [transition for transition in transitions
+                if not self._invalid_stable_compound(transition.final_state)]
+        return out
+
     def _trees(self, arch: FlatArchitecture, state: State_v2):
         """(guard, tree) for every transaction tree of `arch` starting in the stable `state`."""
         for tree in arch.state_sub_tree_dict.get(state, []):
@@ -300,7 +321,7 @@ class SynapseDirArchitecture(HHDirArchitecture):
                 nested = self.nest_graphs(client_graph, chosen)
                 self._nest_races(nested, manager_state, client_state)
                 transitions += self.det_sort_state_graph(nested)
-        return transitions
+        return self._valid_generated_transitions(transitions)
 
     def _nest_races(self, nested: MultiDiGraph, manager_state: State_v2, client_state: State_v2):
         """A forward of the parent that reaches the client in the middle of its transaction (race
@@ -435,8 +456,10 @@ class SynapseDirArchitecture(HHDirArchitecture):
                             request: Label) -> List[Tuple[MultiDiGraph, Optional[Label]]]:
         """manager.process() candidates: the manager's transaction for the request first, then the
         transactions of the semantically equivalent requests (same label), renamed to the request.
-        Each comes with what it newly grants to the children."""
+        Each comes with what it newly grants to the children. A candidate may also include a
+        bounded sequence of stable-state transactions, for example S --request--> M --evict--> I."""
         candidates = [(manager_tree, self._children_grant(manager_tree, manager_state))]
+        candidates += self._continued_manager_candidates(manager_tree, manager_state)
         # An equivalent request is one transaction, possibly stored as several trees (one per branch
         # of its Process, e.g. MESIF I+GetSIfetch: `if forwarder != src`): its branches are merged,
         # otherwise only the first branch would be chosen and the others lost.
@@ -458,7 +481,57 @@ class SynapseDirArchitecture(HHDirArchitecture):
         for trees in slots:
             merged = trees[0] if len(trees) == 1 else MergeGraphsNetworkx().merge_identical_start_state_graphs(trees)
             candidates.append((merged, self._children_grant(merged, manager_state)))
+            candidates += self._continued_manager_candidates(merged, manager_state)
         return candidates
+
+    def _continued_manager_candidates(self, initial_tree: MultiDiGraph,
+                                      manager_state: State_v2) \
+            -> List[Tuple[MultiDiGraph, Optional[Label]]]:
+        """Compose a request transaction with bounded protocol continuations.
+
+        Stable states normally terminate a transaction tree.  An eviction is different for
+        write-through protocols: the request may first move the manager to a state such as M and
+        then have to run the manager's virtual eviction transaction to reach I.  Only Evict trees
+        are eligible here; arbitrary accesses would incorrectly combine independent requests.
+        """
+        candidates = []
+
+        def extend(transitions: List[Transition_v2], state: State_v2, hops: int):
+            if hops >= self.MAX_MANAGER_STABLE_HOPS:
+                return
+            for next_guard, next_tree in self._trees(self.manager, state):
+                if not isinstance(next_guard, Evict):
+                    continue
+                for trace in self.get_trans_traces(next_tree, state, self.manager.stable_states):
+                    final = trace[-1].final_state
+                    if final not in self.manager.stable_states:
+                        continue
+                    composed = self._fold_continuation(transitions, trace)
+                    graph = self.gen_graph(composed)
+                    self.set_root_node_attribute(graph, manager_state)
+                    self.set_terminal_nodes_attribute(graph, [final])
+                    candidates.append((graph, self._children_grant_for_path(composed, manager_state)))
+                    extend(composed, final, hops + 1)
+
+        for trace in self.get_trans_traces(initial_tree, manager_state, self.manager.stable_states):
+            if trace[-1].final_state not in self.manager.stable_states:
+                continue
+            extend(trace, trace[-1].final_state, 1)
+        return candidates
+
+    @staticmethod
+    def _fold_continuation(prefix: List[Transition_v2],
+                           continuation: List[Transition_v2]) -> List[Transition_v2]:
+        """Fold a stable-state continuation into the preceding transaction.
+
+        The continuation starts with an access (currently an eviction). Chaining that access into
+        the preceding transition keeps the original request as the handler guard and avoids
+        stalling for a second access at the intermediate stable state.
+        """
+        if not prefix or not continuation:
+            return prefix + continuation
+        chained = ChainTransitions.chain_transitions(prefix[-1], continuation[0])
+        return prefix[:-1] + [chained] + continuation[1:]
 
     def _rename_request(self, tree: MultiDiGraph, old_guard, new_guard) -> MultiDiGraph:
         tree = self.copy_graph(tree)
@@ -481,6 +554,27 @@ class SynapseDirArchitecture(HHDirArchitecture):
                     grant = after if grant is None else grant.join(after)
         return grant
 
+    def _children_grant_for_path(self, transitions: List[Transition_v2],
+                                 manager_state: State_v2) -> Optional[Label]:
+        """Join grants at every stable boundary in a composed manager path.
+
+        Checking only the final state would miss permissions temporarily held by the children
+        before a continuation revokes them (for example the M boundary in S -> M -> I).
+        """
+        states = [manager_state]
+        for transition in transitions:
+            if transition.final_state in self.manager.stable_states:
+                states.append(transition.final_state)
+
+        grant = None
+        before = self.manager_label(states[0])
+        for state in states[1:]:
+            after = self.manager_label(state)
+            if not (after.op <= before.op and after.data.rank <= before.data.rank):
+                grant = after if grant is None else grant.join(after)
+            before = after
+        return grant
+
     @staticmethod
     def _covers(client: Label, grant: Optional[Label]) -> bool:
         """Inclusion: the children may hold no more than the client, in permissions and in data
@@ -499,6 +593,45 @@ class SynapseDirArchitecture(HHDirArchitecture):
                         and trace[0].final_state in self.client.stable_states:
                     moves.append(trace[0])
         return moves
+
+    def _continued_client_traces(self, initial_tree: MultiDiGraph, client_state: State_v2,
+                                 required: LabelPattern) \
+            -> List[List[Transition_v2]]:
+        """Return client access traces, including bounded eviction continuations.
+
+        A client access can end in a stable state that is only an intermediate state for the
+        policy.  In particular, a write-through store can take S to M and then evict M to I before
+        the manager handles the child's write-back notification.  A stable endpoint matching the
+        rule is terminal, so a normal load ending in S is not incorrectly followed by S -> I.
+        """
+        traces: List[List[Transition_v2]] = []
+
+        def extend(trace: List[Transition_v2], state: State_v2, hops: int):
+            if required.matches(self.client_label(state)):
+                traces.append(trace)
+                return
+            if hops >= self.MAX_MANAGER_STABLE_HOPS:
+                traces.append(trace)
+                return
+            continuations: List[List[Transition_v2]] = []
+            for next_guard, next_tree in self._trees(self.client, state):
+                if not isinstance(next_guard, Evict):
+                    continue
+                for next_trace in self.get_trans_traces(next_tree, state, self.client.stable_states):
+                    final = next_trace[-1].final_state
+                    if final not in self.client.stable_states:
+                        continue
+                    continuations.append(self._fold_continuation(trace, next_trace))
+            if not continuations:
+                traces.append(trace)
+                return
+            for continuation in continuations:
+                extend(continuation, continuation[-1].final_state, hops + 1)
+
+        for trace in self.get_trans_traces(initial_tree, client_state, self.client.stable_states):
+            if trace[-1].final_state in self.client.stable_states:
+                extend(trace, trace[-1].final_state, 1)
+        return traces
 
     def _choose(self, candidates, client_state: State_v2):
         """First manager candidate the client covers, in its state or after a silent move.
@@ -530,7 +663,7 @@ class SynapseDirArchitecture(HHDirArchitecture):
             for tree_guard, tree in self._trees(self.client, client_state):
                 if not isinstance(tree_guard, Access) or str(tree_guard) != access:
                     continue
-                for trace in self.get_trans_traces(tree, client_state, self.client.stable_states):
+                for trace in self._continued_client_traces(tree, client_state, final):
                     final_state = trace[-1].final_state
                     if final_state not in self.client.stable_states:
                         continue
@@ -711,7 +844,7 @@ class SynapseDirArchitecture(HHDirArchitecture):
                                      f"(to {target}) before the client serves {guard}")
             nested = self.nest_graphs(proxy_graph, client_tree)
             transitions += self.det_sort_state_graph(nested)
-        return transitions
+        return self._valid_generated_transitions(transitions)
 
     def _children_data_needed(self, manager_state: State_v2, children: Label) -> bool:
         """Whether the block's up-to-date data is in the children, not here: always with an exclusive
