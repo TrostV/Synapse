@@ -70,7 +70,7 @@ class SynapseDirArchitecture(HHDirArchitecture):
 
     # A continuation crosses a stable boundary, so keep the bound small: these are protocol
     # transactions that are part of serving one request, not an unrestricted request search.
-    MAX_MANAGER_STABLE_HOPS = 2
+    MAX_STABLE_HOPS = 2
 
     def __init__(self, lower_level: Level, higher_level: Level, policy: Policy, gdbg: bool = False):
         # HHDirArchitecture.__init__ runs HeteroGen; only its helper methods are reused here.
@@ -497,7 +497,7 @@ class SynapseDirArchitecture(HHDirArchitecture):
         candidates = []
 
         def extend(transitions: List[Transition_v2], state: State_v2, hops: int):
-            if hops >= self.MAX_MANAGER_STABLE_HOPS:
+            if hops >= self.MAX_STABLE_HOPS:
                 return
             for next_guard, next_tree in self._trees(self.manager, state):
                 if not isinstance(next_guard, Evict):
@@ -610,7 +610,7 @@ class SynapseDirArchitecture(HHDirArchitecture):
             if required.matches(self.client_label(state)):
                 traces.append(trace)
                 return
-            if hops >= self.MAX_MANAGER_STABLE_HOPS:
+            if hops >= self.MAX_STABLE_HOPS:
                 traces.append(trace)
                 return
             continuations: List[List[Transition_v2]] = []
