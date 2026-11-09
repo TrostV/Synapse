@@ -13,6 +13,6 @@ socket:
               count: 8
               nodes:
                 - L2: {protocol: MESI, policy: WB_INCL, capacity: 1MiB}
-                - L1: {capacity: 64KiB}
+                - L1: {policy: WB_INCL, capacity: 64KiB}
         interconnect: {connects: [LLC, core], type: direct, latency: 5ns}
   interconnect: {connects: [directory, chip], type: star, latency: 5ns}

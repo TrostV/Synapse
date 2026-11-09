@@ -357,10 +357,11 @@ class Topology:
         for controller in self.hierarchy:
             given = controller.params.get("protocol")
             if controller is first:
-                if given is not None or "policy" in controller.params:
+                if given is not None:
                     raise TopologyError(
-                        f"{first.name} is the first-level cache: it manages no cache, so it has no protocol "
-                        f"and no policy; it speaks the protocol of {self.hierarchy[1].name}")
+                        f"{first.name} is the first-level cache: it manages no cache, so it has no protocol it speaks the protocol of {self.hierarchy[1].name}")
+                controller.policy = _find_policy(controller.params["policy"], self._policy_dirs,
+                                                             f"{controller.name}: policy")
                 continue
             if given is None:
                 raise TopologyError(f"{controller.name} manages {self._below(controller).name}: give the "
@@ -519,6 +520,7 @@ class Topology:
                 roles = f"{controller.protocol.stem} x {above}, policy {controller.policy[1]}"
             else:
                 roles = above or controller.protocol.stem
+                roles = f"{above}, policy {controller.policy[1]}" if above else controller.protocol.stem
             count = controller.instances * controller.slices
             sliced = ""
             if controller.slices > 1:

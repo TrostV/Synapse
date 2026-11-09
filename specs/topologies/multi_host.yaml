@@ -15,6 +15,6 @@ rack:
           - core:
               count: 9
               nodes:
-                - L1: {capacity: 256KiB}
+                - L1: {policy: WB_INCL, capacity: 256KiB}
         interconnect: {connects: [LLC, core], type: direct, latency: 5ns}
   interconnect: {connects: [cxl_memory_pool, compute_node], type: direct, latency: 70ns, flit_size: 72B}

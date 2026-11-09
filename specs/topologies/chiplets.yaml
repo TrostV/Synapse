@@ -20,6 +20,6 @@ fabric:
               count: 8
               type: TimingSimpleCPU
               nodes:
-                - L1: {capacity: 64KiB, associativity: 2, transitions_per_cycle: 8}
+                - L1: {policy: WB_INCL, capacity: 64KiB, associativity: 2, transitions_per_cycle: 8}
         interconnect: {connects: [directory, LLC, core], type: star, latency: 10ns}
   interconnect: {connects: [memory_pool, chiplet], type: star, latency: 25ns, flit_size: 16B}

@@ -941,3 +941,100 @@ class SynapseDirArchitecture(HHDirArchitecture):
 
     def get_arch_list(self):
         return [self, self.manager, self.client]
+
+class SynapseClientArchitecture():
+    """
+    Apply Policy to client transitions. Used to apply policy to the L1, as it does
+    not have a manger.
+    """
+
+    def __init__(self, client: Level, policy: Policy):
+        self.client = client.cache
+        self.policy = policy
+        self.labels = ProtocolLabels(client)
+        self.warnings: List[str] = []
+        self._apply_policy()
+
+    def _apply_policy(self):
+        for state in list(self.client.state_sub_tree_dict):
+            updated = []
+            for tree in self.client.state_sub_tree_dict[state]:
+                roots = self.client.get_transitions_by_start_state(tree, state)
+                if not roots or not isinstance(roots[0].guard, Access):
+                    updated.append(tree)
+                else:
+                    #updated.append(self._process_core_tree(state, tree))
+                    request_label = self.label_request(state, tree)
+                    if request_label is None:
+                        updated.append(tree)
+                        continue
+
+                    rule = self.policy.match_rule(self.labels.state_labels[state], request_label)
+                    if rule is None: 
+                        self.warnings.append(f"No policy rule for {roots[0].guard} from {state} = {self.labels.state_labels[state]}")
+                        updated.append(tree)
+                        continue
+
+                    traces = self.client.get_trans_traces(tree, state, self.client.stable_states)
+                    processed = []
+                    for trace in traces:
+                        final = trace[-1].final_state
+                        if rule.final.matches(self.labels.state_labels[final]):
+                            processed.append(trace)
+                            continue
+                        completed = self._complete_to_policy(trace, rule.final)
+                        if completed is None:
+                            raise SynthesisError(
+                                f"Incompatible first-level policy: {rule} requires {state} + {request_label}, "
+                                f"but the core transaction ends in {final} and has no matching eviction")
+                        processed.append(completed)
+
+                    transitions = [transition for trace in processed for transition in trace]
+                    result = self.client.gen_graph(transitions)
+                    self.client.set_root_node_attribute(result, state)
+                    terminals = sorted({trace[-1].final_state for trace in processed}, key=str)
+                    self.client.set_terminal_nodes_attribute(result, terminals)
+                    updated.append(result)
+
+            self.client.state_sub_tree_dict[state] = updated
+
+    def label_request(self, state: State_v2, tree: MultiDiGraph) -> Optional[Label]:
+        roots = self.client.get_transitions_by_start_state(tree, state)
+        if not roots or not isinstance(roots[0].guard, Access):
+            return None
+        access = str(roots[0].guard)
+        op = self.labels.access_op(access)
+        data = Data.DIRTY if op == Op.WR else Data.NP
+        return Label("M", op, data)
+
+    def _complete_to_policy(self, trace: List[Transition_v2],
+                            final: LabelPattern) -> Optional[List[Transition_v2]]:
+        """
+        Hop over stable states until a trace ends in a state that matches the LabelPattern.
+        (Note: for now only evictions are considered, MAX_STABLE_HOPS is enforced)
+        """
+        current = trace
+        for _ in range(SynapseDirArchitecture.MAX_STABLE_HOPS):
+            state = current[-1].final_state
+            if final.matches(self.labels.state_labels[state]):
+                return current
+            evictions = []
+            for guard, tree in self._trees(state):
+                if not isinstance(guard, Evict):
+                    continue
+                evictions += self.client.get_trans_traces(tree, state, self.client.stable_states)
+            if not evictions:
+                return None
+            next_trace = next((candidate for candidate in evictions
+                               if final.matches(self.labels.state_labels[candidate[-1].final_state])),
+                              evictions[0])
+            current = current[:-1] + [ChainTransitions.chain_transitions(current[-1],
+                                                                         next_trace[0])] \
+                + next_trace[1:]
+        return current if final.matches(self.labels.state_labels[current[-1].final_state]) else None
+
+    def _trees(self, state: State_v2):
+        for tree in self.client.state_sub_tree_dict.get(state, []):
+            roots = self.client.get_transitions_by_start_state(tree, state)
+            if roots:
+                yield roots[0].guard, tree

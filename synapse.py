@@ -47,7 +47,7 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module=r".*[/\\]antlr3
 from Algorithms.Synapse.Labeling import ProtocolLabels
 from Algorithms.Synapse.LocalWrite import LocalWriteError, derive
 from Algorithms.Synapse.Policy import Policy, load_policy
-from Algorithms.Synapse.Synthesis import SynapseDirArchitecture, SynthesisError
+from Algorithms.Synapse.Synthesis import SynapseClientArchitecture, SynapseDirArchitecture, SynthesisError
 from Algorithms.Synapse.Topology import SLICES_INTERLEAVED, STALL_PARK, Topology, TopologyError, load_topology
 from Backend.SLICC.ModularSLICC.BackendOptions import GEM5_V20, GEM5_V23, LLC_BANKED, LLC_CLUSTER, LLC_RANGE, \
     BackendOptions
@@ -182,10 +182,13 @@ def compose(topology: Topology) -> Tuple[List[Level], List[Optional[Level]], Lis
     """Synthesizes the controllers of the topology: the levels of its protocols (load_levels),
     each synthesized controller being the directory of a manager level, and the warnings."""
     policies = load_policies(topology)
+    l1_policy = load_policy(*topology.hierarchy[0].policy) if topology.hierarchy[0].policy else None
     managers, clients = load_levels(topology.protocol_chain(), local_protocols(topology, policies))
     warnings: List[str] = []
     for i, policy in enumerate(policies):
         warnings += SynapseDirArchitecture(managers[i], clients[i + 1], policy).warnings
+
+    warnings += SynapseClientArchitecture(managers[0], l1_policy).warnings if l1_policy else []
     return managers, clients, list(dict.fromkeys(warnings))
 
 

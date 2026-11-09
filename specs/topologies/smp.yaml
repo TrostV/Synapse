@@ -10,5 +10,5 @@ socket:
     - core:
         count: 8
         nodes:
-          - L1: {capacity: 64KiB}
+          - L1: {policy: WB_INCL, capacity: 64KiB}
   interconnect: {connects: [directory, LLC, core], type: crossbar, latency: 5ns}
