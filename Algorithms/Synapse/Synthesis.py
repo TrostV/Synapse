@@ -953,13 +953,19 @@ class SynapseClientArchitecture():
         self.policy = policy
         self.labels = ProtocolLabels(client)
         self.warnings: List[str] = []
-        self._apply_policy()
-
+        transitions = self._apply_policy()
+        fsm_graph = self.client.gen_graph(transitions)
+        self.client.prune_non_reachable_states_graph(fsm_graph)
+        transitions = self.client.get_transitions_from_graph(fsm_graph)
+        client.cache.update_base_fsm(client.cache.init_state, client.cache.stable_states, transitions)
+        # Needed to make sure the backend doesn't use old hit, etc info
+        client.cache.rebuild_derived_state()
         # Debug output
         Debug.psection(f"L1 {client.parser.filename} + {policy.name}")
         ProtoCCTablePrinter().ptransitiontable(self.client.get_architecture_transitions())
 
     def _apply_policy(self):
+        transitions = []
         for state in list(self.client.state_sub_tree_dict):
             updated = []
             for tree in self.client.state_sub_tree_dict[state]:
@@ -967,7 +973,6 @@ class SynapseClientArchitecture():
                 if not roots or not isinstance(roots[0].guard, Access):
                     updated.append(tree)
                 else:
-                    #updated.append(self._process_core_tree(state, tree))
                     request_label = self.label_request(state, tree)
                     if request_label is None:
                         updated.append(tree)
@@ -993,14 +998,16 @@ class SynapseClientArchitecture():
                                 f"but the core transaction ends in {final} and has no matching eviction")
                         processed.append(completed)
 
-                    transitions = [transition for trace in processed for transition in trace]
-                    result = self.client.gen_graph(transitions)
+                    processed_transitions = [transition for trace in processed for transition in trace]
+                    result = self.client.gen_graph(processed_transitions)
                     self.client.set_root_node_attribute(result, state)
                     terminals = sorted({trace[-1].final_state for trace in processed}, key=str)
                     self.client.set_terminal_nodes_attribute(result, terminals)
                     updated.append(result)
+            for g in updated:
+                transitions.extend(self.client.get_transitions_from_graph(g))
 
-            self.client.state_sub_tree_dict[state] = updated
+        return transitions
 
     def label_request(self, state: State_v2, tree: MultiDiGraph) -> Optional[Label]:
         roots = self.client.get_transitions_by_start_state(tree, state)

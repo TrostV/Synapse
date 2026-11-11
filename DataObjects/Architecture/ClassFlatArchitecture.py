@@ -94,6 +94,34 @@ class FlatArchitecture(BaseArchitecture,
         self.stable_state_exclusive_access_permission_map = other.stable_state_exclusive_access_permission_map
         self.stable_state_atomic_access_permission_map = other.stable_state_atomic_access_permission_map
 
+    def rebuild_derived_state(self):
+        """Rebuild classifications and state sets after replacing transition trees."""
+        states = self.get_architecture_states()
+        transitions = self.get_architecture_transitions()
+        for state in states:
+            state.access_miss.clear()
+            state.access_hit.clear()
+            state.evict_miss.clear()
+            state.evict_hit.clear()
+            state.event_miss.clear()
+            state.event_hit.clear()
+            state.remote_miss.clear()
+            state.remote_hit.clear()
+            state.resp_ack.clear()
+            state.start_state_set.clear()
+            state.end_state_set.clear()
+        for transition in transitions:
+            transition.comm_class = None
+
+        traces = {state: [] for state in self.stable_states}
+        for state, trees in self.state_sub_tree_dict.items():
+            for tree in trees:
+                for trace in self.get_trans_traces(tree, state, self.stable_states):
+                    if trace[-1].final_state.stable:
+                        traces[state].append(Trace(trace))
+        CommClassFunc(traces, self.global_arch)
+        StateSetsNetworkx.__init__(self, traces)
+
     ####################################################################################################################
     # NetworkxModelChecker: Post model checking function
     ####################################################################################################################
