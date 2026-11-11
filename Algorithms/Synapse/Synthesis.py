@@ -955,6 +955,10 @@ class SynapseClientArchitecture():
         self.warnings: List[str] = []
         self._apply_policy()
 
+        # Debug output
+        Debug.psection(f"L1 {client.parser.filename} + {policy.name}")
+        ProtoCCTablePrinter().ptransitiontable(self.client.get_architecture_transitions())
+
     def _apply_policy(self):
         for state in list(self.client.state_sub_tree_dict):
             updated = []
