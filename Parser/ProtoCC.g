@@ -95,6 +95,19 @@ tokens {
 	TRANS_ ;
 	UNDEF_ ;
 	WHEN_ ;
+
+	POL_FILE_;
+	POLICY_;
+	RULE_; 
+	LABEL_STATE_;
+	LABEL_MESSAGE_;
+	DATA_RULE_;
+	LOCAL_RULE_;
+
+	POLICY_OP_;
+	POLICY_DATA_; 
+	POLICY_COH_;
+
 }
 
 /*
@@ -194,7 +207,8 @@ ID  :	('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')*
     ;
 
 document
-	:	(const_decl | init_hw | arch_block | expressions)*
+	:	(const_decl | init_hw | arch_block | expressions)* 
+	| policy_file
 	;
 
 
@@ -315,3 +329,47 @@ conditional: if_stmt | ifnot_stmt;
             cond_sel : cond_type_expr (relational_operator cond_type_expr)*;
             cond_type_expr: cond_types ((PLUS | MINUS | MULT) cond_types)*;
             cond_types : object_expr | set_func | INT | BOOL | NID;
+
+
+/* ==== Policiy parsing ==== */
+policy_op_type: 'Rd' | 'Wr' | 'RdWr' | 'None';
+policy_op
+  : (policy_op_type ('|' policy_op_type)*) -> ^(POLICY_OP_ policy_op_type+)
+	| '_'                                    -> ^(POLICY_OP_ '_')
+	;
+
+policy_data_type: 'Dirty' | 'Clean' | 'P' | 'NP' | 'None';
+policy_data
+  : (policy_data_type ('|' policy_data_type)*) -> ^(POLICY_DATA_ policy_data_type+)
+	| '_'                                        -> ^(POLICY_DATA_ '_')
+	;
+
+policy_coh_type: 'coh' | 'nco';
+policy_coh
+  : (policy_coh_type ('|' policy_coh_type)*) -> ^(POLICY_COH_ policy_coh_type+)
+	| '_'                                      -> ^(POLICY_COH_ '_')
+	;
+
+// ID must be 'S' but to not keep S as a reserved word, we check with python
+label_state: {self.input.LT(1).text == 'S'}? ID OBRACE policy_op COMMA policy_data COMMA policy_coh CBRACE 
+   -> ^(LABEL_STATE_ policy_op policy_data policy_coh);
+// Same here but for 'M'
+label_message:{self.input.LT(1).text == 'M'}? ID OBRACE policy_op COMMA policy_data COMMA policy_coh CBRACE 
+  -> ^(LABEL_MESSAGE_ policy_op policy_data policy_coh);
+
+/* TODO: Data rules, Local rules should be properly documented. */
+data_rule: 'Data' OBRACE label_state CBRACE SEMICOLON
+  -> ^(DATA_RULE_ label_state);
+
+local_rule: 'Local' OBRACE label_state COMMA label_message COMMA label_state CBRACE SEMICOLON
+	-> ^(LOCAL_RULE_ label_state label_message label_state);
+
+
+rule: 'Rule' OBRACE label_state COMMA label_message COMMA label_state CBRACE SEMICOLON
+   -> ^(RULE_ label_state label_message label_state);
+
+policy_rule: data_rule | local_rule | rule;
+policy_block : 'Policy' ID OCBRACE policy_rule* CCBRACE -> ^(POLICY_ ID policy_rule*);
+
+policy_file: policy_block+
+	-> ^(POL_FILE_ policy_block+);

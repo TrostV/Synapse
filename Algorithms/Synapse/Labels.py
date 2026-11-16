@@ -18,7 +18,7 @@
 from dataclasses import dataclass
 from enum import Enum
 from typing import FrozenSet, Iterable
-
+from Parser import ProtoCCParser
 
 class Op(Enum):
     NONE = "None"
@@ -136,28 +136,52 @@ class LabelPattern:
             datas = "None"
         return f"{self.kind}({fmt(self.ops, list(Op))},{datas},{fmt(self.cohs, list(Coh))})"
 
+    @staticmethod 
+    def parse(tree) -> LabelPattern | None: 
+        if tree.type == ProtoCCParser.LABEL_STATE_:
+            kind = "S"
+        elif tree.type == ProtoCCParser.LABEL_MESSAGE_:
+            kind = "M"
+        else:
+            return None 
 
-_OP_ATOMS = {"None": Op.NONE, "Rd": Op.RD, "Wr": Op.WR, "RdWr": Op.RDWR}
-_DATA_ATOMS = {"NP": {Data.NP}, "None": {Data.NP}, "Clean": {Data.CLEAN}, "Dirty": {Data.DIRTY},
+        ops_tree = tree.getChild(0)
+        ops = set()
+        data_tree = tree.getChild(1)
+        data = set()
+        coh_tree = tree.getChild(2)
+        coh = set()
+
+        for op_tree in ops_tree.getChildren():
+            op = _OP_ATOMS[op_tree.getText()]
+            if op is None:
+                ops = None
+                break
+            ops |= op
+
+        for data_tree in data_tree.getChildren():
+            data = _DATA_ATOMS[data_tree.getText()]
+            if data is None:
+                data = None
+                break
+            data |= data
+
+        for coh_tree in coh_tree.getChildren():
+            coh = _COH_ATOMS[coh_tree.getText()]
+            if coh is None:
+                coh = None
+                break
+            coh |= coh
+
+        if ops is not None:
+            ops = frozenset(ops)
+        if data is not None:
+            data = frozenset(data)
+        if coh is not None:
+            coh = frozenset(coh)
+        return LabelPattern(kind, ops, data, coh)  
+
+_OP_ATOMS = {"None": {Op.NONE}, "Rd": {Op.RD}, "Wr": {Op.WR}, "RdWr": {Op.RDWR}, "_" : None}
+_DATA_ATOMS = {"NP": {Data.NP}, "None": {Data.NP}, "Clean": {Data.CLEAN}, "Dirty": {Data.DIRTY}, "_" : None,
                "P": {Data.CLEAN, Data.DIRTY}}
-_COH_ATOMS = {"co": Coh.CO, "nco": Coh.NCO}
-
-
-def parse_pattern(kind: str, op: str, data: str, coh: str) -> LabelPattern:
-    """Builds a pattern from the three textual fields of S(...)/M(...)."""
-    def alternatives(text: str, atoms: dict, what: str):
-        text = text.strip()
-        if text == ANY:
-            return None
-        values = set()
-        for atom in text.split("|"):
-            atom = atom.strip()
-            if atom not in atoms:
-                raise ValueError(f"unknown {what} '{atom}' (expected one of {sorted(atoms)} or {ANY})")
-            value = atoms[atom]
-            values |= value if isinstance(value, set) else {value}
-        return frozenset(values)
-
-    return LabelPattern(kind, alternatives(op, _OP_ATOMS, "operation"),
-                        alternatives(data, _DATA_ATOMS, "data state"),
-                        alternatives(coh, _COH_ATOMS, "coherence"))
+_COH_ATOMS = {"co": {Coh.CO}, "nco": {Coh.NCO}, "_" : None}

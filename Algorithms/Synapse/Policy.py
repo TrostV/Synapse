@@ -39,20 +39,14 @@
 #  protocol's evictions carry the block, e.g. MESIF PutS/PutE); the controller keeps it where the
 #  policy places the data (Synthesis._keep_returned_data).
 
-import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import List, Optional, Tuple
+from typing import List, Optional
 
-from Algorithms.Synapse.Labels import Label, LabelPattern, parse_pattern
-
-_FIELD = r"\s*([^,()]+?)\s*"
-_TERM = r"\s*([SM])\s*\(" + _FIELD + "," + _FIELD + "," + _FIELD + r"\)\s*"
-_RULE_RE = re.compile(r"(Rule|Local)\s*\(" + _TERM + "," + _TERM + "," + _TERM + r"\)\s*;?")
-_DOWNGRADE_RE = re.compile(r"Downgrade\s*\(" + _TERM + "," + _TERM + r"\)\s*;?")
-_DOWNGRADE3_RE = re.compile(r"Downgrade\s*\(" + _TERM + "," + _TERM + "," + _TERM + r"\)\s*;?")
-_DATA_RE = re.compile(r"Data\s*\(" + _TERM + r"\)\s*;?")
-_POLICY_RE = re.compile(r"Policy\s+(\w+)\s*\{(.*?)\}", re.S)
+from Algorithms.Synapse.Labels import Label, LabelPattern
+from Debug.Monitor.ClassDebug import Debug
+from Parser import ProtoCCLexer, ProtoCCParser
+from third_party.antlr3.streams import CommonTokenStream, InputStream
 
 
 @dataclass(frozen=True)
@@ -72,6 +66,23 @@ class Rule:
 
     def __str__(self):
         return f"{'Local' if self.local else 'Rule'}( {self.start}, {self.msg}, {self.final} )"
+
+    @staticmethod
+    def parse(rule_tree) -> Rule | None: 
+        local = False
+        if rule_tree.type == ProtoCCParser.LOCAL_RULE_:
+            local = True
+        elif not rule_tree.type == ProtoCCParser.RULE_:
+            return None
+
+        start_tree, msg_tree, final_tree = rule_tree.getChildren()
+        start = LabelPattern.parse(start_tree)
+        msg   = LabelPattern.parse(msg_tree)
+        final = LabelPattern.parse(final_tree)
+        if start is None or msg is None or final is None: 
+            return None     
+
+        return Rule(start, msg, final, f"Rule({start}, {msg}, {final})", local)
 
 
 @dataclass(frozen=True)
@@ -134,50 +145,60 @@ class Policy:
         return f"Policy {self.name} {{\n" + "".join(f"    {rule};\n" for rule in self.rules + self.downgrades) \
             + "".join(f"    {line};\n" for line in extra) + "}"
 
+    @staticmethod 
+    def parse(path: Path) -> List[Policy] | None:
+        policies: List[Policy] = []
+    
+        with open(path) as f:
+            tokens = CommonTokenStream(ProtoCCLexer.ProtoCCLexer(InputStream(f)))
+        parser = ProtoCCParser.ProtoCCParser(tokens)
+        file_tree = parser.document().tree
+        if file_tree is None:
+            return None # Empty file
 
-def _strip_comments(text: str) -> str:
-    text = re.sub(r"/\*.*?\*/", "", text, flags=re.S)
-    return re.sub(r"//[^\n]*", "", text)
+        if file_tree.type != ProtoCCParser.POL_FILE_:
+            return None # No Error here, this just might be a pcc file.
+        
+        for pol_tree in file_tree.getChildren():
+            if pol_tree.type != ProtoCCParser.POLICY_:
+                # This should never happen, the parser should have rejected the file. 
+                raise ValueError(f"Expected a policy in {path}, got {pol_tree.toStringTree()}")
+            
+            name = pol_tree.getChild(0).getText()
 
+            rules: List[Rule] = []
+            data_rule: LabelPattern | None = None
+            for rule_tree in pol_tree.getChildren()[1:]:
+                match rule_tree.type:
+                    case ProtoCCParser.RULE_:
+                        rule = Rule.parse(rule_tree)
+                        if rule: 
+                            rules.append(rule)
+                    case ProtoCCParser.DATA_RULE_:
+                        if not data_rule is None:
+                            raise ValueError(f"Policy {name} in {path} has more than one Data( ... ) directive")
 
-def parse_rules(text: str) -> Tuple[List[Rule], List[Downgrade], Optional[LabelPattern]]:
-    remainder = _DATA_RE.sub("", text)
-    remainder = _DOWNGRADE_RE.sub("", _DOWNGRADE3_RE.sub("", _RULE_RE.sub("", remainder)))
-    if remainder.strip():
-        raise ValueError(f"cannot parse policy text: {remainder.strip()[:80]!r}")
-    rules = []
-    for m in _RULE_RE.finditer(text):
-        g = m.groups()[1:]
-        rules.append(Rule(parse_pattern(g[0], *g[1:4]), parse_pattern(g[4], *g[5:8]),
-                          parse_pattern(g[8], *g[9:12]), m.group(0).strip(), m.group(1) == "Local"))
-    downgrades = []
-    for m in sorted(list(_DOWNGRADE3_RE.finditer(text)) + list(_DOWNGRADE_RE.finditer(text)),
-                    key=lambda m: m.start()):
-        g = m.groups()
-        if len(g) == 12:
-            client, msg, children = g[0:4], g[4:8], g[8:12]
-        else:
-            client, msg, children = ("S", "_", "_", "_"), g[0:4], g[4:8]
-        downgrades.append(Downgrade(parse_pattern(*client), parse_pattern(*msg),
-                                    parse_pattern(*children), m.group(0).strip()))
-    data_matches = list(_DATA_RE.finditer(text))
-    if len(data_matches) > 1:
-        raise ValueError("a policy has at most one Data( ... )")
-    data = parse_pattern(*data_matches[0].groups()) if data_matches else None
-    return rules, downgrades, data
+                        data_rule = LabelPattern.parse(rule_tree.getChild(0))
+                    case ProtoCCParser.LOCAL_RULE_:
+                        l_rule = Rule.parse(rule_tree.getChild(0))
+                        if l_rule:
+                            rules.append(l_rule)
 
+                    case _: # Shouldn't happen, the parser should have rejected the file.
+                        raise ValueError(f"Unexpected rule type {rule_tree.type} in policy {name} in {path}")
 
-def parse_policies(text: str) -> List[Policy]:
-    text = _strip_comments(text)
-    policies = [Policy(m.group(1), *parse_rules(m.group(2))) for m in _POLICY_RE.finditer(text)]
-    if not policies:
-        raise ValueError("no `Policy <name> { ... }` block found")
-    return policies
+            if len(rules) == 0:
+                Debug.pwaring(f"Policy {name} in {path} has no rules!")
+
+            pol = Policy(name, rules, None, data_rule) # TODO: Downgrades? Data? 
+            policies.append(pol)
+
+        return policies
 
 
 def load_policy(path: Path, name: Optional[str] = None) -> Policy:
     """Loads the policy `name` of a file (the only one of the file if no name is given)."""
-    policies = parse_policies(Path(path).read_text())
+    policies = Policy.parse(path)
     if name is None:
         if len(policies) != 1:
             raise ValueError(f"{path} defines {[p.name for p in policies]}, select one by name")

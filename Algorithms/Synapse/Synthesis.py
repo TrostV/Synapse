@@ -988,6 +988,11 @@ class SynapseClientArchitecture():
                     processed = []
                     for trace in traces:
                         final = trace[-1].final_state
+                        if final not in self.client.stable_states:
+                            # This should not happen. Though I encountered it once when I was testing MESI-RC with a WT_policy.
+                            # I am leaving this here for now, but it should be removed once we are confident that this is not a problem anymore.
+                            Debug.pwarning(f"Encountered the non-stable state {final} when processing {roots[0].guard}. THIS IS A BUG.")
+                            continue
                         if rule.final.matches(self.labels.state_labels[final]):
                             processed.append(trace)
                             continue
