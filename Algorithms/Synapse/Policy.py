@@ -84,31 +84,11 @@ class Rule:
 
         return Rule(start, msg, final, f"Rule({start}, {msg}, {final})", local)
 
-
-@dataclass(frozen=True)
-class Downgrade:
-    client: LabelPattern
-    msg: LabelPattern
-    children: LabelPattern
-    text: str = ""
-
-    def __post_init__(self):
-        if (self.client.kind, self.msg.kind, self.children.kind) != ("S", "M", "S"):
-            raise ValueError(f"a downgrade must be Downgrade(S(..), M(..), S(..)): {self.text}")
-
-    def matches(self, client: Label, msg: Label) -> bool:
-        return self.client.matches(client) and self.msg.matches(msg)
-
-    def __str__(self):
-        return f"Downgrade( {self.client}, {self.msg}, {self.children} )"
-
-
 class Policy:
-    def __init__(self, name: str, rules: List[Rule], downgrades: List[Downgrade] = None,
+    def __init__(self, name: str, rules: List[Rule],
                  data: Optional[LabelPattern] = None):
         self.name = name
         self.rules = rules
-        self.downgrades = downgrades or []
         self.data = data
 
     @property
@@ -123,15 +103,6 @@ class Policy:
         """Data( ... ): whether the controller holds the block's data while its children are in the
         abstract state `children` (always, without the directive)."""
         return self.data is None or self.data.matches(children)
-
-    def children_target(self, client: Label, msg: Label) -> Optional[LabelPattern]:
-        """State the children must be downgraded to on a request from the parent received in the
-        client state labelled `client`, if the policy asks for more than the client's final state
-        (first matching Downgrade rule)."""
-        for downgrade in self.downgrades:
-            if downgrade.matches(client, msg):
-                return downgrade.children
-        return None
 
     def match_rule(self, state: Label, msg: Label) -> Optional[Rule]:
         """policy.match-rule() of Alg. 1: the first rule matching (client state, request)."""
@@ -190,7 +161,7 @@ class Policy:
             if len(rules) == 0:
                 Debug.pwaring(f"Policy {name} in {path} has no rules!")
 
-            pol = Policy(name, rules, None, data_rule) # TODO: Downgrades? Data? 
+            pol = Policy(name, rules, data_rule)
             policies.append(pol)
 
         return policies

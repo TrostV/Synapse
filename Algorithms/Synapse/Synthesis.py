@@ -340,7 +340,7 @@ class SynapseDirArchitecture(HHDirArchitecture):
             if transition.start_state.stable or not isinstance(guard, (BaseMessage, Message)) or \
                     FORWARD not in self.client_labels.msg_roles.get(str(guard), set()):
                 continue
-            target = self._downgrade_target(guard, client_state, self.client_labels.label(guard).op)
+            target = self.client_labels.label(guard).op
             needs_data = self._children_data_needed(manager_state, children) and \
                 any(msg.has_data() for msg in transition.out_msg)
             if children.op <= target and not (target == Op.NONE and children.data != Data.NP) \
@@ -821,8 +821,7 @@ class SynapseDirArchitecture(HHDirArchitecture):
             if isinstance(guard, Evict):
                 target = Op.NONE  # inclusive: evicting the block requires the children to drop it
             elif isinstance(guard, (BaseMessage, Message)):
-                target = self._downgrade_target(guard, client_state,
-                                                self._client_final_op(client_tree, client_state))
+                target = self._client_final_op(client_tree, client_state)
             else:
                 transitions += self._in_compound(client_tree, manager_state, guard)
                 continue
@@ -851,18 +850,6 @@ class SynapseDirArchitecture(HHDirArchitecture):
         policy where the controller keeps no data, and whenever a child may hold it dirty (e.g. a
         MOESI owner in O, whose Fwd_GetS answer does not write back)."""
         return not self.keeps_data(manager_state) or children.data == Data.DIRTY
-
-    def _downgrade_target(self, guard, client_state: State_v2, client_op: Op) -> Op:
-        """Permissions the children may keep on a request from the parent: what the client keeps
-        (Alg. 1, line 12), or less if a Downgrade rule of the policy asks for it."""
-        pattern = self.policy.children_target(self.client_label(client_state),
-                                              self.client_labels.label(guard))
-        if pattern is None or pattern.ops is None:
-            return client_op
-        for op in sorted(pattern.ops, key=lambda o: len(o.perms)):
-            if op <= client_op:
-                return op
-        return client_op
 
     def _client_final_op(self, client_tree: MultiDiGraph, client_state: State_v2) -> Op:
         """client.simulate(): the most permissive state the client can end in after the request."""
