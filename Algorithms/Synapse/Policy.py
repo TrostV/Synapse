@@ -47,6 +47,7 @@ from Algorithms.Synapse.Labels import Label, LabelPattern
 from Debug.Monitor.ClassDebug import Debug
 from Parser import ProtoCCLexer, ProtoCCParser
 from third_party.antlr3.streams import CommonTokenStream, InputStream
+from third_party.antlr3.tree import CommonTree
 
 
 @dataclass(frozen=True)
@@ -56,6 +57,7 @@ class Rule:
     final: LabelPattern
     text: str = ""
     local: bool = False     # Local( ... ): reached without the parent
+    action: Optional[List[CommonTree]] = None # action = {...} : Block that is executed after a rule is matched.
 
     def __post_init__(self):
         if (self.start.kind, self.msg.kind, self.final.kind) != ("S", "M", "S"):
@@ -63,7 +65,7 @@ class Rule:
 
     def matches(self, state: Label, msg: Label) -> bool:
         return self.start.matches(state) and self.msg.matches(msg)
-
+    
     def __str__(self):
         return f"{'Local' if self.local else 'Rule'}( {self.start}, {self.msg}, {self.final} )"
 
@@ -75,14 +77,19 @@ class Rule:
         elif not rule_tree.type == ProtoCCParser.RULE_:
             return None
 
-        start_tree, msg_tree, final_tree = rule_tree.getChildren()
+        children = rule_tree.getChildren()
+        start_tree, msg_tree, final_tree = children[0], children[1], children[2]
+        action_tree = children[3] if len(children) > 3 else None
+
         start = LabelPattern.parse(start_tree)
         msg   = LabelPattern.parse(msg_tree)
         final = LabelPattern.parse(final_tree)
+        action = action_tree.getChildren() if action_tree is not None else None
+
         if start is None or msg is None or final is None: 
             return None     
 
-        return Rule(start, msg, final, f"Rule({start}, {msg}, {final})", local)
+        return Rule(start, msg, final, f"Rule({start}, {msg}, {final})", local, action)
 
 class Policy:
     def __init__(self, name: str, rules: List[Rule],

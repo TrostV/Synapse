@@ -1,4 +1,4 @@
-# $ANTLR 3.5.3 ProtoCC.g 2026-11-16 17:02:38
+# $ANTLR 3.5.3 ProtoCC.g 2026-11-18 17:36:23
 
 import sys
 from antlr3 import *
@@ -13,8 +13,6 @@ HIDDEN = BaseRecognizer.HIDDEN
 
 # token types
 EOF=-1
-T__109=109
-T__110=110
 T__111=111
 T__112=112
 T__113=113
@@ -50,6 +48,9 @@ T__142=142
 T__143=143
 T__144=144
 T__145=145
+T__146=146
+T__147=147
+T__148=148
 ACCESS=4
 ACCESS_=5
 ARCH=6
@@ -94,99 +95,102 @@ EVENT_ACK_=44
 EVICT=45
 FIFO=46
 FIFO_=47
-GUARD_=48
-ID=49
-ID_=50
-IF=51
-IFELSE_=52
-IF_=53
-INITSTATE_=54
-INITVAL_=55
-INT=56
-INTID=57
-INT_=58
-LABEL_MESSAGE_=59
-LABEL_STATE_=60
-LINE_COMMENT=61
-LOCAL_RULE_=62
-MACHN_=63
-MCAST_=64
-MEM=65
-MEM_=66
-MINUS=67
-MSG=68
-MSGCSTR_=69
-MSG_=70
-MULT=71
-NCOND_=72
-NEG=73
-NETWORK=74
-NETWORK_=75
-NEXT=76
-NEXT_=77
-NID=78
-OBJSET_=79
-OBRACE=80
-OCBRACE=81
-OEBRACE=82
-PLUS=83
-POLICY_=84
-POLICY_COH_=85
-POLICY_DATA_=86
-POLICY_OP_=87
-POL_FILE_=88
-PROC=89
-PROC_=90
-RANGE_=91
-RULE_=92
-SEMICOLON=93
-SEND_=94
-SET=95
-SETFUNC_=96
-SET_=97
-STABLE=98
-STABLE_=99
-STALL=100
-STALL_=101
-STATE=102
-TRANS_=103
-UNDEF=104
-UNDEF_=105
-WHEN=106
-WHEN_=107
-WS=108
+FUNCTION_CALL_=48
+GUARD_=49
+ID=50
+ID_=51
+IF=52
+IFELSE_=53
+IF_=54
+INITSTATE_=55
+INITVAL_=56
+INT=57
+INTID=58
+INT_=59
+LABEL_MESSAGE_=60
+LABEL_STATE_=61
+LINE_COMMENT=62
+LOCAL_RULE_=63
+MACHN_=64
+MCAST_=65
+MEM=66
+MEM_=67
+MINUS=68
+MSG=69
+MSGCSTR_=70
+MSG_=71
+MULT=72
+NCOND_=73
+NEG=74
+NETWORK=75
+NETWORK_=76
+NEXT=77
+NEXT_=78
+NID=79
+OBJSET_=80
+OBRACE=81
+OCBRACE=82
+OEBRACE=83
+PLUS=84
+POLICY_=85
+POLICY_ACTION_=86
+POLICY_COH_=87
+POLICY_DATA_=88
+POLICY_OP_=89
+POL_FILE_=90
+PROC=91
+PROC_=92
+RANGE_=93
+RULE_=94
+SEMICOLON=95
+SEND_=96
+SET=97
+SETFUNC_=98
+SET_=99
+STABLE=100
+STABLE_=101
+STALL=102
+STALL_=103
+STATE=104
+TRANS_=105
+UNDEF=106
+UNDEF_=107
+WHEN=108
+WHEN_=109
+WS=110
 
 # token names
 tokenNamesMap = {
     0: "<invalid>", 1: "<EOR>", 2: "<DOWN>", 3: "<UP>",
-    -1: "EOF", 109: "T__109", 110: "T__110", 111: "T__111", 112: "T__112", 
-    113: "T__113", 114: "T__114", 115: "T__115", 116: "T__116", 117: "T__117", 
-    118: "T__118", 119: "T__119", 120: "T__120", 121: "T__121", 122: "T__122", 
-    123: "T__123", 124: "T__124", 125: "T__125", 126: "T__126", 127: "T__127", 
-    128: "T__128", 129: "T__129", 130: "T__130", 131: "T__131", 132: "T__132", 
-    133: "T__133", 134: "T__134", 135: "T__135", 136: "T__136", 137: "T__137", 
-    138: "T__138", 139: "T__139", 140: "T__140", 141: "T__141", 142: "T__142", 
-    143: "T__143", 144: "T__144", 145: "T__145", 4: "ACCESS", 5: "ACCESS_", 
-    6: "ARCH", 7: "ARCH_", 8: "ARRAY", 9: "ARRAY_", 10: "ASSIGN_", 11: "AWAIT", 
-    12: "AWAIT_", 13: "BCAST_", 14: "BOOL", 15: "BOOLID", 16: "BOOL_", 17: "BREAK", 
-    18: "BREAK_", 19: "CACHE", 20: "CACHE_", 21: "CBRACE", 22: "CCBRACE", 
-    23: "CEBRACE", 24: "COMMA", 25: "COMMENT", 26: "COND_", 27: "CONSTANT", 
-    28: "CONSTANT_", 29: "DATA", 30: "DATA_", 31: "DATA_RULE_", 32: "DDOT", 
-    33: "DIR", 34: "DIR_", 35: "DOT", 36: "ELEMENT_", 37: "ELSE", 38: "ENDIFELSE_", 
-    39: "ENDIF_", 40: "ENDPROC_", 41: "ENDWHEN_", 42: "EQUALSIGN", 43: "EVENT_", 
-    44: "EVENT_ACK_", 45: "EVICT", 46: "FIFO", 47: "FIFO_", 48: "GUARD_", 
-    49: "ID", 50: "ID_", 51: "IF", 52: "IFELSE_", 53: "IF_", 54: "INITSTATE_", 
-    55: "INITVAL_", 56: "INT", 57: "INTID", 58: "INT_", 59: "LABEL_MESSAGE_", 
-    60: "LABEL_STATE_", 61: "LINE_COMMENT", 62: "LOCAL_RULE_", 63: "MACHN_", 
-    64: "MCAST_", 65: "MEM", 66: "MEM_", 67: "MINUS", 68: "MSG", 69: "MSGCSTR_", 
-    70: "MSG_", 71: "MULT", 72: "NCOND_", 73: "NEG", 74: "NETWORK", 75: "NETWORK_", 
-    76: "NEXT", 77: "NEXT_", 78: "NID", 79: "OBJSET_", 80: "OBRACE", 81: "OCBRACE", 
-    82: "OEBRACE", 83: "PLUS", 84: "POLICY_", 85: "POLICY_COH_", 86: "POLICY_DATA_", 
-    87: "POLICY_OP_", 88: "POL_FILE_", 89: "PROC", 90: "PROC_", 91: "RANGE_", 
-    92: "RULE_", 93: "SEMICOLON", 94: "SEND_", 95: "SET", 96: "SETFUNC_", 
-    97: "SET_", 98: "STABLE", 99: "STABLE_", 100: "STALL", 101: "STALL_", 
-    102: "STATE", 103: "TRANS_", 104: "UNDEF", 105: "UNDEF_", 106: "WHEN", 
-    107: "WHEN_", 108: "WS"
+    -1: "EOF", 111: "T__111", 112: "T__112", 113: "T__113", 114: "T__114", 
+    115: "T__115", 116: "T__116", 117: "T__117", 118: "T__118", 119: "T__119", 
+    120: "T__120", 121: "T__121", 122: "T__122", 123: "T__123", 124: "T__124", 
+    125: "T__125", 126: "T__126", 127: "T__127", 128: "T__128", 129: "T__129", 
+    130: "T__130", 131: "T__131", 132: "T__132", 133: "T__133", 134: "T__134", 
+    135: "T__135", 136: "T__136", 137: "T__137", 138: "T__138", 139: "T__139", 
+    140: "T__140", 141: "T__141", 142: "T__142", 143: "T__143", 144: "T__144", 
+    145: "T__145", 146: "T__146", 147: "T__147", 148: "T__148", 4: "ACCESS", 
+    5: "ACCESS_", 6: "ARCH", 7: "ARCH_", 8: "ARRAY", 9: "ARRAY_", 10: "ASSIGN_", 
+    11: "AWAIT", 12: "AWAIT_", 13: "BCAST_", 14: "BOOL", 15: "BOOLID", 16: "BOOL_", 
+    17: "BREAK", 18: "BREAK_", 19: "CACHE", 20: "CACHE_", 21: "CBRACE", 
+    22: "CCBRACE", 23: "CEBRACE", 24: "COMMA", 25: "COMMENT", 26: "COND_", 
+    27: "CONSTANT", 28: "CONSTANT_", 29: "DATA", 30: "DATA_", 31: "DATA_RULE_", 
+    32: "DDOT", 33: "DIR", 34: "DIR_", 35: "DOT", 36: "ELEMENT_", 37: "ELSE", 
+    38: "ENDIFELSE_", 39: "ENDIF_", 40: "ENDPROC_", 41: "ENDWHEN_", 42: "EQUALSIGN", 
+    43: "EVENT_", 44: "EVENT_ACK_", 45: "EVICT", 46: "FIFO", 47: "FIFO_", 
+    48: "FUNCTION_CALL_", 49: "GUARD_", 50: "ID", 51: "ID_", 52: "IF", 53: "IFELSE_", 
+    54: "IF_", 55: "INITSTATE_", 56: "INITVAL_", 57: "INT", 58: "INTID", 
+    59: "INT_", 60: "LABEL_MESSAGE_", 61: "LABEL_STATE_", 62: "LINE_COMMENT", 
+    63: "LOCAL_RULE_", 64: "MACHN_", 65: "MCAST_", 66: "MEM", 67: "MEM_", 
+    68: "MINUS", 69: "MSG", 70: "MSGCSTR_", 71: "MSG_", 72: "MULT", 73: "NCOND_", 
+    74: "NEG", 75: "NETWORK", 76: "NETWORK_", 77: "NEXT", 78: "NEXT_", 79: "NID", 
+    80: "OBJSET_", 81: "OBRACE", 82: "OCBRACE", 83: "OEBRACE", 84: "PLUS", 
+    85: "POLICY_", 86: "POLICY_ACTION_", 87: "POLICY_COH_", 88: "POLICY_DATA_", 
+    89: "POLICY_OP_", 90: "POL_FILE_", 91: "PROC", 92: "PROC_", 93: "RANGE_", 
+    94: "RULE_", 95: "SEMICOLON", 96: "SEND_", 97: "SET", 98: "SETFUNC_", 
+    99: "SET_", 100: "STABLE", 101: "STABLE_", 102: "STALL", 103: "STALL_", 
+    104: "STATE", 105: "TRANS_", 106: "UNDEF", 107: "UNDEF_", 108: "WHEN", 
+    109: "WHEN_", 110: "WS"
 }
 Token.registerTokenNamesMap(tokenNamesMap)
 
@@ -199,20 +203,20 @@ tokenNames = [
     "COND_", "CONSTANT", "CONSTANT_", "DATA", "DATA_", "DATA_RULE_", "DDOT", 
     "DIR", "DIR_", "DOT", "ELEMENT_", "ELSE", "ENDIFELSE_", "ENDIF_", "ENDPROC_", 
     "ENDWHEN_", "EQUALSIGN", "EVENT_", "EVENT_ACK_", "EVICT", "FIFO", "FIFO_", 
-    "GUARD_", "ID", "ID_", "IF", "IFELSE_", "IF_", "INITSTATE_", "INITVAL_", 
-    "INT", "INTID", "INT_", "LABEL_MESSAGE_", "LABEL_STATE_", "LINE_COMMENT", 
-    "LOCAL_RULE_", "MACHN_", "MCAST_", "MEM", "MEM_", "MINUS", "MSG", "MSGCSTR_", 
-    "MSG_", "MULT", "NCOND_", "NEG", "NETWORK", "NETWORK_", "NEXT", "NEXT_", 
-    "NID", "OBJSET_", "OBRACE", "OCBRACE", "OEBRACE", "PLUS", "POLICY_", 
-    "POLICY_COH_", "POLICY_DATA_", "POLICY_OP_", "POL_FILE_", "PROC", "PROC_", 
-    "RANGE_", "RULE_", "SEMICOLON", "SEND_", "SET", "SETFUNC_", "SET_", 
-    "STABLE", "STABLE_", "STALL", "STALL_", "STATE", "TRANS_", "UNDEF", 
-    "UNDEF_", "WHEN", "WHEN_", "WS", "'!='", "'&'", "'<'", "'<='", "'=='", 
-    "'>'", "'>='", "'Bcast'", "'Clean'", "'Dirty'", "'Event'", "'Local'", 
-    "'Mcast'", "'NP'", "'None'", "'Ordered'", "'P'", "'Policy'", "'Rd'", 
-    "'RdWr'", "'Rule'", "'Send'", "'Unordered'", "'Wr'", "'_'", "'add'", 
-    "'bcast'", "'clear'", "'coh'", "'contains'", "'count'", "'del'", "'mcast'", 
-    "'nco'", "'send'", "'smallest'", "'|'"
+    "FUNCTION_CALL_", "GUARD_", "ID", "ID_", "IF", "IFELSE_", "IF_", "INITSTATE_", 
+    "INITVAL_", "INT", "INTID", "INT_", "LABEL_MESSAGE_", "LABEL_STATE_", 
+    "LINE_COMMENT", "LOCAL_RULE_", "MACHN_", "MCAST_", "MEM", "MEM_", "MINUS", 
+    "MSG", "MSGCSTR_", "MSG_", "MULT", "NCOND_", "NEG", "NETWORK", "NETWORK_", 
+    "NEXT", "NEXT_", "NID", "OBJSET_", "OBRACE", "OCBRACE", "OEBRACE", "PLUS", 
+    "POLICY_", "POLICY_ACTION_", "POLICY_COH_", "POLICY_DATA_", "POLICY_OP_", 
+    "POL_FILE_", "PROC", "PROC_", "RANGE_", "RULE_", "SEMICOLON", "SEND_", 
+    "SET", "SETFUNC_", "SET_", "STABLE", "STABLE_", "STALL", "STALL_", "STATE", 
+    "TRANS_", "UNDEF", "UNDEF_", "WHEN", "WHEN_", "WS", "'!='", "'&'", "'<'", 
+    "'<='", "'=='", "'>'", "'>='", "'Bcast'", "'Clean'", "'Dirty'", "'Event'", 
+    "'Local'", "'Mcast'", "'NP'", "'None'", "'Ordered'", "'P'", "'Policy'", 
+    "'Rd'", "'RdWr'", "'Rule'", "'Send'", "'Unordered'", "'Wr'", "'_'", 
+    "'action'", "'add'", "'bcast'", "'clear'", "'coh'", "'contains'", "'count'", 
+    "'del'", "'mcast'", "'nco'", "'send'", "'smallest'", "'|'"
 ]
 
 
@@ -258,7 +262,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "send_function"
-    # ProtoCC.g:141:1: send_function : ( 'send' | 'Send' );
+    # ProtoCC.g:142:1: send_function : ( 'send' | 'Send' );
     def send_function(self, ):
         retval = self.send_function_return()
         retval.start = self.input.LT(1)
@@ -272,7 +276,7 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:142:2: ( 'send' | 'Send' )
+                # ProtoCC.g:143:2: ( 'send' | 'Send' )
                 # ProtoCC.g:
                 pass 
                 root_0 = self._adaptor.nil()
@@ -280,7 +284,7 @@ class ProtoCCParser(Parser):
 
                 set1 = self.input.LT(1)
 
-                if self.input.LA(1) in {130, 143}:
+                if self.input.LA(1) in {132, 146}:
                     self.input.consume()
                     self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set1))
 
@@ -326,7 +330,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "mcast_function"
-    # ProtoCC.g:146:1: mcast_function : ( 'mcast' | 'Mcast' );
+    # ProtoCC.g:147:1: mcast_function : ( 'mcast' | 'Mcast' );
     def mcast_function(self, ):
         retval = self.mcast_function_return()
         retval.start = self.input.LT(1)
@@ -340,7 +344,7 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:147:2: ( 'mcast' | 'Mcast' )
+                # ProtoCC.g:148:2: ( 'mcast' | 'Mcast' )
                 # ProtoCC.g:
                 pass 
                 root_0 = self._adaptor.nil()
@@ -348,7 +352,7 @@ class ProtoCCParser(Parser):
 
                 set2 = self.input.LT(1)
 
-                if self.input.LA(1) in {121, 141}:
+                if self.input.LA(1) in {123, 144}:
                     self.input.consume()
                     self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set2))
 
@@ -394,7 +398,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "bcast_function"
-    # ProtoCC.g:151:1: bcast_function : ( 'bcast' | 'Bcast' );
+    # ProtoCC.g:152:1: bcast_function : ( 'bcast' | 'Bcast' );
     def bcast_function(self, ):
         retval = self.bcast_function_return()
         retval.start = self.input.LT(1)
@@ -408,7 +412,7 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:152:2: ( 'bcast' | 'Bcast' )
+                # ProtoCC.g:153:2: ( 'bcast' | 'Bcast' )
                 # ProtoCC.g:
                 pass 
                 root_0 = self._adaptor.nil()
@@ -416,7 +420,7 @@ class ProtoCCParser(Parser):
 
                 set3 = self.input.LT(1)
 
-                if self.input.LA(1) in {116, 135}:
+                if self.input.LA(1) in {118, 138}:
                     self.input.consume()
                     self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set3))
 
@@ -462,7 +466,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "internal_event_function"
-    # ProtoCC.g:156:1: internal_event_function : 'Event' ;
+    # ProtoCC.g:157:1: internal_event_function : 'Event' ;
     def internal_event_function(self, ):
         retval = self.internal_event_function_return()
         retval.start = self.input.LT(1)
@@ -476,13 +480,13 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:157:2: ( 'Event' )
-                # ProtoCC.g:157:4: 'Event'
+                # ProtoCC.g:158:2: ( 'Event' )
+                # ProtoCC.g:158:4: 'Event'
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                string_literal4 = self.match(self.input, 119, self.FOLLOW_119_in_internal_event_function750)
+                string_literal4 = self.match(self.input, 121, self.FOLLOW_121_in_internal_event_function757)
                 string_literal4_tree = self._adaptor.createWithPayload(string_literal4)
                 self._adaptor.addChild(root_0, string_literal4_tree)
 
@@ -521,7 +525,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "set_function_types"
-    # ProtoCC.g:160:1: set_function_types : ( 'add' | 'count' | 'contains' | 'del' | 'clear' | 'smallest' );
+    # ProtoCC.g:161:1: set_function_types : ( 'add' | 'count' | 'contains' | 'del' | 'clear' | 'smallest' );
     def set_function_types(self, ):
         retval = self.set_function_types_return()
         retval.start = self.input.LT(1)
@@ -535,7 +539,7 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:161:2: ( 'add' | 'count' | 'contains' | 'del' | 'clear' | 'smallest' )
+                # ProtoCC.g:162:2: ( 'add' | 'count' | 'contains' | 'del' | 'clear' | 'smallest' )
                 # ProtoCC.g:
                 pass 
                 root_0 = self._adaptor.nil()
@@ -543,7 +547,7 @@ class ProtoCCParser(Parser):
 
                 set5 = self.input.LT(1)
 
-                if self.input.LA(1) in {134, 136, 138, 139, 140, 144}:
+                if self.input.LA(1) in {137, 139, 141, 142, 143, 147}:
                     self.input.consume()
                     self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set5))
 
@@ -589,7 +593,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "relational_operator"
-    # ProtoCC.g:169:1: relational_operator : ( '==' | '!=' | '<=' | '>=' | '<' | '>' );
+    # ProtoCC.g:170:1: relational_operator : ( '==' | '!=' | '<=' | '>=' | '<' | '>' );
     def relational_operator(self, ):
         retval = self.relational_operator_return()
         retval.start = self.input.LT(1)
@@ -603,7 +607,7 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:170:2: ( '==' | '!=' | '<=' | '>=' | '<' | '>' )
+                # ProtoCC.g:171:2: ( '==' | '!=' | '<=' | '>=' | '<' | '>' )
                 # ProtoCC.g:
                 pass 
                 root_0 = self._adaptor.nil()
@@ -611,7 +615,7 @@ class ProtoCCParser(Parser):
 
                 set6 = self.input.LT(1)
 
-                if (111 <= self.input.LA(1) <= 115) or self.input.LA(1) in {109}:
+                if (113 <= self.input.LA(1) <= 117) or self.input.LA(1) in {111}:
                     self.input.consume()
                     self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set6))
 
@@ -657,7 +661,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "combinatorial_operator"
-    # ProtoCC.g:178:1: combinatorial_operator : ( '&' | '|' );
+    # ProtoCC.g:179:1: combinatorial_operator : ( '&' | '|' );
     def combinatorial_operator(self, ):
         retval = self.combinatorial_operator_return()
         retval.start = self.input.LT(1)
@@ -671,7 +675,7 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:179:5: ( '&' | '|' )
+                # ProtoCC.g:180:5: ( '&' | '|' )
                 # ProtoCC.g:
                 pass 
                 root_0 = self._adaptor.nil()
@@ -679,7 +683,7 @@ class ProtoCCParser(Parser):
 
                 set7 = self.input.LT(1)
 
-                if self.input.LA(1) in {110, 145}:
+                if self.input.LA(1) in {112, 148}:
                     self.input.consume()
                     self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set7))
 
@@ -725,7 +729,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "document"
-    # ProtoCC.g:209:1: document : ( ( const_decl | init_hw | arch_block | expressions )* | policy_file );
+    # ProtoCC.g:210:1: document : ( ( const_decl | init_hw | arch_block | expressions )* | policy_file );
     def document(self, ):
         retval = self.document_return()
         retval.start = self.input.LT(1)
@@ -742,13 +746,13 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:210:2: ( ( const_decl | init_hw | arch_block | expressions )* | policy_file )
+                # ProtoCC.g:211:2: ( ( const_decl | init_hw | arch_block | expressions )* | policy_file )
                 alt2 = 2
                 LA2_0 = self.input.LA(1)
 
-                if (LA2_0 in {EOF, ACCESS, ARCH, CACHE, CONSTANT, DIR, ID, IF, MEM, MSG, NETWORK, STALL, STATE, UNDEF, 119}) :
+                if (LA2_0 in {EOF, ACCESS, ARCH, CACHE, CONSTANT, DIR, ID, IF, MEM, MSG, NETWORK, STALL, STATE, UNDEF, 121}) :
                     alt2 = 1
-                elif (LA2_0 == 126) :
+                elif (LA2_0 == 128) :
                     alt2 = 2
                 else:
                     nvae = NoViableAltException("", 2, 0, self.input)
@@ -757,12 +761,12 @@ class ProtoCCParser(Parser):
 
 
                 if alt2 == 1:
-                    # ProtoCC.g:210:4: ( const_decl | init_hw | arch_block | expressions )*
+                    # ProtoCC.g:211:4: ( const_decl | init_hw | arch_block | expressions )*
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    # ProtoCC.g:210:4: ( const_decl | init_hw | arch_block | expressions )*
+                    # ProtoCC.g:211:4: ( const_decl | init_hw | arch_block | expressions )*
                     while True: #loop1
                         alt1 = 5
                         LA1 = self.input.LA(1)
@@ -772,13 +776,13 @@ class ProtoCCParser(Parser):
                             alt1 = 2
                         elif LA1 in {ARCH}:
                             alt1 = 3
-                        elif LA1 in {ACCESS, ID, IF, STALL, STATE, UNDEF, 119}:
+                        elif LA1 in {ACCESS, ID, IF, STALL, STATE, UNDEF, 121}:
                             alt1 = 4
 
                         if alt1 == 1:
-                            # ProtoCC.g:210:5: const_decl
+                            # ProtoCC.g:211:5: const_decl
                             pass 
-                            self._state.following.append(self.FOLLOW_const_decl_in_document1078)
+                            self._state.following.append(self.FOLLOW_const_decl_in_document1085)
                             const_decl8 = self.const_decl()
 
                             self._state.following.pop()
@@ -787,9 +791,9 @@ class ProtoCCParser(Parser):
 
 
                         elif alt1 == 2:
-                            # ProtoCC.g:210:18: init_hw
+                            # ProtoCC.g:211:18: init_hw
                             pass 
-                            self._state.following.append(self.FOLLOW_init_hw_in_document1082)
+                            self._state.following.append(self.FOLLOW_init_hw_in_document1089)
                             init_hw9 = self.init_hw()
 
                             self._state.following.pop()
@@ -798,9 +802,9 @@ class ProtoCCParser(Parser):
 
 
                         elif alt1 == 3:
-                            # ProtoCC.g:210:28: arch_block
+                            # ProtoCC.g:211:28: arch_block
                             pass 
-                            self._state.following.append(self.FOLLOW_arch_block_in_document1086)
+                            self._state.following.append(self.FOLLOW_arch_block_in_document1093)
                             arch_block10 = self.arch_block()
 
                             self._state.following.pop()
@@ -809,9 +813,9 @@ class ProtoCCParser(Parser):
 
 
                         elif alt1 == 4:
-                            # ProtoCC.g:210:41: expressions
+                            # ProtoCC.g:211:41: expressions
                             pass 
-                            self._state.following.append(self.FOLLOW_expressions_in_document1090)
+                            self._state.following.append(self.FOLLOW_expressions_in_document1097)
                             expressions11 = self.expressions()
 
                             self._state.following.pop()
@@ -825,12 +829,12 @@ class ProtoCCParser(Parser):
 
 
                 elif alt2 == 2:
-                    # ProtoCC.g:211:4: policy_file
+                    # ProtoCC.g:212:4: policy_file
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_policy_file_in_document1098)
+                    self._state.following.append(self.FOLLOW_policy_file_in_document1105)
                     policy_file12 = self.policy_file()
 
                     self._state.following.pop()
@@ -869,7 +873,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "declarations"
-    # ProtoCC.g:215:1: declarations : ( int_decl | bool_decl | state_decl | data_decl | id_decl );
+    # ProtoCC.g:216:1: declarations : ( int_decl | bool_decl | state_decl | data_decl | id_decl );
     def declarations(self, ):
         retval = self.declarations_return()
         retval.start = self.input.LT(1)
@@ -886,7 +890,7 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:215:14: ( int_decl | bool_decl | state_decl | data_decl | id_decl )
+                # ProtoCC.g:216:14: ( int_decl | bool_decl | state_decl | data_decl | id_decl )
                 alt3 = 5
                 LA3 = self.input.LA(1)
                 if LA3 in {INTID}:
@@ -906,12 +910,12 @@ class ProtoCCParser(Parser):
 
 
                 if alt3 == 1:
-                    # ProtoCC.g:215:16: int_decl
+                    # ProtoCC.g:216:16: int_decl
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_int_decl_in_declarations1109)
+                    self._state.following.append(self.FOLLOW_int_decl_in_declarations1116)
                     int_decl13 = self.int_decl()
 
                     self._state.following.pop()
@@ -920,12 +924,12 @@ class ProtoCCParser(Parser):
 
 
                 elif alt3 == 2:
-                    # ProtoCC.g:215:27: bool_decl
+                    # ProtoCC.g:216:27: bool_decl
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_bool_decl_in_declarations1113)
+                    self._state.following.append(self.FOLLOW_bool_decl_in_declarations1120)
                     bool_decl14 = self.bool_decl()
 
                     self._state.following.pop()
@@ -934,12 +938,12 @@ class ProtoCCParser(Parser):
 
 
                 elif alt3 == 3:
-                    # ProtoCC.g:215:39: state_decl
+                    # ProtoCC.g:216:39: state_decl
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_state_decl_in_declarations1117)
+                    self._state.following.append(self.FOLLOW_state_decl_in_declarations1124)
                     state_decl15 = self.state_decl()
 
                     self._state.following.pop()
@@ -948,12 +952,12 @@ class ProtoCCParser(Parser):
 
 
                 elif alt3 == 4:
-                    # ProtoCC.g:215:52: data_decl
+                    # ProtoCC.g:216:52: data_decl
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_data_decl_in_declarations1121)
+                    self._state.following.append(self.FOLLOW_data_decl_in_declarations1128)
                     data_decl16 = self.data_decl()
 
                     self._state.following.pop()
@@ -962,12 +966,12 @@ class ProtoCCParser(Parser):
 
 
                 elif alt3 == 5:
-                    # ProtoCC.g:215:64: id_decl
+                    # ProtoCC.g:216:64: id_decl
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_id_decl_in_declarations1125)
+                    self._state.following.append(self.FOLLOW_id_decl_in_declarations1132)
                     id_decl17 = self.id_decl()
 
                     self._state.following.pop()
@@ -1006,7 +1010,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "const_decl"
-    # ProtoCC.g:217:5: const_decl : CONSTANT ID INT -> ^( CONSTANT_ ID INT ) ;
+    # ProtoCC.g:218:5: const_decl : CONSTANT ID INT -> ^( CONSTANT_ ID INT ) ;
     def const_decl(self, ):
         retval = self.const_decl_return()
         retval.start = self.input.LT(1)
@@ -1027,23 +1031,23 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:217:16: ( CONSTANT ID INT -> ^( CONSTANT_ ID INT ) )
-                # ProtoCC.g:217:18: CONSTANT ID INT
+                # ProtoCC.g:218:16: ( CONSTANT ID INT -> ^( CONSTANT_ ID INT ) )
+                # ProtoCC.g:218:18: CONSTANT ID INT
                 pass 
-                CONSTANT18 = self.match(self.input, CONSTANT, self.FOLLOW_CONSTANT_in_const_decl1137) 
+                CONSTANT18 = self.match(self.input, CONSTANT, self.FOLLOW_CONSTANT_in_const_decl1144) 
                 stream_CONSTANT.add(CONSTANT18)
 
 
-                ID19 = self.match(self.input, ID, self.FOLLOW_ID_in_const_decl1139) 
+                ID19 = self.match(self.input, ID, self.FOLLOW_ID_in_const_decl1146) 
                 stream_ID.add(ID19)
 
 
-                INT20 = self.match(self.input, INT, self.FOLLOW_INT_in_const_decl1141) 
+                INT20 = self.match(self.input, INT, self.FOLLOW_INT_in_const_decl1148) 
                 stream_INT.add(INT20)
 
 
                 # AST Rewrite
-                # elements: ID, INT
+                # elements: INT, ID
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -1057,8 +1061,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 217:34: -> ^( CONSTANT_ ID INT )
-                # ProtoCC.g:217:37: ^( CONSTANT_ ID INT )
+                # 218:34: -> ^( CONSTANT_ ID INT )
+                # ProtoCC.g:218:37: ^( CONSTANT_ ID INT )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(CONSTANT_, "CONSTANT_")
@@ -1114,7 +1118,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "int_decl"
-    # ProtoCC.g:219:5: int_decl : INTID range ID ( EQUALSIGN INT )* SEMICOLON -> ^( INT_ ID range ( ^( INITVAL_ INT ) )* ) ;
+    # ProtoCC.g:220:5: int_decl : INTID range ID ( EQUALSIGN INT )* SEMICOLON -> ^( INT_ ID range ( ^( INITVAL_ INT ) )* ) ;
     def int_decl(self, ):
         retval = self.int_decl_return()
         retval.start = self.input.LT(1)
@@ -1142,25 +1146,25 @@ class ProtoCCParser(Parser):
         stream_range = RewriteRuleSubtreeStream(self._adaptor, "rule range")
         try:
             try:
-                # ProtoCC.g:219:14: ( INTID range ID ( EQUALSIGN INT )* SEMICOLON -> ^( INT_ ID range ( ^( INITVAL_ INT ) )* ) )
-                # ProtoCC.g:219:16: INTID range ID ( EQUALSIGN INT )* SEMICOLON
+                # ProtoCC.g:220:14: ( INTID range ID ( EQUALSIGN INT )* SEMICOLON -> ^( INT_ ID range ( ^( INITVAL_ INT ) )* ) )
+                # ProtoCC.g:220:16: INTID range ID ( EQUALSIGN INT )* SEMICOLON
                 pass 
-                INTID21 = self.match(self.input, INTID, self.FOLLOW_INTID_in_int_decl1163) 
+                INTID21 = self.match(self.input, INTID, self.FOLLOW_INTID_in_int_decl1170) 
                 stream_INTID.add(INTID21)
 
 
-                self._state.following.append(self.FOLLOW_range_in_int_decl1165)
+                self._state.following.append(self.FOLLOW_range_in_int_decl1172)
                 range22 = self.range()
 
                 self._state.following.pop()
                 stream_range.add(range22.tree)
 
 
-                ID23 = self.match(self.input, ID, self.FOLLOW_ID_in_int_decl1167) 
+                ID23 = self.match(self.input, ID, self.FOLLOW_ID_in_int_decl1174) 
                 stream_ID.add(ID23)
 
 
-                # ProtoCC.g:219:31: ( EQUALSIGN INT )*
+                # ProtoCC.g:220:31: ( EQUALSIGN INT )*
                 while True: #loop4
                     alt4 = 2
                     LA4_0 = self.input.LA(1)
@@ -1170,13 +1174,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt4 == 1:
-                        # ProtoCC.g:219:32: EQUALSIGN INT
+                        # ProtoCC.g:220:32: EQUALSIGN INT
                         pass 
-                        EQUALSIGN24 = self.match(self.input, EQUALSIGN, self.FOLLOW_EQUALSIGN_in_int_decl1170) 
+                        EQUALSIGN24 = self.match(self.input, EQUALSIGN, self.FOLLOW_EQUALSIGN_in_int_decl1177) 
                         stream_EQUALSIGN.add(EQUALSIGN24)
 
 
-                        INT25 = self.match(self.input, INT, self.FOLLOW_INT_in_int_decl1172) 
+                        INT25 = self.match(self.input, INT, self.FOLLOW_INT_in_int_decl1179) 
                         stream_INT.add(INT25)
 
 
@@ -1185,12 +1189,12 @@ class ProtoCCParser(Parser):
                         break #loop4
 
 
-                SEMICOLON26 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_int_decl1176) 
+                SEMICOLON26 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_int_decl1183) 
                 stream_SEMICOLON.add(SEMICOLON26)
 
 
                 # AST Rewrite
-                # elements: ID, range, INT
+                # elements: range, ID, INT
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -1204,8 +1208,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 219:58: -> ^( INT_ ID range ( ^( INITVAL_ INT ) )* )
-                # ProtoCC.g:219:61: ^( INT_ ID range ( ^( INITVAL_ INT ) )* )
+                # 220:58: -> ^( INT_ ID range ( ^( INITVAL_ INT ) )* )
+                # ProtoCC.g:220:61: ^( INT_ ID range ( ^( INITVAL_ INT ) )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(INT_, "INT_")
@@ -1217,9 +1221,9 @@ class ProtoCCParser(Parser):
 
                 self._adaptor.addChild(root_1, stream_range.nextTree())
 
-                # ProtoCC.g:219:77: ( ^( INITVAL_ INT ) )*
+                # ProtoCC.g:220:77: ( ^( INITVAL_ INT ) )*
                 while stream_INT.hasNext():
-                    # ProtoCC.g:219:77: ^( INITVAL_ INT )
+                    # ProtoCC.g:220:77: ^( INITVAL_ INT )
                     root_2 = self._adaptor.nil()
                     root_2 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(INITVAL_, "INITVAL_")
@@ -1276,7 +1280,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "bool_decl"
-    # ProtoCC.g:220:5: bool_decl : BOOLID ID ( EQUALSIGN BOOL )* SEMICOLON -> ^( BOOL_ ID ( ^( INITVAL_ BOOL ) )* ) ;
+    # ProtoCC.g:221:5: bool_decl : BOOLID ID ( EQUALSIGN BOOL )* SEMICOLON -> ^( BOOL_ ID ( ^( INITVAL_ BOOL ) )* ) ;
     def bool_decl(self, ):
         retval = self.bool_decl_return()
         retval.start = self.input.LT(1)
@@ -1303,18 +1307,18 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:220:15: ( BOOLID ID ( EQUALSIGN BOOL )* SEMICOLON -> ^( BOOL_ ID ( ^( INITVAL_ BOOL ) )* ) )
-                # ProtoCC.g:220:17: BOOLID ID ( EQUALSIGN BOOL )* SEMICOLON
+                # ProtoCC.g:221:15: ( BOOLID ID ( EQUALSIGN BOOL )* SEMICOLON -> ^( BOOL_ ID ( ^( INITVAL_ BOOL ) )* ) )
+                # ProtoCC.g:221:17: BOOLID ID ( EQUALSIGN BOOL )* SEMICOLON
                 pass 
-                BOOLID27 = self.match(self.input, BOOLID, self.FOLLOW_BOOLID_in_bool_decl1204) 
+                BOOLID27 = self.match(self.input, BOOLID, self.FOLLOW_BOOLID_in_bool_decl1211) 
                 stream_BOOLID.add(BOOLID27)
 
 
-                ID28 = self.match(self.input, ID, self.FOLLOW_ID_in_bool_decl1206) 
+                ID28 = self.match(self.input, ID, self.FOLLOW_ID_in_bool_decl1213) 
                 stream_ID.add(ID28)
 
 
-                # ProtoCC.g:220:27: ( EQUALSIGN BOOL )*
+                # ProtoCC.g:221:27: ( EQUALSIGN BOOL )*
                 while True: #loop5
                     alt5 = 2
                     LA5_0 = self.input.LA(1)
@@ -1324,13 +1328,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt5 == 1:
-                        # ProtoCC.g:220:28: EQUALSIGN BOOL
+                        # ProtoCC.g:221:28: EQUALSIGN BOOL
                         pass 
-                        EQUALSIGN29 = self.match(self.input, EQUALSIGN, self.FOLLOW_EQUALSIGN_in_bool_decl1209) 
+                        EQUALSIGN29 = self.match(self.input, EQUALSIGN, self.FOLLOW_EQUALSIGN_in_bool_decl1216) 
                         stream_EQUALSIGN.add(EQUALSIGN29)
 
 
-                        BOOL30 = self.match(self.input, BOOL, self.FOLLOW_BOOL_in_bool_decl1211) 
+                        BOOL30 = self.match(self.input, BOOL, self.FOLLOW_BOOL_in_bool_decl1218) 
                         stream_BOOL.add(BOOL30)
 
 
@@ -1339,12 +1343,12 @@ class ProtoCCParser(Parser):
                         break #loop5
 
 
-                SEMICOLON31 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_bool_decl1215) 
+                SEMICOLON31 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_bool_decl1222) 
                 stream_SEMICOLON.add(SEMICOLON31)
 
 
                 # AST Rewrite
-                # elements: ID, BOOL
+                # elements: BOOL, ID
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -1358,8 +1362,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 220:55: -> ^( BOOL_ ID ( ^( INITVAL_ BOOL ) )* )
-                # ProtoCC.g:220:58: ^( BOOL_ ID ( ^( INITVAL_ BOOL ) )* )
+                # 221:55: -> ^( BOOL_ ID ( ^( INITVAL_ BOOL ) )* )
+                # ProtoCC.g:221:58: ^( BOOL_ ID ( ^( INITVAL_ BOOL ) )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(BOOL_, "BOOL_")
@@ -1369,9 +1373,9 @@ class ProtoCCParser(Parser):
                 stream_ID.nextNode()
                 )
 
-                # ProtoCC.g:220:69: ( ^( INITVAL_ BOOL ) )*
+                # ProtoCC.g:221:69: ( ^( INITVAL_ BOOL ) )*
                 while stream_BOOL.hasNext():
-                    # ProtoCC.g:220:69: ^( INITVAL_ BOOL )
+                    # ProtoCC.g:221:69: ^( INITVAL_ BOOL )
                     root_2 = self._adaptor.nil()
                     root_2 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(INITVAL_, "INITVAL_")
@@ -1428,7 +1432,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "state_decl"
-    # ProtoCC.g:222:5: state_decl : STATE ID SEMICOLON -> ^( INITSTATE_ ID ) ;
+    # ProtoCC.g:223:5: state_decl : STATE ID SEMICOLON -> ^( INITSTATE_ ID ) ;
     def state_decl(self, ):
         retval = self.state_decl_return()
         retval.start = self.input.LT(1)
@@ -1449,18 +1453,18 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:222:16: ( STATE ID SEMICOLON -> ^( INITSTATE_ ID ) )
-                # ProtoCC.g:222:18: STATE ID SEMICOLON
+                # ProtoCC.g:223:16: ( STATE ID SEMICOLON -> ^( INITSTATE_ ID ) )
+                # ProtoCC.g:223:18: STATE ID SEMICOLON
                 pass 
-                STATE32 = self.match(self.input, STATE, self.FOLLOW_STATE_in_state_decl1242) 
+                STATE32 = self.match(self.input, STATE, self.FOLLOW_STATE_in_state_decl1249) 
                 stream_STATE.add(STATE32)
 
 
-                ID33 = self.match(self.input, ID, self.FOLLOW_ID_in_state_decl1244) 
+                ID33 = self.match(self.input, ID, self.FOLLOW_ID_in_state_decl1251) 
                 stream_ID.add(ID33)
 
 
-                SEMICOLON34 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_state_decl1246) 
+                SEMICOLON34 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_state_decl1253) 
                 stream_SEMICOLON.add(SEMICOLON34)
 
 
@@ -1479,8 +1483,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 222:37: -> ^( INITSTATE_ ID )
-                # ProtoCC.g:222:40: ^( INITSTATE_ ID )
+                # 223:37: -> ^( INITSTATE_ ID )
+                # ProtoCC.g:223:40: ^( INITSTATE_ ID )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(INITSTATE_, "INITSTATE_")
@@ -1532,7 +1536,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "data_decl"
-    # ProtoCC.g:223:5: data_decl : DATA ID SEMICOLON -> ^( DATA_ ID ) ;
+    # ProtoCC.g:224:5: data_decl : DATA ID SEMICOLON -> ^( DATA_ ID ) ;
     def data_decl(self, ):
         retval = self.data_decl_return()
         retval.start = self.input.LT(1)
@@ -1553,18 +1557,18 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:223:15: ( DATA ID SEMICOLON -> ^( DATA_ ID ) )
-                # ProtoCC.g:223:17: DATA ID SEMICOLON
+                # ProtoCC.g:224:15: ( DATA ID SEMICOLON -> ^( DATA_ ID ) )
+                # ProtoCC.g:224:17: DATA ID SEMICOLON
                 pass 
-                DATA35 = self.match(self.input, DATA, self.FOLLOW_DATA_in_data_decl1265) 
+                DATA35 = self.match(self.input, DATA, self.FOLLOW_DATA_in_data_decl1272) 
                 stream_DATA.add(DATA35)
 
 
-                ID36 = self.match(self.input, ID, self.FOLLOW_ID_in_data_decl1267) 
+                ID36 = self.match(self.input, ID, self.FOLLOW_ID_in_data_decl1274) 
                 stream_ID.add(ID36)
 
 
-                SEMICOLON37 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_data_decl1269) 
+                SEMICOLON37 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_data_decl1276) 
                 stream_SEMICOLON.add(SEMICOLON37)
 
 
@@ -1583,8 +1587,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 223:35: -> ^( DATA_ ID )
-                # ProtoCC.g:223:38: ^( DATA_ ID )
+                # 224:35: -> ^( DATA_ ID )
+                # ProtoCC.g:224:38: ^( DATA_ ID )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(DATA_, "DATA_")
@@ -1636,7 +1640,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "id_decl"
-    # ProtoCC.g:224:5: id_decl : ( set_decl )* NID ID ( EQUALSIGN ( set_decl )* ID )* SEMICOLON -> ^( ID_ ID ( set_decl )* ( ^( INITVAL_ ( set_decl )* ID ) )* ) ;
+    # ProtoCC.g:225:5: id_decl : ( set_decl )* NID ID ( EQUALSIGN ( set_decl )* ID )* SEMICOLON -> ^( ID_ ID ( set_decl )* ( ^( INITVAL_ ( set_decl )* ID ) )* ) ;
     def id_decl(self, ):
         retval = self.id_decl_return()
         retval.start = self.input.LT(1)
@@ -1664,10 +1668,10 @@ class ProtoCCParser(Parser):
         stream_set_decl = RewriteRuleSubtreeStream(self._adaptor, "rule set_decl")
         try:
             try:
-                # ProtoCC.g:224:13: ( ( set_decl )* NID ID ( EQUALSIGN ( set_decl )* ID )* SEMICOLON -> ^( ID_ ID ( set_decl )* ( ^( INITVAL_ ( set_decl )* ID ) )* ) )
-                # ProtoCC.g:224:15: ( set_decl )* NID ID ( EQUALSIGN ( set_decl )* ID )* SEMICOLON
+                # ProtoCC.g:225:13: ( ( set_decl )* NID ID ( EQUALSIGN ( set_decl )* ID )* SEMICOLON -> ^( ID_ ID ( set_decl )* ( ^( INITVAL_ ( set_decl )* ID ) )* ) )
+                # ProtoCC.g:225:15: ( set_decl )* NID ID ( EQUALSIGN ( set_decl )* ID )* SEMICOLON
                 pass 
-                # ProtoCC.g:224:15: ( set_decl )*
+                # ProtoCC.g:225:15: ( set_decl )*
                 while True: #loop6
                     alt6 = 2
                     LA6_0 = self.input.LA(1)
@@ -1677,9 +1681,9 @@ class ProtoCCParser(Parser):
 
 
                     if alt6 == 1:
-                        # ProtoCC.g:224:15: set_decl
+                        # ProtoCC.g:225:15: set_decl
                         pass 
-                        self._state.following.append(self.FOLLOW_set_decl_in_id_decl1288)
+                        self._state.following.append(self.FOLLOW_set_decl_in_id_decl1295)
                         set_decl38 = self.set_decl()
 
                         self._state.following.pop()
@@ -1691,15 +1695,15 @@ class ProtoCCParser(Parser):
                         break #loop6
 
 
-                NID39 = self.match(self.input, NID, self.FOLLOW_NID_in_id_decl1291) 
+                NID39 = self.match(self.input, NID, self.FOLLOW_NID_in_id_decl1298) 
                 stream_NID.add(NID39)
 
 
-                ID40 = self.match(self.input, ID, self.FOLLOW_ID_in_id_decl1293) 
+                ID40 = self.match(self.input, ID, self.FOLLOW_ID_in_id_decl1300) 
                 stream_ID.add(ID40)
 
 
-                # ProtoCC.g:224:32: ( EQUALSIGN ( set_decl )* ID )*
+                # ProtoCC.g:225:32: ( EQUALSIGN ( set_decl )* ID )*
                 while True: #loop8
                     alt8 = 2
                     LA8_0 = self.input.LA(1)
@@ -1709,13 +1713,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt8 == 1:
-                        # ProtoCC.g:224:33: EQUALSIGN ( set_decl )* ID
+                        # ProtoCC.g:225:33: EQUALSIGN ( set_decl )* ID
                         pass 
-                        EQUALSIGN41 = self.match(self.input, EQUALSIGN, self.FOLLOW_EQUALSIGN_in_id_decl1296) 
+                        EQUALSIGN41 = self.match(self.input, EQUALSIGN, self.FOLLOW_EQUALSIGN_in_id_decl1303) 
                         stream_EQUALSIGN.add(EQUALSIGN41)
 
 
-                        # ProtoCC.g:224:43: ( set_decl )*
+                        # ProtoCC.g:225:43: ( set_decl )*
                         while True: #loop7
                             alt7 = 2
                             LA7_0 = self.input.LA(1)
@@ -1725,9 +1729,9 @@ class ProtoCCParser(Parser):
 
 
                             if alt7 == 1:
-                                # ProtoCC.g:224:43: set_decl
+                                # ProtoCC.g:225:43: set_decl
                                 pass 
-                                self._state.following.append(self.FOLLOW_set_decl_in_id_decl1298)
+                                self._state.following.append(self.FOLLOW_set_decl_in_id_decl1305)
                                 set_decl42 = self.set_decl()
 
                                 self._state.following.pop()
@@ -1739,7 +1743,7 @@ class ProtoCCParser(Parser):
                                 break #loop7
 
 
-                        ID43 = self.match(self.input, ID, self.FOLLOW_ID_in_id_decl1301) 
+                        ID43 = self.match(self.input, ID, self.FOLLOW_ID_in_id_decl1308) 
                         stream_ID.add(ID43)
 
 
@@ -1748,12 +1752,12 @@ class ProtoCCParser(Parser):
                         break #loop8
 
 
-                SEMICOLON44 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_id_decl1305) 
+                SEMICOLON44 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_id_decl1312) 
                 stream_SEMICOLON.add(SEMICOLON44)
 
 
                 # AST Rewrite
-                # elements: set_decl, set_decl, ID, ID
+                # elements: ID, set_decl, set_decl, ID
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -1767,8 +1771,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 224:68: -> ^( ID_ ID ( set_decl )* ( ^( INITVAL_ ( set_decl )* ID ) )* )
-                # ProtoCC.g:224:71: ^( ID_ ID ( set_decl )* ( ^( INITVAL_ ( set_decl )* ID ) )* )
+                # 225:68: -> ^( ID_ ID ( set_decl )* ( ^( INITVAL_ ( set_decl )* ID ) )* )
+                # ProtoCC.g:225:71: ^( ID_ ID ( set_decl )* ( ^( INITVAL_ ( set_decl )* ID ) )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(ID_, "ID_")
@@ -1778,22 +1782,22 @@ class ProtoCCParser(Parser):
                 stream_ID.nextNode()
                 )
 
-                # ProtoCC.g:224:80: ( set_decl )*
+                # ProtoCC.g:225:80: ( set_decl )*
                 while stream_set_decl.hasNext():
                     self._adaptor.addChild(root_1, stream_set_decl.nextTree())
 
 
                 stream_set_decl.reset();
 
-                # ProtoCC.g:224:90: ( ^( INITVAL_ ( set_decl )* ID ) )*
+                # ProtoCC.g:225:90: ( ^( INITVAL_ ( set_decl )* ID ) )*
                 while stream_ID.hasNext():
-                    # ProtoCC.g:224:90: ^( INITVAL_ ( set_decl )* ID )
+                    # ProtoCC.g:225:90: ^( INITVAL_ ( set_decl )* ID )
                     root_2 = self._adaptor.nil()
                     root_2 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(INITVAL_, "INITVAL_")
                     , root_2)
 
-                    # ProtoCC.g:224:101: ( set_decl )*
+                    # ProtoCC.g:225:101: ( set_decl )*
                     while stream_set_decl.hasNext():
                         self._adaptor.addChild(root_2, stream_set_decl.nextTree())
 
@@ -1851,7 +1855,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "set_decl"
-    # ProtoCC.g:226:9: set_decl : SET OEBRACE val_range CEBRACE -> ^( SET_ val_range ) ;
+    # ProtoCC.g:227:9: set_decl : SET OEBRACE val_range CEBRACE -> ^( SET_ val_range ) ;
     def set_decl(self, ):
         retval = self.set_decl_return()
         retval.start = self.input.LT(1)
@@ -1873,25 +1877,25 @@ class ProtoCCParser(Parser):
         stream_val_range = RewriteRuleSubtreeStream(self._adaptor, "rule val_range")
         try:
             try:
-                # ProtoCC.g:226:18: ( SET OEBRACE val_range CEBRACE -> ^( SET_ val_range ) )
-                # ProtoCC.g:226:20: SET OEBRACE val_range CEBRACE
+                # ProtoCC.g:227:18: ( SET OEBRACE val_range CEBRACE -> ^( SET_ val_range ) )
+                # ProtoCC.g:227:20: SET OEBRACE val_range CEBRACE
                 pass 
-                SET45 = self.match(self.input, SET, self.FOLLOW_SET_in_set_decl1342) 
+                SET45 = self.match(self.input, SET, self.FOLLOW_SET_in_set_decl1349) 
                 stream_SET.add(SET45)
 
 
-                OEBRACE46 = self.match(self.input, OEBRACE, self.FOLLOW_OEBRACE_in_set_decl1344) 
+                OEBRACE46 = self.match(self.input, OEBRACE, self.FOLLOW_OEBRACE_in_set_decl1351) 
                 stream_OEBRACE.add(OEBRACE46)
 
 
-                self._state.following.append(self.FOLLOW_val_range_in_set_decl1346)
+                self._state.following.append(self.FOLLOW_val_range_in_set_decl1353)
                 val_range47 = self.val_range()
 
                 self._state.following.pop()
                 stream_val_range.add(val_range47.tree)
 
 
-                CEBRACE48 = self.match(self.input, CEBRACE, self.FOLLOW_CEBRACE_in_set_decl1348) 
+                CEBRACE48 = self.match(self.input, CEBRACE, self.FOLLOW_CEBRACE_in_set_decl1355) 
                 stream_CEBRACE.add(CEBRACE48)
 
 
@@ -1910,8 +1914,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 226:50: -> ^( SET_ val_range )
-                # ProtoCC.g:226:53: ^( SET_ val_range )
+                # 227:50: -> ^( SET_ val_range )
+                # ProtoCC.g:227:53: ^( SET_ val_range )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(SET_, "SET_")
@@ -1961,7 +1965,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "range"
-    # ProtoCC.g:227:9: range : OEBRACE val_range DOT DOT val_range CEBRACE -> ^( RANGE_ OEBRACE val_range DOT DOT val_range CEBRACE ) ;
+    # ProtoCC.g:228:9: range : OEBRACE val_range DOT DOT val_range CEBRACE -> ^( RANGE_ OEBRACE val_range DOT DOT val_range CEBRACE ) ;
     def range(self, ):
         retval = self.range_return()
         retval.start = self.input.LT(1)
@@ -1986,41 +1990,41 @@ class ProtoCCParser(Parser):
         stream_val_range = RewriteRuleSubtreeStream(self._adaptor, "rule val_range")
         try:
             try:
-                # ProtoCC.g:227:15: ( OEBRACE val_range DOT DOT val_range CEBRACE -> ^( RANGE_ OEBRACE val_range DOT DOT val_range CEBRACE ) )
-                # ProtoCC.g:227:17: OEBRACE val_range DOT DOT val_range CEBRACE
+                # ProtoCC.g:228:15: ( OEBRACE val_range DOT DOT val_range CEBRACE -> ^( RANGE_ OEBRACE val_range DOT DOT val_range CEBRACE ) )
+                # ProtoCC.g:228:17: OEBRACE val_range DOT DOT val_range CEBRACE
                 pass 
-                OEBRACE49 = self.match(self.input, OEBRACE, self.FOLLOW_OEBRACE_in_range1371) 
+                OEBRACE49 = self.match(self.input, OEBRACE, self.FOLLOW_OEBRACE_in_range1378) 
                 stream_OEBRACE.add(OEBRACE49)
 
 
-                self._state.following.append(self.FOLLOW_val_range_in_range1373)
+                self._state.following.append(self.FOLLOW_val_range_in_range1380)
                 val_range50 = self.val_range()
 
                 self._state.following.pop()
                 stream_val_range.add(val_range50.tree)
 
 
-                DOT51 = self.match(self.input, DOT, self.FOLLOW_DOT_in_range1375) 
+                DOT51 = self.match(self.input, DOT, self.FOLLOW_DOT_in_range1382) 
                 stream_DOT.add(DOT51)
 
 
-                DOT52 = self.match(self.input, DOT, self.FOLLOW_DOT_in_range1377) 
+                DOT52 = self.match(self.input, DOT, self.FOLLOW_DOT_in_range1384) 
                 stream_DOT.add(DOT52)
 
 
-                self._state.following.append(self.FOLLOW_val_range_in_range1379)
+                self._state.following.append(self.FOLLOW_val_range_in_range1386)
                 val_range53 = self.val_range()
 
                 self._state.following.pop()
                 stream_val_range.add(val_range53.tree)
 
 
-                CEBRACE54 = self.match(self.input, CEBRACE, self.FOLLOW_CEBRACE_in_range1381) 
+                CEBRACE54 = self.match(self.input, CEBRACE, self.FOLLOW_CEBRACE_in_range1388) 
                 stream_CEBRACE.add(CEBRACE54)
 
 
                 # AST Rewrite
-                # elements: OEBRACE, DOT, val_range, val_range, DOT, CEBRACE
+                # elements: val_range, DOT, DOT, CEBRACE, OEBRACE, val_range
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -2034,8 +2038,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 227:61: -> ^( RANGE_ OEBRACE val_range DOT DOT val_range CEBRACE )
-                # ProtoCC.g:227:64: ^( RANGE_ OEBRACE val_range DOT DOT val_range CEBRACE )
+                # 228:61: -> ^( RANGE_ OEBRACE val_range DOT DOT val_range CEBRACE )
+                # ProtoCC.g:228:64: ^( RANGE_ OEBRACE val_range DOT DOT val_range CEBRACE )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(RANGE_, "RANGE_")
@@ -2103,7 +2107,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "val_range"
-    # ProtoCC.g:228:9: val_range : ( INT | ID );
+    # ProtoCC.g:229:9: val_range : ( INT | ID );
     def val_range(self, ):
         retval = self.val_range_return()
         retval.start = self.input.LT(1)
@@ -2117,7 +2121,7 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:228:19: ( INT | ID )
+                # ProtoCC.g:229:19: ( INT | ID )
                 # ProtoCC.g:
                 pass 
                 root_0 = self._adaptor.nil()
@@ -2171,7 +2175,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "array_decl"
-    # ProtoCC.g:230:5: array_decl : ARRAY range ;
+    # ProtoCC.g:231:5: array_decl : ARRAY range ;
     def array_decl(self, ):
         retval = self.array_decl_return()
         retval.start = self.input.LT(1)
@@ -2186,19 +2190,19 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:230:16: ( ARRAY range )
-                # ProtoCC.g:230:18: ARRAY range
+                # ProtoCC.g:231:16: ( ARRAY range )
+                # ProtoCC.g:231:18: ARRAY range
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                ARRAY56 = self.match(self.input, ARRAY, self.FOLLOW_ARRAY_in_array_decl1430)
+                ARRAY56 = self.match(self.input, ARRAY, self.FOLLOW_ARRAY_in_array_decl1437)
                 ARRAY56_tree = self._adaptor.createWithPayload(ARRAY56)
                 self._adaptor.addChild(root_0, ARRAY56_tree)
 
 
 
-                self._state.following.append(self.FOLLOW_range_in_array_decl1432)
+                self._state.following.append(self.FOLLOW_range_in_array_decl1439)
                 range57 = self.range()
 
                 self._state.following.pop()
@@ -2238,7 +2242,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "fifo_decl"
-    # ProtoCC.g:231:5: fifo_decl : FIFO range ;
+    # ProtoCC.g:232:5: fifo_decl : FIFO range ;
     def fifo_decl(self, ):
         retval = self.fifo_decl_return()
         retval.start = self.input.LT(1)
@@ -2253,19 +2257,19 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:231:14: ( FIFO range )
-                # ProtoCC.g:231:16: FIFO range
+                # ProtoCC.g:232:14: ( FIFO range )
+                # ProtoCC.g:232:16: FIFO range
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                FIFO58 = self.match(self.input, FIFO, self.FOLLOW_FIFO_in_fifo_decl1442)
+                FIFO58 = self.match(self.input, FIFO, self.FOLLOW_FIFO_in_fifo_decl1449)
                 FIFO58_tree = self._adaptor.createWithPayload(FIFO58)
                 self._adaptor.addChild(root_0, FIFO58_tree)
 
 
 
-                self._state.following.append(self.FOLLOW_range_in_fifo_decl1444)
+                self._state.following.append(self.FOLLOW_range_in_fifo_decl1451)
                 range59 = self.range()
 
                 self._state.following.pop()
@@ -2305,7 +2309,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "init_hw"
-    # ProtoCC.g:234:1: init_hw : ( network_block | machines | message_block );
+    # ProtoCC.g:235:1: init_hw : ( network_block | machines | message_block );
     def init_hw(self, ):
         retval = self.init_hw_return()
         retval.start = self.input.LT(1)
@@ -2320,7 +2324,7 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:234:9: ( network_block | machines | message_block )
+                # ProtoCC.g:235:9: ( network_block | machines | message_block )
                 alt9 = 3
                 LA9 = self.input.LA(1)
                 if LA9 in {NETWORK}:
@@ -2336,12 +2340,12 @@ class ProtoCCParser(Parser):
 
 
                 if alt9 == 1:
-                    # ProtoCC.g:234:11: network_block
+                    # ProtoCC.g:235:11: network_block
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_network_block_in_init_hw1454)
+                    self._state.following.append(self.FOLLOW_network_block_in_init_hw1461)
                     network_block60 = self.network_block()
 
                     self._state.following.pop()
@@ -2350,12 +2354,12 @@ class ProtoCCParser(Parser):
 
 
                 elif alt9 == 2:
-                    # ProtoCC.g:234:27: machines
+                    # ProtoCC.g:235:27: machines
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_machines_in_init_hw1458)
+                    self._state.following.append(self.FOLLOW_machines_in_init_hw1465)
                     machines61 = self.machines()
 
                     self._state.following.pop()
@@ -2364,12 +2368,12 @@ class ProtoCCParser(Parser):
 
 
                 elif alt9 == 3:
-                    # ProtoCC.g:234:38: message_block
+                    # ProtoCC.g:235:38: message_block
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_message_block_in_init_hw1462)
+                    self._state.following.append(self.FOLLOW_message_block_in_init_hw1469)
                     message_block62 = self.message_block()
 
                     self._state.following.pop()
@@ -2408,7 +2412,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "object_block"
-    # ProtoCC.g:235:5: object_block : object_expr SEMICOLON -> object_expr ;
+    # ProtoCC.g:236:5: object_block : object_expr SEMICOLON -> object_expr ;
     def object_block(self, ):
         retval = self.object_block_return()
         retval.start = self.input.LT(1)
@@ -2424,17 +2428,17 @@ class ProtoCCParser(Parser):
         stream_object_expr = RewriteRuleSubtreeStream(self._adaptor, "rule object_expr")
         try:
             try:
-                # ProtoCC.g:235:18: ( object_expr SEMICOLON -> object_expr )
-                # ProtoCC.g:235:20: object_expr SEMICOLON
+                # ProtoCC.g:236:18: ( object_expr SEMICOLON -> object_expr )
+                # ProtoCC.g:236:20: object_expr SEMICOLON
                 pass 
-                self._state.following.append(self.FOLLOW_object_expr_in_object_block1473)
+                self._state.following.append(self.FOLLOW_object_expr_in_object_block1480)
                 object_expr63 = self.object_expr()
 
                 self._state.following.pop()
                 stream_object_expr.add(object_expr63.tree)
 
 
-                SEMICOLON64 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_object_block1475) 
+                SEMICOLON64 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_object_block1482) 
                 stream_SEMICOLON.add(SEMICOLON64)
 
 
@@ -2453,7 +2457,7 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 235:42: -> object_expr
+                # 236:42: -> object_expr
                 self._adaptor.addChild(root_0, stream_object_expr.nextTree())
 
 
@@ -2496,7 +2500,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "object_expr"
-    # ProtoCC.g:236:5: object_expr : ( object_id | object_func );
+    # ProtoCC.g:237:5: object_expr : ( object_id | object_func );
     def object_expr(self, ):
         retval = self.object_expr_return()
         retval.start = self.input.LT(1)
@@ -2510,7 +2514,7 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:236:17: ( object_id | object_func )
+                # ProtoCC.g:237:17: ( object_id | object_func )
                 alt10 = 2
                 LA10_0 = self.input.LA(1)
 
@@ -2519,7 +2523,7 @@ class ProtoCCParser(Parser):
 
                     if (LA10_1 == DOT) :
                         alt10 = 2
-                    elif ((109 <= LA10_1 <= 115) or LA10_1 in {BOOL, CBRACE, COMMA, ID, INT, MINUS, MULT, NID, OCBRACE, PLUS, SEMICOLON, 145}) :
+                    elif ((111 <= LA10_1 <= 117) or LA10_1 in {BOOL, CBRACE, COMMA, ID, INT, MINUS, MULT, NID, OCBRACE, PLUS, SEMICOLON, 148}) :
                         alt10 = 1
                     else:
                         nvae = NoViableAltException("", 10, 1, self.input)
@@ -2534,12 +2538,12 @@ class ProtoCCParser(Parser):
 
 
                 if alt10 == 1:
-                    # ProtoCC.g:236:19: object_id
+                    # ProtoCC.g:237:19: object_id
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_object_id_in_object_expr1490)
+                    self._state.following.append(self.FOLLOW_object_id_in_object_expr1497)
                     object_id65 = self.object_id()
 
                     self._state.following.pop()
@@ -2548,12 +2552,12 @@ class ProtoCCParser(Parser):
 
 
                 elif alt10 == 2:
-                    # ProtoCC.g:236:31: object_func
+                    # ProtoCC.g:237:31: object_func
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_object_func_in_object_expr1494)
+                    self._state.following.append(self.FOLLOW_object_func_in_object_expr1501)
                     object_func66 = self.object_func()
 
                     self._state.following.pop()
@@ -2592,7 +2596,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "object_id"
-    # ProtoCC.g:237:5: object_id : ID -> ^( ID ) ;
+    # ProtoCC.g:238:5: object_id : ID -> ^( ID ) ;
     def object_id(self, ):
         retval = self.object_id_return()
         retval.start = self.input.LT(1)
@@ -2607,10 +2611,10 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:237:14: ( ID -> ^( ID ) )
-                # ProtoCC.g:237:17: ID
+                # ProtoCC.g:238:14: ( ID -> ^( ID ) )
+                # ProtoCC.g:238:17: ID
                 pass 
-                ID67 = self.match(self.input, ID, self.FOLLOW_ID_in_object_id1505) 
+                ID67 = self.match(self.input, ID, self.FOLLOW_ID_in_object_id1512) 
                 stream_ID.add(ID67)
 
 
@@ -2629,8 +2633,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 237:20: -> ^( ID )
-                # ProtoCC.g:237:23: ^( ID )
+                # 238:20: -> ^( ID )
+                # ProtoCC.g:238:23: ^( ID )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 stream_ID.nextNode()
@@ -2678,7 +2682,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "object_func"
-    # ProtoCC.g:238:5: object_func : ID DOT object_idres ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )* -> ^( ID DOT object_idres ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )* ) ;
+    # ProtoCC.g:239:5: object_func : ID DOT object_idres ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )* -> ^( ID DOT object_idres ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )* ) ;
     def object_func(self, ):
         retval = self.object_func_return()
         retval.start = self.input.LT(1)
@@ -2709,25 +2713,25 @@ class ProtoCCParser(Parser):
         stream_object_expr = RewriteRuleSubtreeStream(self._adaptor, "rule object_expr")
         try:
             try:
-                # ProtoCC.g:238:17: ( ID DOT object_idres ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )* -> ^( ID DOT object_idres ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )* ) )
-                # ProtoCC.g:238:19: ID DOT object_idres ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )*
+                # ProtoCC.g:239:17: ( ID DOT object_idres ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )* -> ^( ID DOT object_idres ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )* ) )
+                # ProtoCC.g:239:19: ID DOT object_idres ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )*
                 pass 
-                ID68 = self.match(self.input, ID, self.FOLLOW_ID_in_object_func1522) 
+                ID68 = self.match(self.input, ID, self.FOLLOW_ID_in_object_func1529) 
                 stream_ID.add(ID68)
 
 
-                DOT69 = self.match(self.input, DOT, self.FOLLOW_DOT_in_object_func1524) 
+                DOT69 = self.match(self.input, DOT, self.FOLLOW_DOT_in_object_func1531) 
                 stream_DOT.add(DOT69)
 
 
-                self._state.following.append(self.FOLLOW_object_idres_in_object_func1526)
+                self._state.following.append(self.FOLLOW_object_idres_in_object_func1533)
                 object_idres70 = self.object_idres()
 
                 self._state.following.pop()
                 stream_object_idres.add(object_idres70.tree)
 
 
-                # ProtoCC.g:238:39: ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )*
+                # ProtoCC.g:239:39: ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )*
                 while True: #loop13
                     alt13 = 2
                     LA13_0 = self.input.LA(1)
@@ -2737,13 +2741,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt13 == 1:
-                        # ProtoCC.g:238:40: OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE
+                        # ProtoCC.g:239:40: OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE
                         pass 
-                        OBRACE71 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_object_func1529) 
+                        OBRACE71 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_object_func1536) 
                         stream_OBRACE.add(OBRACE71)
 
 
-                        # ProtoCC.g:238:47: ( object_expr )*
+                        # ProtoCC.g:239:47: ( object_expr )*
                         while True: #loop11
                             alt11 = 2
                             LA11_0 = self.input.LA(1)
@@ -2753,9 +2757,9 @@ class ProtoCCParser(Parser):
 
 
                             if alt11 == 1:
-                                # ProtoCC.g:238:47: object_expr
+                                # ProtoCC.g:239:47: object_expr
                                 pass 
-                                self._state.following.append(self.FOLLOW_object_expr_in_object_func1531)
+                                self._state.following.append(self.FOLLOW_object_expr_in_object_func1538)
                                 object_expr72 = self.object_expr()
 
                                 self._state.following.pop()
@@ -2767,7 +2771,7 @@ class ProtoCCParser(Parser):
                                 break #loop11
 
 
-                        # ProtoCC.g:238:60: ( COMMA object_expr )*
+                        # ProtoCC.g:239:60: ( COMMA object_expr )*
                         while True: #loop12
                             alt12 = 2
                             LA12_0 = self.input.LA(1)
@@ -2777,13 +2781,13 @@ class ProtoCCParser(Parser):
 
 
                             if alt12 == 1:
-                                # ProtoCC.g:238:61: COMMA object_expr
+                                # ProtoCC.g:239:61: COMMA object_expr
                                 pass 
-                                COMMA73 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_object_func1535) 
+                                COMMA73 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_object_func1542) 
                                 stream_COMMA.add(COMMA73)
 
 
-                                self._state.following.append(self.FOLLOW_object_expr_in_object_func1537)
+                                self._state.following.append(self.FOLLOW_object_expr_in_object_func1544)
                                 object_expr74 = self.object_expr()
 
                                 self._state.following.pop()
@@ -2795,7 +2799,7 @@ class ProtoCCParser(Parser):
                                 break #loop12
 
 
-                        CBRACE75 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_object_func1541) 
+                        CBRACE75 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_object_func1548) 
                         stream_CBRACE.add(CBRACE75)
 
 
@@ -2805,7 +2809,7 @@ class ProtoCCParser(Parser):
 
 
                 # AST Rewrite
-                # elements: ID, object_expr, object_expr, DOT, OBRACE, COMMA, object_idres, CBRACE
+                # elements: COMMA, DOT, object_expr, object_idres, object_expr, ID, OBRACE, CBRACE
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -2819,8 +2823,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 238:90: -> ^( ID DOT object_idres ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )* )
-                # ProtoCC.g:239:9: ^( ID DOT object_idres ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )* )
+                # 239:90: -> ^( ID DOT object_idres ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )* )
+                # ProtoCC.g:240:9: ^( ID DOT object_idres ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 stream_ID.nextNode()
@@ -2832,21 +2836,21 @@ class ProtoCCParser(Parser):
 
                 self._adaptor.addChild(root_1, stream_object_idres.nextTree())
 
-                # ProtoCC.g:239:31: ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )*
+                # ProtoCC.g:240:31: ( OBRACE ( object_expr )* ( COMMA object_expr )* CBRACE )*
                 while stream_OBRACE.hasNext() or stream_CBRACE.hasNext():
                     self._adaptor.addChild(root_1, 
                     stream_OBRACE.nextNode()
                     )
 
-                    # ProtoCC.g:239:39: ( object_expr )*
+                    # ProtoCC.g:240:39: ( object_expr )*
                     while stream_object_expr.hasNext():
                         self._adaptor.addChild(root_1, stream_object_expr.nextTree())
 
 
                     stream_object_expr.reset();
 
-                    # ProtoCC.g:239:52: ( COMMA object_expr )*
-                    while stream_object_expr.hasNext() or stream_COMMA.hasNext():
+                    # ProtoCC.g:240:52: ( COMMA object_expr )*
+                    while stream_COMMA.hasNext() or stream_object_expr.hasNext():
                         self._adaptor.addChild(root_1, 
                         stream_COMMA.nextNode()
                         )
@@ -2854,8 +2858,8 @@ class ProtoCCParser(Parser):
                         self._adaptor.addChild(root_1, stream_object_expr.nextTree())
 
 
-                    stream_object_expr.reset();
                     stream_COMMA.reset();
+                    stream_object_expr.reset();
 
                     self._adaptor.addChild(root_1, 
                     stream_CBRACE.nextNode()
@@ -2896,6 +2900,198 @@ class ProtoCCParser(Parser):
     # $ANTLR end "object_func"
 
 
+    class function_call_block_return(ParserRuleReturnScope):
+        def __init__(self):
+            super().__init__()
+
+            self.tree = None
+
+
+
+
+
+    # $ANTLR start "function_call_block"
+    # ProtoCC.g:241:5: function_call_block : function_call SEMICOLON -> function_call ;
+    def function_call_block(self, ):
+        retval = self.function_call_block_return()
+        retval.start = self.input.LT(1)
+
+
+        root_0 = None
+
+        SEMICOLON77 = None
+        function_call76 = None
+
+        SEMICOLON77_tree = None
+        stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
+        stream_function_call = RewriteRuleSubtreeStream(self._adaptor, "rule function_call")
+        try:
+            try:
+                # ProtoCC.g:241:25: ( function_call SEMICOLON -> function_call )
+                # ProtoCC.g:241:27: function_call SEMICOLON
+                pass 
+                self._state.following.append(self.FOLLOW_function_call_in_function_call_block1596)
+                function_call76 = self.function_call()
+
+                self._state.following.pop()
+                stream_function_call.add(function_call76.tree)
+
+
+                SEMICOLON77 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_function_call_block1598) 
+                stream_SEMICOLON.add(SEMICOLON77)
+
+
+                # AST Rewrite
+                # elements: function_call
+                # token labels: 
+                # rule labels: retval
+                # token list labels: 
+                # rule list labels: 
+                # wildcard labels: 
+                retval.tree = root_0
+                if retval is not None:
+                    stream_retval = RewriteRuleSubtreeStream(self._adaptor, "rule retval", retval.tree)
+                else:
+                    stream_retval = RewriteRuleSubtreeStream(self._adaptor, "token retval", None)
+
+
+                root_0 = self._adaptor.nil()
+                # 241:51: -> function_call
+                self._adaptor.addChild(root_0, stream_function_call.nextTree())
+
+
+
+
+                retval.tree = root_0
+
+
+
+
+
+                retval.stop = self.input.LT(-1)
+
+
+                retval.tree = self._adaptor.rulePostProcessing(root_0)
+                self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
+
+
+
+            except RecognitionException as re:
+                self.reportError(re)
+                self.recover(self.input, re)
+                retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
+
+        finally:
+            pass
+        return retval
+
+    # $ANTLR end "function_call_block"
+
+
+    class function_call_return(ParserRuleReturnScope):
+        def __init__(self):
+            super().__init__()
+
+            self.tree = None
+
+
+
+
+
+    # $ANTLR start "function_call"
+    # ProtoCC.g:242:5: function_call : ID OBRACE CBRACE -> ^( FUNCTION_CALL_ ID ) ;
+    def function_call(self, ):
+        retval = self.function_call_return()
+        retval.start = self.input.LT(1)
+
+
+        root_0 = None
+
+        ID78 = None
+        OBRACE79 = None
+        CBRACE80 = None
+
+        ID78_tree = None
+        OBRACE79_tree = None
+        CBRACE80_tree = None
+        stream_OBRACE = RewriteRuleTokenStream(self._adaptor, "token OBRACE")
+        stream_ID = RewriteRuleTokenStream(self._adaptor, "token ID")
+        stream_CBRACE = RewriteRuleTokenStream(self._adaptor, "token CBRACE")
+
+        try:
+            try:
+                # ProtoCC.g:242:19: ( ID OBRACE CBRACE -> ^( FUNCTION_CALL_ ID ) )
+                # ProtoCC.g:242:21: ID OBRACE CBRACE
+                pass 
+                ID78 = self.match(self.input, ID, self.FOLLOW_ID_in_function_call1613) 
+                stream_ID.add(ID78)
+
+
+                OBRACE79 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_function_call1615) 
+                stream_OBRACE.add(OBRACE79)
+
+
+                CBRACE80 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_function_call1617) 
+                stream_CBRACE.add(CBRACE80)
+
+
+                # AST Rewrite
+                # elements: ID
+                # token labels: 
+                # rule labels: retval
+                # token list labels: 
+                # rule list labels: 
+                # wildcard labels: 
+                retval.tree = root_0
+                if retval is not None:
+                    stream_retval = RewriteRuleSubtreeStream(self._adaptor, "rule retval", retval.tree)
+                else:
+                    stream_retval = RewriteRuleSubtreeStream(self._adaptor, "token retval", None)
+
+
+                root_0 = self._adaptor.nil()
+                # 242:38: -> ^( FUNCTION_CALL_ ID )
+                # ProtoCC.g:242:41: ^( FUNCTION_CALL_ ID )
+                root_1 = self._adaptor.nil()
+                root_1 = self._adaptor.becomeRoot(
+                self._adaptor.createFromType(FUNCTION_CALL_, "FUNCTION_CALL_")
+                , root_1)
+
+                self._adaptor.addChild(root_1, 
+                stream_ID.nextNode()
+                )
+
+                self._adaptor.addChild(root_0, root_1)
+
+
+
+
+                retval.tree = root_0
+
+
+
+
+
+                retval.stop = self.input.LT(-1)
+
+
+                retval.tree = self._adaptor.rulePostProcessing(root_0)
+                self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
+
+
+
+            except RecognitionException as re:
+                self.reportError(re)
+                self.recover(self.input, re)
+                retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
+
+        finally:
+            pass
+        return retval
+
+    # $ANTLR end "function_call"
+
+
     class object_idres_return(ParserRuleReturnScope):
         def __init__(self):
             super().__init__()
@@ -2907,7 +3103,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "object_idres"
-    # ProtoCC.g:240:5: object_idres : ( ID | NID );
+    # ProtoCC.g:243:5: object_idres : ( ID | NID );
     def object_idres(self, ):
         retval = self.object_idres_return()
         retval.start = self.input.LT(1)
@@ -2915,23 +3111,23 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        set76 = None
+        set81 = None
 
-        set76_tree = None
+        set81_tree = None
 
         try:
             try:
-                # ProtoCC.g:240:17: ( ID | NID )
+                # ProtoCC.g:243:17: ( ID | NID )
                 # ProtoCC.g:
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                set76 = self.input.LT(1)
+                set81 = self.input.LT(1)
 
                 if self.input.LA(1) in {ID, NID}:
                     self.input.consume()
-                    self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set76))
+                    self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set81))
 
                     self._state.errorRecovery = False
 
@@ -2975,7 +3171,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "machines"
-    # ProtoCC.g:243:5: machines : ( cache_block | dir_block | mem_block );
+    # ProtoCC.g:246:5: machines : ( cache_block | dir_block | mem_block );
     def machines(self, ):
         retval = self.machines_return()
         retval.start = self.input.LT(1)
@@ -2983,14 +3179,14 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        cache_block77 = None
-        dir_block78 = None
-        mem_block79 = None
+        cache_block82 = None
+        dir_block83 = None
+        mem_block84 = None
 
 
         try:
             try:
-                # ProtoCC.g:243:14: ( cache_block | dir_block | mem_block )
+                # ProtoCC.g:246:14: ( cache_block | dir_block | mem_block )
                 alt14 = 3
                 LA14 = self.input.LA(1)
                 if LA14 in {CACHE}:
@@ -3006,44 +3202,44 @@ class ProtoCCParser(Parser):
 
 
                 if alt14 == 1:
-                    # ProtoCC.g:243:16: cache_block
+                    # ProtoCC.g:246:16: cache_block
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_cache_block_in_machines1610)
-                    cache_block77 = self.cache_block()
+                    self._state.following.append(self.FOLLOW_cache_block_in_machines1657)
+                    cache_block82 = self.cache_block()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, cache_block77.tree)
+                    self._adaptor.addChild(root_0, cache_block82.tree)
 
 
 
                 elif alt14 == 2:
-                    # ProtoCC.g:243:30: dir_block
+                    # ProtoCC.g:246:30: dir_block
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_dir_block_in_machines1614)
-                    dir_block78 = self.dir_block()
+                    self._state.following.append(self.FOLLOW_dir_block_in_machines1661)
+                    dir_block83 = self.dir_block()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, dir_block78.tree)
+                    self._adaptor.addChild(root_0, dir_block83.tree)
 
 
 
                 elif alt14 == 3:
-                    # ProtoCC.g:243:42: mem_block
+                    # ProtoCC.g:246:42: mem_block
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_mem_block_in_machines1618)
-                    mem_block79 = self.mem_block()
+                    self._state.following.append(self.FOLLOW_mem_block_in_machines1665)
+                    mem_block84 = self.mem_block()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, mem_block79.tree)
+                    self._adaptor.addChild(root_0, mem_block84.tree)
 
 
 
@@ -3078,7 +3274,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "cache_block"
-    # ProtoCC.g:244:9: cache_block : CACHE OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON -> ^( CACHE_ ID ( objset_decl )* ( declarations )* ) ;
+    # ProtoCC.g:247:9: cache_block : CACHE OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON -> ^( CACHE_ ID ( objset_decl )* ( declarations )* ) ;
     def cache_block(self, ):
         retval = self.cache_block_return()
         retval.start = self.input.LT(1)
@@ -3086,19 +3282,19 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        CACHE80 = None
-        OCBRACE81 = None
-        CCBRACE83 = None
-        ID85 = None
-        SEMICOLON86 = None
-        declarations82 = None
-        objset_decl84 = None
+        CACHE85 = None
+        OCBRACE86 = None
+        CCBRACE88 = None
+        ID90 = None
+        SEMICOLON91 = None
+        declarations87 = None
+        objset_decl89 = None
 
-        CACHE80_tree = None
-        OCBRACE81_tree = None
-        CCBRACE83_tree = None
-        ID85_tree = None
-        SEMICOLON86_tree = None
+        CACHE85_tree = None
+        OCBRACE86_tree = None
+        CCBRACE88_tree = None
+        ID90_tree = None
+        SEMICOLON91_tree = None
         stream_OCBRACE = RewriteRuleTokenStream(self._adaptor, "token OCBRACE")
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
         stream_ID = RewriteRuleTokenStream(self._adaptor, "token ID")
@@ -3108,18 +3304,18 @@ class ProtoCCParser(Parser):
         stream_declarations = RewriteRuleSubtreeStream(self._adaptor, "rule declarations")
         try:
             try:
-                # ProtoCC.g:244:21: ( CACHE OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON -> ^( CACHE_ ID ( objset_decl )* ( declarations )* ) )
-                # ProtoCC.g:244:23: CACHE OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON
+                # ProtoCC.g:247:21: ( CACHE OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON -> ^( CACHE_ ID ( objset_decl )* ( declarations )* ) )
+                # ProtoCC.g:247:23: CACHE OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON
                 pass 
-                CACHE80 = self.match(self.input, CACHE, self.FOLLOW_CACHE_in_cache_block1633) 
-                stream_CACHE.add(CACHE80)
+                CACHE85 = self.match(self.input, CACHE, self.FOLLOW_CACHE_in_cache_block1680) 
+                stream_CACHE.add(CACHE85)
 
 
-                OCBRACE81 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_cache_block1635) 
-                stream_OCBRACE.add(OCBRACE81)
+                OCBRACE86 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_cache_block1682) 
+                stream_OCBRACE.add(OCBRACE86)
 
 
-                # ProtoCC.g:244:37: ( declarations )*
+                # ProtoCC.g:247:37: ( declarations )*
                 while True: #loop15
                     alt15 = 2
                     LA15_0 = self.input.LA(1)
@@ -3129,13 +3325,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt15 == 1:
-                        # ProtoCC.g:244:37: declarations
+                        # ProtoCC.g:247:37: declarations
                         pass 
-                        self._state.following.append(self.FOLLOW_declarations_in_cache_block1637)
-                        declarations82 = self.declarations()
+                        self._state.following.append(self.FOLLOW_declarations_in_cache_block1684)
+                        declarations87 = self.declarations()
 
                         self._state.following.pop()
-                        stream_declarations.add(declarations82.tree)
+                        stream_declarations.add(declarations87.tree)
 
 
 
@@ -3143,11 +3339,11 @@ class ProtoCCParser(Parser):
                         break #loop15
 
 
-                CCBRACE83 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_cache_block1640) 
-                stream_CCBRACE.add(CCBRACE83)
+                CCBRACE88 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_cache_block1687) 
+                stream_CCBRACE.add(CCBRACE88)
 
 
-                # ProtoCC.g:244:59: ( objset_decl )*
+                # ProtoCC.g:247:59: ( objset_decl )*
                 while True: #loop16
                     alt16 = 2
                     LA16_0 = self.input.LA(1)
@@ -3157,13 +3353,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt16 == 1:
-                        # ProtoCC.g:244:59: objset_decl
+                        # ProtoCC.g:247:59: objset_decl
                         pass 
-                        self._state.following.append(self.FOLLOW_objset_decl_in_cache_block1642)
-                        objset_decl84 = self.objset_decl()
+                        self._state.following.append(self.FOLLOW_objset_decl_in_cache_block1689)
+                        objset_decl89 = self.objset_decl()
 
                         self._state.following.pop()
-                        stream_objset_decl.add(objset_decl84.tree)
+                        stream_objset_decl.add(objset_decl89.tree)
 
 
 
@@ -3171,16 +3367,16 @@ class ProtoCCParser(Parser):
                         break #loop16
 
 
-                ID85 = self.match(self.input, ID, self.FOLLOW_ID_in_cache_block1645) 
-                stream_ID.add(ID85)
+                ID90 = self.match(self.input, ID, self.FOLLOW_ID_in_cache_block1692) 
+                stream_ID.add(ID90)
 
 
-                SEMICOLON86 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_cache_block1647) 
-                stream_SEMICOLON.add(SEMICOLON86)
+                SEMICOLON91 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_cache_block1694) 
+                stream_SEMICOLON.add(SEMICOLON91)
 
 
                 # AST Rewrite
-                # elements: ID, objset_decl, declarations
+                # elements: ID, declarations, objset_decl
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -3194,8 +3390,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 244:85: -> ^( CACHE_ ID ( objset_decl )* ( declarations )* )
-                # ProtoCC.g:245:13: ^( CACHE_ ID ( objset_decl )* ( declarations )* )
+                # 247:85: -> ^( CACHE_ ID ( objset_decl )* ( declarations )* )
+                # ProtoCC.g:248:13: ^( CACHE_ ID ( objset_decl )* ( declarations )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(CACHE_, "CACHE_")
@@ -3205,14 +3401,14 @@ class ProtoCCParser(Parser):
                 stream_ID.nextNode()
                 )
 
-                # ProtoCC.g:245:25: ( objset_decl )*
+                # ProtoCC.g:248:25: ( objset_decl )*
                 while stream_objset_decl.hasNext():
                     self._adaptor.addChild(root_1, stream_objset_decl.nextTree())
 
 
                 stream_objset_decl.reset();
 
-                # ProtoCC.g:245:38: ( declarations )*
+                # ProtoCC.g:248:38: ( declarations )*
                 while stream_declarations.hasNext():
                     self._adaptor.addChild(root_1, stream_declarations.nextTree())
 
@@ -3261,7 +3457,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "dir_block"
-    # ProtoCC.g:246:9: dir_block : DIR OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON -> ^( DIR_ ID ( objset_decl )* ( declarations )* ) ;
+    # ProtoCC.g:249:9: dir_block : DIR OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON -> ^( DIR_ ID ( objset_decl )* ( declarations )* ) ;
     def dir_block(self, ):
         retval = self.dir_block_return()
         retval.start = self.input.LT(1)
@@ -3269,19 +3465,19 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        DIR87 = None
-        OCBRACE88 = None
-        CCBRACE90 = None
-        ID92 = None
-        SEMICOLON93 = None
-        declarations89 = None
-        objset_decl91 = None
+        DIR92 = None
+        OCBRACE93 = None
+        CCBRACE95 = None
+        ID97 = None
+        SEMICOLON98 = None
+        declarations94 = None
+        objset_decl96 = None
 
-        DIR87_tree = None
-        OCBRACE88_tree = None
-        CCBRACE90_tree = None
-        ID92_tree = None
-        SEMICOLON93_tree = None
+        DIR92_tree = None
+        OCBRACE93_tree = None
+        CCBRACE95_tree = None
+        ID97_tree = None
+        SEMICOLON98_tree = None
         stream_OCBRACE = RewriteRuleTokenStream(self._adaptor, "token OCBRACE")
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
         stream_ID = RewriteRuleTokenStream(self._adaptor, "token ID")
@@ -3291,18 +3487,18 @@ class ProtoCCParser(Parser):
         stream_declarations = RewriteRuleSubtreeStream(self._adaptor, "rule declarations")
         try:
             try:
-                # ProtoCC.g:246:19: ( DIR OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON -> ^( DIR_ ID ( objset_decl )* ( declarations )* ) )
-                # ProtoCC.g:246:21: DIR OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON
+                # ProtoCC.g:249:19: ( DIR OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON -> ^( DIR_ ID ( objset_decl )* ( declarations )* ) )
+                # ProtoCC.g:249:21: DIR OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON
                 pass 
-                DIR87 = self.match(self.input, DIR, self.FOLLOW_DIR_in_dir_block1688) 
-                stream_DIR.add(DIR87)
+                DIR92 = self.match(self.input, DIR, self.FOLLOW_DIR_in_dir_block1735) 
+                stream_DIR.add(DIR92)
 
 
-                OCBRACE88 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_dir_block1690) 
-                stream_OCBRACE.add(OCBRACE88)
+                OCBRACE93 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_dir_block1737) 
+                stream_OCBRACE.add(OCBRACE93)
 
 
-                # ProtoCC.g:246:33: ( declarations )*
+                # ProtoCC.g:249:33: ( declarations )*
                 while True: #loop17
                     alt17 = 2
                     LA17_0 = self.input.LA(1)
@@ -3312,13 +3508,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt17 == 1:
-                        # ProtoCC.g:246:33: declarations
+                        # ProtoCC.g:249:33: declarations
                         pass 
-                        self._state.following.append(self.FOLLOW_declarations_in_dir_block1692)
-                        declarations89 = self.declarations()
+                        self._state.following.append(self.FOLLOW_declarations_in_dir_block1739)
+                        declarations94 = self.declarations()
 
                         self._state.following.pop()
-                        stream_declarations.add(declarations89.tree)
+                        stream_declarations.add(declarations94.tree)
 
 
 
@@ -3326,11 +3522,11 @@ class ProtoCCParser(Parser):
                         break #loop17
 
 
-                CCBRACE90 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_dir_block1695) 
-                stream_CCBRACE.add(CCBRACE90)
+                CCBRACE95 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_dir_block1742) 
+                stream_CCBRACE.add(CCBRACE95)
 
 
-                # ProtoCC.g:246:55: ( objset_decl )*
+                # ProtoCC.g:249:55: ( objset_decl )*
                 while True: #loop18
                     alt18 = 2
                     LA18_0 = self.input.LA(1)
@@ -3340,13 +3536,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt18 == 1:
-                        # ProtoCC.g:246:55: objset_decl
+                        # ProtoCC.g:249:55: objset_decl
                         pass 
-                        self._state.following.append(self.FOLLOW_objset_decl_in_dir_block1697)
-                        objset_decl91 = self.objset_decl()
+                        self._state.following.append(self.FOLLOW_objset_decl_in_dir_block1744)
+                        objset_decl96 = self.objset_decl()
 
                         self._state.following.pop()
-                        stream_objset_decl.add(objset_decl91.tree)
+                        stream_objset_decl.add(objset_decl96.tree)
 
 
 
@@ -3354,16 +3550,16 @@ class ProtoCCParser(Parser):
                         break #loop18
 
 
-                ID92 = self.match(self.input, ID, self.FOLLOW_ID_in_dir_block1700) 
-                stream_ID.add(ID92)
+                ID97 = self.match(self.input, ID, self.FOLLOW_ID_in_dir_block1747) 
+                stream_ID.add(ID97)
 
 
-                SEMICOLON93 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_dir_block1702) 
-                stream_SEMICOLON.add(SEMICOLON93)
+                SEMICOLON98 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_dir_block1749) 
+                stream_SEMICOLON.add(SEMICOLON98)
 
 
                 # AST Rewrite
-                # elements: objset_decl, declarations, ID
+                # elements: objset_decl, ID, declarations
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -3377,8 +3573,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 246:81: -> ^( DIR_ ID ( objset_decl )* ( declarations )* )
-                # ProtoCC.g:247:13: ^( DIR_ ID ( objset_decl )* ( declarations )* )
+                # 249:81: -> ^( DIR_ ID ( objset_decl )* ( declarations )* )
+                # ProtoCC.g:250:13: ^( DIR_ ID ( objset_decl )* ( declarations )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(DIR_, "DIR_")
@@ -3388,14 +3584,14 @@ class ProtoCCParser(Parser):
                 stream_ID.nextNode()
                 )
 
-                # ProtoCC.g:247:23: ( objset_decl )*
+                # ProtoCC.g:250:23: ( objset_decl )*
                 while stream_objset_decl.hasNext():
                     self._adaptor.addChild(root_1, stream_objset_decl.nextTree())
 
 
                 stream_objset_decl.reset();
 
-                # ProtoCC.g:247:36: ( declarations )*
+                # ProtoCC.g:250:36: ( declarations )*
                 while stream_declarations.hasNext():
                     self._adaptor.addChild(root_1, stream_declarations.nextTree())
 
@@ -3444,7 +3640,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "mem_block"
-    # ProtoCC.g:248:9: mem_block : MEM OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON -> ^( MEM_ ID ( objset_decl )* ( declarations )* ) ;
+    # ProtoCC.g:251:9: mem_block : MEM OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON -> ^( MEM_ ID ( objset_decl )* ( declarations )* ) ;
     def mem_block(self, ):
         retval = self.mem_block_return()
         retval.start = self.input.LT(1)
@@ -3452,19 +3648,19 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        MEM94 = None
-        OCBRACE95 = None
-        CCBRACE97 = None
-        ID99 = None
-        SEMICOLON100 = None
-        declarations96 = None
-        objset_decl98 = None
+        MEM99 = None
+        OCBRACE100 = None
+        CCBRACE102 = None
+        ID104 = None
+        SEMICOLON105 = None
+        declarations101 = None
+        objset_decl103 = None
 
-        MEM94_tree = None
-        OCBRACE95_tree = None
-        CCBRACE97_tree = None
-        ID99_tree = None
-        SEMICOLON100_tree = None
+        MEM99_tree = None
+        OCBRACE100_tree = None
+        CCBRACE102_tree = None
+        ID104_tree = None
+        SEMICOLON105_tree = None
         stream_MEM = RewriteRuleTokenStream(self._adaptor, "token MEM")
         stream_OCBRACE = RewriteRuleTokenStream(self._adaptor, "token OCBRACE")
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
@@ -3474,18 +3670,18 @@ class ProtoCCParser(Parser):
         stream_declarations = RewriteRuleSubtreeStream(self._adaptor, "rule declarations")
         try:
             try:
-                # ProtoCC.g:248:19: ( MEM OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON -> ^( MEM_ ID ( objset_decl )* ( declarations )* ) )
-                # ProtoCC.g:248:21: MEM OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON
+                # ProtoCC.g:251:19: ( MEM OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON -> ^( MEM_ ID ( objset_decl )* ( declarations )* ) )
+                # ProtoCC.g:251:21: MEM OCBRACE ( declarations )* CCBRACE ( objset_decl )* ID SEMICOLON
                 pass 
-                MEM94 = self.match(self.input, MEM, self.FOLLOW_MEM_in_mem_block1743) 
-                stream_MEM.add(MEM94)
+                MEM99 = self.match(self.input, MEM, self.FOLLOW_MEM_in_mem_block1790) 
+                stream_MEM.add(MEM99)
 
 
-                OCBRACE95 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_mem_block1745) 
-                stream_OCBRACE.add(OCBRACE95)
+                OCBRACE100 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_mem_block1792) 
+                stream_OCBRACE.add(OCBRACE100)
 
 
-                # ProtoCC.g:248:33: ( declarations )*
+                # ProtoCC.g:251:33: ( declarations )*
                 while True: #loop19
                     alt19 = 2
                     LA19_0 = self.input.LA(1)
@@ -3495,13 +3691,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt19 == 1:
-                        # ProtoCC.g:248:33: declarations
+                        # ProtoCC.g:251:33: declarations
                         pass 
-                        self._state.following.append(self.FOLLOW_declarations_in_mem_block1747)
-                        declarations96 = self.declarations()
+                        self._state.following.append(self.FOLLOW_declarations_in_mem_block1794)
+                        declarations101 = self.declarations()
 
                         self._state.following.pop()
-                        stream_declarations.add(declarations96.tree)
+                        stream_declarations.add(declarations101.tree)
 
 
 
@@ -3509,11 +3705,11 @@ class ProtoCCParser(Parser):
                         break #loop19
 
 
-                CCBRACE97 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_mem_block1750) 
-                stream_CCBRACE.add(CCBRACE97)
+                CCBRACE102 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_mem_block1797) 
+                stream_CCBRACE.add(CCBRACE102)
 
 
-                # ProtoCC.g:248:55: ( objset_decl )*
+                # ProtoCC.g:251:55: ( objset_decl )*
                 while True: #loop20
                     alt20 = 2
                     LA20_0 = self.input.LA(1)
@@ -3523,13 +3719,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt20 == 1:
-                        # ProtoCC.g:248:55: objset_decl
+                        # ProtoCC.g:251:55: objset_decl
                         pass 
-                        self._state.following.append(self.FOLLOW_objset_decl_in_mem_block1752)
-                        objset_decl98 = self.objset_decl()
+                        self._state.following.append(self.FOLLOW_objset_decl_in_mem_block1799)
+                        objset_decl103 = self.objset_decl()
 
                         self._state.following.pop()
-                        stream_objset_decl.add(objset_decl98.tree)
+                        stream_objset_decl.add(objset_decl103.tree)
 
 
 
@@ -3537,16 +3733,16 @@ class ProtoCCParser(Parser):
                         break #loop20
 
 
-                ID99 = self.match(self.input, ID, self.FOLLOW_ID_in_mem_block1755) 
-                stream_ID.add(ID99)
+                ID104 = self.match(self.input, ID, self.FOLLOW_ID_in_mem_block1802) 
+                stream_ID.add(ID104)
 
 
-                SEMICOLON100 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_mem_block1757) 
-                stream_SEMICOLON.add(SEMICOLON100)
+                SEMICOLON105 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_mem_block1804) 
+                stream_SEMICOLON.add(SEMICOLON105)
 
 
                 # AST Rewrite
-                # elements: declarations, objset_decl, ID
+                # elements: ID, objset_decl, declarations
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -3560,8 +3756,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 248:81: -> ^( MEM_ ID ( objset_decl )* ( declarations )* )
-                # ProtoCC.g:249:13: ^( MEM_ ID ( objset_decl )* ( declarations )* )
+                # 251:81: -> ^( MEM_ ID ( objset_decl )* ( declarations )* )
+                # ProtoCC.g:252:13: ^( MEM_ ID ( objset_decl )* ( declarations )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(MEM_, "MEM_")
@@ -3571,14 +3767,14 @@ class ProtoCCParser(Parser):
                 stream_ID.nextNode()
                 )
 
-                # ProtoCC.g:249:23: ( objset_decl )*
+                # ProtoCC.g:252:23: ( objset_decl )*
                 while stream_objset_decl.hasNext():
                     self._adaptor.addChild(root_1, stream_objset_decl.nextTree())
 
 
                 stream_objset_decl.reset();
 
-                # ProtoCC.g:249:36: ( declarations )*
+                # ProtoCC.g:252:36: ( declarations )*
                 while stream_declarations.hasNext():
                     self._adaptor.addChild(root_1, stream_declarations.nextTree())
 
@@ -3627,7 +3823,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "objset_decl"
-    # ProtoCC.g:251:9: objset_decl : SET OEBRACE val_range CEBRACE -> ^( OBJSET_ val_range ) ;
+    # ProtoCC.g:254:9: objset_decl : SET OEBRACE val_range CEBRACE -> ^( OBJSET_ val_range ) ;
     def objset_decl(self, ):
         retval = self.objset_decl_return()
         retval.start = self.input.LT(1)
@@ -3635,40 +3831,40 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        SET101 = None
-        OEBRACE102 = None
-        CEBRACE104 = None
-        val_range103 = None
+        SET106 = None
+        OEBRACE107 = None
+        CEBRACE109 = None
+        val_range108 = None
 
-        SET101_tree = None
-        OEBRACE102_tree = None
-        CEBRACE104_tree = None
+        SET106_tree = None
+        OEBRACE107_tree = None
+        CEBRACE109_tree = None
         stream_SET = RewriteRuleTokenStream(self._adaptor, "token SET")
         stream_CEBRACE = RewriteRuleTokenStream(self._adaptor, "token CEBRACE")
         stream_OEBRACE = RewriteRuleTokenStream(self._adaptor, "token OEBRACE")
         stream_val_range = RewriteRuleSubtreeStream(self._adaptor, "rule val_range")
         try:
             try:
-                # ProtoCC.g:251:21: ( SET OEBRACE val_range CEBRACE -> ^( OBJSET_ val_range ) )
-                # ProtoCC.g:251:23: SET OEBRACE val_range CEBRACE
+                # ProtoCC.g:254:21: ( SET OEBRACE val_range CEBRACE -> ^( OBJSET_ val_range ) )
+                # ProtoCC.g:254:23: SET OEBRACE val_range CEBRACE
                 pass 
-                SET101 = self.match(self.input, SET, self.FOLLOW_SET_in_objset_decl1799) 
-                stream_SET.add(SET101)
+                SET106 = self.match(self.input, SET, self.FOLLOW_SET_in_objset_decl1846) 
+                stream_SET.add(SET106)
 
 
-                OEBRACE102 = self.match(self.input, OEBRACE, self.FOLLOW_OEBRACE_in_objset_decl1801) 
-                stream_OEBRACE.add(OEBRACE102)
+                OEBRACE107 = self.match(self.input, OEBRACE, self.FOLLOW_OEBRACE_in_objset_decl1848) 
+                stream_OEBRACE.add(OEBRACE107)
 
 
-                self._state.following.append(self.FOLLOW_val_range_in_objset_decl1803)
-                val_range103 = self.val_range()
+                self._state.following.append(self.FOLLOW_val_range_in_objset_decl1850)
+                val_range108 = self.val_range()
 
                 self._state.following.pop()
-                stream_val_range.add(val_range103.tree)
+                stream_val_range.add(val_range108.tree)
 
 
-                CEBRACE104 = self.match(self.input, CEBRACE, self.FOLLOW_CEBRACE_in_objset_decl1805) 
-                stream_CEBRACE.add(CEBRACE104)
+                CEBRACE109 = self.match(self.input, CEBRACE, self.FOLLOW_CEBRACE_in_objset_decl1852) 
+                stream_CEBRACE.add(CEBRACE109)
 
 
                 # AST Rewrite
@@ -3686,8 +3882,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 251:53: -> ^( OBJSET_ val_range )
-                # ProtoCC.g:251:56: ^( OBJSET_ val_range )
+                # 254:53: -> ^( OBJSET_ val_range )
+                # ProtoCC.g:254:56: ^( OBJSET_ val_range )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(OBJSET_, "OBJSET_")
@@ -3737,7 +3933,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "network_block"
-    # ProtoCC.g:254:5: network_block : NETWORK OCBRACE ( network_element )* CCBRACE SEMICOLON -> ^( NETWORK_ ( network_element )* ) ;
+    # ProtoCC.g:257:5: network_block : NETWORK OCBRACE ( network_element )* CCBRACE SEMICOLON -> ^( NETWORK_ ( network_element )* ) ;
     def network_block(self, ):
         retval = self.network_block_return()
         retval.start = self.input.LT(1)
@@ -3745,16 +3941,16 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        NETWORK105 = None
-        OCBRACE106 = None
-        CCBRACE108 = None
-        SEMICOLON109 = None
-        network_element107 = None
+        NETWORK110 = None
+        OCBRACE111 = None
+        CCBRACE113 = None
+        SEMICOLON114 = None
+        network_element112 = None
 
-        NETWORK105_tree = None
-        OCBRACE106_tree = None
-        CCBRACE108_tree = None
-        SEMICOLON109_tree = None
+        NETWORK110_tree = None
+        OCBRACE111_tree = None
+        CCBRACE113_tree = None
+        SEMICOLON114_tree = None
         stream_NETWORK = RewriteRuleTokenStream(self._adaptor, "token NETWORK")
         stream_OCBRACE = RewriteRuleTokenStream(self._adaptor, "token OCBRACE")
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
@@ -3762,34 +3958,34 @@ class ProtoCCParser(Parser):
         stream_network_element = RewriteRuleSubtreeStream(self._adaptor, "rule network_element")
         try:
             try:
-                # ProtoCC.g:254:19: ( NETWORK OCBRACE ( network_element )* CCBRACE SEMICOLON -> ^( NETWORK_ ( network_element )* ) )
-                # ProtoCC.g:254:21: NETWORK OCBRACE ( network_element )* CCBRACE SEMICOLON
+                # ProtoCC.g:257:19: ( NETWORK OCBRACE ( network_element )* CCBRACE SEMICOLON -> ^( NETWORK_ ( network_element )* ) )
+                # ProtoCC.g:257:21: NETWORK OCBRACE ( network_element )* CCBRACE SEMICOLON
                 pass 
-                NETWORK105 = self.match(self.input, NETWORK, self.FOLLOW_NETWORK_in_network_block1831) 
-                stream_NETWORK.add(NETWORK105)
+                NETWORK110 = self.match(self.input, NETWORK, self.FOLLOW_NETWORK_in_network_block1878) 
+                stream_NETWORK.add(NETWORK110)
 
 
-                OCBRACE106 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_network_block1833) 
-                stream_OCBRACE.add(OCBRACE106)
+                OCBRACE111 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_network_block1880) 
+                stream_OCBRACE.add(OCBRACE111)
 
 
-                # ProtoCC.g:254:37: ( network_element )*
+                # ProtoCC.g:257:37: ( network_element )*
                 while True: #loop21
                     alt21 = 2
                     LA21_0 = self.input.LA(1)
 
-                    if (LA21_0 in {124, 131}) :
+                    if (LA21_0 in {126, 133}) :
                         alt21 = 1
 
 
                     if alt21 == 1:
-                        # ProtoCC.g:254:37: network_element
+                        # ProtoCC.g:257:37: network_element
                         pass 
-                        self._state.following.append(self.FOLLOW_network_element_in_network_block1835)
-                        network_element107 = self.network_element()
+                        self._state.following.append(self.FOLLOW_network_element_in_network_block1882)
+                        network_element112 = self.network_element()
 
                         self._state.following.pop()
-                        stream_network_element.add(network_element107.tree)
+                        stream_network_element.add(network_element112.tree)
 
 
 
@@ -3797,12 +3993,12 @@ class ProtoCCParser(Parser):
                         break #loop21
 
 
-                CCBRACE108 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_network_block1838) 
-                stream_CCBRACE.add(CCBRACE108)
+                CCBRACE113 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_network_block1885) 
+                stream_CCBRACE.add(CCBRACE113)
 
 
-                SEMICOLON109 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_network_block1840) 
-                stream_SEMICOLON.add(SEMICOLON109)
+                SEMICOLON114 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_network_block1887) 
+                stream_SEMICOLON.add(SEMICOLON114)
 
 
                 # AST Rewrite
@@ -3820,14 +4016,14 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 254:72: -> ^( NETWORK_ ( network_element )* )
-                # ProtoCC.g:254:75: ^( NETWORK_ ( network_element )* )
+                # 257:72: -> ^( NETWORK_ ( network_element )* )
+                # ProtoCC.g:257:75: ^( NETWORK_ ( network_element )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(NETWORK_, "NETWORK_")
                 , root_1)
 
-                # ProtoCC.g:254:86: ( network_element )*
+                # ProtoCC.g:257:86: ( network_element )*
                 while stream_network_element.hasNext():
                     self._adaptor.addChild(root_1, stream_network_element.nextTree())
 
@@ -3876,7 +4072,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "element_type"
-    # ProtoCC.g:255:9: element_type : ( 'Ordered' | 'Unordered' );
+    # ProtoCC.g:258:9: element_type : ( 'Ordered' | 'Unordered' );
     def element_type(self, ):
         retval = self.element_type_return()
         retval.start = self.input.LT(1)
@@ -3884,23 +4080,23 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        set110 = None
+        set115 = None
 
-        set110_tree = None
+        set115_tree = None
 
         try:
             try:
-                # ProtoCC.g:255:22: ( 'Ordered' | 'Unordered' )
+                # ProtoCC.g:258:22: ( 'Ordered' | 'Unordered' )
                 # ProtoCC.g:
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                set110 = self.input.LT(1)
+                set115 = self.input.LT(1)
 
-                if self.input.LA(1) in {124, 131}:
+                if self.input.LA(1) in {126, 133}:
                     self.input.consume()
-                    self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set110))
+                    self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set115))
 
                     self._state.errorRecovery = False
 
@@ -3944,7 +4140,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "network_element"
-    # ProtoCC.g:256:9: network_element : element_type ID SEMICOLON -> ^( ELEMENT_ element_type ID ) ;
+    # ProtoCC.g:259:9: network_element : element_type ID SEMICOLON -> ^( ELEMENT_ element_type ID ) ;
     def network_element(self, ):
         retval = self.network_element_return()
         retval.start = self.input.LT(1)
@@ -3952,37 +4148,37 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        ID112 = None
-        SEMICOLON113 = None
-        element_type111 = None
+        ID117 = None
+        SEMICOLON118 = None
+        element_type116 = None
 
-        ID112_tree = None
-        SEMICOLON113_tree = None
+        ID117_tree = None
+        SEMICOLON118_tree = None
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
         stream_ID = RewriteRuleTokenStream(self._adaptor, "token ID")
         stream_element_type = RewriteRuleSubtreeStream(self._adaptor, "rule element_type")
         try:
             try:
-                # ProtoCC.g:256:25: ( element_type ID SEMICOLON -> ^( ELEMENT_ element_type ID ) )
-                # ProtoCC.g:256:27: element_type ID SEMICOLON
+                # ProtoCC.g:259:25: ( element_type ID SEMICOLON -> ^( ELEMENT_ element_type ID ) )
+                # ProtoCC.g:259:27: element_type ID SEMICOLON
                 pass 
-                self._state.following.append(self.FOLLOW_element_type_in_network_element1883)
-                element_type111 = self.element_type()
+                self._state.following.append(self.FOLLOW_element_type_in_network_element1930)
+                element_type116 = self.element_type()
 
                 self._state.following.pop()
-                stream_element_type.add(element_type111.tree)
+                stream_element_type.add(element_type116.tree)
 
 
-                ID112 = self.match(self.input, ID, self.FOLLOW_ID_in_network_element1885) 
-                stream_ID.add(ID112)
+                ID117 = self.match(self.input, ID, self.FOLLOW_ID_in_network_element1932) 
+                stream_ID.add(ID117)
 
 
-                SEMICOLON113 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_network_element1887) 
-                stream_SEMICOLON.add(SEMICOLON113)
+                SEMICOLON118 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_network_element1934) 
+                stream_SEMICOLON.add(SEMICOLON118)
 
 
                 # AST Rewrite
-                # elements: element_type, ID
+                # elements: ID, element_type
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -3996,8 +4192,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 256:53: -> ^( ELEMENT_ element_type ID )
-                # ProtoCC.g:256:56: ^( ELEMENT_ element_type ID )
+                # 259:53: -> ^( ELEMENT_ element_type ID )
+                # ProtoCC.g:259:56: ^( ELEMENT_ element_type ID )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(ELEMENT_, "ELEMENT_")
@@ -4051,7 +4247,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "network_send"
-    # ProtoCC.g:257:5: network_send : ID DOT send_function OBRACE ID CBRACE SEMICOLON -> ^( SEND_ ID ID ) ;
+    # ProtoCC.g:260:5: network_send : ID DOT send_function OBRACE ID CBRACE SEMICOLON -> ^( SEND_ ID ID ) ;
     def network_send(self, ):
         retval = self.network_send_return()
         retval.start = self.input.LT(1)
@@ -4059,20 +4255,20 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        ID114 = None
-        DOT115 = None
-        OBRACE117 = None
-        ID118 = None
-        CBRACE119 = None
-        SEMICOLON120 = None
-        send_function116 = None
+        ID119 = None
+        DOT120 = None
+        OBRACE122 = None
+        ID123 = None
+        CBRACE124 = None
+        SEMICOLON125 = None
+        send_function121 = None
 
-        ID114_tree = None
-        DOT115_tree = None
-        OBRACE117_tree = None
-        ID118_tree = None
-        CBRACE119_tree = None
-        SEMICOLON120_tree = None
+        ID119_tree = None
+        DOT120_tree = None
+        OBRACE122_tree = None
+        ID123_tree = None
+        CBRACE124_tree = None
+        SEMICOLON125_tree = None
         stream_OBRACE = RewriteRuleTokenStream(self._adaptor, "token OBRACE")
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
         stream_DOT = RewriteRuleTokenStream(self._adaptor, "token DOT")
@@ -4081,38 +4277,38 @@ class ProtoCCParser(Parser):
         stream_send_function = RewriteRuleSubtreeStream(self._adaptor, "rule send_function")
         try:
             try:
-                # ProtoCC.g:257:18: ( ID DOT send_function OBRACE ID CBRACE SEMICOLON -> ^( SEND_ ID ID ) )
-                # ProtoCC.g:257:20: ID DOT send_function OBRACE ID CBRACE SEMICOLON
+                # ProtoCC.g:260:18: ( ID DOT send_function OBRACE ID CBRACE SEMICOLON -> ^( SEND_ ID ID ) )
+                # ProtoCC.g:260:20: ID DOT send_function OBRACE ID CBRACE SEMICOLON
                 pass 
-                ID114 = self.match(self.input, ID, self.FOLLOW_ID_in_network_send1908) 
-                stream_ID.add(ID114)
+                ID119 = self.match(self.input, ID, self.FOLLOW_ID_in_network_send1955) 
+                stream_ID.add(ID119)
 
 
-                DOT115 = self.match(self.input, DOT, self.FOLLOW_DOT_in_network_send1910) 
-                stream_DOT.add(DOT115)
+                DOT120 = self.match(self.input, DOT, self.FOLLOW_DOT_in_network_send1957) 
+                stream_DOT.add(DOT120)
 
 
-                self._state.following.append(self.FOLLOW_send_function_in_network_send1912)
-                send_function116 = self.send_function()
+                self._state.following.append(self.FOLLOW_send_function_in_network_send1959)
+                send_function121 = self.send_function()
 
                 self._state.following.pop()
-                stream_send_function.add(send_function116.tree)
+                stream_send_function.add(send_function121.tree)
 
 
-                OBRACE117 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_network_send1914) 
-                stream_OBRACE.add(OBRACE117)
+                OBRACE122 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_network_send1961) 
+                stream_OBRACE.add(OBRACE122)
 
 
-                ID118 = self.match(self.input, ID, self.FOLLOW_ID_in_network_send1916) 
-                stream_ID.add(ID118)
+                ID123 = self.match(self.input, ID, self.FOLLOW_ID_in_network_send1963) 
+                stream_ID.add(ID123)
 
 
-                CBRACE119 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_network_send1918) 
-                stream_CBRACE.add(CBRACE119)
+                CBRACE124 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_network_send1965) 
+                stream_CBRACE.add(CBRACE124)
 
 
-                SEMICOLON120 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_network_send1920) 
-                stream_SEMICOLON.add(SEMICOLON120)
+                SEMICOLON125 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_network_send1967) 
+                stream_SEMICOLON.add(SEMICOLON125)
 
 
                 # AST Rewrite
@@ -4130,8 +4326,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 257:68: -> ^( SEND_ ID ID )
-                # ProtoCC.g:257:71: ^( SEND_ ID ID )
+                # 260:68: -> ^( SEND_ ID ID )
+                # ProtoCC.g:260:71: ^( SEND_ ID ID )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(SEND_, "SEND_")
@@ -4187,7 +4383,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "network_bcast"
-    # ProtoCC.g:258:5: network_bcast : ID DOT bcast_function OBRACE ID CBRACE SEMICOLON -> ^( BCAST_ ID ID ) ;
+    # ProtoCC.g:261:5: network_bcast : ID DOT bcast_function OBRACE ID CBRACE SEMICOLON -> ^( BCAST_ ID ID ) ;
     def network_bcast(self, ):
         retval = self.network_bcast_return()
         retval.start = self.input.LT(1)
@@ -4195,20 +4391,20 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        ID121 = None
-        DOT122 = None
-        OBRACE124 = None
-        ID125 = None
-        CBRACE126 = None
-        SEMICOLON127 = None
-        bcast_function123 = None
+        ID126 = None
+        DOT127 = None
+        OBRACE129 = None
+        ID130 = None
+        CBRACE131 = None
+        SEMICOLON132 = None
+        bcast_function128 = None
 
-        ID121_tree = None
-        DOT122_tree = None
-        OBRACE124_tree = None
-        ID125_tree = None
-        CBRACE126_tree = None
-        SEMICOLON127_tree = None
+        ID126_tree = None
+        DOT127_tree = None
+        OBRACE129_tree = None
+        ID130_tree = None
+        CBRACE131_tree = None
+        SEMICOLON132_tree = None
         stream_OBRACE = RewriteRuleTokenStream(self._adaptor, "token OBRACE")
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
         stream_DOT = RewriteRuleTokenStream(self._adaptor, "token DOT")
@@ -4217,38 +4413,38 @@ class ProtoCCParser(Parser):
         stream_bcast_function = RewriteRuleSubtreeStream(self._adaptor, "rule bcast_function")
         try:
             try:
-                # ProtoCC.g:258:18: ( ID DOT bcast_function OBRACE ID CBRACE SEMICOLON -> ^( BCAST_ ID ID ) )
-                # ProtoCC.g:258:20: ID DOT bcast_function OBRACE ID CBRACE SEMICOLON
+                # ProtoCC.g:261:18: ( ID DOT bcast_function OBRACE ID CBRACE SEMICOLON -> ^( BCAST_ ID ID ) )
+                # ProtoCC.g:261:20: ID DOT bcast_function OBRACE ID CBRACE SEMICOLON
                 pass 
-                ID121 = self.match(self.input, ID, self.FOLLOW_ID_in_network_bcast1940) 
-                stream_ID.add(ID121)
+                ID126 = self.match(self.input, ID, self.FOLLOW_ID_in_network_bcast1987) 
+                stream_ID.add(ID126)
 
 
-                DOT122 = self.match(self.input, DOT, self.FOLLOW_DOT_in_network_bcast1942) 
-                stream_DOT.add(DOT122)
+                DOT127 = self.match(self.input, DOT, self.FOLLOW_DOT_in_network_bcast1989) 
+                stream_DOT.add(DOT127)
 
 
-                self._state.following.append(self.FOLLOW_bcast_function_in_network_bcast1944)
-                bcast_function123 = self.bcast_function()
+                self._state.following.append(self.FOLLOW_bcast_function_in_network_bcast1991)
+                bcast_function128 = self.bcast_function()
 
                 self._state.following.pop()
-                stream_bcast_function.add(bcast_function123.tree)
+                stream_bcast_function.add(bcast_function128.tree)
 
 
-                OBRACE124 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_network_bcast1946) 
-                stream_OBRACE.add(OBRACE124)
+                OBRACE129 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_network_bcast1993) 
+                stream_OBRACE.add(OBRACE129)
 
 
-                ID125 = self.match(self.input, ID, self.FOLLOW_ID_in_network_bcast1948) 
-                stream_ID.add(ID125)
+                ID130 = self.match(self.input, ID, self.FOLLOW_ID_in_network_bcast1995) 
+                stream_ID.add(ID130)
 
 
-                CBRACE126 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_network_bcast1950) 
-                stream_CBRACE.add(CBRACE126)
+                CBRACE131 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_network_bcast1997) 
+                stream_CBRACE.add(CBRACE131)
 
 
-                SEMICOLON127 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_network_bcast1952) 
-                stream_SEMICOLON.add(SEMICOLON127)
+                SEMICOLON132 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_network_bcast1999) 
+                stream_SEMICOLON.add(SEMICOLON132)
 
 
                 # AST Rewrite
@@ -4266,8 +4462,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 258:69: -> ^( BCAST_ ID ID )
-                # ProtoCC.g:258:72: ^( BCAST_ ID ID )
+                # 261:69: -> ^( BCAST_ ID ID )
+                # ProtoCC.g:261:72: ^( BCAST_ ID ID )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(BCAST_, "BCAST_")
@@ -4323,7 +4519,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "network_mcast"
-    # ProtoCC.g:259:5: network_mcast : ID DOT mcast_function OBRACE ID COMMA ID CBRACE SEMICOLON -> ^( MCAST_ ID ID ID ) ;
+    # ProtoCC.g:262:5: network_mcast : ID DOT mcast_function OBRACE ID COMMA ID CBRACE SEMICOLON -> ^( MCAST_ ID ID ID ) ;
     def network_mcast(self, ):
         retval = self.network_mcast_return()
         retval.start = self.input.LT(1)
@@ -4331,24 +4527,24 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        ID128 = None
-        DOT129 = None
-        OBRACE131 = None
-        ID132 = None
-        COMMA133 = None
-        ID134 = None
-        CBRACE135 = None
-        SEMICOLON136 = None
-        mcast_function130 = None
+        ID133 = None
+        DOT134 = None
+        OBRACE136 = None
+        ID137 = None
+        COMMA138 = None
+        ID139 = None
+        CBRACE140 = None
+        SEMICOLON141 = None
+        mcast_function135 = None
 
-        ID128_tree = None
-        DOT129_tree = None
-        OBRACE131_tree = None
-        ID132_tree = None
-        COMMA133_tree = None
-        ID134_tree = None
-        CBRACE135_tree = None
-        SEMICOLON136_tree = None
+        ID133_tree = None
+        DOT134_tree = None
+        OBRACE136_tree = None
+        ID137_tree = None
+        COMMA138_tree = None
+        ID139_tree = None
+        CBRACE140_tree = None
+        SEMICOLON141_tree = None
         stream_COMMA = RewriteRuleTokenStream(self._adaptor, "token COMMA")
         stream_OBRACE = RewriteRuleTokenStream(self._adaptor, "token OBRACE")
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
@@ -4358,46 +4554,46 @@ class ProtoCCParser(Parser):
         stream_mcast_function = RewriteRuleSubtreeStream(self._adaptor, "rule mcast_function")
         try:
             try:
-                # ProtoCC.g:259:18: ( ID DOT mcast_function OBRACE ID COMMA ID CBRACE SEMICOLON -> ^( MCAST_ ID ID ID ) )
-                # ProtoCC.g:259:20: ID DOT mcast_function OBRACE ID COMMA ID CBRACE SEMICOLON
+                # ProtoCC.g:262:18: ( ID DOT mcast_function OBRACE ID COMMA ID CBRACE SEMICOLON -> ^( MCAST_ ID ID ID ) )
+                # ProtoCC.g:262:20: ID DOT mcast_function OBRACE ID COMMA ID CBRACE SEMICOLON
                 pass 
-                ID128 = self.match(self.input, ID, self.FOLLOW_ID_in_network_mcast1972) 
-                stream_ID.add(ID128)
+                ID133 = self.match(self.input, ID, self.FOLLOW_ID_in_network_mcast2019) 
+                stream_ID.add(ID133)
 
 
-                DOT129 = self.match(self.input, DOT, self.FOLLOW_DOT_in_network_mcast1974) 
-                stream_DOT.add(DOT129)
+                DOT134 = self.match(self.input, DOT, self.FOLLOW_DOT_in_network_mcast2021) 
+                stream_DOT.add(DOT134)
 
 
-                self._state.following.append(self.FOLLOW_mcast_function_in_network_mcast1976)
-                mcast_function130 = self.mcast_function()
+                self._state.following.append(self.FOLLOW_mcast_function_in_network_mcast2023)
+                mcast_function135 = self.mcast_function()
 
                 self._state.following.pop()
-                stream_mcast_function.add(mcast_function130.tree)
+                stream_mcast_function.add(mcast_function135.tree)
 
 
-                OBRACE131 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_network_mcast1978) 
-                stream_OBRACE.add(OBRACE131)
+                OBRACE136 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_network_mcast2025) 
+                stream_OBRACE.add(OBRACE136)
 
 
-                ID132 = self.match(self.input, ID, self.FOLLOW_ID_in_network_mcast1980) 
-                stream_ID.add(ID132)
+                ID137 = self.match(self.input, ID, self.FOLLOW_ID_in_network_mcast2027) 
+                stream_ID.add(ID137)
 
 
-                COMMA133 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_network_mcast1982) 
-                stream_COMMA.add(COMMA133)
+                COMMA138 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_network_mcast2029) 
+                stream_COMMA.add(COMMA138)
 
 
-                ID134 = self.match(self.input, ID, self.FOLLOW_ID_in_network_mcast1984) 
-                stream_ID.add(ID134)
+                ID139 = self.match(self.input, ID, self.FOLLOW_ID_in_network_mcast2031) 
+                stream_ID.add(ID139)
 
 
-                CBRACE135 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_network_mcast1986) 
-                stream_CBRACE.add(CBRACE135)
+                CBRACE140 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_network_mcast2033) 
+                stream_CBRACE.add(CBRACE140)
 
 
-                SEMICOLON136 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_network_mcast1988) 
-                stream_SEMICOLON.add(SEMICOLON136)
+                SEMICOLON141 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_network_mcast2035) 
+                stream_SEMICOLON.add(SEMICOLON141)
 
 
                 # AST Rewrite
@@ -4415,8 +4611,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 259:78: -> ^( MCAST_ ID ID ID )
-                # ProtoCC.g:259:81: ^( MCAST_ ID ID ID )
+                # 262:78: -> ^( MCAST_ ID ID ID )
+                # ProtoCC.g:262:81: ^( MCAST_ ID ID ID )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(MCAST_, "MCAST_")
@@ -4476,7 +4672,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "message_block"
-    # ProtoCC.g:262:5: message_block : MSG ID OCBRACE ( declarations )* CCBRACE SEMICOLON -> ^( MSG_ ID ( declarations )* ) ;
+    # ProtoCC.g:265:5: message_block : MSG ID OCBRACE ( declarations )* CCBRACE SEMICOLON -> ^( MSG_ ID ( declarations )* ) ;
     def message_block(self, ):
         retval = self.message_block_return()
         retval.start = self.input.LT(1)
@@ -4484,18 +4680,18 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        MSG137 = None
-        ID138 = None
-        OCBRACE139 = None
-        CCBRACE141 = None
-        SEMICOLON142 = None
-        declarations140 = None
+        MSG142 = None
+        ID143 = None
+        OCBRACE144 = None
+        CCBRACE146 = None
+        SEMICOLON147 = None
+        declarations145 = None
 
-        MSG137_tree = None
-        ID138_tree = None
-        OCBRACE139_tree = None
-        CCBRACE141_tree = None
-        SEMICOLON142_tree = None
+        MSG142_tree = None
+        ID143_tree = None
+        OCBRACE144_tree = None
+        CCBRACE146_tree = None
+        SEMICOLON147_tree = None
         stream_MSG = RewriteRuleTokenStream(self._adaptor, "token MSG")
         stream_OCBRACE = RewriteRuleTokenStream(self._adaptor, "token OCBRACE")
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
@@ -4504,22 +4700,22 @@ class ProtoCCParser(Parser):
         stream_declarations = RewriteRuleSubtreeStream(self._adaptor, "rule declarations")
         try:
             try:
-                # ProtoCC.g:262:19: ( MSG ID OCBRACE ( declarations )* CCBRACE SEMICOLON -> ^( MSG_ ID ( declarations )* ) )
-                # ProtoCC.g:262:21: MSG ID OCBRACE ( declarations )* CCBRACE SEMICOLON
+                # ProtoCC.g:265:19: ( MSG ID OCBRACE ( declarations )* CCBRACE SEMICOLON -> ^( MSG_ ID ( declarations )* ) )
+                # ProtoCC.g:265:21: MSG ID OCBRACE ( declarations )* CCBRACE SEMICOLON
                 pass 
-                MSG137 = self.match(self.input, MSG, self.FOLLOW_MSG_in_message_block2018) 
-                stream_MSG.add(MSG137)
+                MSG142 = self.match(self.input, MSG, self.FOLLOW_MSG_in_message_block2065) 
+                stream_MSG.add(MSG142)
 
 
-                ID138 = self.match(self.input, ID, self.FOLLOW_ID_in_message_block2020) 
-                stream_ID.add(ID138)
+                ID143 = self.match(self.input, ID, self.FOLLOW_ID_in_message_block2067) 
+                stream_ID.add(ID143)
 
 
-                OCBRACE139 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_message_block2022) 
-                stream_OCBRACE.add(OCBRACE139)
+                OCBRACE144 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_message_block2069) 
+                stream_OCBRACE.add(OCBRACE144)
 
 
-                # ProtoCC.g:262:36: ( declarations )*
+                # ProtoCC.g:265:36: ( declarations )*
                 while True: #loop22
                     alt22 = 2
                     LA22_0 = self.input.LA(1)
@@ -4529,13 +4725,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt22 == 1:
-                        # ProtoCC.g:262:36: declarations
+                        # ProtoCC.g:265:36: declarations
                         pass 
-                        self._state.following.append(self.FOLLOW_declarations_in_message_block2024)
-                        declarations140 = self.declarations()
+                        self._state.following.append(self.FOLLOW_declarations_in_message_block2071)
+                        declarations145 = self.declarations()
 
                         self._state.following.pop()
-                        stream_declarations.add(declarations140.tree)
+                        stream_declarations.add(declarations145.tree)
 
 
 
@@ -4543,16 +4739,16 @@ class ProtoCCParser(Parser):
                         break #loop22
 
 
-                CCBRACE141 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_message_block2027) 
-                stream_CCBRACE.add(CCBRACE141)
+                CCBRACE146 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_message_block2074) 
+                stream_CCBRACE.add(CCBRACE146)
 
 
-                SEMICOLON142 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_message_block2029) 
-                stream_SEMICOLON.add(SEMICOLON142)
+                SEMICOLON147 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_message_block2076) 
+                stream_SEMICOLON.add(SEMICOLON147)
 
 
                 # AST Rewrite
-                # elements: declarations, ID
+                # elements: ID, declarations
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -4566,8 +4762,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 262:68: -> ^( MSG_ ID ( declarations )* )
-                # ProtoCC.g:262:71: ^( MSG_ ID ( declarations )* )
+                # 265:68: -> ^( MSG_ ID ( declarations )* )
+                # ProtoCC.g:265:71: ^( MSG_ ID ( declarations )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(MSG_, "MSG_")
@@ -4577,7 +4773,7 @@ class ProtoCCParser(Parser):
                 stream_ID.nextNode()
                 )
 
-                # ProtoCC.g:262:81: ( declarations )*
+                # ProtoCC.g:265:81: ( declarations )*
                 while stream_declarations.hasNext():
                     self._adaptor.addChild(root_1, stream_declarations.nextTree())
 
@@ -4626,7 +4822,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "message_constr"
-    # ProtoCC.g:263:5: message_constr : ID OBRACE ( message_expr )* ( COMMA message_expr )* CBRACE -> ^( MSGCSTR_ ID ( message_expr )* ) ;
+    # ProtoCC.g:266:5: message_constr : ID OBRACE ( message_expr )* ( COMMA message_expr )* CBRACE -> ^( MSGCSTR_ ID ( message_expr )* ) ;
     def message_constr(self, ):
         retval = self.message_constr_return()
         retval.start = self.input.LT(1)
@@ -4634,17 +4830,17 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        ID143 = None
-        OBRACE144 = None
-        COMMA146 = None
-        CBRACE148 = None
-        message_expr145 = None
-        message_expr147 = None
+        ID148 = None
+        OBRACE149 = None
+        COMMA151 = None
+        CBRACE153 = None
+        message_expr150 = None
+        message_expr152 = None
 
-        ID143_tree = None
-        OBRACE144_tree = None
-        COMMA146_tree = None
-        CBRACE148_tree = None
+        ID148_tree = None
+        OBRACE149_tree = None
+        COMMA151_tree = None
+        CBRACE153_tree = None
         stream_COMMA = RewriteRuleTokenStream(self._adaptor, "token COMMA")
         stream_OBRACE = RewriteRuleTokenStream(self._adaptor, "token OBRACE")
         stream_ID = RewriteRuleTokenStream(self._adaptor, "token ID")
@@ -4652,18 +4848,18 @@ class ProtoCCParser(Parser):
         stream_message_expr = RewriteRuleSubtreeStream(self._adaptor, "rule message_expr")
         try:
             try:
-                # ProtoCC.g:263:20: ( ID OBRACE ( message_expr )* ( COMMA message_expr )* CBRACE -> ^( MSGCSTR_ ID ( message_expr )* ) )
-                # ProtoCC.g:263:22: ID OBRACE ( message_expr )* ( COMMA message_expr )* CBRACE
+                # ProtoCC.g:266:20: ( ID OBRACE ( message_expr )* ( COMMA message_expr )* CBRACE -> ^( MSGCSTR_ ID ( message_expr )* ) )
+                # ProtoCC.g:266:22: ID OBRACE ( message_expr )* ( COMMA message_expr )* CBRACE
                 pass 
-                ID143 = self.match(self.input, ID, self.FOLLOW_ID_in_message_constr2051) 
-                stream_ID.add(ID143)
+                ID148 = self.match(self.input, ID, self.FOLLOW_ID_in_message_constr2098) 
+                stream_ID.add(ID148)
 
 
-                OBRACE144 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_message_constr2053) 
-                stream_OBRACE.add(OBRACE144)
+                OBRACE149 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_message_constr2100) 
+                stream_OBRACE.add(OBRACE149)
 
 
-                # ProtoCC.g:263:32: ( message_expr )*
+                # ProtoCC.g:266:32: ( message_expr )*
                 while True: #loop23
                     alt23 = 2
                     LA23_0 = self.input.LA(1)
@@ -4673,13 +4869,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt23 == 1:
-                        # ProtoCC.g:263:32: message_expr
+                        # ProtoCC.g:266:32: message_expr
                         pass 
-                        self._state.following.append(self.FOLLOW_message_expr_in_message_constr2055)
-                        message_expr145 = self.message_expr()
+                        self._state.following.append(self.FOLLOW_message_expr_in_message_constr2102)
+                        message_expr150 = self.message_expr()
 
                         self._state.following.pop()
-                        stream_message_expr.add(message_expr145.tree)
+                        stream_message_expr.add(message_expr150.tree)
 
 
 
@@ -4687,7 +4883,7 @@ class ProtoCCParser(Parser):
                         break #loop23
 
 
-                # ProtoCC.g:263:46: ( COMMA message_expr )*
+                # ProtoCC.g:266:46: ( COMMA message_expr )*
                 while True: #loop24
                     alt24 = 2
                     LA24_0 = self.input.LA(1)
@@ -4697,17 +4893,17 @@ class ProtoCCParser(Parser):
 
 
                     if alt24 == 1:
-                        # ProtoCC.g:263:47: COMMA message_expr
+                        # ProtoCC.g:266:47: COMMA message_expr
                         pass 
-                        COMMA146 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_message_constr2059) 
-                        stream_COMMA.add(COMMA146)
+                        COMMA151 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_message_constr2106) 
+                        stream_COMMA.add(COMMA151)
 
 
-                        self._state.following.append(self.FOLLOW_message_expr_in_message_constr2061)
-                        message_expr147 = self.message_expr()
+                        self._state.following.append(self.FOLLOW_message_expr_in_message_constr2108)
+                        message_expr152 = self.message_expr()
 
                         self._state.following.pop()
-                        stream_message_expr.add(message_expr147.tree)
+                        stream_message_expr.add(message_expr152.tree)
 
 
 
@@ -4715,8 +4911,8 @@ class ProtoCCParser(Parser):
                         break #loop24
 
 
-                CBRACE148 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_message_constr2065) 
-                stream_CBRACE.add(CBRACE148)
+                CBRACE153 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_message_constr2112) 
+                stream_CBRACE.add(CBRACE153)
 
 
                 # AST Rewrite
@@ -4734,8 +4930,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 263:75: -> ^( MSGCSTR_ ID ( message_expr )* )
-                # ProtoCC.g:263:78: ^( MSGCSTR_ ID ( message_expr )* )
+                # 266:75: -> ^( MSGCSTR_ ID ( message_expr )* )
+                # ProtoCC.g:266:78: ^( MSGCSTR_ ID ( message_expr )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(MSGCSTR_, "MSGCSTR_")
@@ -4745,7 +4941,7 @@ class ProtoCCParser(Parser):
                 stream_ID.nextNode()
                 )
 
-                # ProtoCC.g:263:92: ( message_expr )*
+                # ProtoCC.g:266:92: ( message_expr )*
                 while stream_message_expr.hasNext():
                     self._adaptor.addChild(root_1, stream_message_expr.nextTree())
 
@@ -4794,7 +4990,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "message_expr"
-    # ProtoCC.g:264:5: message_expr : ( object_expr | set_func | INT | BOOL | NID );
+    # ProtoCC.g:267:5: message_expr : ( object_expr | set_func | INT | BOOL | NID );
     def message_expr(self, ):
         retval = self.message_expr_return()
         retval.start = self.input.LT(1)
@@ -4802,19 +4998,19 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        INT151 = None
-        BOOL152 = None
-        NID153 = None
-        object_expr149 = None
-        set_func150 = None
+        INT156 = None
+        BOOL157 = None
+        NID158 = None
+        object_expr154 = None
+        set_func155 = None
 
-        INT151_tree = None
-        BOOL152_tree = None
-        NID153_tree = None
+        INT156_tree = None
+        BOOL157_tree = None
+        NID158_tree = None
 
         try:
             try:
-                # ProtoCC.g:264:18: ( object_expr | set_func | INT | BOOL | NID )
+                # ProtoCC.g:267:18: ( object_expr | set_func | INT | BOOL | NID )
                 alt25 = 5
                 LA25 = self.input.LA(1)
                 if LA25 in {ID}:
@@ -4825,7 +5021,7 @@ class ProtoCCParser(Parser):
 
                         if (LA25_5 in {ID, NID}) :
                             alt25 = 1
-                        elif (LA25_5 in {134, 136, 138, 139, 140, 144}) :
+                        elif (LA25_5 in {137, 139, 141, 142, 143, 147}) :
                             alt25 = 2
                         else:
                             nvae = NoViableAltException("", 25, 5, self.input)
@@ -4854,68 +5050,68 @@ class ProtoCCParser(Parser):
 
 
                 if alt25 == 1:
-                    # ProtoCC.g:264:20: object_expr
+                    # ProtoCC.g:267:20: object_expr
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_object_expr_in_message_expr2087)
-                    object_expr149 = self.object_expr()
+                    self._state.following.append(self.FOLLOW_object_expr_in_message_expr2134)
+                    object_expr154 = self.object_expr()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, object_expr149.tree)
+                    self._adaptor.addChild(root_0, object_expr154.tree)
 
 
 
                 elif alt25 == 2:
-                    # ProtoCC.g:264:34: set_func
+                    # ProtoCC.g:267:34: set_func
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_set_func_in_message_expr2091)
-                    set_func150 = self.set_func()
+                    self._state.following.append(self.FOLLOW_set_func_in_message_expr2138)
+                    set_func155 = self.set_func()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, set_func150.tree)
+                    self._adaptor.addChild(root_0, set_func155.tree)
 
 
 
                 elif alt25 == 3:
-                    # ProtoCC.g:264:45: INT
+                    # ProtoCC.g:267:45: INT
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    INT151 = self.match(self.input, INT, self.FOLLOW_INT_in_message_expr2095)
-                    INT151_tree = self._adaptor.createWithPayload(INT151)
-                    self._adaptor.addChild(root_0, INT151_tree)
+                    INT156 = self.match(self.input, INT, self.FOLLOW_INT_in_message_expr2142)
+                    INT156_tree = self._adaptor.createWithPayload(INT156)
+                    self._adaptor.addChild(root_0, INT156_tree)
 
 
 
 
                 elif alt25 == 4:
-                    # ProtoCC.g:264:51: BOOL
+                    # ProtoCC.g:267:51: BOOL
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    BOOL152 = self.match(self.input, BOOL, self.FOLLOW_BOOL_in_message_expr2099)
-                    BOOL152_tree = self._adaptor.createWithPayload(BOOL152)
-                    self._adaptor.addChild(root_0, BOOL152_tree)
+                    BOOL157 = self.match(self.input, BOOL, self.FOLLOW_BOOL_in_message_expr2146)
+                    BOOL157_tree = self._adaptor.createWithPayload(BOOL157)
+                    self._adaptor.addChild(root_0, BOOL157_tree)
 
 
 
 
                 elif alt25 == 5:
-                    # ProtoCC.g:264:58: NID
+                    # ProtoCC.g:267:58: NID
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    NID153 = self.match(self.input, NID, self.FOLLOW_NID_in_message_expr2103)
-                    NID153_tree = self._adaptor.createWithPayload(NID153)
-                    self._adaptor.addChild(root_0, NID153_tree)
+                    NID158 = self.match(self.input, NID, self.FOLLOW_NID_in_message_expr2150)
+                    NID158_tree = self._adaptor.createWithPayload(NID158)
+                    self._adaptor.addChild(root_0, NID158_tree)
 
 
 
@@ -4951,7 +5147,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "set_block"
-    # ProtoCC.g:267:5: set_block : set_func SEMICOLON -> set_func ;
+    # ProtoCC.g:270:5: set_block : set_func SEMICOLON -> set_func ;
     def set_block(self, ):
         retval = self.set_block_return()
         retval.start = self.input.LT(1)
@@ -4959,26 +5155,26 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        SEMICOLON155 = None
-        set_func154 = None
+        SEMICOLON160 = None
+        set_func159 = None
 
-        SEMICOLON155_tree = None
+        SEMICOLON160_tree = None
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
         stream_set_func = RewriteRuleSubtreeStream(self._adaptor, "rule set_func")
         try:
             try:
-                # ProtoCC.g:267:15: ( set_func SEMICOLON -> set_func )
-                # ProtoCC.g:267:17: set_func SEMICOLON
+                # ProtoCC.g:270:15: ( set_func SEMICOLON -> set_func )
+                # ProtoCC.g:270:17: set_func SEMICOLON
                 pass 
-                self._state.following.append(self.FOLLOW_set_func_in_set_block2121)
-                set_func154 = self.set_func()
+                self._state.following.append(self.FOLLOW_set_func_in_set_block2168)
+                set_func159 = self.set_func()
 
                 self._state.following.pop()
-                stream_set_func.add(set_func154.tree)
+                stream_set_func.add(set_func159.tree)
 
 
-                SEMICOLON155 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_set_block2123) 
-                stream_SEMICOLON.add(SEMICOLON155)
+                SEMICOLON160 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_set_block2170) 
+                stream_SEMICOLON.add(SEMICOLON160)
 
 
                 # AST Rewrite
@@ -4996,7 +5192,7 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 267:36: -> set_func
+                # 270:36: -> set_func
                 self._adaptor.addChild(root_0, stream_set_func.nextTree())
 
 
@@ -5039,7 +5235,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "set_func"
-    # ProtoCC.g:268:5: set_func : ID DOT set_function_types OBRACE ( set_nest )* CBRACE -> ^( SETFUNC_ ID DOT set_function_types OBRACE ( set_nest )* CBRACE ) ;
+    # ProtoCC.g:271:5: set_func : ID DOT set_function_types OBRACE ( set_nest )* CBRACE -> ^( SETFUNC_ ID DOT set_function_types OBRACE ( set_nest )* CBRACE ) ;
     def set_func(self, ):
         retval = self.set_func_return()
         retval.start = self.input.LT(1)
@@ -5047,17 +5243,17 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        ID156 = None
-        DOT157 = None
-        OBRACE159 = None
-        CBRACE161 = None
-        set_function_types158 = None
-        set_nest160 = None
+        ID161 = None
+        DOT162 = None
+        OBRACE164 = None
+        CBRACE166 = None
+        set_function_types163 = None
+        set_nest165 = None
 
-        ID156_tree = None
-        DOT157_tree = None
-        OBRACE159_tree = None
-        CBRACE161_tree = None
+        ID161_tree = None
+        DOT162_tree = None
+        OBRACE164_tree = None
+        CBRACE166_tree = None
         stream_OBRACE = RewriteRuleTokenStream(self._adaptor, "token OBRACE")
         stream_DOT = RewriteRuleTokenStream(self._adaptor, "token DOT")
         stream_ID = RewriteRuleTokenStream(self._adaptor, "token ID")
@@ -5066,29 +5262,29 @@ class ProtoCCParser(Parser):
         stream_set_nest = RewriteRuleSubtreeStream(self._adaptor, "rule set_nest")
         try:
             try:
-                # ProtoCC.g:268:14: ( ID DOT set_function_types OBRACE ( set_nest )* CBRACE -> ^( SETFUNC_ ID DOT set_function_types OBRACE ( set_nest )* CBRACE ) )
-                # ProtoCC.g:268:16: ID DOT set_function_types OBRACE ( set_nest )* CBRACE
+                # ProtoCC.g:271:14: ( ID DOT set_function_types OBRACE ( set_nest )* CBRACE -> ^( SETFUNC_ ID DOT set_function_types OBRACE ( set_nest )* CBRACE ) )
+                # ProtoCC.g:271:16: ID DOT set_function_types OBRACE ( set_nest )* CBRACE
                 pass 
-                ID156 = self.match(self.input, ID, self.FOLLOW_ID_in_set_func2138) 
-                stream_ID.add(ID156)
+                ID161 = self.match(self.input, ID, self.FOLLOW_ID_in_set_func2185) 
+                stream_ID.add(ID161)
 
 
-                DOT157 = self.match(self.input, DOT, self.FOLLOW_DOT_in_set_func2140) 
-                stream_DOT.add(DOT157)
+                DOT162 = self.match(self.input, DOT, self.FOLLOW_DOT_in_set_func2187) 
+                stream_DOT.add(DOT162)
 
 
-                self._state.following.append(self.FOLLOW_set_function_types_in_set_func2142)
-                set_function_types158 = self.set_function_types()
+                self._state.following.append(self.FOLLOW_set_function_types_in_set_func2189)
+                set_function_types163 = self.set_function_types()
 
                 self._state.following.pop()
-                stream_set_function_types.add(set_function_types158.tree)
+                stream_set_function_types.add(set_function_types163.tree)
 
 
-                OBRACE159 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_set_func2144) 
-                stream_OBRACE.add(OBRACE159)
+                OBRACE164 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_set_func2191) 
+                stream_OBRACE.add(OBRACE164)
 
 
-                # ProtoCC.g:268:49: ( set_nest )*
+                # ProtoCC.g:271:49: ( set_nest )*
                 while True: #loop26
                     alt26 = 2
                     LA26_0 = self.input.LA(1)
@@ -5098,13 +5294,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt26 == 1:
-                        # ProtoCC.g:268:49: set_nest
+                        # ProtoCC.g:271:49: set_nest
                         pass 
-                        self._state.following.append(self.FOLLOW_set_nest_in_set_func2146)
-                        set_nest160 = self.set_nest()
+                        self._state.following.append(self.FOLLOW_set_nest_in_set_func2193)
+                        set_nest165 = self.set_nest()
 
                         self._state.following.pop()
-                        stream_set_nest.add(set_nest160.tree)
+                        stream_set_nest.add(set_nest165.tree)
 
 
 
@@ -5112,12 +5308,12 @@ class ProtoCCParser(Parser):
                         break #loop26
 
 
-                CBRACE161 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_set_func2149) 
-                stream_CBRACE.add(CBRACE161)
+                CBRACE166 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_set_func2196) 
+                stream_CBRACE.add(CBRACE166)
 
 
                 # AST Rewrite
-                # elements: set_nest, OBRACE, CBRACE, ID, DOT, set_function_types
+                # elements: set_function_types, ID, set_nest, DOT, OBRACE, CBRACE
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -5131,8 +5327,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 268:66: -> ^( SETFUNC_ ID DOT set_function_types OBRACE ( set_nest )* CBRACE )
-                # ProtoCC.g:269:9: ^( SETFUNC_ ID DOT set_function_types OBRACE ( set_nest )* CBRACE )
+                # 271:66: -> ^( SETFUNC_ ID DOT set_function_types OBRACE ( set_nest )* CBRACE )
+                # ProtoCC.g:272:9: ^( SETFUNC_ ID DOT set_function_types OBRACE ( set_nest )* CBRACE )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(SETFUNC_, "SETFUNC_")
@@ -5152,7 +5348,7 @@ class ProtoCCParser(Parser):
                 stream_OBRACE.nextNode()
                 )
 
-                # ProtoCC.g:269:53: ( set_nest )*
+                # ProtoCC.g:272:53: ( set_nest )*
                 while stream_set_nest.hasNext():
                     self._adaptor.addChild(root_1, stream_set_nest.nextTree())
 
@@ -5205,7 +5401,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "set_nest"
-    # ProtoCC.g:270:5: set_nest : ( set_func | object_expr );
+    # ProtoCC.g:273:5: set_nest : ( set_func | object_expr );
     def set_nest(self, ):
         retval = self.set_nest_return()
         retval.start = self.input.LT(1)
@@ -5213,13 +5409,13 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        set_func162 = None
-        object_expr163 = None
+        set_func167 = None
+        object_expr168 = None
 
 
         try:
             try:
-                # ProtoCC.g:270:14: ( set_func | object_expr )
+                # ProtoCC.g:273:14: ( set_func | object_expr )
                 alt27 = 2
                 LA27_0 = self.input.LA(1)
 
@@ -5229,7 +5425,7 @@ class ProtoCCParser(Parser):
                     if (LA27_1 == DOT) :
                         LA27_2 = self.input.LA(3)
 
-                        if (LA27_2 in {134, 136, 138, 139, 140, 144}) :
+                        if (LA27_2 in {137, 139, 141, 142, 143, 147}) :
                             alt27 = 1
                         elif (LA27_2 in {ID, NID}) :
                             alt27 = 2
@@ -5254,30 +5450,30 @@ class ProtoCCParser(Parser):
 
 
                 if alt27 == 1:
-                    # ProtoCC.g:270:16: set_func
+                    # ProtoCC.g:273:16: set_func
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_set_func_in_set_nest2187)
-                    set_func162 = self.set_func()
+                    self._state.following.append(self.FOLLOW_set_func_in_set_nest2234)
+                    set_func167 = self.set_func()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, set_func162.tree)
+                    self._adaptor.addChild(root_0, set_func167.tree)
 
 
 
                 elif alt27 == 2:
-                    # ProtoCC.g:270:27: object_expr
+                    # ProtoCC.g:273:27: object_expr
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_object_expr_in_set_nest2191)
-                    object_expr163 = self.object_expr()
+                    self._state.following.append(self.FOLLOW_object_expr_in_set_nest2238)
+                    object_expr168 = self.object_expr()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, object_expr163.tree)
+                    self._adaptor.addChild(root_0, object_expr168.tree)
 
 
 
@@ -5312,7 +5508,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "internal_event_block"
-    # ProtoCC.g:274:5: internal_event_block : internal_event_func SEMICOLON -> internal_event_func ;
+    # ProtoCC.g:277:5: internal_event_block : internal_event_func SEMICOLON -> internal_event_func ;
     def internal_event_block(self, ):
         retval = self.internal_event_block_return()
         retval.start = self.input.LT(1)
@@ -5320,26 +5516,26 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        SEMICOLON165 = None
-        internal_event_func164 = None
+        SEMICOLON170 = None
+        internal_event_func169 = None
 
-        SEMICOLON165_tree = None
+        SEMICOLON170_tree = None
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
         stream_internal_event_func = RewriteRuleSubtreeStream(self._adaptor, "rule internal_event_func")
         try:
             try:
-                # ProtoCC.g:274:25: ( internal_event_func SEMICOLON -> internal_event_func )
-                # ProtoCC.g:274:27: internal_event_func SEMICOLON
+                # ProtoCC.g:277:25: ( internal_event_func SEMICOLON -> internal_event_func )
+                # ProtoCC.g:277:27: internal_event_func SEMICOLON
                 pass 
-                self._state.following.append(self.FOLLOW_internal_event_func_in_internal_event_block2209)
-                internal_event_func164 = self.internal_event_func()
+                self._state.following.append(self.FOLLOW_internal_event_func_in_internal_event_block2256)
+                internal_event_func169 = self.internal_event_func()
 
                 self._state.following.pop()
-                stream_internal_event_func.add(internal_event_func164.tree)
+                stream_internal_event_func.add(internal_event_func169.tree)
 
 
-                SEMICOLON165 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_internal_event_block2211) 
-                stream_SEMICOLON.add(SEMICOLON165)
+                SEMICOLON170 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_internal_event_block2258) 
+                stream_SEMICOLON.add(SEMICOLON170)
 
 
                 # AST Rewrite
@@ -5357,7 +5553,7 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 274:57: -> internal_event_func
+                # 277:57: -> internal_event_func
                 self._adaptor.addChild(root_0, stream_internal_event_func.nextTree())
 
 
@@ -5400,7 +5596,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "internal_event_func"
-    # ProtoCC.g:275:5: internal_event_func : internal_event_function OBRACE ID CBRACE -> ^( EVENT_ ID ) ^( EVENT_ACK_ ID ) ;
+    # ProtoCC.g:278:5: internal_event_func : internal_event_function OBRACE ID CBRACE -> ^( EVENT_ ID ) ^( EVENT_ACK_ ID ) ;
     def internal_event_func(self, ):
         retval = self.internal_event_func_return()
         retval.start = self.input.LT(1)
@@ -5408,40 +5604,40 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        OBRACE167 = None
-        ID168 = None
-        CBRACE169 = None
-        internal_event_function166 = None
+        OBRACE172 = None
+        ID173 = None
+        CBRACE174 = None
+        internal_event_function171 = None
 
-        OBRACE167_tree = None
-        ID168_tree = None
-        CBRACE169_tree = None
+        OBRACE172_tree = None
+        ID173_tree = None
+        CBRACE174_tree = None
         stream_OBRACE = RewriteRuleTokenStream(self._adaptor, "token OBRACE")
         stream_ID = RewriteRuleTokenStream(self._adaptor, "token ID")
         stream_CBRACE = RewriteRuleTokenStream(self._adaptor, "token CBRACE")
         stream_internal_event_function = RewriteRuleSubtreeStream(self._adaptor, "rule internal_event_function")
         try:
             try:
-                # ProtoCC.g:275:24: ( internal_event_function OBRACE ID CBRACE -> ^( EVENT_ ID ) ^( EVENT_ACK_ ID ) )
-                # ProtoCC.g:275:26: internal_event_function OBRACE ID CBRACE
+                # ProtoCC.g:278:24: ( internal_event_function OBRACE ID CBRACE -> ^( EVENT_ ID ) ^( EVENT_ACK_ ID ) )
+                # ProtoCC.g:278:26: internal_event_function OBRACE ID CBRACE
                 pass 
-                self._state.following.append(self.FOLLOW_internal_event_function_in_internal_event_func2225)
-                internal_event_function166 = self.internal_event_function()
+                self._state.following.append(self.FOLLOW_internal_event_function_in_internal_event_func2272)
+                internal_event_function171 = self.internal_event_function()
 
                 self._state.following.pop()
-                stream_internal_event_function.add(internal_event_function166.tree)
+                stream_internal_event_function.add(internal_event_function171.tree)
 
 
-                OBRACE167 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_internal_event_func2227) 
-                stream_OBRACE.add(OBRACE167)
+                OBRACE172 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_internal_event_func2274) 
+                stream_OBRACE.add(OBRACE172)
 
 
-                ID168 = self.match(self.input, ID, self.FOLLOW_ID_in_internal_event_func2229) 
-                stream_ID.add(ID168)
+                ID173 = self.match(self.input, ID, self.FOLLOW_ID_in_internal_event_func2276) 
+                stream_ID.add(ID173)
 
 
-                CBRACE169 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_internal_event_func2231) 
-                stream_CBRACE.add(CBRACE169)
+                CBRACE174 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_internal_event_func2278) 
+                stream_CBRACE.add(CBRACE174)
 
 
                 # AST Rewrite
@@ -5459,8 +5655,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 275:67: -> ^( EVENT_ ID ) ^( EVENT_ACK_ ID )
-                # ProtoCC.g:275:70: ^( EVENT_ ID )
+                # 278:67: -> ^( EVENT_ ID ) ^( EVENT_ACK_ ID )
+                # ProtoCC.g:278:70: ^( EVENT_ ID )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(EVENT_, "EVENT_")
@@ -5472,7 +5668,7 @@ class ProtoCCParser(Parser):
 
                 self._adaptor.addChild(root_0, root_1)
 
-                # ProtoCC.g:275:83: ^( EVENT_ACK_ ID )
+                # ProtoCC.g:278:83: ^( EVENT_ACK_ ID )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(EVENT_ACK_, "EVENT_ACK_")
@@ -5524,7 +5720,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "arch_block"
-    # ProtoCC.g:278:1: arch_block : ARCH ID OCBRACE arch_body CCBRACE -> ^( ARCH_ ^( MACHN_ ID ) arch_body ) ;
+    # ProtoCC.g:281:1: arch_block : ARCH ID OCBRACE arch_body CCBRACE -> ^( ARCH_ ^( MACHN_ ID ) arch_body ) ;
     def arch_block(self, ):
         retval = self.arch_block_return()
         retval.start = self.input.LT(1)
@@ -5532,16 +5728,16 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        ARCH170 = None
-        ID171 = None
-        OCBRACE172 = None
-        CCBRACE174 = None
-        arch_body173 = None
+        ARCH175 = None
+        ID176 = None
+        OCBRACE177 = None
+        CCBRACE179 = None
+        arch_body178 = None
 
-        ARCH170_tree = None
-        ID171_tree = None
-        OCBRACE172_tree = None
-        CCBRACE174_tree = None
+        ARCH175_tree = None
+        ID176_tree = None
+        OCBRACE177_tree = None
+        CCBRACE179_tree = None
         stream_OCBRACE = RewriteRuleTokenStream(self._adaptor, "token OCBRACE")
         stream_ARCH = RewriteRuleTokenStream(self._adaptor, "token ARCH")
         stream_ID = RewriteRuleTokenStream(self._adaptor, "token ID")
@@ -5549,34 +5745,34 @@ class ProtoCCParser(Parser):
         stream_arch_body = RewriteRuleSubtreeStream(self._adaptor, "rule arch_body")
         try:
             try:
-                # ProtoCC.g:278:12: ( ARCH ID OCBRACE arch_body CCBRACE -> ^( ARCH_ ^( MACHN_ ID ) arch_body ) )
-                # ProtoCC.g:278:14: ARCH ID OCBRACE arch_body CCBRACE
+                # ProtoCC.g:281:12: ( ARCH ID OCBRACE arch_body CCBRACE -> ^( ARCH_ ^( MACHN_ ID ) arch_body ) )
+                # ProtoCC.g:281:14: ARCH ID OCBRACE arch_body CCBRACE
                 pass 
-                ARCH170 = self.match(self.input, ARCH, self.FOLLOW_ARCH_in_arch_block2255) 
-                stream_ARCH.add(ARCH170)
+                ARCH175 = self.match(self.input, ARCH, self.FOLLOW_ARCH_in_arch_block2302) 
+                stream_ARCH.add(ARCH175)
 
 
-                ID171 = self.match(self.input, ID, self.FOLLOW_ID_in_arch_block2257) 
-                stream_ID.add(ID171)
+                ID176 = self.match(self.input, ID, self.FOLLOW_ID_in_arch_block2304) 
+                stream_ID.add(ID176)
 
 
-                OCBRACE172 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_arch_block2259) 
-                stream_OCBRACE.add(OCBRACE172)
+                OCBRACE177 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_arch_block2306) 
+                stream_OCBRACE.add(OCBRACE177)
 
 
-                self._state.following.append(self.FOLLOW_arch_body_in_arch_block2261)
-                arch_body173 = self.arch_body()
+                self._state.following.append(self.FOLLOW_arch_body_in_arch_block2308)
+                arch_body178 = self.arch_body()
 
                 self._state.following.pop()
-                stream_arch_body.add(arch_body173.tree)
+                stream_arch_body.add(arch_body178.tree)
 
 
-                CCBRACE174 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_arch_block2263) 
-                stream_CCBRACE.add(CCBRACE174)
+                CCBRACE179 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_arch_block2310) 
+                stream_CCBRACE.add(CCBRACE179)
 
 
                 # AST Rewrite
-                # elements: ID, arch_body
+                # elements: arch_body, ID
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -5590,14 +5786,14 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 278:48: -> ^( ARCH_ ^( MACHN_ ID ) arch_body )
-                # ProtoCC.g:278:51: ^( ARCH_ ^( MACHN_ ID ) arch_body )
+                # 281:48: -> ^( ARCH_ ^( MACHN_ ID ) arch_body )
+                # ProtoCC.g:281:51: ^( ARCH_ ^( MACHN_ ID ) arch_body )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(ARCH_, "ARCH_")
                 , root_1)
 
-                # ProtoCC.g:278:59: ^( MACHN_ ID )
+                # ProtoCC.g:281:59: ^( MACHN_ ID )
                 root_2 = self._adaptor.nil()
                 root_2 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(MACHN_, "MACHN_")
@@ -5653,7 +5849,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "arch_body"
-    # ProtoCC.g:280:1: arch_body : ( stable_def | process_block )* ;
+    # ProtoCC.g:283:1: arch_body : ( stable_def | process_block )* ;
     def arch_body(self, ):
         retval = self.arch_body_return()
         retval.start = self.input.LT(1)
@@ -5661,19 +5857,19 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        stable_def175 = None
-        process_block176 = None
+        stable_def180 = None
+        process_block181 = None
 
 
         try:
             try:
-                # ProtoCC.g:280:10: ( ( stable_def | process_block )* )
-                # ProtoCC.g:280:12: ( stable_def | process_block )*
+                # ProtoCC.g:283:10: ( ( stable_def | process_block )* )
+                # ProtoCC.g:283:12: ( stable_def | process_block )*
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                # ProtoCC.g:280:12: ( stable_def | process_block )*
+                # ProtoCC.g:283:12: ( stable_def | process_block )*
                 while True: #loop28
                     alt28 = 3
                     LA28_0 = self.input.LA(1)
@@ -5685,24 +5881,24 @@ class ProtoCCParser(Parser):
 
 
                     if alt28 == 1:
-                        # ProtoCC.g:280:13: stable_def
+                        # ProtoCC.g:283:13: stable_def
                         pass 
-                        self._state.following.append(self.FOLLOW_stable_def_in_arch_body2285)
-                        stable_def175 = self.stable_def()
+                        self._state.following.append(self.FOLLOW_stable_def_in_arch_body2332)
+                        stable_def180 = self.stable_def()
 
                         self._state.following.pop()
-                        self._adaptor.addChild(root_0, stable_def175.tree)
+                        self._adaptor.addChild(root_0, stable_def180.tree)
 
 
 
                     elif alt28 == 2:
-                        # ProtoCC.g:280:26: process_block
+                        # ProtoCC.g:283:26: process_block
                         pass 
-                        self._state.following.append(self.FOLLOW_process_block_in_arch_body2289)
-                        process_block176 = self.process_block()
+                        self._state.following.append(self.FOLLOW_process_block_in_arch_body2336)
+                        process_block181 = self.process_block()
 
                         self._state.following.pop()
-                        self._adaptor.addChild(root_0, process_block176.tree)
+                        self._adaptor.addChild(root_0, process_block181.tree)
 
 
 
@@ -5743,7 +5939,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "stable_def"
-    # ProtoCC.g:282:1: stable_def : STABLE OCBRACE ID ( COMMA ID )* CCBRACE -> ^( STABLE_ ID ( ID )* ) ;
+    # ProtoCC.g:285:1: stable_def : STABLE OCBRACE ID ( COMMA ID )* CCBRACE -> ^( STABLE_ ID ( ID )* ) ;
     def stable_def(self, ):
         retval = self.stable_def_return()
         retval.start = self.input.LT(1)
@@ -5751,19 +5947,19 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        STABLE177 = None
-        OCBRACE178 = None
-        ID179 = None
-        COMMA180 = None
-        ID181 = None
-        CCBRACE182 = None
+        STABLE182 = None
+        OCBRACE183 = None
+        ID184 = None
+        COMMA185 = None
+        ID186 = None
+        CCBRACE187 = None
 
-        STABLE177_tree = None
-        OCBRACE178_tree = None
-        ID179_tree = None
-        COMMA180_tree = None
-        ID181_tree = None
-        CCBRACE182_tree = None
+        STABLE182_tree = None
+        OCBRACE183_tree = None
+        ID184_tree = None
+        COMMA185_tree = None
+        ID186_tree = None
+        CCBRACE187_tree = None
         stream_COMMA = RewriteRuleTokenStream(self._adaptor, "token COMMA")
         stream_OCBRACE = RewriteRuleTokenStream(self._adaptor, "token OCBRACE")
         stream_STABLE = RewriteRuleTokenStream(self._adaptor, "token STABLE")
@@ -5772,22 +5968,22 @@ class ProtoCCParser(Parser):
 
         try:
             try:
-                # ProtoCC.g:282:12: ( STABLE OCBRACE ID ( COMMA ID )* CCBRACE -> ^( STABLE_ ID ( ID )* ) )
-                # ProtoCC.g:282:14: STABLE OCBRACE ID ( COMMA ID )* CCBRACE
+                # ProtoCC.g:285:12: ( STABLE OCBRACE ID ( COMMA ID )* CCBRACE -> ^( STABLE_ ID ( ID )* ) )
+                # ProtoCC.g:285:14: STABLE OCBRACE ID ( COMMA ID )* CCBRACE
                 pass 
-                STABLE177 = self.match(self.input, STABLE, self.FOLLOW_STABLE_in_stable_def2299) 
-                stream_STABLE.add(STABLE177)
+                STABLE182 = self.match(self.input, STABLE, self.FOLLOW_STABLE_in_stable_def2346) 
+                stream_STABLE.add(STABLE182)
 
 
-                OCBRACE178 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_stable_def2301) 
-                stream_OCBRACE.add(OCBRACE178)
+                OCBRACE183 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_stable_def2348) 
+                stream_OCBRACE.add(OCBRACE183)
 
 
-                ID179 = self.match(self.input, ID, self.FOLLOW_ID_in_stable_def2303) 
-                stream_ID.add(ID179)
+                ID184 = self.match(self.input, ID, self.FOLLOW_ID_in_stable_def2350) 
+                stream_ID.add(ID184)
 
 
-                # ProtoCC.g:282:32: ( COMMA ID )*
+                # ProtoCC.g:285:32: ( COMMA ID )*
                 while True: #loop29
                     alt29 = 2
                     LA29_0 = self.input.LA(1)
@@ -5797,14 +5993,14 @@ class ProtoCCParser(Parser):
 
 
                     if alt29 == 1:
-                        # ProtoCC.g:282:33: COMMA ID
+                        # ProtoCC.g:285:33: COMMA ID
                         pass 
-                        COMMA180 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_stable_def2306) 
-                        stream_COMMA.add(COMMA180)
+                        COMMA185 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_stable_def2353) 
+                        stream_COMMA.add(COMMA185)
 
 
-                        ID181 = self.match(self.input, ID, self.FOLLOW_ID_in_stable_def2308) 
-                        stream_ID.add(ID181)
+                        ID186 = self.match(self.input, ID, self.FOLLOW_ID_in_stable_def2355) 
+                        stream_ID.add(ID186)
 
 
 
@@ -5812,8 +6008,8 @@ class ProtoCCParser(Parser):
                         break #loop29
 
 
-                CCBRACE182 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_stable_def2312) 
-                stream_CCBRACE.add(CCBRACE182)
+                CCBRACE187 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_stable_def2359) 
+                stream_CCBRACE.add(CCBRACE187)
 
 
                 # AST Rewrite
@@ -5831,8 +6027,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 282:52: -> ^( STABLE_ ID ( ID )* )
-                # ProtoCC.g:282:55: ^( STABLE_ ID ( ID )* )
+                # 285:52: -> ^( STABLE_ ID ( ID )* )
+                # ProtoCC.g:285:55: ^( STABLE_ ID ( ID )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(STABLE_, "STABLE_")
@@ -5842,7 +6038,7 @@ class ProtoCCParser(Parser):
                 stream_ID.nextNode()
                 )
 
-                # ProtoCC.g:282:68: ( ID )*
+                # ProtoCC.g:285:68: ( ID )*
                 while stream_ID.hasNext():
                     self._adaptor.addChild(root_1, 
                     stream_ID.nextNode()
@@ -5893,7 +6089,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "process_block"
-    # ProtoCC.g:284:1: process_block : PROC process_trans OCBRACE ( process_expr )* CCBRACE -> ^( PROC_ process_trans ( process_expr )* ^( ENDPROC_ ) ) ;
+    # ProtoCC.g:287:1: process_block : PROC process_trans OCBRACE ( process_expr )* CCBRACE -> ^( PROC_ process_trans ( process_expr )* ^( ENDPROC_ ) ) ;
     def process_block(self, ):
         retval = self.process_block_return()
         retval.start = self.input.LT(1)
@@ -5901,15 +6097,15 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        PROC183 = None
-        OCBRACE185 = None
-        CCBRACE187 = None
-        process_trans184 = None
-        process_expr186 = None
+        PROC188 = None
+        OCBRACE190 = None
+        CCBRACE192 = None
+        process_trans189 = None
+        process_expr191 = None
 
-        PROC183_tree = None
-        OCBRACE185_tree = None
-        CCBRACE187_tree = None
+        PROC188_tree = None
+        OCBRACE190_tree = None
+        CCBRACE192_tree = None
         stream_PROC = RewriteRuleTokenStream(self._adaptor, "token PROC")
         stream_OCBRACE = RewriteRuleTokenStream(self._adaptor, "token OCBRACE")
         stream_CCBRACE = RewriteRuleTokenStream(self._adaptor, "token CCBRACE")
@@ -5917,41 +6113,41 @@ class ProtoCCParser(Parser):
         stream_process_expr = RewriteRuleSubtreeStream(self._adaptor, "rule process_expr")
         try:
             try:
-                # ProtoCC.g:284:15: ( PROC process_trans OCBRACE ( process_expr )* CCBRACE -> ^( PROC_ process_trans ( process_expr )* ^( ENDPROC_ ) ) )
-                # ProtoCC.g:284:17: PROC process_trans OCBRACE ( process_expr )* CCBRACE
+                # ProtoCC.g:287:15: ( PROC process_trans OCBRACE ( process_expr )* CCBRACE -> ^( PROC_ process_trans ( process_expr )* ^( ENDPROC_ ) ) )
+                # ProtoCC.g:287:17: PROC process_trans OCBRACE ( process_expr )* CCBRACE
                 pass 
-                PROC183 = self.match(self.input, PROC, self.FOLLOW_PROC_in_process_block2331) 
-                stream_PROC.add(PROC183)
+                PROC188 = self.match(self.input, PROC, self.FOLLOW_PROC_in_process_block2378) 
+                stream_PROC.add(PROC188)
 
 
-                self._state.following.append(self.FOLLOW_process_trans_in_process_block2333)
-                process_trans184 = self.process_trans()
+                self._state.following.append(self.FOLLOW_process_trans_in_process_block2380)
+                process_trans189 = self.process_trans()
 
                 self._state.following.pop()
-                stream_process_trans.add(process_trans184.tree)
+                stream_process_trans.add(process_trans189.tree)
 
 
-                OCBRACE185 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_process_block2335) 
-                stream_OCBRACE.add(OCBRACE185)
+                OCBRACE190 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_process_block2382) 
+                stream_OCBRACE.add(OCBRACE190)
 
 
-                # ProtoCC.g:284:44: ( process_expr )*
+                # ProtoCC.g:287:44: ( process_expr )*
                 while True: #loop30
                     alt30 = 2
                     LA30_0 = self.input.LA(1)
 
-                    if (LA30_0 in {ACCESS, AWAIT, ID, IF, STALL, STATE, UNDEF, 119}) :
+                    if (LA30_0 in {ACCESS, AWAIT, ID, IF, STALL, STATE, UNDEF, 121}) :
                         alt30 = 1
 
 
                     if alt30 == 1:
-                        # ProtoCC.g:284:44: process_expr
+                        # ProtoCC.g:287:44: process_expr
                         pass 
-                        self._state.following.append(self.FOLLOW_process_expr_in_process_block2337)
-                        process_expr186 = self.process_expr()
+                        self._state.following.append(self.FOLLOW_process_expr_in_process_block2384)
+                        process_expr191 = self.process_expr()
 
                         self._state.following.pop()
-                        stream_process_expr.add(process_expr186.tree)
+                        stream_process_expr.add(process_expr191.tree)
 
 
 
@@ -5959,8 +6155,8 @@ class ProtoCCParser(Parser):
                         break #loop30
 
 
-                CCBRACE187 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_process_block2340) 
-                stream_CCBRACE.add(CCBRACE187)
+                CCBRACE192 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_process_block2387) 
+                stream_CCBRACE.add(CCBRACE192)
 
 
                 # AST Rewrite
@@ -5978,8 +6174,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 284:66: -> ^( PROC_ process_trans ( process_expr )* ^( ENDPROC_ ) )
-                # ProtoCC.g:284:69: ^( PROC_ process_trans ( process_expr )* ^( ENDPROC_ ) )
+                # 287:66: -> ^( PROC_ process_trans ( process_expr )* ^( ENDPROC_ ) )
+                # ProtoCC.g:287:69: ^( PROC_ process_trans ( process_expr )* ^( ENDPROC_ ) )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(PROC_, "PROC_")
@@ -5987,14 +6183,14 @@ class ProtoCCParser(Parser):
 
                 self._adaptor.addChild(root_1, stream_process_trans.nextTree())
 
-                # ProtoCC.g:284:91: ( process_expr )*
+                # ProtoCC.g:287:91: ( process_expr )*
                 while stream_process_expr.hasNext():
                     self._adaptor.addChild(root_1, stream_process_expr.nextTree())
 
 
                 stream_process_expr.reset();
 
-                # ProtoCC.g:284:105: ^( ENDPROC_ )
+                # ProtoCC.g:287:105: ^( ENDPROC_ )
                 root_2 = self._adaptor.nil()
                 root_2 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(ENDPROC_, "ENDPROC_")
@@ -6044,7 +6240,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "process_trans"
-    # ProtoCC.g:285:5: process_trans : OBRACE ID COMMA process_events ( process_finalstate )* CBRACE -> ^( TRANS_ ID process_events ( process_finalstate )* ) ;
+    # ProtoCC.g:288:5: process_trans : OBRACE ID COMMA process_events ( process_finalstate )* CBRACE -> ^( TRANS_ ID process_events ( process_finalstate )* ) ;
     def process_trans(self, ):
         retval = self.process_trans_return()
         retval.start = self.input.LT(1)
@@ -6052,17 +6248,17 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        OBRACE188 = None
-        ID189 = None
-        COMMA190 = None
-        CBRACE193 = None
-        process_events191 = None
-        process_finalstate192 = None
+        OBRACE193 = None
+        ID194 = None
+        COMMA195 = None
+        CBRACE198 = None
+        process_events196 = None
+        process_finalstate197 = None
 
-        OBRACE188_tree = None
-        ID189_tree = None
-        COMMA190_tree = None
-        CBRACE193_tree = None
+        OBRACE193_tree = None
+        ID194_tree = None
+        COMMA195_tree = None
+        CBRACE198_tree = None
         stream_COMMA = RewriteRuleTokenStream(self._adaptor, "token COMMA")
         stream_OBRACE = RewriteRuleTokenStream(self._adaptor, "token OBRACE")
         stream_ID = RewriteRuleTokenStream(self._adaptor, "token ID")
@@ -6071,29 +6267,29 @@ class ProtoCCParser(Parser):
         stream_process_finalstate = RewriteRuleSubtreeStream(self._adaptor, "rule process_finalstate")
         try:
             try:
-                # ProtoCC.g:285:19: ( OBRACE ID COMMA process_events ( process_finalstate )* CBRACE -> ^( TRANS_ ID process_events ( process_finalstate )* ) )
-                # ProtoCC.g:285:21: OBRACE ID COMMA process_events ( process_finalstate )* CBRACE
+                # ProtoCC.g:288:19: ( OBRACE ID COMMA process_events ( process_finalstate )* CBRACE -> ^( TRANS_ ID process_events ( process_finalstate )* ) )
+                # ProtoCC.g:288:21: OBRACE ID COMMA process_events ( process_finalstate )* CBRACE
                 pass 
-                OBRACE188 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_process_trans2366) 
-                stream_OBRACE.add(OBRACE188)
+                OBRACE193 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_process_trans2413) 
+                stream_OBRACE.add(OBRACE193)
 
 
-                ID189 = self.match(self.input, ID, self.FOLLOW_ID_in_process_trans2368) 
-                stream_ID.add(ID189)
+                ID194 = self.match(self.input, ID, self.FOLLOW_ID_in_process_trans2415) 
+                stream_ID.add(ID194)
 
 
-                COMMA190 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_process_trans2370) 
-                stream_COMMA.add(COMMA190)
+                COMMA195 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_process_trans2417) 
+                stream_COMMA.add(COMMA195)
 
 
-                self._state.following.append(self.FOLLOW_process_events_in_process_trans2372)
-                process_events191 = self.process_events()
+                self._state.following.append(self.FOLLOW_process_events_in_process_trans2419)
+                process_events196 = self.process_events()
 
                 self._state.following.pop()
-                stream_process_events.add(process_events191.tree)
+                stream_process_events.add(process_events196.tree)
 
 
-                # ProtoCC.g:285:52: ( process_finalstate )*
+                # ProtoCC.g:288:52: ( process_finalstate )*
                 while True: #loop31
                     alt31 = 2
                     LA31_0 = self.input.LA(1)
@@ -6103,13 +6299,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt31 == 1:
-                        # ProtoCC.g:285:52: process_finalstate
+                        # ProtoCC.g:288:52: process_finalstate
                         pass 
-                        self._state.following.append(self.FOLLOW_process_finalstate_in_process_trans2374)
-                        process_finalstate192 = self.process_finalstate()
+                        self._state.following.append(self.FOLLOW_process_finalstate_in_process_trans2421)
+                        process_finalstate197 = self.process_finalstate()
 
                         self._state.following.pop()
-                        stream_process_finalstate.add(process_finalstate192.tree)
+                        stream_process_finalstate.add(process_finalstate197.tree)
 
 
 
@@ -6117,8 +6313,8 @@ class ProtoCCParser(Parser):
                         break #loop31
 
 
-                CBRACE193 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_process_trans2377) 
-                stream_CBRACE.add(CBRACE193)
+                CBRACE198 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_process_trans2424) 
+                stream_CBRACE.add(CBRACE198)
 
 
                 # AST Rewrite
@@ -6136,8 +6332,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 285:79: -> ^( TRANS_ ID process_events ( process_finalstate )* )
-                # ProtoCC.g:285:82: ^( TRANS_ ID process_events ( process_finalstate )* )
+                # 288:79: -> ^( TRANS_ ID process_events ( process_finalstate )* )
+                # ProtoCC.g:288:82: ^( TRANS_ ID process_events ( process_finalstate )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(TRANS_, "TRANS_")
@@ -6149,7 +6345,7 @@ class ProtoCCParser(Parser):
 
                 self._adaptor.addChild(root_1, stream_process_events.nextTree())
 
-                # ProtoCC.g:285:109: ( process_finalstate )*
+                # ProtoCC.g:288:109: ( process_finalstate )*
                 while stream_process_finalstate.hasNext():
                     self._adaptor.addChild(root_1, stream_process_finalstate.nextTree())
 
@@ -6198,7 +6394,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "process_finalstate"
-    # ProtoCC.g:286:5: process_finalstate : COMMA process_finalident -> ^( process_finalident ) ;
+    # ProtoCC.g:289:5: process_finalstate : COMMA process_finalident -> ^( process_finalident ) ;
     def process_finalstate(self, ):
         retval = self.process_finalstate_return()
         retval.start = self.input.LT(1)
@@ -6206,26 +6402,26 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        COMMA194 = None
-        process_finalident195 = None
+        COMMA199 = None
+        process_finalident200 = None
 
-        COMMA194_tree = None
+        COMMA199_tree = None
         stream_COMMA = RewriteRuleTokenStream(self._adaptor, "token COMMA")
         stream_process_finalident = RewriteRuleSubtreeStream(self._adaptor, "rule process_finalident")
         try:
             try:
-                # ProtoCC.g:286:23: ( COMMA process_finalident -> ^( process_finalident ) )
-                # ProtoCC.g:286:25: COMMA process_finalident
+                # ProtoCC.g:289:23: ( COMMA process_finalident -> ^( process_finalident ) )
+                # ProtoCC.g:289:25: COMMA process_finalident
                 pass 
-                COMMA194 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_process_finalstate2400) 
-                stream_COMMA.add(COMMA194)
+                COMMA199 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_process_finalstate2447) 
+                stream_COMMA.add(COMMA199)
 
 
-                self._state.following.append(self.FOLLOW_process_finalident_in_process_finalstate2402)
-                process_finalident195 = self.process_finalident()
+                self._state.following.append(self.FOLLOW_process_finalident_in_process_finalstate2449)
+                process_finalident200 = self.process_finalident()
 
                 self._state.following.pop()
-                stream_process_finalident.add(process_finalident195.tree)
+                stream_process_finalident.add(process_finalident200.tree)
 
 
                 # AST Rewrite
@@ -6243,8 +6439,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 286:50: -> ^( process_finalident )
-                # ProtoCC.g:286:53: ^( process_finalident )
+                # 289:50: -> ^( process_finalident )
+                # ProtoCC.g:289:53: ^( process_finalident )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(stream_process_finalident.nextNode(), root_1)
 
@@ -6290,7 +6486,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "process_finalident"
-    # ProtoCC.g:287:5: process_finalident : ( ID | STATE ) ;
+    # ProtoCC.g:290:5: process_finalident : ( ID | STATE ) ;
     def process_finalident(self, ):
         retval = self.process_finalident_return()
         retval.start = self.input.LT(1)
@@ -6298,23 +6494,23 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        set196 = None
+        set201 = None
 
-        set196_tree = None
+        set201_tree = None
 
         try:
             try:
-                # ProtoCC.g:287:23: ( ( ID | STATE ) )
+                # ProtoCC.g:290:23: ( ( ID | STATE ) )
                 # ProtoCC.g:
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                set196 = self.input.LT(1)
+                set201 = self.input.LT(1)
 
                 if self.input.LA(1) in {ID, STATE}:
                     self.input.consume()
-                    self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set196))
+                    self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set201))
 
                     self._state.errorRecovery = False
 
@@ -6358,7 +6554,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "process_events"
-    # ProtoCC.g:288:5: process_events : ( ACCESS | EVICT | ID ) ;
+    # ProtoCC.g:291:5: process_events : ( ACCESS | EVICT | ID ) ;
     def process_events(self, ):
         retval = self.process_events_return()
         retval.start = self.input.LT(1)
@@ -6366,23 +6562,23 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        set197 = None
+        set202 = None
 
-        set197_tree = None
+        set202_tree = None
 
         try:
             try:
-                # ProtoCC.g:288:20: ( ( ACCESS | EVICT | ID ) )
+                # ProtoCC.g:291:20: ( ( ACCESS | EVICT | ID ) )
                 # ProtoCC.g:
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                set197 = self.input.LT(1)
+                set202 = self.input.LT(1)
 
                 if self.input.LA(1) in {ACCESS, EVICT, ID}:
                     self.input.consume()
-                    self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set197))
+                    self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set202))
 
                     self._state.errorRecovery = False
 
@@ -6426,7 +6622,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "process_expr"
-    # ProtoCC.g:289:5: process_expr : ( expressions | network_send | network_mcast | network_bcast | transaction );
+    # ProtoCC.g:292:5: process_expr : ( expressions | network_send | network_mcast | network_bcast | transaction );
     def process_expr(self, ):
         retval = self.process_expr_return()
         retval.start = self.input.LT(1)
@@ -6434,16 +6630,16 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        expressions198 = None
-        network_send199 = None
-        network_mcast200 = None
-        network_bcast201 = None
-        transaction202 = None
+        expressions203 = None
+        network_send204 = None
+        network_mcast205 = None
+        network_bcast206 = None
+        transaction207 = None
 
 
         try:
             try:
-                # ProtoCC.g:289:17: ( expressions | network_send | network_mcast | network_bcast | transaction )
+                # ProtoCC.g:292:17: ( expressions | network_send | network_mcast | network_bcast | transaction )
                 alt32 = 5
                 LA32 = self.input.LA(1)
                 if LA32 in {ID}:
@@ -6451,13 +6647,13 @@ class ProtoCCParser(Parser):
 
                     if (LA32_1 == DOT) :
                         LA32 = self.input.LA(3)
-                        if LA32 in {ID, NID, 134, 136, 138, 139, 140, 144}:
+                        if LA32 in {ID, NID, 137, 139, 141, 142, 143, 147}:
                             alt32 = 1
-                        elif LA32 in {130, 143}:
+                        elif LA32 in {132, 146}:
                             alt32 = 2
-                        elif LA32 in {121, 141}:
+                        elif LA32 in {123, 144}:
                             alt32 = 3
-                        elif LA32 in {116, 135}:
+                        elif LA32 in {118, 138}:
                             alt32 = 4
                         else:
                             nvae = NoViableAltException("", 32, 9, self.input)
@@ -6465,7 +6661,7 @@ class ProtoCCParser(Parser):
                             raise nvae
 
 
-                    elif (LA32_1 in {EQUALSIGN, SEMICOLON}) :
+                    elif (LA32_1 in {EQUALSIGN, OBRACE, SEMICOLON}) :
                         alt32 = 1
                     else:
                         nvae = NoViableAltException("", 32, 1, self.input)
@@ -6473,7 +6669,7 @@ class ProtoCCParser(Parser):
                         raise nvae
 
 
-                elif LA32 in {ACCESS, IF, STALL, STATE, UNDEF, 119}:
+                elif LA32 in {ACCESS, IF, STALL, STATE, UNDEF, 121}:
                     alt32 = 1
                 elif LA32 in {AWAIT}:
                     alt32 = 5
@@ -6484,72 +6680,72 @@ class ProtoCCParser(Parser):
 
 
                 if alt32 == 1:
-                    # ProtoCC.g:289:19: expressions
+                    # ProtoCC.g:292:19: expressions
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_expressions_in_process_expr2455)
-                    expressions198 = self.expressions()
+                    self._state.following.append(self.FOLLOW_expressions_in_process_expr2502)
+                    expressions203 = self.expressions()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, expressions198.tree)
+                    self._adaptor.addChild(root_0, expressions203.tree)
 
 
 
                 elif alt32 == 2:
-                    # ProtoCC.g:289:33: network_send
+                    # ProtoCC.g:292:33: network_send
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_network_send_in_process_expr2459)
-                    network_send199 = self.network_send()
+                    self._state.following.append(self.FOLLOW_network_send_in_process_expr2506)
+                    network_send204 = self.network_send()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, network_send199.tree)
+                    self._adaptor.addChild(root_0, network_send204.tree)
 
 
 
                 elif alt32 == 3:
-                    # ProtoCC.g:289:48: network_mcast
+                    # ProtoCC.g:292:48: network_mcast
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_network_mcast_in_process_expr2463)
-                    network_mcast200 = self.network_mcast()
+                    self._state.following.append(self.FOLLOW_network_mcast_in_process_expr2510)
+                    network_mcast205 = self.network_mcast()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, network_mcast200.tree)
+                    self._adaptor.addChild(root_0, network_mcast205.tree)
 
 
 
                 elif alt32 == 4:
-                    # ProtoCC.g:289:64: network_bcast
+                    # ProtoCC.g:292:64: network_bcast
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_network_bcast_in_process_expr2467)
-                    network_bcast201 = self.network_bcast()
+                    self._state.following.append(self.FOLLOW_network_bcast_in_process_expr2514)
+                    network_bcast206 = self.network_bcast()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, network_bcast201.tree)
+                    self._adaptor.addChild(root_0, network_bcast206.tree)
 
 
 
                 elif alt32 == 5:
-                    # ProtoCC.g:289:79: transaction
+                    # ProtoCC.g:292:79: transaction
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_transaction_in_process_expr2470)
-                    transaction202 = self.transaction()
+                    self._state.following.append(self.FOLLOW_transaction_in_process_expr2517)
+                    transaction207 = self.transaction()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, transaction202.tree)
+                    self._adaptor.addChild(root_0, transaction207.tree)
 
 
 
@@ -6584,7 +6780,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "transaction"
-    # ProtoCC.g:292:1: transaction : AWAIT OCBRACE ( trans )* CCBRACE -> ^( AWAIT_ ( trans )* ) ;
+    # ProtoCC.g:295:1: transaction : AWAIT OCBRACE ( trans )* CCBRACE -> ^( AWAIT_ ( trans )* ) ;
     def transaction(self, ):
         retval = self.transaction_return()
         retval.start = self.input.LT(1)
@@ -6592,32 +6788,32 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        AWAIT203 = None
-        OCBRACE204 = None
-        CCBRACE206 = None
-        trans205 = None
+        AWAIT208 = None
+        OCBRACE209 = None
+        CCBRACE211 = None
+        trans210 = None
 
-        AWAIT203_tree = None
-        OCBRACE204_tree = None
-        CCBRACE206_tree = None
+        AWAIT208_tree = None
+        OCBRACE209_tree = None
+        CCBRACE211_tree = None
         stream_OCBRACE = RewriteRuleTokenStream(self._adaptor, "token OCBRACE")
         stream_AWAIT = RewriteRuleTokenStream(self._adaptor, "token AWAIT")
         stream_CCBRACE = RewriteRuleTokenStream(self._adaptor, "token CCBRACE")
         stream_trans = RewriteRuleSubtreeStream(self._adaptor, "rule trans")
         try:
             try:
-                # ProtoCC.g:292:13: ( AWAIT OCBRACE ( trans )* CCBRACE -> ^( AWAIT_ ( trans )* ) )
-                # ProtoCC.g:292:15: AWAIT OCBRACE ( trans )* CCBRACE
+                # ProtoCC.g:295:13: ( AWAIT OCBRACE ( trans )* CCBRACE -> ^( AWAIT_ ( trans )* ) )
+                # ProtoCC.g:295:15: AWAIT OCBRACE ( trans )* CCBRACE
                 pass 
-                AWAIT203 = self.match(self.input, AWAIT, self.FOLLOW_AWAIT_in_transaction2480) 
-                stream_AWAIT.add(AWAIT203)
+                AWAIT208 = self.match(self.input, AWAIT, self.FOLLOW_AWAIT_in_transaction2527) 
+                stream_AWAIT.add(AWAIT208)
 
 
-                OCBRACE204 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_transaction2482) 
-                stream_OCBRACE.add(OCBRACE204)
+                OCBRACE209 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_transaction2529) 
+                stream_OCBRACE.add(OCBRACE209)
 
 
-                # ProtoCC.g:292:29: ( trans )*
+                # ProtoCC.g:295:29: ( trans )*
                 while True: #loop33
                     alt33 = 2
                     LA33_0 = self.input.LA(1)
@@ -6627,13 +6823,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt33 == 1:
-                        # ProtoCC.g:292:29: trans
+                        # ProtoCC.g:295:29: trans
                         pass 
-                        self._state.following.append(self.FOLLOW_trans_in_transaction2484)
-                        trans205 = self.trans()
+                        self._state.following.append(self.FOLLOW_trans_in_transaction2531)
+                        trans210 = self.trans()
 
                         self._state.following.pop()
-                        stream_trans.add(trans205.tree)
+                        stream_trans.add(trans210.tree)
 
 
 
@@ -6641,8 +6837,8 @@ class ProtoCCParser(Parser):
                         break #loop33
 
 
-                CCBRACE206 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_transaction2487) 
-                stream_CCBRACE.add(CCBRACE206)
+                CCBRACE211 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_transaction2534) 
+                stream_CCBRACE.add(CCBRACE211)
 
 
                 # AST Rewrite
@@ -6660,14 +6856,14 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 292:44: -> ^( AWAIT_ ( trans )* )
-                # ProtoCC.g:292:47: ^( AWAIT_ ( trans )* )
+                # 295:44: -> ^( AWAIT_ ( trans )* )
+                # ProtoCC.g:295:47: ^( AWAIT_ ( trans )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(AWAIT_, "AWAIT_")
                 , root_1)
 
-                # ProtoCC.g:292:56: ( trans )*
+                # ProtoCC.g:295:56: ( trans )*
                 while stream_trans.hasNext():
                     self._adaptor.addChild(root_1, stream_trans.nextTree())
 
@@ -6716,7 +6912,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "trans"
-    # ProtoCC.g:293:5: trans : WHEN ID DDOT ( trans_body )* -> ^( WHEN_ ^( GUARD_ ID ) ( trans_body )* ENDWHEN_ ) ;
+    # ProtoCC.g:296:5: trans : WHEN ID DDOT ( trans_body )* -> ^( WHEN_ ^( GUARD_ ID ) ( trans_body )* ENDWHEN_ ) ;
     def trans(self, ):
         retval = self.trans_return()
         retval.start = self.input.LT(1)
@@ -6724,52 +6920,52 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        WHEN207 = None
-        ID208 = None
-        DDOT209 = None
-        trans_body210 = None
+        WHEN212 = None
+        ID213 = None
+        DDOT214 = None
+        trans_body215 = None
 
-        WHEN207_tree = None
-        ID208_tree = None
-        DDOT209_tree = None
+        WHEN212_tree = None
+        ID213_tree = None
+        DDOT214_tree = None
         stream_WHEN = RewriteRuleTokenStream(self._adaptor, "token WHEN")
         stream_DDOT = RewriteRuleTokenStream(self._adaptor, "token DDOT")
         stream_ID = RewriteRuleTokenStream(self._adaptor, "token ID")
         stream_trans_body = RewriteRuleSubtreeStream(self._adaptor, "rule trans_body")
         try:
             try:
-                # ProtoCC.g:293:11: ( WHEN ID DDOT ( trans_body )* -> ^( WHEN_ ^( GUARD_ ID ) ( trans_body )* ENDWHEN_ ) )
-                # ProtoCC.g:293:13: WHEN ID DDOT ( trans_body )*
+                # ProtoCC.g:296:11: ( WHEN ID DDOT ( trans_body )* -> ^( WHEN_ ^( GUARD_ ID ) ( trans_body )* ENDWHEN_ ) )
+                # ProtoCC.g:296:13: WHEN ID DDOT ( trans_body )*
                 pass 
-                WHEN207 = self.match(self.input, WHEN, self.FOLLOW_WHEN_in_trans2507) 
-                stream_WHEN.add(WHEN207)
+                WHEN212 = self.match(self.input, WHEN, self.FOLLOW_WHEN_in_trans2554) 
+                stream_WHEN.add(WHEN212)
 
 
-                ID208 = self.match(self.input, ID, self.FOLLOW_ID_in_trans2509) 
-                stream_ID.add(ID208)
+                ID213 = self.match(self.input, ID, self.FOLLOW_ID_in_trans2556) 
+                stream_ID.add(ID213)
 
 
-                DDOT209 = self.match(self.input, DDOT, self.FOLLOW_DDOT_in_trans2511) 
-                stream_DDOT.add(DDOT209)
+                DDOT214 = self.match(self.input, DDOT, self.FOLLOW_DDOT_in_trans2558) 
+                stream_DDOT.add(DDOT214)
 
 
-                # ProtoCC.g:293:26: ( trans_body )*
+                # ProtoCC.g:296:26: ( trans_body )*
                 while True: #loop34
                     alt34 = 2
                     LA34_0 = self.input.LA(1)
 
-                    if (LA34_0 in {ACCESS, AWAIT, BREAK, ID, IF, NEXT, STALL, STATE, UNDEF, 119}) :
+                    if (LA34_0 in {ACCESS, AWAIT, BREAK, ID, IF, NEXT, STALL, STATE, UNDEF, 121}) :
                         alt34 = 1
 
 
                     if alt34 == 1:
-                        # ProtoCC.g:293:26: trans_body
+                        # ProtoCC.g:296:26: trans_body
                         pass 
-                        self._state.following.append(self.FOLLOW_trans_body_in_trans2513)
-                        trans_body210 = self.trans_body()
+                        self._state.following.append(self.FOLLOW_trans_body_in_trans2560)
+                        trans_body215 = self.trans_body()
 
                         self._state.following.pop()
-                        stream_trans_body.add(trans_body210.tree)
+                        stream_trans_body.add(trans_body215.tree)
 
 
 
@@ -6778,7 +6974,7 @@ class ProtoCCParser(Parser):
 
 
                 # AST Rewrite
-                # elements: ID, trans_body
+                # elements: trans_body, ID
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -6792,14 +6988,14 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 293:38: -> ^( WHEN_ ^( GUARD_ ID ) ( trans_body )* ENDWHEN_ )
-                # ProtoCC.g:293:41: ^( WHEN_ ^( GUARD_ ID ) ( trans_body )* ENDWHEN_ )
+                # 296:38: -> ^( WHEN_ ^( GUARD_ ID ) ( trans_body )* ENDWHEN_ )
+                # ProtoCC.g:296:41: ^( WHEN_ ^( GUARD_ ID ) ( trans_body )* ENDWHEN_ )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(WHEN_, "WHEN_")
                 , root_1)
 
-                # ProtoCC.g:293:49: ^( GUARD_ ID )
+                # ProtoCC.g:296:49: ^( GUARD_ ID )
                 root_2 = self._adaptor.nil()
                 root_2 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(GUARD_, "GUARD_")
@@ -6811,7 +7007,7 @@ class ProtoCCParser(Parser):
 
                 self._adaptor.addChild(root_1, root_2)
 
-                # ProtoCC.g:293:62: ( trans_body )*
+                # ProtoCC.g:296:62: ( trans_body )*
                 while stream_trans_body.hasNext():
                     self._adaptor.addChild(root_1, stream_trans_body.nextTree())
 
@@ -6864,7 +7060,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "trans_body"
-    # ProtoCC.g:294:9: trans_body : ( expressions | next_trans | next_break | transaction | network_send | network_mcast | network_bcast );
+    # ProtoCC.g:297:9: trans_body : ( expressions | next_trans | next_break | transaction | network_send | network_mcast | network_bcast );
     def trans_body(self, ):
         retval = self.trans_body_return()
         retval.start = self.input.LT(1)
@@ -6872,18 +7068,18 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        expressions211 = None
-        next_trans212 = None
-        next_break213 = None
-        transaction214 = None
-        network_send215 = None
-        network_mcast216 = None
-        network_bcast217 = None
+        expressions216 = None
+        next_trans217 = None
+        next_break218 = None
+        transaction219 = None
+        network_send220 = None
+        network_mcast221 = None
+        network_bcast222 = None
 
 
         try:
             try:
-                # ProtoCC.g:294:20: ( expressions | next_trans | next_break | transaction | network_send | network_mcast | network_bcast )
+                # ProtoCC.g:297:20: ( expressions | next_trans | next_break | transaction | network_send | network_mcast | network_bcast )
                 alt35 = 7
                 LA35 = self.input.LA(1)
                 if LA35 in {ID}:
@@ -6891,13 +7087,13 @@ class ProtoCCParser(Parser):
 
                     if (LA35_1 == DOT) :
                         LA35 = self.input.LA(3)
-                        if LA35 in {ID, NID, 134, 136, 138, 139, 140, 144}:
+                        if LA35 in {ID, NID, 137, 139, 141, 142, 143, 147}:
                             alt35 = 1
-                        elif LA35 in {130, 143}:
+                        elif LA35 in {132, 146}:
                             alt35 = 5
-                        elif LA35 in {121, 141}:
+                        elif LA35 in {123, 144}:
                             alt35 = 6
-                        elif LA35 in {116, 135}:
+                        elif LA35 in {118, 138}:
                             alt35 = 7
                         else:
                             nvae = NoViableAltException("", 35, 11, self.input)
@@ -6905,7 +7101,7 @@ class ProtoCCParser(Parser):
                             raise nvae
 
 
-                    elif (LA35_1 in {EQUALSIGN, SEMICOLON}) :
+                    elif (LA35_1 in {EQUALSIGN, OBRACE, SEMICOLON}) :
                         alt35 = 1
                     else:
                         nvae = NoViableAltException("", 35, 1, self.input)
@@ -6913,7 +7109,7 @@ class ProtoCCParser(Parser):
                         raise nvae
 
 
-                elif LA35 in {ACCESS, IF, STALL, STATE, UNDEF, 119}:
+                elif LA35 in {ACCESS, IF, STALL, STATE, UNDEF, 121}:
                     alt35 = 1
                 elif LA35 in {NEXT}:
                     alt35 = 2
@@ -6928,100 +7124,100 @@ class ProtoCCParser(Parser):
 
 
                 if alt35 == 1:
-                    # ProtoCC.g:294:22: expressions
+                    # ProtoCC.g:297:22: expressions
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_expressions_in_trans_body2546)
-                    expressions211 = self.expressions()
+                    self._state.following.append(self.FOLLOW_expressions_in_trans_body2593)
+                    expressions216 = self.expressions()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, expressions211.tree)
+                    self._adaptor.addChild(root_0, expressions216.tree)
 
 
 
                 elif alt35 == 2:
-                    # ProtoCC.g:294:36: next_trans
+                    # ProtoCC.g:297:36: next_trans
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_next_trans_in_trans_body2550)
-                    next_trans212 = self.next_trans()
+                    self._state.following.append(self.FOLLOW_next_trans_in_trans_body2597)
+                    next_trans217 = self.next_trans()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, next_trans212.tree)
+                    self._adaptor.addChild(root_0, next_trans217.tree)
 
 
 
                 elif alt35 == 3:
-                    # ProtoCC.g:294:49: next_break
+                    # ProtoCC.g:297:49: next_break
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_next_break_in_trans_body2554)
-                    next_break213 = self.next_break()
+                    self._state.following.append(self.FOLLOW_next_break_in_trans_body2601)
+                    next_break218 = self.next_break()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, next_break213.tree)
+                    self._adaptor.addChild(root_0, next_break218.tree)
 
 
 
                 elif alt35 == 4:
-                    # ProtoCC.g:294:62: transaction
+                    # ProtoCC.g:297:62: transaction
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_transaction_in_trans_body2558)
-                    transaction214 = self.transaction()
+                    self._state.following.append(self.FOLLOW_transaction_in_trans_body2605)
+                    transaction219 = self.transaction()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, transaction214.tree)
+                    self._adaptor.addChild(root_0, transaction219.tree)
 
 
 
                 elif alt35 == 5:
-                    # ProtoCC.g:294:76: network_send
+                    # ProtoCC.g:297:76: network_send
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_network_send_in_trans_body2562)
-                    network_send215 = self.network_send()
+                    self._state.following.append(self.FOLLOW_network_send_in_trans_body2609)
+                    network_send220 = self.network_send()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, network_send215.tree)
+                    self._adaptor.addChild(root_0, network_send220.tree)
 
 
 
                 elif alt35 == 6:
-                    # ProtoCC.g:294:91: network_mcast
+                    # ProtoCC.g:297:91: network_mcast
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_network_mcast_in_trans_body2566)
-                    network_mcast216 = self.network_mcast()
+                    self._state.following.append(self.FOLLOW_network_mcast_in_trans_body2613)
+                    network_mcast221 = self.network_mcast()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, network_mcast216.tree)
+                    self._adaptor.addChild(root_0, network_mcast221.tree)
 
 
 
                 elif alt35 == 7:
-                    # ProtoCC.g:294:107: network_bcast
+                    # ProtoCC.g:297:107: network_bcast
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_network_bcast_in_trans_body2570)
-                    network_bcast217 = self.network_bcast()
+                    self._state.following.append(self.FOLLOW_network_bcast_in_trans_body2617)
+                    network_bcast222 = self.network_bcast()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, network_bcast217.tree)
+                    self._adaptor.addChild(root_0, network_bcast222.tree)
 
 
 
@@ -7056,7 +7252,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "next_trans"
-    # ProtoCC.g:295:13: next_trans : NEXT OCBRACE ( trans )* CCBRACE -> ^( NEXT_ ( trans )* ) ;
+    # ProtoCC.g:298:13: next_trans : NEXT OCBRACE ( trans )* CCBRACE -> ^( NEXT_ ( trans )* ) ;
     def next_trans(self, ):
         retval = self.next_trans_return()
         retval.start = self.input.LT(1)
@@ -7064,32 +7260,32 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        NEXT218 = None
-        OCBRACE219 = None
-        CCBRACE221 = None
-        trans220 = None
+        NEXT223 = None
+        OCBRACE224 = None
+        CCBRACE226 = None
+        trans225 = None
 
-        NEXT218_tree = None
-        OCBRACE219_tree = None
-        CCBRACE221_tree = None
+        NEXT223_tree = None
+        OCBRACE224_tree = None
+        CCBRACE226_tree = None
         stream_OCBRACE = RewriteRuleTokenStream(self._adaptor, "token OCBRACE")
         stream_NEXT = RewriteRuleTokenStream(self._adaptor, "token NEXT")
         stream_CCBRACE = RewriteRuleTokenStream(self._adaptor, "token CCBRACE")
         stream_trans = RewriteRuleSubtreeStream(self._adaptor, "rule trans")
         try:
             try:
-                # ProtoCC.g:295:23: ( NEXT OCBRACE ( trans )* CCBRACE -> ^( NEXT_ ( trans )* ) )
-                # ProtoCC.g:295:25: NEXT OCBRACE ( trans )* CCBRACE
+                # ProtoCC.g:298:23: ( NEXT OCBRACE ( trans )* CCBRACE -> ^( NEXT_ ( trans )* ) )
+                # ProtoCC.g:298:25: NEXT OCBRACE ( trans )* CCBRACE
                 pass 
-                NEXT218 = self.match(self.input, NEXT, self.FOLLOW_NEXT_in_next_trans2588) 
-                stream_NEXT.add(NEXT218)
+                NEXT223 = self.match(self.input, NEXT, self.FOLLOW_NEXT_in_next_trans2635) 
+                stream_NEXT.add(NEXT223)
 
 
-                OCBRACE219 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_next_trans2590) 
-                stream_OCBRACE.add(OCBRACE219)
+                OCBRACE224 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_next_trans2637) 
+                stream_OCBRACE.add(OCBRACE224)
 
 
-                # ProtoCC.g:295:38: ( trans )*
+                # ProtoCC.g:298:38: ( trans )*
                 while True: #loop36
                     alt36 = 2
                     LA36_0 = self.input.LA(1)
@@ -7099,13 +7295,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt36 == 1:
-                        # ProtoCC.g:295:38: trans
+                        # ProtoCC.g:298:38: trans
                         pass 
-                        self._state.following.append(self.FOLLOW_trans_in_next_trans2592)
-                        trans220 = self.trans()
+                        self._state.following.append(self.FOLLOW_trans_in_next_trans2639)
+                        trans225 = self.trans()
 
                         self._state.following.pop()
-                        stream_trans.add(trans220.tree)
+                        stream_trans.add(trans225.tree)
 
 
 
@@ -7113,8 +7309,8 @@ class ProtoCCParser(Parser):
                         break #loop36
 
 
-                CCBRACE221 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_next_trans2595) 
-                stream_CCBRACE.add(CCBRACE221)
+                CCBRACE226 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_next_trans2642) 
+                stream_CCBRACE.add(CCBRACE226)
 
 
                 # AST Rewrite
@@ -7132,14 +7328,14 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 295:53: -> ^( NEXT_ ( trans )* )
-                # ProtoCC.g:295:56: ^( NEXT_ ( trans )* )
+                # 298:53: -> ^( NEXT_ ( trans )* )
+                # ProtoCC.g:298:56: ^( NEXT_ ( trans )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(NEXT_, "NEXT_")
                 , root_1)
 
-                # ProtoCC.g:295:64: ( trans )*
+                # ProtoCC.g:298:64: ( trans )*
                 while stream_trans.hasNext():
                     self._adaptor.addChild(root_1, stream_trans.nextTree())
 
@@ -7188,7 +7384,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "next_break"
-    # ProtoCC.g:297:5: next_break : BREAK SEMICOLON -> ^( BREAK_ ) ;
+    # ProtoCC.g:300:5: next_break : BREAK SEMICOLON -> ^( BREAK_ ) ;
     def next_break(self, ):
         retval = self.next_break_return()
         retval.start = self.input.LT(1)
@@ -7196,25 +7392,25 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        BREAK222 = None
-        SEMICOLON223 = None
+        BREAK227 = None
+        SEMICOLON228 = None
 
-        BREAK222_tree = None
-        SEMICOLON223_tree = None
+        BREAK227_tree = None
+        SEMICOLON228_tree = None
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
         stream_BREAK = RewriteRuleTokenStream(self._adaptor, "token BREAK")
 
         try:
             try:
-                # ProtoCC.g:297:16: ( BREAK SEMICOLON -> ^( BREAK_ ) )
-                # ProtoCC.g:297:18: BREAK SEMICOLON
+                # ProtoCC.g:300:16: ( BREAK SEMICOLON -> ^( BREAK_ ) )
+                # ProtoCC.g:300:18: BREAK SEMICOLON
                 pass 
-                BREAK222 = self.match(self.input, BREAK, self.FOLLOW_BREAK_in_next_break2616) 
-                stream_BREAK.add(BREAK222)
+                BREAK227 = self.match(self.input, BREAK, self.FOLLOW_BREAK_in_next_break2663) 
+                stream_BREAK.add(BREAK227)
 
 
-                SEMICOLON223 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_next_break2618) 
-                stream_SEMICOLON.add(SEMICOLON223)
+                SEMICOLON228 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_next_break2665) 
+                stream_SEMICOLON.add(SEMICOLON228)
 
 
                 # AST Rewrite
@@ -7232,8 +7428,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 297:34: -> ^( BREAK_ )
-                # ProtoCC.g:297:37: ^( BREAK_ )
+                # 300:34: -> ^( BREAK_ )
+                # ProtoCC.g:300:37: ^( BREAK_ )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(BREAK_, "BREAK_")
@@ -7281,7 +7477,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "expressions"
-    # ProtoCC.g:300:1: expressions : ( assignment | conditional | object_block | set_block | internal_event_block | msg_stall | set_access | undefine );
+    # ProtoCC.g:303:1: expressions : ( assignment | conditional | object_block | function_call_block | set_block | internal_event_block | msg_stall | set_access | undefine );
     def expressions(self, ):
         retval = self.expressions_return()
         retval.start = self.input.LT(1)
@@ -7289,20 +7485,21 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        assignment224 = None
-        conditional225 = None
-        object_block226 = None
-        set_block227 = None
-        internal_event_block228 = None
-        msg_stall229 = None
-        set_access230 = None
-        undefine231 = None
+        assignment229 = None
+        conditional230 = None
+        object_block231 = None
+        function_call_block232 = None
+        set_block233 = None
+        internal_event_block234 = None
+        msg_stall235 = None
+        set_access236 = None
+        undefine237 = None
 
 
         try:
             try:
-                # ProtoCC.g:300:13: ( assignment | conditional | object_block | set_block | internal_event_block | msg_stall | set_access | undefine )
-                alt37 = 8
+                # ProtoCC.g:303:13: ( assignment | conditional | object_block | function_call_block | set_block | internal_event_block | msg_stall | set_access | undefine )
+                alt37 = 9
                 LA37 = self.input.LA(1)
                 if LA37 in {ID}:
                     LA37 = self.input.LA(2)
@@ -7311,14 +7508,16 @@ class ProtoCCParser(Parser):
 
                         if (LA37_8 in {ID, NID}) :
                             alt37 = 3
-                        elif (LA37_8 in {134, 136, 138, 139, 140, 144}) :
-                            alt37 = 4
+                        elif (LA37_8 in {137, 139, 141, 142, 143, 147}) :
+                            alt37 = 5
                         else:
                             nvae = NoViableAltException("", 37, 8, self.input)
 
                             raise nvae
 
 
+                    elif LA37 in {OBRACE}:
+                        alt37 = 4
                     elif LA37 in {EQUALSIGN}:
                         alt37 = 1
                     elif LA37 in {SEMICOLON}:
@@ -7333,14 +7532,14 @@ class ProtoCCParser(Parser):
                     alt37 = 2
                 elif LA37 in {STATE}:
                     alt37 = 1
-                elif LA37 in {119}:
-                    alt37 = 5
-                elif LA37 in {STALL}:
+                elif LA37 in {121}:
                     alt37 = 6
-                elif LA37 in {ACCESS}:
+                elif LA37 in {STALL}:
                     alt37 = 7
-                elif LA37 in {UNDEF}:
+                elif LA37 in {ACCESS}:
                     alt37 = 8
+                elif LA37 in {UNDEF}:
+                    alt37 = 9
                 else:
                     nvae = NoViableAltException("", 37, 0, self.input)
 
@@ -7348,114 +7547,128 @@ class ProtoCCParser(Parser):
 
 
                 if alt37 == 1:
-                    # ProtoCC.g:300:15: assignment
+                    # ProtoCC.g:303:15: assignment
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_assignment_in_expressions2634)
-                    assignment224 = self.assignment()
+                    self._state.following.append(self.FOLLOW_assignment_in_expressions2681)
+                    assignment229 = self.assignment()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, assignment224.tree)
+                    self._adaptor.addChild(root_0, assignment229.tree)
 
 
 
                 elif alt37 == 2:
-                    # ProtoCC.g:300:28: conditional
+                    # ProtoCC.g:303:28: conditional
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_conditional_in_expressions2638)
-                    conditional225 = self.conditional()
+                    self._state.following.append(self.FOLLOW_conditional_in_expressions2685)
+                    conditional230 = self.conditional()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, conditional225.tree)
+                    self._adaptor.addChild(root_0, conditional230.tree)
 
 
 
                 elif alt37 == 3:
-                    # ProtoCC.g:300:42: object_block
+                    # ProtoCC.g:303:42: object_block
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_object_block_in_expressions2642)
-                    object_block226 = self.object_block()
+                    self._state.following.append(self.FOLLOW_object_block_in_expressions2689)
+                    object_block231 = self.object_block()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, object_block226.tree)
+                    self._adaptor.addChild(root_0, object_block231.tree)
 
 
 
                 elif alt37 == 4:
-                    # ProtoCC.g:300:57: set_block
+                    # ProtoCC.g:303:57: function_call_block
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_set_block_in_expressions2646)
-                    set_block227 = self.set_block()
+                    self._state.following.append(self.FOLLOW_function_call_block_in_expressions2693)
+                    function_call_block232 = self.function_call_block()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, set_block227.tree)
+                    self._adaptor.addChild(root_0, function_call_block232.tree)
 
 
 
                 elif alt37 == 5:
-                    # ProtoCC.g:300:69: internal_event_block
+                    # ProtoCC.g:303:79: set_block
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_internal_event_block_in_expressions2650)
-                    internal_event_block228 = self.internal_event_block()
+                    self._state.following.append(self.FOLLOW_set_block_in_expressions2697)
+                    set_block233 = self.set_block()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, internal_event_block228.tree)
+                    self._adaptor.addChild(root_0, set_block233.tree)
 
 
 
                 elif alt37 == 6:
-                    # ProtoCC.g:300:92: msg_stall
+                    # ProtoCC.g:303:91: internal_event_block
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_msg_stall_in_expressions2654)
-                    msg_stall229 = self.msg_stall()
+                    self._state.following.append(self.FOLLOW_internal_event_block_in_expressions2701)
+                    internal_event_block234 = self.internal_event_block()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, msg_stall229.tree)
+                    self._adaptor.addChild(root_0, internal_event_block234.tree)
 
 
 
                 elif alt37 == 7:
-                    # ProtoCC.g:300:104: set_access
+                    # ProtoCC.g:303:114: msg_stall
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_set_access_in_expressions2658)
-                    set_access230 = self.set_access()
+                    self._state.following.append(self.FOLLOW_msg_stall_in_expressions2705)
+                    msg_stall235 = self.msg_stall()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, set_access230.tree)
+                    self._adaptor.addChild(root_0, msg_stall235.tree)
 
 
 
                 elif alt37 == 8:
-                    # ProtoCC.g:300:117: undefine
+                    # ProtoCC.g:303:126: set_access
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_undefine_in_expressions2662)
-                    undefine231 = self.undefine()
+                    self._state.following.append(self.FOLLOW_set_access_in_expressions2709)
+                    set_access236 = self.set_access()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, undefine231.tree)
+                    self._adaptor.addChild(root_0, set_access236.tree)
+
+
+
+                elif alt37 == 9:
+                    # ProtoCC.g:303:139: undefine
+                    pass 
+                    root_0 = self._adaptor.nil()
+
+
+                    self._state.following.append(self.FOLLOW_undefine_in_expressions2713)
+                    undefine237 = self.undefine()
+
+                    self._state.following.pop()
+                    self._adaptor.addChild(root_0, undefine237.tree)
 
 
 
@@ -7490,7 +7703,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "assignment"
-    # ProtoCC.g:301:1: assignment : process_finalident EQUALSIGN assign_types SEMICOLON -> ^( ASSIGN_ process_finalident EQUALSIGN assign_types ) ;
+    # ProtoCC.g:304:1: assignment : process_finalident EQUALSIGN assign_types SEMICOLON -> ^( ASSIGN_ process_finalident EQUALSIGN assign_types ) ;
     def assignment(self, ):
         retval = self.assignment_return()
         retval.start = self.input.LT(1)
@@ -7498,46 +7711,46 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        EQUALSIGN233 = None
-        SEMICOLON235 = None
-        process_finalident232 = None
-        assign_types234 = None
+        EQUALSIGN239 = None
+        SEMICOLON241 = None
+        process_finalident238 = None
+        assign_types240 = None
 
-        EQUALSIGN233_tree = None
-        SEMICOLON235_tree = None
+        EQUALSIGN239_tree = None
+        SEMICOLON241_tree = None
         stream_EQUALSIGN = RewriteRuleTokenStream(self._adaptor, "token EQUALSIGN")
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
         stream_assign_types = RewriteRuleSubtreeStream(self._adaptor, "rule assign_types")
         stream_process_finalident = RewriteRuleSubtreeStream(self._adaptor, "rule process_finalident")
         try:
             try:
-                # ProtoCC.g:301:12: ( process_finalident EQUALSIGN assign_types SEMICOLON -> ^( ASSIGN_ process_finalident EQUALSIGN assign_types ) )
-                # ProtoCC.g:301:14: process_finalident EQUALSIGN assign_types SEMICOLON
+                # ProtoCC.g:304:12: ( process_finalident EQUALSIGN assign_types SEMICOLON -> ^( ASSIGN_ process_finalident EQUALSIGN assign_types ) )
+                # ProtoCC.g:304:14: process_finalident EQUALSIGN assign_types SEMICOLON
                 pass 
-                self._state.following.append(self.FOLLOW_process_finalident_in_assignment2669)
-                process_finalident232 = self.process_finalident()
+                self._state.following.append(self.FOLLOW_process_finalident_in_assignment2720)
+                process_finalident238 = self.process_finalident()
 
                 self._state.following.pop()
-                stream_process_finalident.add(process_finalident232.tree)
+                stream_process_finalident.add(process_finalident238.tree)
 
 
-                EQUALSIGN233 = self.match(self.input, EQUALSIGN, self.FOLLOW_EQUALSIGN_in_assignment2671) 
-                stream_EQUALSIGN.add(EQUALSIGN233)
+                EQUALSIGN239 = self.match(self.input, EQUALSIGN, self.FOLLOW_EQUALSIGN_in_assignment2722) 
+                stream_EQUALSIGN.add(EQUALSIGN239)
 
 
-                self._state.following.append(self.FOLLOW_assign_types_in_assignment2673)
-                assign_types234 = self.assign_types()
+                self._state.following.append(self.FOLLOW_assign_types_in_assignment2724)
+                assign_types240 = self.assign_types()
 
                 self._state.following.pop()
-                stream_assign_types.add(assign_types234.tree)
+                stream_assign_types.add(assign_types240.tree)
 
 
-                SEMICOLON235 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_assignment2675) 
-                stream_SEMICOLON.add(SEMICOLON235)
+                SEMICOLON241 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_assignment2726) 
+                stream_SEMICOLON.add(SEMICOLON241)
 
 
                 # AST Rewrite
-                # elements: process_finalident, assign_types, EQUALSIGN
+                # elements: assign_types, process_finalident, EQUALSIGN
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -7551,8 +7764,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 301:65: -> ^( ASSIGN_ process_finalident EQUALSIGN assign_types )
-                # ProtoCC.g:301:68: ^( ASSIGN_ process_finalident EQUALSIGN assign_types )
+                # 304:65: -> ^( ASSIGN_ process_finalident EQUALSIGN assign_types )
+                # ProtoCC.g:304:68: ^( ASSIGN_ process_finalident EQUALSIGN assign_types )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(ASSIGN_, "ASSIGN_")
@@ -7608,7 +7821,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "assign_types"
-    # ProtoCC.g:302:5: assign_types : ( object_expr | message_constr | math_op | set_func | INT | BOOL | NID );
+    # ProtoCC.g:305:5: assign_types : ( object_expr | message_constr | math_op | set_func | INT | BOOL | NID );
     def assign_types(self, ):
         retval = self.assign_types_return()
         retval.start = self.input.LT(1)
@@ -7616,21 +7829,21 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        INT240 = None
-        BOOL241 = None
-        NID242 = None
-        object_expr236 = None
-        message_constr237 = None
-        math_op238 = None
-        set_func239 = None
+        INT246 = None
+        BOOL247 = None
+        NID248 = None
+        object_expr242 = None
+        message_constr243 = None
+        math_op244 = None
+        set_func245 = None
 
-        INT240_tree = None
-        BOOL241_tree = None
-        NID242_tree = None
+        INT246_tree = None
+        BOOL247_tree = None
+        NID248_tree = None
 
         try:
             try:
-                # ProtoCC.g:302:18: ( object_expr | message_constr | math_op | set_func | INT | BOOL | NID )
+                # ProtoCC.g:305:18: ( object_expr | message_constr | math_op | set_func | INT | BOOL | NID )
                 alt38 = 7
                 LA38 = self.input.LA(1)
                 if LA38 in {ID}:
@@ -7640,7 +7853,7 @@ class ProtoCCParser(Parser):
 
                         if (LA38_5 in {ID, NID}) :
                             alt38 = 1
-                        elif (LA38_5 in {134, 136, 138, 139, 140, 144}) :
+                        elif (LA38_5 in {137, 139, 141, 142, 143, 147}) :
                             alt38 = 4
                         else:
                             nvae = NoViableAltException("", 38, 5, self.input)
@@ -7684,96 +7897,96 @@ class ProtoCCParser(Parser):
 
 
                 if alt38 == 1:
-                    # ProtoCC.g:302:20: object_expr
+                    # ProtoCC.g:305:20: object_expr
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_object_expr_in_assign_types2697)
-                    object_expr236 = self.object_expr()
+                    self._state.following.append(self.FOLLOW_object_expr_in_assign_types2748)
+                    object_expr242 = self.object_expr()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, object_expr236.tree)
+                    self._adaptor.addChild(root_0, object_expr242.tree)
 
 
 
                 elif alt38 == 2:
-                    # ProtoCC.g:302:34: message_constr
+                    # ProtoCC.g:305:34: message_constr
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_message_constr_in_assign_types2701)
-                    message_constr237 = self.message_constr()
+                    self._state.following.append(self.FOLLOW_message_constr_in_assign_types2752)
+                    message_constr243 = self.message_constr()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, message_constr237.tree)
+                    self._adaptor.addChild(root_0, message_constr243.tree)
 
 
 
                 elif alt38 == 3:
-                    # ProtoCC.g:302:51: math_op
+                    # ProtoCC.g:305:51: math_op
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_math_op_in_assign_types2705)
-                    math_op238 = self.math_op()
+                    self._state.following.append(self.FOLLOW_math_op_in_assign_types2756)
+                    math_op244 = self.math_op()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, math_op238.tree)
+                    self._adaptor.addChild(root_0, math_op244.tree)
 
 
 
                 elif alt38 == 4:
-                    # ProtoCC.g:302:61: set_func
+                    # ProtoCC.g:305:61: set_func
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_set_func_in_assign_types2709)
-                    set_func239 = self.set_func()
+                    self._state.following.append(self.FOLLOW_set_func_in_assign_types2760)
+                    set_func245 = self.set_func()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, set_func239.tree)
+                    self._adaptor.addChild(root_0, set_func245.tree)
 
 
 
                 elif alt38 == 5:
-                    # ProtoCC.g:302:72: INT
+                    # ProtoCC.g:305:72: INT
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    INT240 = self.match(self.input, INT, self.FOLLOW_INT_in_assign_types2713)
-                    INT240_tree = self._adaptor.createWithPayload(INT240)
-                    self._adaptor.addChild(root_0, INT240_tree)
+                    INT246 = self.match(self.input, INT, self.FOLLOW_INT_in_assign_types2764)
+                    INT246_tree = self._adaptor.createWithPayload(INT246)
+                    self._adaptor.addChild(root_0, INT246_tree)
 
 
 
 
                 elif alt38 == 6:
-                    # ProtoCC.g:302:78: BOOL
+                    # ProtoCC.g:305:78: BOOL
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    BOOL241 = self.match(self.input, BOOL, self.FOLLOW_BOOL_in_assign_types2717)
-                    BOOL241_tree = self._adaptor.createWithPayload(BOOL241)
-                    self._adaptor.addChild(root_0, BOOL241_tree)
+                    BOOL247 = self.match(self.input, BOOL, self.FOLLOW_BOOL_in_assign_types2768)
+                    BOOL247_tree = self._adaptor.createWithPayload(BOOL247)
+                    self._adaptor.addChild(root_0, BOOL247_tree)
 
 
 
 
                 elif alt38 == 7:
-                    # ProtoCC.g:302:85: NID
+                    # ProtoCC.g:305:85: NID
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    NID242 = self.match(self.input, NID, self.FOLLOW_NID_in_assign_types2721)
-                    NID242_tree = self._adaptor.createWithPayload(NID242)
-                    self._adaptor.addChild(root_0, NID242_tree)
+                    NID248 = self.match(self.input, NID, self.FOLLOW_NID_in_assign_types2772)
+                    NID248_tree = self._adaptor.createWithPayload(NID248)
+                    self._adaptor.addChild(root_0, NID248_tree)
 
 
 
@@ -7809,7 +8022,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "math_op"
-    # ProtoCC.g:303:5: math_op : val_range ( PLUS | MINUS ) val_range ;
+    # ProtoCC.g:306:5: math_op : val_range ( PLUS | MINUS ) val_range ;
     def math_op(self, ):
         retval = self.math_op_return()
         retval.start = self.input.LT(1)
@@ -7817,32 +8030,32 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        set244 = None
-        val_range243 = None
-        val_range245 = None
+        set250 = None
+        val_range249 = None
+        val_range251 = None
 
-        set244_tree = None
+        set250_tree = None
 
         try:
             try:
-                # ProtoCC.g:303:13: ( val_range ( PLUS | MINUS ) val_range )
-                # ProtoCC.g:303:15: val_range ( PLUS | MINUS ) val_range
+                # ProtoCC.g:306:13: ( val_range ( PLUS | MINUS ) val_range )
+                # ProtoCC.g:306:15: val_range ( PLUS | MINUS ) val_range
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                self._state.following.append(self.FOLLOW_val_range_in_math_op2732)
-                val_range243 = self.val_range()
+                self._state.following.append(self.FOLLOW_val_range_in_math_op2783)
+                val_range249 = self.val_range()
 
                 self._state.following.pop()
-                self._adaptor.addChild(root_0, val_range243.tree)
+                self._adaptor.addChild(root_0, val_range249.tree)
 
 
-                set244 = self.input.LT(1)
+                set250 = self.input.LT(1)
 
                 if self.input.LA(1) in {MINUS, PLUS}:
                     self.input.consume()
-                    self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set244))
+                    self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set250))
 
                     self._state.errorRecovery = False
 
@@ -7853,11 +8066,11 @@ class ProtoCCParser(Parser):
 
 
 
-                self._state.following.append(self.FOLLOW_val_range_in_math_op2742)
-                val_range245 = self.val_range()
+                self._state.following.append(self.FOLLOW_val_range_in_math_op2793)
+                val_range251 = self.val_range()
 
                 self._state.following.pop()
-                self._adaptor.addChild(root_0, val_range245.tree)
+                self._adaptor.addChild(root_0, val_range251.tree)
 
 
 
@@ -7893,7 +8106,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "msg_stall"
-    # ProtoCC.g:304:1: msg_stall : STALL SEMICOLON -> ^( STALL_ ) ;
+    # ProtoCC.g:307:1: msg_stall : STALL SEMICOLON -> ^( STALL_ ) ;
     def msg_stall(self, ):
         retval = self.msg_stall_return()
         retval.start = self.input.LT(1)
@@ -7901,25 +8114,25 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        STALL246 = None
-        SEMICOLON247 = None
+        STALL252 = None
+        SEMICOLON253 = None
 
-        STALL246_tree = None
-        SEMICOLON247_tree = None
+        STALL252_tree = None
+        SEMICOLON253_tree = None
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
         stream_STALL = RewriteRuleTokenStream(self._adaptor, "token STALL")
 
         try:
             try:
-                # ProtoCC.g:304:10: ( STALL SEMICOLON -> ^( STALL_ ) )
-                # ProtoCC.g:304:12: STALL SEMICOLON
+                # ProtoCC.g:307:10: ( STALL SEMICOLON -> ^( STALL_ ) )
+                # ProtoCC.g:307:12: STALL SEMICOLON
                 pass 
-                STALL246 = self.match(self.input, STALL, self.FOLLOW_STALL_in_msg_stall2748) 
-                stream_STALL.add(STALL246)
+                STALL252 = self.match(self.input, STALL, self.FOLLOW_STALL_in_msg_stall2799) 
+                stream_STALL.add(STALL252)
 
 
-                SEMICOLON247 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_msg_stall2750) 
-                stream_SEMICOLON.add(SEMICOLON247)
+                SEMICOLON253 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_msg_stall2801) 
+                stream_SEMICOLON.add(SEMICOLON253)
 
 
                 # AST Rewrite
@@ -7937,8 +8150,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 304:28: -> ^( STALL_ )
-                # ProtoCC.g:304:31: ^( STALL_ )
+                # 307:28: -> ^( STALL_ )
+                # ProtoCC.g:307:31: ^( STALL_ )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(STALL_, "STALL_")
@@ -7986,7 +8199,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "set_access"
-    # ProtoCC.g:305:1: set_access : ACCESS SEMICOLON -> ^( ACCESS_ ACCESS ) ;
+    # ProtoCC.g:308:1: set_access : ACCESS SEMICOLON -> ^( ACCESS_ ACCESS ) ;
     def set_access(self, ):
         retval = self.set_access_return()
         retval.start = self.input.LT(1)
@@ -7994,25 +8207,25 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        ACCESS248 = None
-        SEMICOLON249 = None
+        ACCESS254 = None
+        SEMICOLON255 = None
 
-        ACCESS248_tree = None
-        SEMICOLON249_tree = None
+        ACCESS254_tree = None
+        SEMICOLON255_tree = None
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
         stream_ACCESS = RewriteRuleTokenStream(self._adaptor, "token ACCESS")
 
         try:
             try:
-                # ProtoCC.g:305:11: ( ACCESS SEMICOLON -> ^( ACCESS_ ACCESS ) )
-                # ProtoCC.g:305:13: ACCESS SEMICOLON
+                # ProtoCC.g:308:11: ( ACCESS SEMICOLON -> ^( ACCESS_ ACCESS ) )
+                # ProtoCC.g:308:13: ACCESS SEMICOLON
                 pass 
-                ACCESS248 = self.match(self.input, ACCESS, self.FOLLOW_ACCESS_in_set_access2762) 
-                stream_ACCESS.add(ACCESS248)
+                ACCESS254 = self.match(self.input, ACCESS, self.FOLLOW_ACCESS_in_set_access2813) 
+                stream_ACCESS.add(ACCESS254)
 
 
-                SEMICOLON249 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_set_access2764) 
-                stream_SEMICOLON.add(SEMICOLON249)
+                SEMICOLON255 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_set_access2815) 
+                stream_SEMICOLON.add(SEMICOLON255)
 
 
                 # AST Rewrite
@@ -8030,8 +8243,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 305:30: -> ^( ACCESS_ ACCESS )
-                # ProtoCC.g:305:33: ^( ACCESS_ ACCESS )
+                # 308:30: -> ^( ACCESS_ ACCESS )
+                # ProtoCC.g:308:33: ^( ACCESS_ ACCESS )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(ACCESS_, "ACCESS_")
@@ -8083,7 +8296,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "undefine"
-    # ProtoCC.g:306:1: undefine : UNDEF ID SEMICOLON -> ^( UNDEF_ ID ) ;
+    # ProtoCC.g:309:1: undefine : UNDEF ID SEMICOLON -> ^( UNDEF_ ID ) ;
     def undefine(self, ):
         retval = self.undefine_return()
         retval.start = self.input.LT(1)
@@ -8091,32 +8304,32 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        UNDEF250 = None
-        ID251 = None
-        SEMICOLON252 = None
+        UNDEF256 = None
+        ID257 = None
+        SEMICOLON258 = None
 
-        UNDEF250_tree = None
-        ID251_tree = None
-        SEMICOLON252_tree = None
+        UNDEF256_tree = None
+        ID257_tree = None
+        SEMICOLON258_tree = None
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
         stream_ID = RewriteRuleTokenStream(self._adaptor, "token ID")
         stream_UNDEF = RewriteRuleTokenStream(self._adaptor, "token UNDEF")
 
         try:
             try:
-                # ProtoCC.g:306:9: ( UNDEF ID SEMICOLON -> ^( UNDEF_ ID ) )
-                # ProtoCC.g:306:11: UNDEF ID SEMICOLON
+                # ProtoCC.g:309:9: ( UNDEF ID SEMICOLON -> ^( UNDEF_ ID ) )
+                # ProtoCC.g:309:11: UNDEF ID SEMICOLON
                 pass 
-                UNDEF250 = self.match(self.input, UNDEF, self.FOLLOW_UNDEF_in_undefine2778) 
-                stream_UNDEF.add(UNDEF250)
+                UNDEF256 = self.match(self.input, UNDEF, self.FOLLOW_UNDEF_in_undefine2829) 
+                stream_UNDEF.add(UNDEF256)
 
 
-                ID251 = self.match(self.input, ID, self.FOLLOW_ID_in_undefine2780) 
-                stream_ID.add(ID251)
+                ID257 = self.match(self.input, ID, self.FOLLOW_ID_in_undefine2831) 
+                stream_ID.add(ID257)
 
 
-                SEMICOLON252 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_undefine2782) 
-                stream_SEMICOLON.add(SEMICOLON252)
+                SEMICOLON258 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_undefine2833) 
+                stream_SEMICOLON.add(SEMICOLON258)
 
 
                 # AST Rewrite
@@ -8134,8 +8347,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 306:30: -> ^( UNDEF_ ID )
-                # ProtoCC.g:306:33: ^( UNDEF_ ID )
+                # 309:30: -> ^( UNDEF_ ID )
+                # ProtoCC.g:309:33: ^( UNDEF_ ID )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(UNDEF_, "UNDEF_")
@@ -8187,7 +8400,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "conditional"
-    # ProtoCC.g:309:1: conditional : ( if_stmt | ifnot_stmt );
+    # ProtoCC.g:312:1: conditional : ( if_stmt | ifnot_stmt );
     def conditional(self, ):
         retval = self.conditional_return()
         retval.start = self.input.LT(1)
@@ -8195,13 +8408,13 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        if_stmt253 = None
-        ifnot_stmt254 = None
+        if_stmt259 = None
+        ifnot_stmt260 = None
 
 
         try:
             try:
-                # ProtoCC.g:309:12: ( if_stmt | ifnot_stmt )
+                # ProtoCC.g:312:12: ( if_stmt | ifnot_stmt )
                 alt39 = 2
                 LA39_0 = self.input.LA(1)
 
@@ -8225,30 +8438,30 @@ class ProtoCCParser(Parser):
 
 
                 if alt39 == 1:
-                    # ProtoCC.g:309:14: if_stmt
+                    # ProtoCC.g:312:14: if_stmt
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_if_stmt_in_conditional2799)
-                    if_stmt253 = self.if_stmt()
+                    self._state.following.append(self.FOLLOW_if_stmt_in_conditional2850)
+                    if_stmt259 = self.if_stmt()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, if_stmt253.tree)
+                    self._adaptor.addChild(root_0, if_stmt259.tree)
 
 
 
                 elif alt39 == 2:
-                    # ProtoCC.g:309:24: ifnot_stmt
+                    # ProtoCC.g:312:24: ifnot_stmt
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_ifnot_stmt_in_conditional2803)
-                    ifnot_stmt254 = self.ifnot_stmt()
+                    self._state.following.append(self.FOLLOW_ifnot_stmt_in_conditional2854)
+                    ifnot_stmt260 = self.ifnot_stmt()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, ifnot_stmt254.tree)
+                    self._adaptor.addChild(root_0, ifnot_stmt260.tree)
 
 
 
@@ -8283,7 +8496,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "if_stmt"
-    # ProtoCC.g:310:5: if_stmt : IF cond_comb OCBRACE if_expression CCBRACE ( ELSE OCBRACE else_expression CCBRACE )* -> {t_else}? ^( IFELSE_ ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( NCOND_ cond_comb ) ( else_expression )* ENDIF_ ) ) -> ^( IFELSE_ ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( NCOND_ cond_comb ) ENDIF_ ) ) ;
+    # ProtoCC.g:313:5: if_stmt : IF cond_comb OCBRACE if_expression CCBRACE ( ELSE OCBRACE else_expression CCBRACE )* -> {t_else}? ^( IFELSE_ ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( NCOND_ cond_comb ) ( else_expression )* ENDIF_ ) ) -> ^( IFELSE_ ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( NCOND_ cond_comb ) ENDIF_ ) ) ;
     def if_stmt(self, ):
         retval = self.if_stmt_return()
         retval.start = self.input.LT(1)
@@ -8291,22 +8504,22 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        IF255 = None
-        OCBRACE257 = None
-        CCBRACE259 = None
-        ELSE260 = None
-        OCBRACE261 = None
-        CCBRACE263 = None
-        cond_comb256 = None
-        if_expression258 = None
-        else_expression262 = None
+        IF261 = None
+        OCBRACE263 = None
+        CCBRACE265 = None
+        ELSE266 = None
+        OCBRACE267 = None
+        CCBRACE269 = None
+        cond_comb262 = None
+        if_expression264 = None
+        else_expression268 = None
 
-        IF255_tree = None
-        OCBRACE257_tree = None
-        CCBRACE259_tree = None
-        ELSE260_tree = None
-        OCBRACE261_tree = None
-        CCBRACE263_tree = None
+        IF261_tree = None
+        OCBRACE263_tree = None
+        CCBRACE265_tree = None
+        ELSE266_tree = None
+        OCBRACE267_tree = None
+        CCBRACE269_tree = None
         stream_OCBRACE = RewriteRuleTokenStream(self._adaptor, "token OCBRACE")
         stream_ELSE = RewriteRuleTokenStream(self._adaptor, "token ELSE")
         stream_IF = RewriteRuleTokenStream(self._adaptor, "token IF")
@@ -8317,36 +8530,36 @@ class ProtoCCParser(Parser):
         t_else = 0
         try:
             try:
-                # ProtoCC.g:311:5: ( IF cond_comb OCBRACE if_expression CCBRACE ( ELSE OCBRACE else_expression CCBRACE )* -> {t_else}? ^( IFELSE_ ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( NCOND_ cond_comb ) ( else_expression )* ENDIF_ ) ) -> ^( IFELSE_ ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( NCOND_ cond_comb ) ENDIF_ ) ) )
-                # ProtoCC.g:311:7: IF cond_comb OCBRACE if_expression CCBRACE ( ELSE OCBRACE else_expression CCBRACE )*
+                # ProtoCC.g:314:5: ( IF cond_comb OCBRACE if_expression CCBRACE ( ELSE OCBRACE else_expression CCBRACE )* -> {t_else}? ^( IFELSE_ ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( NCOND_ cond_comb ) ( else_expression )* ENDIF_ ) ) -> ^( IFELSE_ ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( NCOND_ cond_comb ) ENDIF_ ) ) )
+                # ProtoCC.g:314:7: IF cond_comb OCBRACE if_expression CCBRACE ( ELSE OCBRACE else_expression CCBRACE )*
                 pass 
-                IF255 = self.match(self.input, IF, self.FOLLOW_IF_in_if_stmt2822) 
-                stream_IF.add(IF255)
+                IF261 = self.match(self.input, IF, self.FOLLOW_IF_in_if_stmt2873) 
+                stream_IF.add(IF261)
 
 
-                self._state.following.append(self.FOLLOW_cond_comb_in_if_stmt2824)
-                cond_comb256 = self.cond_comb()
-
-                self._state.following.pop()
-                stream_cond_comb.add(cond_comb256.tree)
-
-
-                OCBRACE257 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_if_stmt2826) 
-                stream_OCBRACE.add(OCBRACE257)
-
-
-                self._state.following.append(self.FOLLOW_if_expression_in_if_stmt2828)
-                if_expression258 = self.if_expression()
+                self._state.following.append(self.FOLLOW_cond_comb_in_if_stmt2875)
+                cond_comb262 = self.cond_comb()
 
                 self._state.following.pop()
-                stream_if_expression.add(if_expression258.tree)
+                stream_cond_comb.add(cond_comb262.tree)
 
 
-                CCBRACE259 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_if_stmt2830) 
-                stream_CCBRACE.add(CCBRACE259)
+                OCBRACE263 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_if_stmt2877) 
+                stream_OCBRACE.add(OCBRACE263)
 
 
-                # ProtoCC.g:312:5: ( ELSE OCBRACE else_expression CCBRACE )*
+                self._state.following.append(self.FOLLOW_if_expression_in_if_stmt2879)
+                if_expression264 = self.if_expression()
+
+                self._state.following.pop()
+                stream_if_expression.add(if_expression264.tree)
+
+
+                CCBRACE265 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_if_stmt2881) 
+                stream_CCBRACE.add(CCBRACE265)
+
+
+                # ProtoCC.g:315:5: ( ELSE OCBRACE else_expression CCBRACE )*
                 while True: #loop40
                     alt40 = 2
                     LA40_0 = self.input.LA(1)
@@ -8356,10 +8569,10 @@ class ProtoCCParser(Parser):
 
 
                     if alt40 == 1:
-                        # ProtoCC.g:312:6: ELSE OCBRACE else_expression CCBRACE
+                        # ProtoCC.g:315:6: ELSE OCBRACE else_expression CCBRACE
                         pass 
-                        ELSE260 = self.match(self.input, ELSE, self.FOLLOW_ELSE_in_if_stmt2837) 
-                        stream_ELSE.add(ELSE260)
+                        ELSE266 = self.match(self.input, ELSE, self.FOLLOW_ELSE_in_if_stmt2888) 
+                        stream_ELSE.add(ELSE266)
 
 
                         #action start
@@ -8367,19 +8580,19 @@ class ProtoCCParser(Parser):
                         #action end
 
 
-                        OCBRACE261 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_if_stmt2841) 
-                        stream_OCBRACE.add(OCBRACE261)
+                        OCBRACE267 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_if_stmt2892) 
+                        stream_OCBRACE.add(OCBRACE267)
 
 
-                        self._state.following.append(self.FOLLOW_else_expression_in_if_stmt2843)
-                        else_expression262 = self.else_expression()
+                        self._state.following.append(self.FOLLOW_else_expression_in_if_stmt2894)
+                        else_expression268 = self.else_expression()
 
                         self._state.following.pop()
-                        stream_else_expression.add(else_expression262.tree)
+                        stream_else_expression.add(else_expression268.tree)
 
 
-                        CCBRACE263 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_if_stmt2845) 
-                        stream_CCBRACE.add(CCBRACE263)
+                        CCBRACE269 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_if_stmt2896) 
+                        stream_CCBRACE.add(CCBRACE269)
 
 
 
@@ -8388,7 +8601,7 @@ class ProtoCCParser(Parser):
 
 
                 # AST Rewrite
-                # elements: cond_comb, cond_comb, if_expression, cond_comb, else_expression, if_expression, cond_comb
+                # elements: if_expression, cond_comb, cond_comb, cond_comb, cond_comb, if_expression, else_expression
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -8403,20 +8616,20 @@ class ProtoCCParser(Parser):
 
                 root_0 = self._adaptor.nil()
                 if t_else:
-                    # 313:5: -> {t_else}? ^( IFELSE_ ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( NCOND_ cond_comb ) ( else_expression )* ENDIF_ ) )
-                    # ProtoCC.g:313:18: ^( IFELSE_ ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( NCOND_ cond_comb ) ( else_expression )* ENDIF_ ) )
+                    # 316:5: -> {t_else}? ^( IFELSE_ ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( NCOND_ cond_comb ) ( else_expression )* ENDIF_ ) )
+                    # ProtoCC.g:316:18: ^( IFELSE_ ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( NCOND_ cond_comb ) ( else_expression )* ENDIF_ ) )
                     root_1 = self._adaptor.nil()
                     root_1 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(IFELSE_, "IFELSE_")
                     , root_1)
 
-                    # ProtoCC.g:313:28: ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ )
+                    # ProtoCC.g:316:28: ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ )
                     root_2 = self._adaptor.nil()
                     root_2 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(IF_, "IF_")
                     , root_2)
 
-                    # ProtoCC.g:313:34: ^( COND_ cond_comb )
+                    # ProtoCC.g:316:34: ^( COND_ cond_comb )
                     root_3 = self._adaptor.nil()
                     root_3 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(COND_, "COND_")
@@ -8426,7 +8639,7 @@ class ProtoCCParser(Parser):
 
                     self._adaptor.addChild(root_2, root_3)
 
-                    # ProtoCC.g:313:53: ( if_expression )*
+                    # ProtoCC.g:316:53: ( if_expression )*
                     while stream_if_expression.hasNext():
                         self._adaptor.addChild(root_2, stream_if_expression.nextTree())
 
@@ -8439,13 +8652,13 @@ class ProtoCCParser(Parser):
 
                     self._adaptor.addChild(root_1, root_2)
 
-                    # ProtoCC.g:313:76: ^( IF_ ^( NCOND_ cond_comb ) ( else_expression )* ENDIF_ )
+                    # ProtoCC.g:316:76: ^( IF_ ^( NCOND_ cond_comb ) ( else_expression )* ENDIF_ )
                     root_2 = self._adaptor.nil()
                     root_2 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(IF_, "IF_")
                     , root_2)
 
-                    # ProtoCC.g:313:82: ^( NCOND_ cond_comb )
+                    # ProtoCC.g:316:82: ^( NCOND_ cond_comb )
                     root_3 = self._adaptor.nil()
                     root_3 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(NCOND_, "NCOND_")
@@ -8455,7 +8668,7 @@ class ProtoCCParser(Parser):
 
                     self._adaptor.addChild(root_2, root_3)
 
-                    # ProtoCC.g:313:102: ( else_expression )*
+                    # ProtoCC.g:316:102: ( else_expression )*
                     while stream_else_expression.hasNext():
                         self._adaptor.addChild(root_2, stream_else_expression.nextTree())
 
@@ -8473,20 +8686,20 @@ class ProtoCCParser(Parser):
 
 
                 else: 
-                    # 314:5: -> ^( IFELSE_ ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( NCOND_ cond_comb ) ENDIF_ ) )
-                    # ProtoCC.g:314:8: ^( IFELSE_ ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( NCOND_ cond_comb ) ENDIF_ ) )
+                    # 317:5: -> ^( IFELSE_ ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( NCOND_ cond_comb ) ENDIF_ ) )
+                    # ProtoCC.g:317:8: ^( IFELSE_ ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( NCOND_ cond_comb ) ENDIF_ ) )
                     root_1 = self._adaptor.nil()
                     root_1 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(IFELSE_, "IFELSE_")
                     , root_1)
 
-                    # ProtoCC.g:314:18: ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ )
+                    # ProtoCC.g:317:18: ^( IF_ ^( COND_ cond_comb ) ( if_expression )* ENDIF_ )
                     root_2 = self._adaptor.nil()
                     root_2 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(IF_, "IF_")
                     , root_2)
 
-                    # ProtoCC.g:314:24: ^( COND_ cond_comb )
+                    # ProtoCC.g:317:24: ^( COND_ cond_comb )
                     root_3 = self._adaptor.nil()
                     root_3 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(COND_, "COND_")
@@ -8496,7 +8709,7 @@ class ProtoCCParser(Parser):
 
                     self._adaptor.addChild(root_2, root_3)
 
-                    # ProtoCC.g:314:43: ( if_expression )*
+                    # ProtoCC.g:317:43: ( if_expression )*
                     while stream_if_expression.hasNext():
                         self._adaptor.addChild(root_2, stream_if_expression.nextTree())
 
@@ -8509,13 +8722,13 @@ class ProtoCCParser(Parser):
 
                     self._adaptor.addChild(root_1, root_2)
 
-                    # ProtoCC.g:314:66: ^( IF_ ^( NCOND_ cond_comb ) ENDIF_ )
+                    # ProtoCC.g:317:66: ^( IF_ ^( NCOND_ cond_comb ) ENDIF_ )
                     root_2 = self._adaptor.nil()
                     root_2 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(IF_, "IF_")
                     , root_2)
 
-                    # ProtoCC.g:314:72: ^( NCOND_ cond_comb )
+                    # ProtoCC.g:317:72: ^( NCOND_ cond_comb )
                     root_3 = self._adaptor.nil()
                     root_3 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(NCOND_, "NCOND_")
@@ -8572,7 +8785,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "ifnot_stmt"
-    # ProtoCC.g:317:5: ifnot_stmt : IF NEG cond_comb OCBRACE if_expression CCBRACE ( ELSE OCBRACE else_expression CCBRACE )* -> {t_else}? ^( IFELSE_ ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( COND_ cond_comb ) ( else_expression )* ENDIF_ ) ) -> ^( IFELSE_ ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( COND_ cond_comb ) ENDIF_ ) ) ;
+    # ProtoCC.g:320:5: ifnot_stmt : IF NEG cond_comb OCBRACE if_expression CCBRACE ( ELSE OCBRACE else_expression CCBRACE )* -> {t_else}? ^( IFELSE_ ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( COND_ cond_comb ) ( else_expression )* ENDIF_ ) ) -> ^( IFELSE_ ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( COND_ cond_comb ) ENDIF_ ) ) ;
     def ifnot_stmt(self, ):
         retval = self.ifnot_stmt_return()
         retval.start = self.input.LT(1)
@@ -8580,24 +8793,24 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        IF264 = None
-        NEG265 = None
-        OCBRACE267 = None
-        CCBRACE269 = None
-        ELSE270 = None
-        OCBRACE271 = None
-        CCBRACE273 = None
-        cond_comb266 = None
-        if_expression268 = None
-        else_expression272 = None
+        IF270 = None
+        NEG271 = None
+        OCBRACE273 = None
+        CCBRACE275 = None
+        ELSE276 = None
+        OCBRACE277 = None
+        CCBRACE279 = None
+        cond_comb272 = None
+        if_expression274 = None
+        else_expression278 = None
 
-        IF264_tree = None
-        NEG265_tree = None
-        OCBRACE267_tree = None
-        CCBRACE269_tree = None
-        ELSE270_tree = None
-        OCBRACE271_tree = None
-        CCBRACE273_tree = None
+        IF270_tree = None
+        NEG271_tree = None
+        OCBRACE273_tree = None
+        CCBRACE275_tree = None
+        ELSE276_tree = None
+        OCBRACE277_tree = None
+        CCBRACE279_tree = None
         stream_NEG = RewriteRuleTokenStream(self._adaptor, "token NEG")
         stream_OCBRACE = RewriteRuleTokenStream(self._adaptor, "token OCBRACE")
         stream_ELSE = RewriteRuleTokenStream(self._adaptor, "token ELSE")
@@ -8609,40 +8822,40 @@ class ProtoCCParser(Parser):
         t_else = 0
         try:
             try:
-                # ProtoCC.g:318:5: ( IF NEG cond_comb OCBRACE if_expression CCBRACE ( ELSE OCBRACE else_expression CCBRACE )* -> {t_else}? ^( IFELSE_ ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( COND_ cond_comb ) ( else_expression )* ENDIF_ ) ) -> ^( IFELSE_ ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( COND_ cond_comb ) ENDIF_ ) ) )
-                # ProtoCC.g:318:7: IF NEG cond_comb OCBRACE if_expression CCBRACE ( ELSE OCBRACE else_expression CCBRACE )*
+                # ProtoCC.g:321:5: ( IF NEG cond_comb OCBRACE if_expression CCBRACE ( ELSE OCBRACE else_expression CCBRACE )* -> {t_else}? ^( IFELSE_ ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( COND_ cond_comb ) ( else_expression )* ENDIF_ ) ) -> ^( IFELSE_ ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( COND_ cond_comb ) ENDIF_ ) ) )
+                # ProtoCC.g:321:7: IF NEG cond_comb OCBRACE if_expression CCBRACE ( ELSE OCBRACE else_expression CCBRACE )*
                 pass 
-                IF264 = self.match(self.input, IF, self.FOLLOW_IF_in_ifnot_stmt2951) 
-                stream_IF.add(IF264)
+                IF270 = self.match(self.input, IF, self.FOLLOW_IF_in_ifnot_stmt3002) 
+                stream_IF.add(IF270)
 
 
-                NEG265 = self.match(self.input, NEG, self.FOLLOW_NEG_in_ifnot_stmt2953) 
-                stream_NEG.add(NEG265)
+                NEG271 = self.match(self.input, NEG, self.FOLLOW_NEG_in_ifnot_stmt3004) 
+                stream_NEG.add(NEG271)
 
 
-                self._state.following.append(self.FOLLOW_cond_comb_in_ifnot_stmt2955)
-                cond_comb266 = self.cond_comb()
-
-                self._state.following.pop()
-                stream_cond_comb.add(cond_comb266.tree)
-
-
-                OCBRACE267 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_ifnot_stmt2957) 
-                stream_OCBRACE.add(OCBRACE267)
-
-
-                self._state.following.append(self.FOLLOW_if_expression_in_ifnot_stmt2959)
-                if_expression268 = self.if_expression()
+                self._state.following.append(self.FOLLOW_cond_comb_in_ifnot_stmt3006)
+                cond_comb272 = self.cond_comb()
 
                 self._state.following.pop()
-                stream_if_expression.add(if_expression268.tree)
+                stream_cond_comb.add(cond_comb272.tree)
 
 
-                CCBRACE269 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_ifnot_stmt2961) 
-                stream_CCBRACE.add(CCBRACE269)
+                OCBRACE273 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_ifnot_stmt3008) 
+                stream_OCBRACE.add(OCBRACE273)
 
 
-                # ProtoCC.g:319:5: ( ELSE OCBRACE else_expression CCBRACE )*
+                self._state.following.append(self.FOLLOW_if_expression_in_ifnot_stmt3010)
+                if_expression274 = self.if_expression()
+
+                self._state.following.pop()
+                stream_if_expression.add(if_expression274.tree)
+
+
+                CCBRACE275 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_ifnot_stmt3012) 
+                stream_CCBRACE.add(CCBRACE275)
+
+
+                # ProtoCC.g:322:5: ( ELSE OCBRACE else_expression CCBRACE )*
                 while True: #loop41
                     alt41 = 2
                     LA41_0 = self.input.LA(1)
@@ -8652,10 +8865,10 @@ class ProtoCCParser(Parser):
 
 
                     if alt41 == 1:
-                        # ProtoCC.g:319:6: ELSE OCBRACE else_expression CCBRACE
+                        # ProtoCC.g:322:6: ELSE OCBRACE else_expression CCBRACE
                         pass 
-                        ELSE270 = self.match(self.input, ELSE, self.FOLLOW_ELSE_in_ifnot_stmt2968) 
-                        stream_ELSE.add(ELSE270)
+                        ELSE276 = self.match(self.input, ELSE, self.FOLLOW_ELSE_in_ifnot_stmt3019) 
+                        stream_ELSE.add(ELSE276)
 
 
                         #action start
@@ -8663,19 +8876,19 @@ class ProtoCCParser(Parser):
                         #action end
 
 
-                        OCBRACE271 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_ifnot_stmt2972) 
-                        stream_OCBRACE.add(OCBRACE271)
+                        OCBRACE277 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_ifnot_stmt3023) 
+                        stream_OCBRACE.add(OCBRACE277)
 
 
-                        self._state.following.append(self.FOLLOW_else_expression_in_ifnot_stmt2974)
-                        else_expression272 = self.else_expression()
+                        self._state.following.append(self.FOLLOW_else_expression_in_ifnot_stmt3025)
+                        else_expression278 = self.else_expression()
 
                         self._state.following.pop()
-                        stream_else_expression.add(else_expression272.tree)
+                        stream_else_expression.add(else_expression278.tree)
 
 
-                        CCBRACE273 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_ifnot_stmt2976) 
-                        stream_CCBRACE.add(CCBRACE273)
+                        CCBRACE279 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_ifnot_stmt3027) 
+                        stream_CCBRACE.add(CCBRACE279)
 
 
 
@@ -8684,7 +8897,7 @@ class ProtoCCParser(Parser):
 
 
                 # AST Rewrite
-                # elements: cond_comb, if_expression, if_expression, cond_comb, else_expression, cond_comb, cond_comb
+                # elements: cond_comb, cond_comb, cond_comb, else_expression, cond_comb, if_expression, if_expression
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -8699,20 +8912,20 @@ class ProtoCCParser(Parser):
 
                 root_0 = self._adaptor.nil()
                 if t_else:
-                    # 320:5: -> {t_else}? ^( IFELSE_ ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( COND_ cond_comb ) ( else_expression )* ENDIF_ ) )
-                    # ProtoCC.g:320:18: ^( IFELSE_ ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( COND_ cond_comb ) ( else_expression )* ENDIF_ ) )
+                    # 323:5: -> {t_else}? ^( IFELSE_ ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( COND_ cond_comb ) ( else_expression )* ENDIF_ ) )
+                    # ProtoCC.g:323:18: ^( IFELSE_ ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( COND_ cond_comb ) ( else_expression )* ENDIF_ ) )
                     root_1 = self._adaptor.nil()
                     root_1 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(IFELSE_, "IFELSE_")
                     , root_1)
 
-                    # ProtoCC.g:320:28: ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ )
+                    # ProtoCC.g:323:28: ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ )
                     root_2 = self._adaptor.nil()
                     root_2 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(IF_, "IF_")
                     , root_2)
 
-                    # ProtoCC.g:320:34: ^( NCOND_ cond_comb )
+                    # ProtoCC.g:323:34: ^( NCOND_ cond_comb )
                     root_3 = self._adaptor.nil()
                     root_3 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(NCOND_, "NCOND_")
@@ -8722,7 +8935,7 @@ class ProtoCCParser(Parser):
 
                     self._adaptor.addChild(root_2, root_3)
 
-                    # ProtoCC.g:320:54: ( if_expression )*
+                    # ProtoCC.g:323:54: ( if_expression )*
                     while stream_if_expression.hasNext():
                         self._adaptor.addChild(root_2, stream_if_expression.nextTree())
 
@@ -8735,13 +8948,13 @@ class ProtoCCParser(Parser):
 
                     self._adaptor.addChild(root_1, root_2)
 
-                    # ProtoCC.g:320:77: ^( IF_ ^( COND_ cond_comb ) ( else_expression )* ENDIF_ )
+                    # ProtoCC.g:323:77: ^( IF_ ^( COND_ cond_comb ) ( else_expression )* ENDIF_ )
                     root_2 = self._adaptor.nil()
                     root_2 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(IF_, "IF_")
                     , root_2)
 
-                    # ProtoCC.g:320:83: ^( COND_ cond_comb )
+                    # ProtoCC.g:323:83: ^( COND_ cond_comb )
                     root_3 = self._adaptor.nil()
                     root_3 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(COND_, "COND_")
@@ -8751,7 +8964,7 @@ class ProtoCCParser(Parser):
 
                     self._adaptor.addChild(root_2, root_3)
 
-                    # ProtoCC.g:320:102: ( else_expression )*
+                    # ProtoCC.g:323:102: ( else_expression )*
                     while stream_else_expression.hasNext():
                         self._adaptor.addChild(root_2, stream_else_expression.nextTree())
 
@@ -8769,20 +8982,20 @@ class ProtoCCParser(Parser):
 
 
                 else: 
-                    # 321:5: -> ^( IFELSE_ ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( COND_ cond_comb ) ENDIF_ ) )
-                    # ProtoCC.g:321:8: ^( IFELSE_ ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( COND_ cond_comb ) ENDIF_ ) )
+                    # 324:5: -> ^( IFELSE_ ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( COND_ cond_comb ) ENDIF_ ) )
+                    # ProtoCC.g:324:8: ^( IFELSE_ ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ ) ^( IF_ ^( COND_ cond_comb ) ENDIF_ ) )
                     root_1 = self._adaptor.nil()
                     root_1 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(IFELSE_, "IFELSE_")
                     , root_1)
 
-                    # ProtoCC.g:321:18: ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ )
+                    # ProtoCC.g:324:18: ^( IF_ ^( NCOND_ cond_comb ) ( if_expression )* ENDIF_ )
                     root_2 = self._adaptor.nil()
                     root_2 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(IF_, "IF_")
                     , root_2)
 
-                    # ProtoCC.g:321:24: ^( NCOND_ cond_comb )
+                    # ProtoCC.g:324:24: ^( NCOND_ cond_comb )
                     root_3 = self._adaptor.nil()
                     root_3 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(NCOND_, "NCOND_")
@@ -8792,7 +9005,7 @@ class ProtoCCParser(Parser):
 
                     self._adaptor.addChild(root_2, root_3)
 
-                    # ProtoCC.g:321:44: ( if_expression )*
+                    # ProtoCC.g:324:44: ( if_expression )*
                     while stream_if_expression.hasNext():
                         self._adaptor.addChild(root_2, stream_if_expression.nextTree())
 
@@ -8805,13 +9018,13 @@ class ProtoCCParser(Parser):
 
                     self._adaptor.addChild(root_1, root_2)
 
-                    # ProtoCC.g:321:67: ^( IF_ ^( COND_ cond_comb ) ENDIF_ )
+                    # ProtoCC.g:324:67: ^( IF_ ^( COND_ cond_comb ) ENDIF_ )
                     root_2 = self._adaptor.nil()
                     root_2 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(IF_, "IF_")
                     , root_2)
 
-                    # ProtoCC.g:321:73: ^( COND_ cond_comb )
+                    # ProtoCC.g:324:73: ^( COND_ cond_comb )
                     root_3 = self._adaptor.nil()
                     root_3 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(COND_, "COND_")
@@ -8868,7 +9081,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "if_expression"
-    # ProtoCC.g:324:9: if_expression : ( exprwbreak )* ;
+    # ProtoCC.g:327:9: if_expression : ( exprwbreak )* ;
     def if_expression(self, ):
         retval = self.if_expression_return()
         retval.start = self.input.LT(1)
@@ -8876,34 +9089,34 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        exprwbreak274 = None
+        exprwbreak280 = None
 
 
         try:
             try:
-                # ProtoCC.g:324:22: ( ( exprwbreak )* )
-                # ProtoCC.g:324:24: ( exprwbreak )*
+                # ProtoCC.g:327:22: ( ( exprwbreak )* )
+                # ProtoCC.g:327:24: ( exprwbreak )*
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                # ProtoCC.g:324:24: ( exprwbreak )*
+                # ProtoCC.g:327:24: ( exprwbreak )*
                 while True: #loop42
                     alt42 = 2
                     LA42_0 = self.input.LA(1)
 
-                    if (LA42_0 in {ACCESS, AWAIT, BREAK, ID, IF, STALL, STATE, UNDEF, 119}) :
+                    if (LA42_0 in {ACCESS, AWAIT, BREAK, ID, IF, STALL, STATE, UNDEF, 121}) :
                         alt42 = 1
 
 
                     if alt42 == 1:
-                        # ProtoCC.g:324:24: exprwbreak
+                        # ProtoCC.g:327:24: exprwbreak
                         pass 
-                        self._state.following.append(self.FOLLOW_exprwbreak_in_if_expression3077)
-                        exprwbreak274 = self.exprwbreak()
+                        self._state.following.append(self.FOLLOW_exprwbreak_in_if_expression3128)
+                        exprwbreak280 = self.exprwbreak()
 
                         self._state.following.pop()
-                        self._adaptor.addChild(root_0, exprwbreak274.tree)
+                        self._adaptor.addChild(root_0, exprwbreak280.tree)
 
 
 
@@ -8944,7 +9157,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "else_expression"
-    # ProtoCC.g:325:9: else_expression : ( exprwbreak )* ;
+    # ProtoCC.g:328:9: else_expression : ( exprwbreak )* ;
     def else_expression(self, ):
         retval = self.else_expression_return()
         retval.start = self.input.LT(1)
@@ -8952,34 +9165,34 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        exprwbreak275 = None
+        exprwbreak281 = None
 
 
         try:
             try:
-                # ProtoCC.g:325:24: ( ( exprwbreak )* )
-                # ProtoCC.g:325:26: ( exprwbreak )*
+                # ProtoCC.g:328:24: ( ( exprwbreak )* )
+                # ProtoCC.g:328:26: ( exprwbreak )*
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                # ProtoCC.g:325:26: ( exprwbreak )*
+                # ProtoCC.g:328:26: ( exprwbreak )*
                 while True: #loop43
                     alt43 = 2
                     LA43_0 = self.input.LA(1)
 
-                    if (LA43_0 in {ACCESS, AWAIT, BREAK, ID, IF, STALL, STATE, UNDEF, 119}) :
+                    if (LA43_0 in {ACCESS, AWAIT, BREAK, ID, IF, STALL, STATE, UNDEF, 121}) :
                         alt43 = 1
 
 
                     if alt43 == 1:
-                        # ProtoCC.g:325:26: exprwbreak
+                        # ProtoCC.g:328:26: exprwbreak
                         pass 
-                        self._state.following.append(self.FOLLOW_exprwbreak_in_else_expression3092)
-                        exprwbreak275 = self.exprwbreak()
+                        self._state.following.append(self.FOLLOW_exprwbreak_in_else_expression3143)
+                        exprwbreak281 = self.exprwbreak()
 
                         self._state.following.pop()
-                        self._adaptor.addChild(root_0, exprwbreak275.tree)
+                        self._adaptor.addChild(root_0, exprwbreak281.tree)
 
 
 
@@ -9020,7 +9233,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "exprwbreak"
-    # ProtoCC.g:326:9: exprwbreak : ( expressions | network_send | network_mcast | network_bcast | transaction | next_break );
+    # ProtoCC.g:329:9: exprwbreak : ( expressions | network_send | network_mcast | network_bcast | transaction | next_break );
     def exprwbreak(self, ):
         retval = self.exprwbreak_return()
         retval.start = self.input.LT(1)
@@ -9028,17 +9241,17 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        expressions276 = None
-        network_send277 = None
-        network_mcast278 = None
-        network_bcast279 = None
-        transaction280 = None
-        next_break281 = None
+        expressions282 = None
+        network_send283 = None
+        network_mcast284 = None
+        network_bcast285 = None
+        transaction286 = None
+        next_break287 = None
 
 
         try:
             try:
-                # ProtoCC.g:326:19: ( expressions | network_send | network_mcast | network_bcast | transaction | next_break )
+                # ProtoCC.g:329:19: ( expressions | network_send | network_mcast | network_bcast | transaction | next_break )
                 alt44 = 6
                 LA44 = self.input.LA(1)
                 if LA44 in {ID}:
@@ -9046,13 +9259,13 @@ class ProtoCCParser(Parser):
 
                     if (LA44_1 == DOT) :
                         LA44 = self.input.LA(3)
-                        if LA44 in {ID, NID, 134, 136, 138, 139, 140, 144}:
+                        if LA44 in {ID, NID, 137, 139, 141, 142, 143, 147}:
                             alt44 = 1
-                        elif LA44 in {130, 143}:
+                        elif LA44 in {132, 146}:
                             alt44 = 2
-                        elif LA44 in {121, 141}:
+                        elif LA44 in {123, 144}:
                             alt44 = 3
-                        elif LA44 in {116, 135}:
+                        elif LA44 in {118, 138}:
                             alt44 = 4
                         else:
                             nvae = NoViableAltException("", 44, 10, self.input)
@@ -9060,7 +9273,7 @@ class ProtoCCParser(Parser):
                             raise nvae
 
 
-                    elif (LA44_1 in {EQUALSIGN, SEMICOLON}) :
+                    elif (LA44_1 in {EQUALSIGN, OBRACE, SEMICOLON}) :
                         alt44 = 1
                     else:
                         nvae = NoViableAltException("", 44, 1, self.input)
@@ -9068,7 +9281,7 @@ class ProtoCCParser(Parser):
                         raise nvae
 
 
-                elif LA44 in {ACCESS, IF, STALL, STATE, UNDEF, 119}:
+                elif LA44 in {ACCESS, IF, STALL, STATE, UNDEF, 121}:
                     alt44 = 1
                 elif LA44 in {AWAIT}:
                     alt44 = 5
@@ -9081,86 +9294,86 @@ class ProtoCCParser(Parser):
 
 
                 if alt44 == 1:
-                    # ProtoCC.g:326:21: expressions
+                    # ProtoCC.g:329:21: expressions
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_expressions_in_exprwbreak3107)
-                    expressions276 = self.expressions()
+                    self._state.following.append(self.FOLLOW_expressions_in_exprwbreak3158)
+                    expressions282 = self.expressions()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, expressions276.tree)
+                    self._adaptor.addChild(root_0, expressions282.tree)
 
 
 
                 elif alt44 == 2:
-                    # ProtoCC.g:326:35: network_send
+                    # ProtoCC.g:329:35: network_send
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_network_send_in_exprwbreak3111)
-                    network_send277 = self.network_send()
+                    self._state.following.append(self.FOLLOW_network_send_in_exprwbreak3162)
+                    network_send283 = self.network_send()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, network_send277.tree)
+                    self._adaptor.addChild(root_0, network_send283.tree)
 
 
 
                 elif alt44 == 3:
-                    # ProtoCC.g:326:50: network_mcast
+                    # ProtoCC.g:329:50: network_mcast
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_network_mcast_in_exprwbreak3115)
-                    network_mcast278 = self.network_mcast()
+                    self._state.following.append(self.FOLLOW_network_mcast_in_exprwbreak3166)
+                    network_mcast284 = self.network_mcast()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, network_mcast278.tree)
+                    self._adaptor.addChild(root_0, network_mcast284.tree)
 
 
 
                 elif alt44 == 4:
-                    # ProtoCC.g:326:66: network_bcast
+                    # ProtoCC.g:329:66: network_bcast
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_network_bcast_in_exprwbreak3119)
-                    network_bcast279 = self.network_bcast()
+                    self._state.following.append(self.FOLLOW_network_bcast_in_exprwbreak3170)
+                    network_bcast285 = self.network_bcast()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, network_bcast279.tree)
+                    self._adaptor.addChild(root_0, network_bcast285.tree)
 
 
 
                 elif alt44 == 5:
-                    # ProtoCC.g:326:82: transaction
+                    # ProtoCC.g:329:82: transaction
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_transaction_in_exprwbreak3123)
-                    transaction280 = self.transaction()
+                    self._state.following.append(self.FOLLOW_transaction_in_exprwbreak3174)
+                    transaction286 = self.transaction()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, transaction280.tree)
+                    self._adaptor.addChild(root_0, transaction286.tree)
 
 
 
                 elif alt44 == 6:
-                    # ProtoCC.g:326:96: next_break
+                    # ProtoCC.g:329:96: next_break
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_next_break_in_exprwbreak3127)
-                    next_break281 = self.next_break()
+                    self._state.following.append(self.FOLLOW_next_break_in_exprwbreak3178)
+                    next_break287 = self.next_break()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, next_break281.tree)
+                    self._adaptor.addChild(root_0, next_break287.tree)
 
 
 
@@ -9195,7 +9408,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "cond_comb"
-    # ProtoCC.g:327:9: cond_comb : cond_rel ( combinatorial_operator cond_rel )* ;
+    # ProtoCC.g:330:9: cond_comb : cond_rel ( combinatorial_operator cond_rel )* ;
     def cond_comb(self, ):
         retval = self.cond_comb_return()
         retval.start = self.input.LT(1)
@@ -9203,50 +9416,50 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        cond_rel282 = None
-        combinatorial_operator283 = None
-        cond_rel284 = None
+        cond_rel288 = None
+        combinatorial_operator289 = None
+        cond_rel290 = None
 
 
         try:
             try:
-                # ProtoCC.g:327:18: ( cond_rel ( combinatorial_operator cond_rel )* )
-                # ProtoCC.g:327:20: cond_rel ( combinatorial_operator cond_rel )*
+                # ProtoCC.g:330:18: ( cond_rel ( combinatorial_operator cond_rel )* )
+                # ProtoCC.g:330:20: cond_rel ( combinatorial_operator cond_rel )*
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                self._state.following.append(self.FOLLOW_cond_rel_in_cond_comb3141)
-                cond_rel282 = self.cond_rel()
+                self._state.following.append(self.FOLLOW_cond_rel_in_cond_comb3192)
+                cond_rel288 = self.cond_rel()
 
                 self._state.following.pop()
-                self._adaptor.addChild(root_0, cond_rel282.tree)
+                self._adaptor.addChild(root_0, cond_rel288.tree)
 
 
-                # ProtoCC.g:327:29: ( combinatorial_operator cond_rel )*
+                # ProtoCC.g:330:29: ( combinatorial_operator cond_rel )*
                 while True: #loop45
                     alt45 = 2
                     LA45_0 = self.input.LA(1)
 
-                    if (LA45_0 in {110, 145}) :
+                    if (LA45_0 in {112, 148}) :
                         alt45 = 1
 
 
                     if alt45 == 1:
-                        # ProtoCC.g:327:30: combinatorial_operator cond_rel
+                        # ProtoCC.g:330:30: combinatorial_operator cond_rel
                         pass 
-                        self._state.following.append(self.FOLLOW_combinatorial_operator_in_cond_comb3144)
-                        combinatorial_operator283 = self.combinatorial_operator()
+                        self._state.following.append(self.FOLLOW_combinatorial_operator_in_cond_comb3195)
+                        combinatorial_operator289 = self.combinatorial_operator()
 
                         self._state.following.pop()
-                        self._adaptor.addChild(root_0, combinatorial_operator283.tree)
+                        self._adaptor.addChild(root_0, combinatorial_operator289.tree)
 
 
-                        self._state.following.append(self.FOLLOW_cond_rel_in_cond_comb3146)
-                        cond_rel284 = self.cond_rel()
+                        self._state.following.append(self.FOLLOW_cond_rel_in_cond_comb3197)
+                        cond_rel290 = self.cond_rel()
 
                         self._state.following.pop()
-                        self._adaptor.addChild(root_0, cond_rel284.tree)
+                        self._adaptor.addChild(root_0, cond_rel290.tree)
 
 
 
@@ -9287,7 +9500,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "cond_rel"
-    # ProtoCC.g:328:9: cond_rel : ( OBRACE )* cond_sel ( CBRACE )* -> cond_sel ;
+    # ProtoCC.g:331:9: cond_rel : ( OBRACE )* cond_sel ( CBRACE )* -> cond_sel ;
     def cond_rel(self, ):
         retval = self.cond_rel_return()
         retval.start = self.input.LT(1)
@@ -9295,21 +9508,21 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        OBRACE285 = None
-        CBRACE287 = None
-        cond_sel286 = None
+        OBRACE291 = None
+        CBRACE293 = None
+        cond_sel292 = None
 
-        OBRACE285_tree = None
-        CBRACE287_tree = None
+        OBRACE291_tree = None
+        CBRACE293_tree = None
         stream_OBRACE = RewriteRuleTokenStream(self._adaptor, "token OBRACE")
         stream_CBRACE = RewriteRuleTokenStream(self._adaptor, "token CBRACE")
         stream_cond_sel = RewriteRuleSubtreeStream(self._adaptor, "rule cond_sel")
         try:
             try:
-                # ProtoCC.g:328:18: ( ( OBRACE )* cond_sel ( CBRACE )* -> cond_sel )
-                # ProtoCC.g:328:20: ( OBRACE )* cond_sel ( CBRACE )*
+                # ProtoCC.g:331:18: ( ( OBRACE )* cond_sel ( CBRACE )* -> cond_sel )
+                # ProtoCC.g:331:20: ( OBRACE )* cond_sel ( CBRACE )*
                 pass 
-                # ProtoCC.g:328:20: ( OBRACE )*
+                # ProtoCC.g:331:20: ( OBRACE )*
                 while True: #loop46
                     alt46 = 2
                     LA46_0 = self.input.LA(1)
@@ -9319,10 +9532,10 @@ class ProtoCCParser(Parser):
 
 
                     if alt46 == 1:
-                        # ProtoCC.g:328:20: OBRACE
+                        # ProtoCC.g:331:20: OBRACE
                         pass 
-                        OBRACE285 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_cond_rel3163) 
-                        stream_OBRACE.add(OBRACE285)
+                        OBRACE291 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_cond_rel3214) 
+                        stream_OBRACE.add(OBRACE291)
 
 
 
@@ -9330,14 +9543,14 @@ class ProtoCCParser(Parser):
                         break #loop46
 
 
-                self._state.following.append(self.FOLLOW_cond_sel_in_cond_rel3166)
-                cond_sel286 = self.cond_sel()
+                self._state.following.append(self.FOLLOW_cond_sel_in_cond_rel3217)
+                cond_sel292 = self.cond_sel()
 
                 self._state.following.pop()
-                stream_cond_sel.add(cond_sel286.tree)
+                stream_cond_sel.add(cond_sel292.tree)
 
 
-                # ProtoCC.g:328:37: ( CBRACE )*
+                # ProtoCC.g:331:37: ( CBRACE )*
                 while True: #loop47
                     alt47 = 2
                     LA47_0 = self.input.LA(1)
@@ -9347,10 +9560,10 @@ class ProtoCCParser(Parser):
 
 
                     if alt47 == 1:
-                        # ProtoCC.g:328:37: CBRACE
+                        # ProtoCC.g:331:37: CBRACE
                         pass 
-                        CBRACE287 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_cond_rel3168) 
-                        stream_CBRACE.add(CBRACE287)
+                        CBRACE293 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_cond_rel3219) 
+                        stream_CBRACE.add(CBRACE293)
 
 
 
@@ -9373,7 +9586,7 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 328:45: -> cond_sel
+                # 331:45: -> cond_sel
                 self._adaptor.addChild(root_0, stream_cond_sel.nextTree())
 
 
@@ -9416,7 +9629,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "cond_sel"
-    # ProtoCC.g:329:13: cond_sel : cond_type_expr ( relational_operator cond_type_expr )* ;
+    # ProtoCC.g:332:13: cond_sel : cond_type_expr ( relational_operator cond_type_expr )* ;
     def cond_sel(self, ):
         retval = self.cond_sel_return()
         retval.start = self.input.LT(1)
@@ -9424,50 +9637,50 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        cond_type_expr288 = None
-        relational_operator289 = None
-        cond_type_expr290 = None
+        cond_type_expr294 = None
+        relational_operator295 = None
+        cond_type_expr296 = None
 
 
         try:
             try:
-                # ProtoCC.g:329:22: ( cond_type_expr ( relational_operator cond_type_expr )* )
-                # ProtoCC.g:329:24: cond_type_expr ( relational_operator cond_type_expr )*
+                # ProtoCC.g:332:22: ( cond_type_expr ( relational_operator cond_type_expr )* )
+                # ProtoCC.g:332:24: cond_type_expr ( relational_operator cond_type_expr )*
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                self._state.following.append(self.FOLLOW_cond_type_expr_in_cond_sel3192)
-                cond_type_expr288 = self.cond_type_expr()
+                self._state.following.append(self.FOLLOW_cond_type_expr_in_cond_sel3243)
+                cond_type_expr294 = self.cond_type_expr()
 
                 self._state.following.pop()
-                self._adaptor.addChild(root_0, cond_type_expr288.tree)
+                self._adaptor.addChild(root_0, cond_type_expr294.tree)
 
 
-                # ProtoCC.g:329:39: ( relational_operator cond_type_expr )*
+                # ProtoCC.g:332:39: ( relational_operator cond_type_expr )*
                 while True: #loop48
                     alt48 = 2
                     LA48_0 = self.input.LA(1)
 
-                    if ((111 <= LA48_0 <= 115) or LA48_0 in {109}) :
+                    if ((113 <= LA48_0 <= 117) or LA48_0 in {111}) :
                         alt48 = 1
 
 
                     if alt48 == 1:
-                        # ProtoCC.g:329:40: relational_operator cond_type_expr
+                        # ProtoCC.g:332:40: relational_operator cond_type_expr
                         pass 
-                        self._state.following.append(self.FOLLOW_relational_operator_in_cond_sel3195)
-                        relational_operator289 = self.relational_operator()
+                        self._state.following.append(self.FOLLOW_relational_operator_in_cond_sel3246)
+                        relational_operator295 = self.relational_operator()
 
                         self._state.following.pop()
-                        self._adaptor.addChild(root_0, relational_operator289.tree)
+                        self._adaptor.addChild(root_0, relational_operator295.tree)
 
 
-                        self._state.following.append(self.FOLLOW_cond_type_expr_in_cond_sel3197)
-                        cond_type_expr290 = self.cond_type_expr()
+                        self._state.following.append(self.FOLLOW_cond_type_expr_in_cond_sel3248)
+                        cond_type_expr296 = self.cond_type_expr()
 
                         self._state.following.pop()
-                        self._adaptor.addChild(root_0, cond_type_expr290.tree)
+                        self._adaptor.addChild(root_0, cond_type_expr296.tree)
 
 
 
@@ -9508,7 +9721,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "cond_type_expr"
-    # ProtoCC.g:330:13: cond_type_expr : cond_types ( ( PLUS | MINUS | MULT ) cond_types )* ;
+    # ProtoCC.g:333:13: cond_type_expr : cond_types ( ( PLUS | MINUS | MULT ) cond_types )* ;
     def cond_type_expr(self, ):
         retval = self.cond_type_expr_return()
         retval.start = self.input.LT(1)
@@ -9516,28 +9729,28 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        set292 = None
-        cond_types291 = None
-        cond_types293 = None
+        set298 = None
+        cond_types297 = None
+        cond_types299 = None
 
-        set292_tree = None
+        set298_tree = None
 
         try:
             try:
-                # ProtoCC.g:330:27: ( cond_types ( ( PLUS | MINUS | MULT ) cond_types )* )
-                # ProtoCC.g:330:29: cond_types ( ( PLUS | MINUS | MULT ) cond_types )*
+                # ProtoCC.g:333:27: ( cond_types ( ( PLUS | MINUS | MULT ) cond_types )* )
+                # ProtoCC.g:333:29: cond_types ( ( PLUS | MINUS | MULT ) cond_types )*
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                self._state.following.append(self.FOLLOW_cond_types_in_cond_type_expr3217)
-                cond_types291 = self.cond_types()
+                self._state.following.append(self.FOLLOW_cond_types_in_cond_type_expr3268)
+                cond_types297 = self.cond_types()
 
                 self._state.following.pop()
-                self._adaptor.addChild(root_0, cond_types291.tree)
+                self._adaptor.addChild(root_0, cond_types297.tree)
 
 
-                # ProtoCC.g:330:40: ( ( PLUS | MINUS | MULT ) cond_types )*
+                # ProtoCC.g:333:40: ( ( PLUS | MINUS | MULT ) cond_types )*
                 while True: #loop49
                     alt49 = 2
                     LA49_0 = self.input.LA(1)
@@ -9547,13 +9760,13 @@ class ProtoCCParser(Parser):
 
 
                     if alt49 == 1:
-                        # ProtoCC.g:330:41: ( PLUS | MINUS | MULT ) cond_types
+                        # ProtoCC.g:333:41: ( PLUS | MINUS | MULT ) cond_types
                         pass 
-                        set292 = self.input.LT(1)
+                        set298 = self.input.LT(1)
 
                         if self.input.LA(1) in {MINUS, MULT, PLUS}:
                             self.input.consume()
-                            self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set292))
+                            self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set298))
 
                             self._state.errorRecovery = False
 
@@ -9564,11 +9777,11 @@ class ProtoCCParser(Parser):
 
 
 
-                        self._state.following.append(self.FOLLOW_cond_types_in_cond_type_expr3232)
-                        cond_types293 = self.cond_types()
+                        self._state.following.append(self.FOLLOW_cond_types_in_cond_type_expr3283)
+                        cond_types299 = self.cond_types()
 
                         self._state.following.pop()
-                        self._adaptor.addChild(root_0, cond_types293.tree)
+                        self._adaptor.addChild(root_0, cond_types299.tree)
 
 
 
@@ -9609,7 +9822,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "cond_types"
-    # ProtoCC.g:331:13: cond_types : ( object_expr | set_func | INT | BOOL | NID );
+    # ProtoCC.g:334:13: cond_types : ( object_expr | set_func | INT | BOOL | NID );
     def cond_types(self, ):
         retval = self.cond_types_return()
         retval.start = self.input.LT(1)
@@ -9617,19 +9830,19 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        INT296 = None
-        BOOL297 = None
-        NID298 = None
-        object_expr294 = None
-        set_func295 = None
+        INT302 = None
+        BOOL303 = None
+        NID304 = None
+        object_expr300 = None
+        set_func301 = None
 
-        INT296_tree = None
-        BOOL297_tree = None
-        NID298_tree = None
+        INT302_tree = None
+        BOOL303_tree = None
+        NID304_tree = None
 
         try:
             try:
-                # ProtoCC.g:331:24: ( object_expr | set_func | INT | BOOL | NID )
+                # ProtoCC.g:334:24: ( object_expr | set_func | INT | BOOL | NID )
                 alt50 = 5
                 LA50 = self.input.LA(1)
                 if LA50 in {ID}:
@@ -9640,7 +9853,7 @@ class ProtoCCParser(Parser):
 
                         if (LA50_5 in {ID, NID}) :
                             alt50 = 1
-                        elif (LA50_5 in {134, 136, 138, 139, 140, 144}) :
+                        elif (LA50_5 in {137, 139, 141, 142, 143, 147}) :
                             alt50 = 2
                         else:
                             nvae = NoViableAltException("", 50, 5, self.input)
@@ -9648,7 +9861,7 @@ class ProtoCCParser(Parser):
                             raise nvae
 
 
-                    elif ((109 <= LA50_1 <= 115) or LA50_1 in {CBRACE, MINUS, MULT, OCBRACE, PLUS, 145}) :
+                    elif ((111 <= LA50_1 <= 117) or LA50_1 in {CBRACE, MINUS, MULT, OCBRACE, PLUS, 148}) :
                         alt50 = 1
                     else:
                         nvae = NoViableAltException("", 50, 1, self.input)
@@ -9669,68 +9882,68 @@ class ProtoCCParser(Parser):
 
 
                 if alt50 == 1:
-                    # ProtoCC.g:331:26: object_expr
+                    # ProtoCC.g:334:26: object_expr
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_object_expr_in_cond_types3253)
-                    object_expr294 = self.object_expr()
+                    self._state.following.append(self.FOLLOW_object_expr_in_cond_types3304)
+                    object_expr300 = self.object_expr()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, object_expr294.tree)
+                    self._adaptor.addChild(root_0, object_expr300.tree)
 
 
 
                 elif alt50 == 2:
-                    # ProtoCC.g:331:40: set_func
+                    # ProtoCC.g:334:40: set_func
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_set_func_in_cond_types3257)
-                    set_func295 = self.set_func()
+                    self._state.following.append(self.FOLLOW_set_func_in_cond_types3308)
+                    set_func301 = self.set_func()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, set_func295.tree)
+                    self._adaptor.addChild(root_0, set_func301.tree)
 
 
 
                 elif alt50 == 3:
-                    # ProtoCC.g:331:51: INT
+                    # ProtoCC.g:334:51: INT
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    INT296 = self.match(self.input, INT, self.FOLLOW_INT_in_cond_types3261)
-                    INT296_tree = self._adaptor.createWithPayload(INT296)
-                    self._adaptor.addChild(root_0, INT296_tree)
+                    INT302 = self.match(self.input, INT, self.FOLLOW_INT_in_cond_types3312)
+                    INT302_tree = self._adaptor.createWithPayload(INT302)
+                    self._adaptor.addChild(root_0, INT302_tree)
 
 
 
 
                 elif alt50 == 4:
-                    # ProtoCC.g:331:57: BOOL
+                    # ProtoCC.g:334:57: BOOL
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    BOOL297 = self.match(self.input, BOOL, self.FOLLOW_BOOL_in_cond_types3265)
-                    BOOL297_tree = self._adaptor.createWithPayload(BOOL297)
-                    self._adaptor.addChild(root_0, BOOL297_tree)
+                    BOOL303 = self.match(self.input, BOOL, self.FOLLOW_BOOL_in_cond_types3316)
+                    BOOL303_tree = self._adaptor.createWithPayload(BOOL303)
+                    self._adaptor.addChild(root_0, BOOL303_tree)
 
 
 
 
                 elif alt50 == 5:
-                    # ProtoCC.g:331:64: NID
+                    # ProtoCC.g:334:64: NID
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    NID298 = self.match(self.input, NID, self.FOLLOW_NID_in_cond_types3269)
-                    NID298_tree = self._adaptor.createWithPayload(NID298)
-                    self._adaptor.addChild(root_0, NID298_tree)
+                    NID304 = self.match(self.input, NID, self.FOLLOW_NID_in_cond_types3320)
+                    NID304_tree = self._adaptor.createWithPayload(NID304)
+                    self._adaptor.addChild(root_0, NID304_tree)
 
 
 
@@ -9766,7 +9979,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "policy_op_type"
-    # ProtoCC.g:335:1: policy_op_type : ( 'Rd' | 'Wr' | 'RdWr' | 'None' );
+    # ProtoCC.g:338:1: policy_op_type : ( 'Rd' | 'Wr' | 'RdWr' | 'None' );
     def policy_op_type(self, ):
         retval = self.policy_op_type_return()
         retval.start = self.input.LT(1)
@@ -9774,23 +9987,23 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        set299 = None
+        set305 = None
 
-        set299_tree = None
+        set305_tree = None
 
         try:
             try:
-                # ProtoCC.g:335:15: ( 'Rd' | 'Wr' | 'RdWr' | 'None' )
+                # ProtoCC.g:338:15: ( 'Rd' | 'Wr' | 'RdWr' | 'None' )
                 # ProtoCC.g:
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                set299 = self.input.LT(1)
+                set305 = self.input.LT(1)
 
-                if self.input.LA(1) in {123, 127, 128, 132}:
+                if self.input.LA(1) in {125, 129, 130, 134}:
                     self.input.consume()
-                    self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set299))
+                    self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set305))
 
                     self._state.errorRecovery = False
 
@@ -9834,7 +10047,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "policy_op"
-    # ProtoCC.g:336:1: policy_op : ( ( policy_op_type ( '|' policy_op_type )* ) -> ^( POLICY_OP_ ( policy_op_type )+ ) | '_' -> ^( POLICY_OP_ '_' ) );
+    # ProtoCC.g:339:1: policy_op : ( ( policy_op_type ( '|' policy_op_type )* ) -> ^( POLICY_OP_ ( policy_op_type )+ ) | '_' -> ^( POLICY_OP_ '_' ) );
     def policy_op(self, ):
         retval = self.policy_op_return()
         retval.start = self.input.LT(1)
@@ -9842,25 +10055,25 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        char_literal301 = None
-        char_literal303 = None
-        policy_op_type300 = None
-        policy_op_type302 = None
+        char_literal307 = None
+        char_literal309 = None
+        policy_op_type306 = None
+        policy_op_type308 = None
 
-        char_literal301_tree = None
-        char_literal303_tree = None
-        stream_133 = RewriteRuleTokenStream(self._adaptor, "token 133")
-        stream_145 = RewriteRuleTokenStream(self._adaptor, "token 145")
+        char_literal307_tree = None
+        char_literal309_tree = None
+        stream_135 = RewriteRuleTokenStream(self._adaptor, "token 135")
+        stream_148 = RewriteRuleTokenStream(self._adaptor, "token 148")
         stream_policy_op_type = RewriteRuleSubtreeStream(self._adaptor, "rule policy_op_type")
         try:
             try:
-                # ProtoCC.g:337:3: ( ( policy_op_type ( '|' policy_op_type )* ) -> ^( POLICY_OP_ ( policy_op_type )+ ) | '_' -> ^( POLICY_OP_ '_' ) )
+                # ProtoCC.g:340:3: ( ( policy_op_type ( '|' policy_op_type )* ) -> ^( POLICY_OP_ ( policy_op_type )+ ) | '_' -> ^( POLICY_OP_ '_' ) )
                 alt52 = 2
                 LA52_0 = self.input.LA(1)
 
-                if (LA52_0 in {123, 127, 128, 132}) :
+                if (LA52_0 in {125, 129, 130, 134}) :
                     alt52 = 1
-                elif (LA52_0 == 133) :
+                elif (LA52_0 == 135) :
                     alt52 = 2
                 else:
                     nvae = NoViableAltException("", 52, 0, self.input)
@@ -9869,39 +10082,39 @@ class ProtoCCParser(Parser):
 
 
                 if alt52 == 1:
-                    # ProtoCC.g:337:5: ( policy_op_type ( '|' policy_op_type )* )
+                    # ProtoCC.g:340:5: ( policy_op_type ( '|' policy_op_type )* )
                     pass 
-                    # ProtoCC.g:337:5: ( policy_op_type ( '|' policy_op_type )* )
-                    # ProtoCC.g:337:6: policy_op_type ( '|' policy_op_type )*
+                    # ProtoCC.g:340:5: ( policy_op_type ( '|' policy_op_type )* )
+                    # ProtoCC.g:340:6: policy_op_type ( '|' policy_op_type )*
                     pass 
-                    self._state.following.append(self.FOLLOW_policy_op_type_in_policy_op3301)
-                    policy_op_type300 = self.policy_op_type()
+                    self._state.following.append(self.FOLLOW_policy_op_type_in_policy_op3352)
+                    policy_op_type306 = self.policy_op_type()
 
                     self._state.following.pop()
-                    stream_policy_op_type.add(policy_op_type300.tree)
+                    stream_policy_op_type.add(policy_op_type306.tree)
 
 
-                    # ProtoCC.g:337:21: ( '|' policy_op_type )*
+                    # ProtoCC.g:340:21: ( '|' policy_op_type )*
                     while True: #loop51
                         alt51 = 2
                         LA51_0 = self.input.LA(1)
 
-                        if (LA51_0 == 145) :
+                        if (LA51_0 == 148) :
                             alt51 = 1
 
 
                         if alt51 == 1:
-                            # ProtoCC.g:337:22: '|' policy_op_type
+                            # ProtoCC.g:340:22: '|' policy_op_type
                             pass 
-                            char_literal301 = self.match(self.input, 145, self.FOLLOW_145_in_policy_op3304) 
-                            stream_145.add(char_literal301)
+                            char_literal307 = self.match(self.input, 148, self.FOLLOW_148_in_policy_op3355) 
+                            stream_148.add(char_literal307)
 
 
-                            self._state.following.append(self.FOLLOW_policy_op_type_in_policy_op3306)
-                            policy_op_type302 = self.policy_op_type()
+                            self._state.following.append(self.FOLLOW_policy_op_type_in_policy_op3357)
+                            policy_op_type308 = self.policy_op_type()
 
                             self._state.following.pop()
-                            stream_policy_op_type.add(policy_op_type302.tree)
+                            stream_policy_op_type.add(policy_op_type308.tree)
 
 
 
@@ -9927,14 +10140,14 @@ class ProtoCCParser(Parser):
 
 
                     root_0 = self._adaptor.nil()
-                    # 337:44: -> ^( POLICY_OP_ ( policy_op_type )+ )
-                    # ProtoCC.g:337:47: ^( POLICY_OP_ ( policy_op_type )+ )
+                    # 340:44: -> ^( POLICY_OP_ ( policy_op_type )+ )
+                    # ProtoCC.g:340:47: ^( POLICY_OP_ ( policy_op_type )+ )
                     root_1 = self._adaptor.nil()
                     root_1 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(POLICY_OP_, "POLICY_OP_")
                     , root_1)
 
-                    # ProtoCC.g:337:60: ( policy_op_type )+
+                    # ProtoCC.g:340:60: ( policy_op_type )+
                     if not (stream_policy_op_type.hasNext()):
                         raise RewriteEarlyExitException()
 
@@ -9955,14 +10168,14 @@ class ProtoCCParser(Parser):
 
 
                 elif alt52 == 2:
-                    # ProtoCC.g:338:4: '_'
+                    # ProtoCC.g:341:4: '_'
                     pass 
-                    char_literal303 = self.match(self.input, 133, self.FOLLOW_133_in_policy_op3323) 
-                    stream_133.add(char_literal303)
+                    char_literal309 = self.match(self.input, 135, self.FOLLOW_135_in_policy_op3374) 
+                    stream_135.add(char_literal309)
 
 
                     # AST Rewrite
-                    # elements: 133
+                    # elements: 135
                     # token labels: 
                     # rule labels: retval
                     # token list labels: 
@@ -9976,15 +10189,15 @@ class ProtoCCParser(Parser):
 
 
                     root_0 = self._adaptor.nil()
-                    # 338:43: -> ^( POLICY_OP_ '_' )
-                    # ProtoCC.g:338:46: ^( POLICY_OP_ '_' )
+                    # 341:43: -> ^( POLICY_OP_ '_' )
+                    # ProtoCC.g:341:46: ^( POLICY_OP_ '_' )
                     root_1 = self._adaptor.nil()
                     root_1 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(POLICY_OP_, "POLICY_OP_")
                     , root_1)
 
                     self._adaptor.addChild(root_1, 
-                    stream_133.nextNode()
+                    stream_135.nextNode()
                     )
 
                     self._adaptor.addChild(root_0, root_1)
@@ -10028,7 +10241,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "policy_data_type"
-    # ProtoCC.g:341:1: policy_data_type : ( 'Dirty' | 'Clean' | 'P' | 'NP' | 'None' );
+    # ProtoCC.g:344:1: policy_data_type : ( 'Dirty' | 'Clean' | 'P' | 'NP' | 'None' );
     def policy_data_type(self, ):
         retval = self.policy_data_type_return()
         retval.start = self.input.LT(1)
@@ -10036,23 +10249,23 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        set304 = None
+        set310 = None
 
-        set304_tree = None
+        set310_tree = None
 
         try:
             try:
-                # ProtoCC.g:341:17: ( 'Dirty' | 'Clean' | 'P' | 'NP' | 'None' )
+                # ProtoCC.g:344:17: ( 'Dirty' | 'Clean' | 'P' | 'NP' | 'None' )
                 # ProtoCC.g:
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                set304 = self.input.LT(1)
+                set310 = self.input.LT(1)
 
-                if self.input.LA(1) in {117, 118, 122, 123, 125}:
+                if self.input.LA(1) in {119, 120, 124, 125, 127}:
                     self.input.consume()
-                    self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set304))
+                    self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set310))
 
                     self._state.errorRecovery = False
 
@@ -10096,7 +10309,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "policy_data"
-    # ProtoCC.g:342:1: policy_data : ( ( policy_data_type ( '|' policy_data_type )* ) -> ^( POLICY_DATA_ ( policy_data_type )+ ) | '_' -> ^( POLICY_DATA_ '_' ) );
+    # ProtoCC.g:345:1: policy_data : ( ( policy_data_type ( '|' policy_data_type )* ) -> ^( POLICY_DATA_ ( policy_data_type )+ ) | '_' -> ^( POLICY_DATA_ '_' ) );
     def policy_data(self, ):
         retval = self.policy_data_return()
         retval.start = self.input.LT(1)
@@ -10104,25 +10317,25 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        char_literal306 = None
-        char_literal308 = None
-        policy_data_type305 = None
-        policy_data_type307 = None
+        char_literal312 = None
+        char_literal314 = None
+        policy_data_type311 = None
+        policy_data_type313 = None
 
-        char_literal306_tree = None
-        char_literal308_tree = None
-        stream_133 = RewriteRuleTokenStream(self._adaptor, "token 133")
-        stream_145 = RewriteRuleTokenStream(self._adaptor, "token 145")
+        char_literal312_tree = None
+        char_literal314_tree = None
+        stream_135 = RewriteRuleTokenStream(self._adaptor, "token 135")
+        stream_148 = RewriteRuleTokenStream(self._adaptor, "token 148")
         stream_policy_data_type = RewriteRuleSubtreeStream(self._adaptor, "rule policy_data_type")
         try:
             try:
-                # ProtoCC.g:343:3: ( ( policy_data_type ( '|' policy_data_type )* ) -> ^( POLICY_DATA_ ( policy_data_type )+ ) | '_' -> ^( POLICY_DATA_ '_' ) )
+                # ProtoCC.g:346:3: ( ( policy_data_type ( '|' policy_data_type )* ) -> ^( POLICY_DATA_ ( policy_data_type )+ ) | '_' -> ^( POLICY_DATA_ '_' ) )
                 alt54 = 2
                 LA54_0 = self.input.LA(1)
 
-                if (LA54_0 in {117, 118, 122, 123, 125}) :
+                if (LA54_0 in {119, 120, 124, 125, 127}) :
                     alt54 = 1
-                elif (LA54_0 == 133) :
+                elif (LA54_0 == 135) :
                     alt54 = 2
                 else:
                     nvae = NoViableAltException("", 54, 0, self.input)
@@ -10131,39 +10344,39 @@ class ProtoCCParser(Parser):
 
 
                 if alt54 == 1:
-                    # ProtoCC.g:343:5: ( policy_data_type ( '|' policy_data_type )* )
+                    # ProtoCC.g:346:5: ( policy_data_type ( '|' policy_data_type )* )
                     pass 
-                    # ProtoCC.g:343:5: ( policy_data_type ( '|' policy_data_type )* )
-                    # ProtoCC.g:343:6: policy_data_type ( '|' policy_data_type )*
+                    # ProtoCC.g:346:5: ( policy_data_type ( '|' policy_data_type )* )
+                    # ProtoCC.g:346:6: policy_data_type ( '|' policy_data_type )*
                     pass 
-                    self._state.following.append(self.FOLLOW_policy_data_type_in_policy_data3401)
-                    policy_data_type305 = self.policy_data_type()
+                    self._state.following.append(self.FOLLOW_policy_data_type_in_policy_data3452)
+                    policy_data_type311 = self.policy_data_type()
 
                     self._state.following.pop()
-                    stream_policy_data_type.add(policy_data_type305.tree)
+                    stream_policy_data_type.add(policy_data_type311.tree)
 
 
-                    # ProtoCC.g:343:23: ( '|' policy_data_type )*
+                    # ProtoCC.g:346:23: ( '|' policy_data_type )*
                     while True: #loop53
                         alt53 = 2
                         LA53_0 = self.input.LA(1)
 
-                        if (LA53_0 == 145) :
+                        if (LA53_0 == 148) :
                             alt53 = 1
 
 
                         if alt53 == 1:
-                            # ProtoCC.g:343:24: '|' policy_data_type
+                            # ProtoCC.g:346:24: '|' policy_data_type
                             pass 
-                            char_literal306 = self.match(self.input, 145, self.FOLLOW_145_in_policy_data3404) 
-                            stream_145.add(char_literal306)
+                            char_literal312 = self.match(self.input, 148, self.FOLLOW_148_in_policy_data3455) 
+                            stream_148.add(char_literal312)
 
 
-                            self._state.following.append(self.FOLLOW_policy_data_type_in_policy_data3406)
-                            policy_data_type307 = self.policy_data_type()
+                            self._state.following.append(self.FOLLOW_policy_data_type_in_policy_data3457)
+                            policy_data_type313 = self.policy_data_type()
 
                             self._state.following.pop()
-                            stream_policy_data_type.add(policy_data_type307.tree)
+                            stream_policy_data_type.add(policy_data_type313.tree)
 
 
 
@@ -10189,14 +10402,14 @@ class ProtoCCParser(Parser):
 
 
                     root_0 = self._adaptor.nil()
-                    # 343:48: -> ^( POLICY_DATA_ ( policy_data_type )+ )
-                    # ProtoCC.g:343:51: ^( POLICY_DATA_ ( policy_data_type )+ )
+                    # 346:48: -> ^( POLICY_DATA_ ( policy_data_type )+ )
+                    # ProtoCC.g:346:51: ^( POLICY_DATA_ ( policy_data_type )+ )
                     root_1 = self._adaptor.nil()
                     root_1 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(POLICY_DATA_, "POLICY_DATA_")
                     , root_1)
 
-                    # ProtoCC.g:343:66: ( policy_data_type )+
+                    # ProtoCC.g:346:66: ( policy_data_type )+
                     if not (stream_policy_data_type.hasNext()):
                         raise RewriteEarlyExitException()
 
@@ -10217,14 +10430,14 @@ class ProtoCCParser(Parser):
 
 
                 elif alt54 == 2:
-                    # ProtoCC.g:344:4: '_'
+                    # ProtoCC.g:347:4: '_'
                     pass 
-                    char_literal308 = self.match(self.input, 133, self.FOLLOW_133_in_policy_data3423) 
-                    stream_133.add(char_literal308)
+                    char_literal314 = self.match(self.input, 135, self.FOLLOW_135_in_policy_data3474) 
+                    stream_135.add(char_literal314)
 
 
                     # AST Rewrite
-                    # elements: 133
+                    # elements: 135
                     # token labels: 
                     # rule labels: retval
                     # token list labels: 
@@ -10238,15 +10451,15 @@ class ProtoCCParser(Parser):
 
 
                     root_0 = self._adaptor.nil()
-                    # 344:47: -> ^( POLICY_DATA_ '_' )
-                    # ProtoCC.g:344:50: ^( POLICY_DATA_ '_' )
+                    # 347:47: -> ^( POLICY_DATA_ '_' )
+                    # ProtoCC.g:347:50: ^( POLICY_DATA_ '_' )
                     root_1 = self._adaptor.nil()
                     root_1 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(POLICY_DATA_, "POLICY_DATA_")
                     , root_1)
 
                     self._adaptor.addChild(root_1, 
-                    stream_133.nextNode()
+                    stream_135.nextNode()
                     )
 
                     self._adaptor.addChild(root_0, root_1)
@@ -10290,7 +10503,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "policy_coh_type"
-    # ProtoCC.g:347:1: policy_coh_type : ( 'coh' | 'nco' );
+    # ProtoCC.g:350:1: policy_coh_type : ( 'coh' | 'nco' );
     def policy_coh_type(self, ):
         retval = self.policy_coh_type_return()
         retval.start = self.input.LT(1)
@@ -10298,23 +10511,23 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        set309 = None
+        set315 = None
 
-        set309_tree = None
+        set315_tree = None
 
         try:
             try:
-                # ProtoCC.g:347:16: ( 'coh' | 'nco' )
+                # ProtoCC.g:350:16: ( 'coh' | 'nco' )
                 # ProtoCC.g:
                 pass 
                 root_0 = self._adaptor.nil()
 
 
-                set309 = self.input.LT(1)
+                set315 = self.input.LT(1)
 
-                if self.input.LA(1) in {137, 142}:
+                if self.input.LA(1) in {140, 145}:
                     self.input.consume()
-                    self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set309))
+                    self._adaptor.addChild(root_0, self._adaptor.createWithPayload(set315))
 
                     self._state.errorRecovery = False
 
@@ -10358,7 +10571,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "policy_coh"
-    # ProtoCC.g:348:1: policy_coh : ( ( policy_coh_type ( '|' policy_coh_type )* ) -> ^( POLICY_COH_ ( policy_coh_type )+ ) | '_' -> ^( POLICY_COH_ '_' ) );
+    # ProtoCC.g:351:1: policy_coh : ( ( policy_coh_type ( '|' policy_coh_type )* ) -> ^( POLICY_COH_ ( policy_coh_type )+ ) | '_' -> ^( POLICY_COH_ '_' ) );
     def policy_coh(self, ):
         retval = self.policy_coh_return()
         retval.start = self.input.LT(1)
@@ -10366,25 +10579,25 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        char_literal311 = None
-        char_literal313 = None
-        policy_coh_type310 = None
-        policy_coh_type312 = None
+        char_literal317 = None
+        char_literal319 = None
+        policy_coh_type316 = None
+        policy_coh_type318 = None
 
-        char_literal311_tree = None
-        char_literal313_tree = None
-        stream_133 = RewriteRuleTokenStream(self._adaptor, "token 133")
-        stream_145 = RewriteRuleTokenStream(self._adaptor, "token 145")
+        char_literal317_tree = None
+        char_literal319_tree = None
+        stream_135 = RewriteRuleTokenStream(self._adaptor, "token 135")
+        stream_148 = RewriteRuleTokenStream(self._adaptor, "token 148")
         stream_policy_coh_type = RewriteRuleSubtreeStream(self._adaptor, "rule policy_coh_type")
         try:
             try:
-                # ProtoCC.g:349:3: ( ( policy_coh_type ( '|' policy_coh_type )* ) -> ^( POLICY_COH_ ( policy_coh_type )+ ) | '_' -> ^( POLICY_COH_ '_' ) )
+                # ProtoCC.g:352:3: ( ( policy_coh_type ( '|' policy_coh_type )* ) -> ^( POLICY_COH_ ( policy_coh_type )+ ) | '_' -> ^( POLICY_COH_ '_' ) )
                 alt56 = 2
                 LA56_0 = self.input.LA(1)
 
-                if (LA56_0 in {137, 142}) :
+                if (LA56_0 in {140, 145}) :
                     alt56 = 1
-                elif (LA56_0 == 133) :
+                elif (LA56_0 == 135) :
                     alt56 = 2
                 else:
                     nvae = NoViableAltException("", 56, 0, self.input)
@@ -10393,39 +10606,39 @@ class ProtoCCParser(Parser):
 
 
                 if alt56 == 1:
-                    # ProtoCC.g:349:5: ( policy_coh_type ( '|' policy_coh_type )* )
+                    # ProtoCC.g:352:5: ( policy_coh_type ( '|' policy_coh_type )* )
                     pass 
-                    # ProtoCC.g:349:5: ( policy_coh_type ( '|' policy_coh_type )* )
-                    # ProtoCC.g:349:6: policy_coh_type ( '|' policy_coh_type )*
+                    # ProtoCC.g:352:5: ( policy_coh_type ( '|' policy_coh_type )* )
+                    # ProtoCC.g:352:6: policy_coh_type ( '|' policy_coh_type )*
                     pass 
-                    self._state.following.append(self.FOLLOW_policy_coh_type_in_policy_coh3493)
-                    policy_coh_type310 = self.policy_coh_type()
+                    self._state.following.append(self.FOLLOW_policy_coh_type_in_policy_coh3544)
+                    policy_coh_type316 = self.policy_coh_type()
 
                     self._state.following.pop()
-                    stream_policy_coh_type.add(policy_coh_type310.tree)
+                    stream_policy_coh_type.add(policy_coh_type316.tree)
 
 
-                    # ProtoCC.g:349:22: ( '|' policy_coh_type )*
+                    # ProtoCC.g:352:22: ( '|' policy_coh_type )*
                     while True: #loop55
                         alt55 = 2
                         LA55_0 = self.input.LA(1)
 
-                        if (LA55_0 == 145) :
+                        if (LA55_0 == 148) :
                             alt55 = 1
 
 
                         if alt55 == 1:
-                            # ProtoCC.g:349:23: '|' policy_coh_type
+                            # ProtoCC.g:352:23: '|' policy_coh_type
                             pass 
-                            char_literal311 = self.match(self.input, 145, self.FOLLOW_145_in_policy_coh3496) 
-                            stream_145.add(char_literal311)
+                            char_literal317 = self.match(self.input, 148, self.FOLLOW_148_in_policy_coh3547) 
+                            stream_148.add(char_literal317)
 
 
-                            self._state.following.append(self.FOLLOW_policy_coh_type_in_policy_coh3498)
-                            policy_coh_type312 = self.policy_coh_type()
+                            self._state.following.append(self.FOLLOW_policy_coh_type_in_policy_coh3549)
+                            policy_coh_type318 = self.policy_coh_type()
 
                             self._state.following.pop()
-                            stream_policy_coh_type.add(policy_coh_type312.tree)
+                            stream_policy_coh_type.add(policy_coh_type318.tree)
 
 
 
@@ -10451,14 +10664,14 @@ class ProtoCCParser(Parser):
 
 
                     root_0 = self._adaptor.nil()
-                    # 349:46: -> ^( POLICY_COH_ ( policy_coh_type )+ )
-                    # ProtoCC.g:349:49: ^( POLICY_COH_ ( policy_coh_type )+ )
+                    # 352:46: -> ^( POLICY_COH_ ( policy_coh_type )+ )
+                    # ProtoCC.g:352:49: ^( POLICY_COH_ ( policy_coh_type )+ )
                     root_1 = self._adaptor.nil()
                     root_1 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(POLICY_COH_, "POLICY_COH_")
                     , root_1)
 
-                    # ProtoCC.g:349:63: ( policy_coh_type )+
+                    # ProtoCC.g:352:63: ( policy_coh_type )+
                     if not (stream_policy_coh_type.hasNext()):
                         raise RewriteEarlyExitException()
 
@@ -10479,14 +10692,14 @@ class ProtoCCParser(Parser):
 
 
                 elif alt56 == 2:
-                    # ProtoCC.g:350:4: '_'
+                    # ProtoCC.g:353:4: '_'
                     pass 
-                    char_literal313 = self.match(self.input, 133, self.FOLLOW_133_in_policy_coh3515) 
-                    stream_133.add(char_literal313)
+                    char_literal319 = self.match(self.input, 135, self.FOLLOW_135_in_policy_coh3566) 
+                    stream_135.add(char_literal319)
 
 
                     # AST Rewrite
-                    # elements: 133
+                    # elements: 135
                     # token labels: 
                     # rule labels: retval
                     # token list labels: 
@@ -10500,15 +10713,15 @@ class ProtoCCParser(Parser):
 
 
                     root_0 = self._adaptor.nil()
-                    # 350:45: -> ^( POLICY_COH_ '_' )
-                    # ProtoCC.g:350:48: ^( POLICY_COH_ '_' )
+                    # 353:45: -> ^( POLICY_COH_ '_' )
+                    # ProtoCC.g:353:48: ^( POLICY_COH_ '_' )
                     root_1 = self._adaptor.nil()
                     root_1 = self._adaptor.becomeRoot(
                     self._adaptor.createFromType(POLICY_COH_, "POLICY_COH_")
                     , root_1)
 
                     self._adaptor.addChild(root_1, 
-                    stream_133.nextNode()
+                    stream_135.nextNode()
                     )
 
                     self._adaptor.addChild(root_0, root_1)
@@ -10552,7 +10765,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "label_state"
-    # ProtoCC.g:354:1: label_state :{...}? ID OBRACE policy_op COMMA policy_data COMMA policy_coh CBRACE -> ^( LABEL_STATE_ policy_op policy_data policy_coh ) ;
+    # ProtoCC.g:357:1: label_state :{...}? ID OBRACE policy_op COMMA policy_data COMMA policy_coh CBRACE -> ^( LABEL_STATE_ policy_op policy_data policy_coh ) ;
     def label_state(self, ):
         retval = self.label_state_return()
         retval.start = self.input.LT(1)
@@ -10560,20 +10773,20 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        ID314 = None
-        OBRACE315 = None
-        COMMA317 = None
-        COMMA319 = None
-        CBRACE321 = None
-        policy_op316 = None
-        policy_data318 = None
-        policy_coh320 = None
+        ID320 = None
+        OBRACE321 = None
+        COMMA323 = None
+        COMMA325 = None
+        CBRACE327 = None
+        policy_op322 = None
+        policy_data324 = None
+        policy_coh326 = None
 
-        ID314_tree = None
-        OBRACE315_tree = None
-        COMMA317_tree = None
-        COMMA319_tree = None
-        CBRACE321_tree = None
+        ID320_tree = None
+        OBRACE321_tree = None
+        COMMA323_tree = None
+        COMMA325_tree = None
+        CBRACE327_tree = None
         stream_COMMA = RewriteRuleTokenStream(self._adaptor, "token COMMA")
         stream_OBRACE = RewriteRuleTokenStream(self._adaptor, "token OBRACE")
         stream_ID = RewriteRuleTokenStream(self._adaptor, "token ID")
@@ -10583,56 +10796,56 @@ class ProtoCCParser(Parser):
         stream_policy_coh = RewriteRuleSubtreeStream(self._adaptor, "rule policy_coh")
         try:
             try:
-                # ProtoCC.g:354:12: ({...}? ID OBRACE policy_op COMMA policy_data COMMA policy_coh CBRACE -> ^( LABEL_STATE_ policy_op policy_data policy_coh ) )
-                # ProtoCC.g:354:14: {...}? ID OBRACE policy_op COMMA policy_data COMMA policy_coh CBRACE
+                # ProtoCC.g:357:12: ({...}? ID OBRACE policy_op COMMA policy_data COMMA policy_coh CBRACE -> ^( LABEL_STATE_ policy_op policy_data policy_coh ) )
+                # ProtoCC.g:357:14: {...}? ID OBRACE policy_op COMMA policy_data COMMA policy_coh CBRACE
                 pass 
                 if not ((self.input.LT(1).text == 'S')):
                     raise FailedPredicateException(self.input, "label_state", "self.input.LT(1).text == 'S'")
 
 
-                ID314 = self.match(self.input, ID, self.FOLLOW_ID_in_label_state3572) 
-                stream_ID.add(ID314)
+                ID320 = self.match(self.input, ID, self.FOLLOW_ID_in_label_state3623) 
+                stream_ID.add(ID320)
 
 
-                OBRACE315 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_label_state3574) 
-                stream_OBRACE.add(OBRACE315)
+                OBRACE321 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_label_state3625) 
+                stream_OBRACE.add(OBRACE321)
 
 
-                self._state.following.append(self.FOLLOW_policy_op_in_label_state3576)
-                policy_op316 = self.policy_op()
-
-                self._state.following.pop()
-                stream_policy_op.add(policy_op316.tree)
-
-
-                COMMA317 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_label_state3578) 
-                stream_COMMA.add(COMMA317)
-
-
-                self._state.following.append(self.FOLLOW_policy_data_in_label_state3580)
-                policy_data318 = self.policy_data()
+                self._state.following.append(self.FOLLOW_policy_op_in_label_state3627)
+                policy_op322 = self.policy_op()
 
                 self._state.following.pop()
-                stream_policy_data.add(policy_data318.tree)
+                stream_policy_op.add(policy_op322.tree)
 
 
-                COMMA319 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_label_state3582) 
-                stream_COMMA.add(COMMA319)
+                COMMA323 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_label_state3629) 
+                stream_COMMA.add(COMMA323)
 
 
-                self._state.following.append(self.FOLLOW_policy_coh_in_label_state3584)
-                policy_coh320 = self.policy_coh()
+                self._state.following.append(self.FOLLOW_policy_data_in_label_state3631)
+                policy_data324 = self.policy_data()
 
                 self._state.following.pop()
-                stream_policy_coh.add(policy_coh320.tree)
+                stream_policy_data.add(policy_data324.tree)
 
 
-                CBRACE321 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_label_state3586) 
-                stream_CBRACE.add(CBRACE321)
+                COMMA325 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_label_state3633) 
+                stream_COMMA.add(COMMA325)
+
+
+                self._state.following.append(self.FOLLOW_policy_coh_in_label_state3635)
+                policy_coh326 = self.policy_coh()
+
+                self._state.following.pop()
+                stream_policy_coh.add(policy_coh326.tree)
+
+
+                CBRACE327 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_label_state3637) 
+                stream_CBRACE.add(CBRACE327)
 
 
                 # AST Rewrite
-                # elements: policy_op, policy_data, policy_coh
+                # elements: policy_coh, policy_data, policy_op
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -10646,8 +10859,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 355:4: -> ^( LABEL_STATE_ policy_op policy_data policy_coh )
-                # ProtoCC.g:355:7: ^( LABEL_STATE_ policy_op policy_data policy_coh )
+                # 358:4: -> ^( LABEL_STATE_ policy_op policy_data policy_coh )
+                # ProtoCC.g:358:7: ^( LABEL_STATE_ policy_op policy_data policy_coh )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(LABEL_STATE_, "LABEL_STATE_")
@@ -10701,7 +10914,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "label_message"
-    # ProtoCC.g:357:1: label_message :{...}? ID OBRACE policy_op COMMA policy_data COMMA policy_coh CBRACE -> ^( LABEL_MESSAGE_ policy_op policy_data policy_coh ) ;
+    # ProtoCC.g:360:1: label_message :{...}? ID OBRACE policy_op COMMA policy_data COMMA policy_coh CBRACE -> ^( LABEL_MESSAGE_ policy_op policy_data policy_coh ) ;
     def label_message(self, ):
         retval = self.label_message_return()
         retval.start = self.input.LT(1)
@@ -10709,20 +10922,20 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        ID322 = None
-        OBRACE323 = None
-        COMMA325 = None
-        COMMA327 = None
-        CBRACE329 = None
-        policy_op324 = None
-        policy_data326 = None
-        policy_coh328 = None
+        ID328 = None
+        OBRACE329 = None
+        COMMA331 = None
+        COMMA333 = None
+        CBRACE335 = None
+        policy_op330 = None
+        policy_data332 = None
+        policy_coh334 = None
 
-        ID322_tree = None
-        OBRACE323_tree = None
-        COMMA325_tree = None
-        COMMA327_tree = None
-        CBRACE329_tree = None
+        ID328_tree = None
+        OBRACE329_tree = None
+        COMMA331_tree = None
+        COMMA333_tree = None
+        CBRACE335_tree = None
         stream_COMMA = RewriteRuleTokenStream(self._adaptor, "token COMMA")
         stream_OBRACE = RewriteRuleTokenStream(self._adaptor, "token OBRACE")
         stream_ID = RewriteRuleTokenStream(self._adaptor, "token ID")
@@ -10732,52 +10945,52 @@ class ProtoCCParser(Parser):
         stream_policy_coh = RewriteRuleSubtreeStream(self._adaptor, "rule policy_coh")
         try:
             try:
-                # ProtoCC.g:357:14: ({...}? ID OBRACE policy_op COMMA policy_data COMMA policy_coh CBRACE -> ^( LABEL_MESSAGE_ policy_op policy_data policy_coh ) )
-                # ProtoCC.g:357:15: {...}? ID OBRACE policy_op COMMA policy_data COMMA policy_coh CBRACE
+                # ProtoCC.g:360:14: ({...}? ID OBRACE policy_op COMMA policy_data COMMA policy_coh CBRACE -> ^( LABEL_MESSAGE_ policy_op policy_data policy_coh ) )
+                # ProtoCC.g:360:15: {...}? ID OBRACE policy_op COMMA policy_data COMMA policy_coh CBRACE
                 pass 
                 if not ((self.input.LT(1).text == 'M')):
                     raise FailedPredicateException(self.input, "label_message", "self.input.LT(1).text == 'M'")
 
 
-                ID322 = self.match(self.input, ID, self.FOLLOW_ID_in_label_message3610) 
-                stream_ID.add(ID322)
+                ID328 = self.match(self.input, ID, self.FOLLOW_ID_in_label_message3661) 
+                stream_ID.add(ID328)
 
 
-                OBRACE323 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_label_message3612) 
-                stream_OBRACE.add(OBRACE323)
+                OBRACE329 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_label_message3663) 
+                stream_OBRACE.add(OBRACE329)
 
 
-                self._state.following.append(self.FOLLOW_policy_op_in_label_message3614)
-                policy_op324 = self.policy_op()
-
-                self._state.following.pop()
-                stream_policy_op.add(policy_op324.tree)
-
-
-                COMMA325 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_label_message3616) 
-                stream_COMMA.add(COMMA325)
-
-
-                self._state.following.append(self.FOLLOW_policy_data_in_label_message3618)
-                policy_data326 = self.policy_data()
+                self._state.following.append(self.FOLLOW_policy_op_in_label_message3665)
+                policy_op330 = self.policy_op()
 
                 self._state.following.pop()
-                stream_policy_data.add(policy_data326.tree)
+                stream_policy_op.add(policy_op330.tree)
 
 
-                COMMA327 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_label_message3620) 
-                stream_COMMA.add(COMMA327)
+                COMMA331 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_label_message3667) 
+                stream_COMMA.add(COMMA331)
 
 
-                self._state.following.append(self.FOLLOW_policy_coh_in_label_message3622)
-                policy_coh328 = self.policy_coh()
+                self._state.following.append(self.FOLLOW_policy_data_in_label_message3669)
+                policy_data332 = self.policy_data()
 
                 self._state.following.pop()
-                stream_policy_coh.add(policy_coh328.tree)
+                stream_policy_data.add(policy_data332.tree)
 
 
-                CBRACE329 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_label_message3624) 
-                stream_CBRACE.add(CBRACE329)
+                COMMA333 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_label_message3671) 
+                stream_COMMA.add(COMMA333)
+
+
+                self._state.following.append(self.FOLLOW_policy_coh_in_label_message3673)
+                policy_coh334 = self.policy_coh()
+
+                self._state.following.pop()
+                stream_policy_coh.add(policy_coh334.tree)
+
+
+                CBRACE335 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_label_message3675) 
+                stream_CBRACE.add(CBRACE335)
 
 
                 # AST Rewrite
@@ -10795,8 +11008,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 358:3: -> ^( LABEL_MESSAGE_ policy_op policy_data policy_coh )
-                # ProtoCC.g:358:6: ^( LABEL_MESSAGE_ policy_op policy_data policy_coh )
+                # 361:3: -> ^( LABEL_MESSAGE_ policy_op policy_data policy_coh )
+                # ProtoCC.g:361:6: ^( LABEL_MESSAGE_ policy_op policy_data policy_coh )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(LABEL_MESSAGE_, "LABEL_MESSAGE_")
@@ -10850,7 +11063,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "data_rule"
-    # ProtoCC.g:361:1: data_rule : 'Data' OBRACE label_state CBRACE SEMICOLON -> ^( DATA_RULE_ label_state ) ;
+    # ProtoCC.g:364:1: data_rule : 'Data' OBRACE label_state CBRACE SEMICOLON -> ^( DATA_RULE_ label_state ) ;
     def data_rule(self, ):
         retval = self.data_rule_return()
         retval.start = self.input.LT(1)
@@ -10858,16 +11071,16 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        string_literal330 = None
-        OBRACE331 = None
-        CBRACE333 = None
-        SEMICOLON334 = None
-        label_state332 = None
+        string_literal336 = None
+        OBRACE337 = None
+        CBRACE339 = None
+        SEMICOLON340 = None
+        label_state338 = None
 
-        string_literal330_tree = None
-        OBRACE331_tree = None
-        CBRACE333_tree = None
-        SEMICOLON334_tree = None
+        string_literal336_tree = None
+        OBRACE337_tree = None
+        CBRACE339_tree = None
+        SEMICOLON340_tree = None
         stream_OBRACE = RewriteRuleTokenStream(self._adaptor, "token OBRACE")
         stream_DATA = RewriteRuleTokenStream(self._adaptor, "token DATA")
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
@@ -10875,30 +11088,30 @@ class ProtoCCParser(Parser):
         stream_label_state = RewriteRuleSubtreeStream(self._adaptor, "rule label_state")
         try:
             try:
-                # ProtoCC.g:361:10: ( 'Data' OBRACE label_state CBRACE SEMICOLON -> ^( DATA_RULE_ label_state ) )
-                # ProtoCC.g:361:12: 'Data' OBRACE label_state CBRACE SEMICOLON
+                # ProtoCC.g:364:10: ( 'Data' OBRACE label_state CBRACE SEMICOLON -> ^( DATA_RULE_ label_state ) )
+                # ProtoCC.g:364:12: 'Data' OBRACE label_state CBRACE SEMICOLON
                 pass 
-                string_literal330 = self.match(self.input, DATA, self.FOLLOW_DATA_in_data_rule3648) 
-                stream_DATA.add(string_literal330)
+                string_literal336 = self.match(self.input, DATA, self.FOLLOW_DATA_in_data_rule3699) 
+                stream_DATA.add(string_literal336)
 
 
-                OBRACE331 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_data_rule3650) 
-                stream_OBRACE.add(OBRACE331)
+                OBRACE337 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_data_rule3701) 
+                stream_OBRACE.add(OBRACE337)
 
 
-                self._state.following.append(self.FOLLOW_label_state_in_data_rule3652)
-                label_state332 = self.label_state()
+                self._state.following.append(self.FOLLOW_label_state_in_data_rule3703)
+                label_state338 = self.label_state()
 
                 self._state.following.pop()
-                stream_label_state.add(label_state332.tree)
+                stream_label_state.add(label_state338.tree)
 
 
-                CBRACE333 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_data_rule3654) 
-                stream_CBRACE.add(CBRACE333)
+                CBRACE339 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_data_rule3705) 
+                stream_CBRACE.add(CBRACE339)
 
 
-                SEMICOLON334 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_data_rule3656) 
-                stream_SEMICOLON.add(SEMICOLON334)
+                SEMICOLON340 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_data_rule3707) 
+                stream_SEMICOLON.add(SEMICOLON340)
 
 
                 # AST Rewrite
@@ -10916,8 +11129,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 362:3: -> ^( DATA_RULE_ label_state )
-                # ProtoCC.g:362:6: ^( DATA_RULE_ label_state )
+                # 365:3: -> ^( DATA_RULE_ label_state )
+                # ProtoCC.g:365:6: ^( DATA_RULE_ label_state )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(DATA_RULE_, "DATA_RULE_")
@@ -10967,7 +11180,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "local_rule"
-    # ProtoCC.g:364:1: local_rule : 'Local' OBRACE label_state COMMA label_message COMMA label_state CBRACE SEMICOLON -> ^( LOCAL_RULE_ label_state label_message label_state ) ;
+    # ProtoCC.g:367:1: local_rule : 'Local' OBRACE label_state COMMA label_message COMMA label_state CBRACE SEMICOLON -> ^( LOCAL_RULE_ label_state label_message label_state ) ;
     def local_rule(self, ):
         retval = self.local_rule_return()
         retval.start = self.input.LT(1)
@@ -10975,81 +11188,81 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        string_literal335 = None
-        OBRACE336 = None
-        COMMA338 = None
-        COMMA340 = None
-        CBRACE342 = None
-        SEMICOLON343 = None
-        label_state337 = None
-        label_message339 = None
-        label_state341 = None
+        string_literal341 = None
+        OBRACE342 = None
+        COMMA344 = None
+        COMMA346 = None
+        CBRACE348 = None
+        SEMICOLON349 = None
+        label_state343 = None
+        label_message345 = None
+        label_state347 = None
 
-        string_literal335_tree = None
-        OBRACE336_tree = None
-        COMMA338_tree = None
-        COMMA340_tree = None
-        CBRACE342_tree = None
-        SEMICOLON343_tree = None
+        string_literal341_tree = None
+        OBRACE342_tree = None
+        COMMA344_tree = None
+        COMMA346_tree = None
+        CBRACE348_tree = None
+        SEMICOLON349_tree = None
         stream_COMMA = RewriteRuleTokenStream(self._adaptor, "token COMMA")
+        stream_122 = RewriteRuleTokenStream(self._adaptor, "token 122")
         stream_OBRACE = RewriteRuleTokenStream(self._adaptor, "token OBRACE")
         stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
         stream_CBRACE = RewriteRuleTokenStream(self._adaptor, "token CBRACE")
-        stream_120 = RewriteRuleTokenStream(self._adaptor, "token 120")
         stream_label_state = RewriteRuleSubtreeStream(self._adaptor, "rule label_state")
         stream_label_message = RewriteRuleSubtreeStream(self._adaptor, "rule label_message")
         try:
             try:
-                # ProtoCC.g:364:11: ( 'Local' OBRACE label_state COMMA label_message COMMA label_state CBRACE SEMICOLON -> ^( LOCAL_RULE_ label_state label_message label_state ) )
-                # ProtoCC.g:364:13: 'Local' OBRACE label_state COMMA label_message COMMA label_state CBRACE SEMICOLON
+                # ProtoCC.g:367:11: ( 'Local' OBRACE label_state COMMA label_message COMMA label_state CBRACE SEMICOLON -> ^( LOCAL_RULE_ label_state label_message label_state ) )
+                # ProtoCC.g:367:13: 'Local' OBRACE label_state COMMA label_message COMMA label_state CBRACE SEMICOLON
                 pass 
-                string_literal335 = self.match(self.input, 120, self.FOLLOW_120_in_local_rule3673) 
-                stream_120.add(string_literal335)
+                string_literal341 = self.match(self.input, 122, self.FOLLOW_122_in_local_rule3724) 
+                stream_122.add(string_literal341)
 
 
-                OBRACE336 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_local_rule3675) 
-                stream_OBRACE.add(OBRACE336)
+                OBRACE342 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_local_rule3726) 
+                stream_OBRACE.add(OBRACE342)
 
 
-                self._state.following.append(self.FOLLOW_label_state_in_local_rule3677)
-                label_state337 = self.label_state()
-
-                self._state.following.pop()
-                stream_label_state.add(label_state337.tree)
-
-
-                COMMA338 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_local_rule3679) 
-                stream_COMMA.add(COMMA338)
-
-
-                self._state.following.append(self.FOLLOW_label_message_in_local_rule3681)
-                label_message339 = self.label_message()
+                self._state.following.append(self.FOLLOW_label_state_in_local_rule3728)
+                label_state343 = self.label_state()
 
                 self._state.following.pop()
-                stream_label_message.add(label_message339.tree)
+                stream_label_state.add(label_state343.tree)
 
 
-                COMMA340 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_local_rule3683) 
-                stream_COMMA.add(COMMA340)
+                COMMA344 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_local_rule3730) 
+                stream_COMMA.add(COMMA344)
 
 
-                self._state.following.append(self.FOLLOW_label_state_in_local_rule3685)
-                label_state341 = self.label_state()
+                self._state.following.append(self.FOLLOW_label_message_in_local_rule3732)
+                label_message345 = self.label_message()
 
                 self._state.following.pop()
-                stream_label_state.add(label_state341.tree)
+                stream_label_message.add(label_message345.tree)
 
 
-                CBRACE342 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_local_rule3687) 
-                stream_CBRACE.add(CBRACE342)
+                COMMA346 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_local_rule3734) 
+                stream_COMMA.add(COMMA346)
 
 
-                SEMICOLON343 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_local_rule3689) 
-                stream_SEMICOLON.add(SEMICOLON343)
+                self._state.following.append(self.FOLLOW_label_state_in_local_rule3736)
+                label_state347 = self.label_state()
+
+                self._state.following.pop()
+                stream_label_state.add(label_state347.tree)
+
+
+                CBRACE348 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_local_rule3738) 
+                stream_CBRACE.add(CBRACE348)
+
+
+                SEMICOLON349 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_local_rule3740) 
+                stream_SEMICOLON.add(SEMICOLON349)
 
 
                 # AST Rewrite
-                # elements: label_message, label_state, label_state
+                # elements: label_state, label_state, label_message
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -11063,8 +11276,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 365:2: -> ^( LOCAL_RULE_ label_state label_message label_state )
-                # ProtoCC.g:365:5: ^( LOCAL_RULE_ label_state label_message label_state )
+                # 368:2: -> ^( LOCAL_RULE_ label_state label_message label_state )
+                # ProtoCC.g:368:5: ^( LOCAL_RULE_ label_state label_message label_state )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(LOCAL_RULE_, "LOCAL_RULE_")
@@ -11107,7 +11320,7 @@ class ProtoCCParser(Parser):
     # $ANTLR end "local_rule"
 
 
-    class rule_return(ParserRuleReturnScope):
+    class rule_action_return(ParserRuleReturnScope):
         def __init__(self):
             super().__init__()
 
@@ -11117,90 +11330,77 @@ class ProtoCCParser(Parser):
 
 
 
-    # $ANTLR start "rule"
-    # ProtoCC.g:368:1: rule : 'Rule' OBRACE label_state COMMA label_message COMMA label_state CBRACE SEMICOLON -> ^( RULE_ label_state label_message label_state ) ;
-    def rule(self, ):
-        retval = self.rule_return()
+    # $ANTLR start "rule_action"
+    # ProtoCC.g:370:1: rule_action : 'action' EQUALSIGN OCBRACE ( expressions )* CCBRACE -> ^( POLICY_ACTION_ ( expressions )* ) ;
+    def rule_action(self, ):
+        retval = self.rule_action_return()
         retval.start = self.input.LT(1)
 
 
         root_0 = None
 
-        string_literal344 = None
-        OBRACE345 = None
-        COMMA347 = None
-        COMMA349 = None
-        CBRACE351 = None
-        SEMICOLON352 = None
-        label_state346 = None
-        label_message348 = None
-        label_state350 = None
+        string_literal350 = None
+        EQUALSIGN351 = None
+        OCBRACE352 = None
+        CCBRACE354 = None
+        expressions353 = None
 
-        string_literal344_tree = None
-        OBRACE345_tree = None
-        COMMA347_tree = None
-        COMMA349_tree = None
-        CBRACE351_tree = None
-        SEMICOLON352_tree = None
-        stream_COMMA = RewriteRuleTokenStream(self._adaptor, "token COMMA")
-        stream_OBRACE = RewriteRuleTokenStream(self._adaptor, "token OBRACE")
-        stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
-        stream_129 = RewriteRuleTokenStream(self._adaptor, "token 129")
-        stream_CBRACE = RewriteRuleTokenStream(self._adaptor, "token CBRACE")
-        stream_label_state = RewriteRuleSubtreeStream(self._adaptor, "rule label_state")
-        stream_label_message = RewriteRuleSubtreeStream(self._adaptor, "rule label_message")
+        string_literal350_tree = None
+        EQUALSIGN351_tree = None
+        OCBRACE352_tree = None
+        CCBRACE354_tree = None
+        stream_EQUALSIGN = RewriteRuleTokenStream(self._adaptor, "token EQUALSIGN")
+        stream_136 = RewriteRuleTokenStream(self._adaptor, "token 136")
+        stream_OCBRACE = RewriteRuleTokenStream(self._adaptor, "token OCBRACE")
+        stream_CCBRACE = RewriteRuleTokenStream(self._adaptor, "token CCBRACE")
+        stream_expressions = RewriteRuleSubtreeStream(self._adaptor, "rule expressions")
         try:
             try:
-                # ProtoCC.g:368:5: ( 'Rule' OBRACE label_state COMMA label_message COMMA label_state CBRACE SEMICOLON -> ^( RULE_ label_state label_message label_state ) )
-                # ProtoCC.g:368:7: 'Rule' OBRACE label_state COMMA label_message COMMA label_state CBRACE SEMICOLON
+                # ProtoCC.g:370:12: ( 'action' EQUALSIGN OCBRACE ( expressions )* CCBRACE -> ^( POLICY_ACTION_ ( expressions )* ) )
+                # ProtoCC.g:370:14: 'action' EQUALSIGN OCBRACE ( expressions )* CCBRACE
                 pass 
-                string_literal344 = self.match(self.input, 129, self.FOLLOW_129_in_rule3710) 
-                stream_129.add(string_literal344)
+                string_literal350 = self.match(self.input, 136, self.FOLLOW_136_in_rule_action3760) 
+                stream_136.add(string_literal350)
 
 
-                OBRACE345 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_rule3712) 
-                stream_OBRACE.add(OBRACE345)
+                EQUALSIGN351 = self.match(self.input, EQUALSIGN, self.FOLLOW_EQUALSIGN_in_rule_action3762) 
+                stream_EQUALSIGN.add(EQUALSIGN351)
 
 
-                self._state.following.append(self.FOLLOW_label_state_in_rule3714)
-                label_state346 = self.label_state()
-
-                self._state.following.pop()
-                stream_label_state.add(label_state346.tree)
+                OCBRACE352 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_rule_action3764) 
+                stream_OCBRACE.add(OCBRACE352)
 
 
-                COMMA347 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_rule3716) 
-                stream_COMMA.add(COMMA347)
+                # ProtoCC.g:370:41: ( expressions )*
+                while True: #loop57
+                    alt57 = 2
+                    LA57_0 = self.input.LA(1)
+
+                    if (LA57_0 in {ACCESS, ID, IF, STALL, STATE, UNDEF, 121}) :
+                        alt57 = 1
 
 
-                self._state.following.append(self.FOLLOW_label_message_in_rule3718)
-                label_message348 = self.label_message()
+                    if alt57 == 1:
+                        # ProtoCC.g:370:41: expressions
+                        pass 
+                        self._state.following.append(self.FOLLOW_expressions_in_rule_action3766)
+                        expressions353 = self.expressions()
 
-                self._state.following.pop()
-                stream_label_message.add(label_message348.tree)
-
-
-                COMMA349 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_rule3720) 
-                stream_COMMA.add(COMMA349)
-
-
-                self._state.following.append(self.FOLLOW_label_state_in_rule3722)
-                label_state350 = self.label_state()
-
-                self._state.following.pop()
-                stream_label_state.add(label_state350.tree)
+                        self._state.following.pop()
+                        stream_expressions.add(expressions353.tree)
 
 
-                CBRACE351 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_rule3724) 
-                stream_CBRACE.add(CBRACE351)
+
+                    else:
+                        break #loop57
 
 
-                SEMICOLON352 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_rule3726) 
-                stream_SEMICOLON.add(SEMICOLON352)
+                CCBRACE354 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_rule_action3769) 
+                stream_CCBRACE.add(CCBRACE354)
 
 
                 # AST Rewrite
-                # elements: label_state, label_state, label_message
+                # elements: expressions
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -11214,8 +11414,187 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 369:4: -> ^( RULE_ label_state label_message label_state )
-                # ProtoCC.g:369:7: ^( RULE_ label_state label_message label_state )
+                # 370:62: -> ^( POLICY_ACTION_ ( expressions )* )
+                # ProtoCC.g:370:65: ^( POLICY_ACTION_ ( expressions )* )
+                root_1 = self._adaptor.nil()
+                root_1 = self._adaptor.becomeRoot(
+                self._adaptor.createFromType(POLICY_ACTION_, "POLICY_ACTION_")
+                , root_1)
+
+                # ProtoCC.g:370:82: ( expressions )*
+                while stream_expressions.hasNext():
+                    self._adaptor.addChild(root_1, stream_expressions.nextTree())
+
+
+                stream_expressions.reset();
+
+                self._adaptor.addChild(root_0, root_1)
+
+
+
+
+                retval.tree = root_0
+
+
+
+
+
+                retval.stop = self.input.LT(-1)
+
+
+                retval.tree = self._adaptor.rulePostProcessing(root_0)
+                self._adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop)
+
+
+
+            except RecognitionException as re:
+                self.reportError(re)
+                self.recover(self.input, re)
+                retval.tree = self._adaptor.errorNode(self.input, retval.start, self.input.LT(-1), re)
+
+        finally:
+            pass
+        return retval
+
+    # $ANTLR end "rule_action"
+
+
+    class rule_return(ParserRuleReturnScope):
+        def __init__(self):
+            super().__init__()
+
+            self.tree = None
+
+
+
+
+
+    # $ANTLR start "rule"
+    # ProtoCC.g:372:1: rule : 'Rule' OBRACE label_state COMMA label_message COMMA label_state ( COMMA rule_action )? CBRACE SEMICOLON -> ^( RULE_ label_state label_message label_state ( rule_action )? ) ;
+    def rule(self, ):
+        retval = self.rule_return()
+        retval.start = self.input.LT(1)
+
+
+        root_0 = None
+
+        string_literal355 = None
+        OBRACE356 = None
+        COMMA358 = None
+        COMMA360 = None
+        COMMA362 = None
+        CBRACE364 = None
+        SEMICOLON365 = None
+        label_state357 = None
+        label_message359 = None
+        label_state361 = None
+        rule_action363 = None
+
+        string_literal355_tree = None
+        OBRACE356_tree = None
+        COMMA358_tree = None
+        COMMA360_tree = None
+        COMMA362_tree = None
+        CBRACE364_tree = None
+        SEMICOLON365_tree = None
+        stream_COMMA = RewriteRuleTokenStream(self._adaptor, "token COMMA")
+        stream_OBRACE = RewriteRuleTokenStream(self._adaptor, "token OBRACE")
+        stream_SEMICOLON = RewriteRuleTokenStream(self._adaptor, "token SEMICOLON")
+        stream_CBRACE = RewriteRuleTokenStream(self._adaptor, "token CBRACE")
+        stream_131 = RewriteRuleTokenStream(self._adaptor, "token 131")
+        stream_rule_action = RewriteRuleSubtreeStream(self._adaptor, "rule rule_action")
+        stream_label_state = RewriteRuleSubtreeStream(self._adaptor, "rule label_state")
+        stream_label_message = RewriteRuleSubtreeStream(self._adaptor, "rule label_message")
+        try:
+            try:
+                # ProtoCC.g:372:5: ( 'Rule' OBRACE label_state COMMA label_message COMMA label_state ( COMMA rule_action )? CBRACE SEMICOLON -> ^( RULE_ label_state label_message label_state ( rule_action )? ) )
+                # ProtoCC.g:372:7: 'Rule' OBRACE label_state COMMA label_message COMMA label_state ( COMMA rule_action )? CBRACE SEMICOLON
+                pass 
+                string_literal355 = self.match(self.input, 131, self.FOLLOW_131_in_rule3785) 
+                stream_131.add(string_literal355)
+
+
+                OBRACE356 = self.match(self.input, OBRACE, self.FOLLOW_OBRACE_in_rule3787) 
+                stream_OBRACE.add(OBRACE356)
+
+
+                self._state.following.append(self.FOLLOW_label_state_in_rule3789)
+                label_state357 = self.label_state()
+
+                self._state.following.pop()
+                stream_label_state.add(label_state357.tree)
+
+
+                COMMA358 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_rule3791) 
+                stream_COMMA.add(COMMA358)
+
+
+                self._state.following.append(self.FOLLOW_label_message_in_rule3793)
+                label_message359 = self.label_message()
+
+                self._state.following.pop()
+                stream_label_message.add(label_message359.tree)
+
+
+                COMMA360 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_rule3795) 
+                stream_COMMA.add(COMMA360)
+
+
+                self._state.following.append(self.FOLLOW_label_state_in_rule3797)
+                label_state361 = self.label_state()
+
+                self._state.following.pop()
+                stream_label_state.add(label_state361.tree)
+
+
+                # ProtoCC.g:372:71: ( COMMA rule_action )?
+                alt58 = 2
+                LA58_0 = self.input.LA(1)
+
+                if (LA58_0 == COMMA) :
+                    alt58 = 1
+                if alt58 == 1:
+                    # ProtoCC.g:372:72: COMMA rule_action
+                    pass 
+                    COMMA362 = self.match(self.input, COMMA, self.FOLLOW_COMMA_in_rule3800) 
+                    stream_COMMA.add(COMMA362)
+
+
+                    self._state.following.append(self.FOLLOW_rule_action_in_rule3802)
+                    rule_action363 = self.rule_action()
+
+                    self._state.following.pop()
+                    stream_rule_action.add(rule_action363.tree)
+
+
+
+
+
+                CBRACE364 = self.match(self.input, CBRACE, self.FOLLOW_CBRACE_in_rule3806) 
+                stream_CBRACE.add(CBRACE364)
+
+
+                SEMICOLON365 = self.match(self.input, SEMICOLON, self.FOLLOW_SEMICOLON_in_rule3808) 
+                stream_SEMICOLON.add(SEMICOLON365)
+
+
+                # AST Rewrite
+                # elements: rule_action, label_message, label_state, label_state
+                # token labels: 
+                # rule labels: retval
+                # token list labels: 
+                # rule list labels: 
+                # wildcard labels: 
+                retval.tree = root_0
+                if retval is not None:
+                    stream_retval = RewriteRuleSubtreeStream(self._adaptor, "rule retval", retval.tree)
+                else:
+                    stream_retval = RewriteRuleSubtreeStream(self._adaptor, "token retval", None)
+
+
+                root_0 = self._adaptor.nil()
+                # 373:4: -> ^( RULE_ label_state label_message label_state ( rule_action )? )
+                # ProtoCC.g:373:7: ^( RULE_ label_state label_message label_state ( rule_action )? )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(RULE_, "RULE_")
@@ -11226,6 +11605,13 @@ class ProtoCCParser(Parser):
                 self._adaptor.addChild(root_1, stream_label_message.nextTree())
 
                 self._adaptor.addChild(root_1, stream_label_state.nextTree())
+
+                # ProtoCC.g:373:53: ( rule_action )?
+                if stream_rule_action.hasNext():
+                    self._adaptor.addChild(root_1, stream_rule_action.nextTree())
+
+
+                stream_rule_action.reset();
 
                 self._adaptor.addChild(root_0, root_1)
 
@@ -11269,7 +11655,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "policy_rule"
-    # ProtoCC.g:371:1: policy_rule : ( data_rule | local_rule | rule );
+    # ProtoCC.g:375:1: policy_rule : ( data_rule | local_rule | rule );
     def policy_rule(self, ):
         retval = self.policy_rule_return()
         retval.start = self.input.LT(1)
@@ -11277,67 +11663,67 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        data_rule353 = None
-        local_rule354 = None
-        rule355 = None
+        data_rule366 = None
+        local_rule367 = None
+        rule368 = None
 
 
         try:
             try:
-                # ProtoCC.g:371:12: ( data_rule | local_rule | rule )
-                alt57 = 3
-                LA57 = self.input.LA(1)
-                if LA57 in {DATA}:
-                    alt57 = 1
-                elif LA57 in {120}:
-                    alt57 = 2
-                elif LA57 in {129}:
-                    alt57 = 3
+                # ProtoCC.g:375:12: ( data_rule | local_rule | rule )
+                alt59 = 3
+                LA59 = self.input.LA(1)
+                if LA59 in {DATA}:
+                    alt59 = 1
+                elif LA59 in {122}:
+                    alt59 = 2
+                elif LA59 in {131}:
+                    alt59 = 3
                 else:
-                    nvae = NoViableAltException("", 57, 0, self.input)
+                    nvae = NoViableAltException("", 59, 0, self.input)
 
                     raise nvae
 
 
-                if alt57 == 1:
-                    # ProtoCC.g:371:14: data_rule
+                if alt59 == 1:
+                    # ProtoCC.g:375:14: data_rule
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_data_rule_in_policy_rule3748)
-                    data_rule353 = self.data_rule()
+                    self._state.following.append(self.FOLLOW_data_rule_in_policy_rule3833)
+                    data_rule366 = self.data_rule()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, data_rule353.tree)
+                    self._adaptor.addChild(root_0, data_rule366.tree)
 
 
 
-                elif alt57 == 2:
-                    # ProtoCC.g:371:26: local_rule
+                elif alt59 == 2:
+                    # ProtoCC.g:375:26: local_rule
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_local_rule_in_policy_rule3752)
-                    local_rule354 = self.local_rule()
+                    self._state.following.append(self.FOLLOW_local_rule_in_policy_rule3837)
+                    local_rule367 = self.local_rule()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, local_rule354.tree)
+                    self._adaptor.addChild(root_0, local_rule367.tree)
 
 
 
-                elif alt57 == 3:
-                    # ProtoCC.g:371:39: rule
+                elif alt59 == 3:
+                    # ProtoCC.g:375:39: rule
                     pass 
                     root_0 = self._adaptor.nil()
 
 
-                    self._state.following.append(self.FOLLOW_rule_in_policy_rule3756)
-                    rule355 = self.rule()
+                    self._state.following.append(self.FOLLOW_rule_in_policy_rule3841)
+                    rule368 = self.rule()
 
                     self._state.following.pop()
-                    self._adaptor.addChild(root_0, rule355.tree)
+                    self._adaptor.addChild(root_0, rule368.tree)
 
 
 
@@ -11372,7 +11758,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "policy_block"
-    # ProtoCC.g:372:1: policy_block : 'Policy' ID OCBRACE ( policy_rule )* CCBRACE -> ^( POLICY_ ID ( policy_rule )* ) ;
+    # ProtoCC.g:376:1: policy_block : 'Policy' ID OCBRACE ( policy_rule )* CCBRACE -> ^( POLICY_ ID ( policy_rule )* ) ;
     def policy_block(self, ):
         retval = self.policy_block_return()
         retval.start = self.input.LT(1)
@@ -11380,68 +11766,68 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        string_literal356 = None
-        ID357 = None
-        OCBRACE358 = None
-        CCBRACE360 = None
-        policy_rule359 = None
+        string_literal369 = None
+        ID370 = None
+        OCBRACE371 = None
+        CCBRACE373 = None
+        policy_rule372 = None
 
-        string_literal356_tree = None
-        ID357_tree = None
-        OCBRACE358_tree = None
-        CCBRACE360_tree = None
-        stream_126 = RewriteRuleTokenStream(self._adaptor, "token 126")
+        string_literal369_tree = None
+        ID370_tree = None
+        OCBRACE371_tree = None
+        CCBRACE373_tree = None
         stream_OCBRACE = RewriteRuleTokenStream(self._adaptor, "token OCBRACE")
+        stream_128 = RewriteRuleTokenStream(self._adaptor, "token 128")
         stream_ID = RewriteRuleTokenStream(self._adaptor, "token ID")
         stream_CCBRACE = RewriteRuleTokenStream(self._adaptor, "token CCBRACE")
         stream_policy_rule = RewriteRuleSubtreeStream(self._adaptor, "rule policy_rule")
         try:
             try:
-                # ProtoCC.g:372:14: ( 'Policy' ID OCBRACE ( policy_rule )* CCBRACE -> ^( POLICY_ ID ( policy_rule )* ) )
-                # ProtoCC.g:372:16: 'Policy' ID OCBRACE ( policy_rule )* CCBRACE
+                # ProtoCC.g:376:14: ( 'Policy' ID OCBRACE ( policy_rule )* CCBRACE -> ^( POLICY_ ID ( policy_rule )* ) )
+                # ProtoCC.g:376:16: 'Policy' ID OCBRACE ( policy_rule )* CCBRACE
                 pass 
-                string_literal356 = self.match(self.input, 126, self.FOLLOW_126_in_policy_block3763) 
-                stream_126.add(string_literal356)
+                string_literal369 = self.match(self.input, 128, self.FOLLOW_128_in_policy_block3848) 
+                stream_128.add(string_literal369)
 
 
-                ID357 = self.match(self.input, ID, self.FOLLOW_ID_in_policy_block3765) 
-                stream_ID.add(ID357)
+                ID370 = self.match(self.input, ID, self.FOLLOW_ID_in_policy_block3850) 
+                stream_ID.add(ID370)
 
 
-                OCBRACE358 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_policy_block3767) 
-                stream_OCBRACE.add(OCBRACE358)
+                OCBRACE371 = self.match(self.input, OCBRACE, self.FOLLOW_OCBRACE_in_policy_block3852) 
+                stream_OCBRACE.add(OCBRACE371)
 
 
-                # ProtoCC.g:372:36: ( policy_rule )*
-                while True: #loop58
-                    alt58 = 2
-                    LA58_0 = self.input.LA(1)
+                # ProtoCC.g:376:36: ( policy_rule )*
+                while True: #loop60
+                    alt60 = 2
+                    LA60_0 = self.input.LA(1)
 
-                    if (LA58_0 in {DATA, 120, 129}) :
-                        alt58 = 1
+                    if (LA60_0 in {DATA, 122, 131}) :
+                        alt60 = 1
 
 
-                    if alt58 == 1:
-                        # ProtoCC.g:372:36: policy_rule
+                    if alt60 == 1:
+                        # ProtoCC.g:376:36: policy_rule
                         pass 
-                        self._state.following.append(self.FOLLOW_policy_rule_in_policy_block3769)
-                        policy_rule359 = self.policy_rule()
+                        self._state.following.append(self.FOLLOW_policy_rule_in_policy_block3854)
+                        policy_rule372 = self.policy_rule()
 
                         self._state.following.pop()
-                        stream_policy_rule.add(policy_rule359.tree)
+                        stream_policy_rule.add(policy_rule372.tree)
 
 
 
                     else:
-                        break #loop58
+                        break #loop60
 
 
-                CCBRACE360 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_policy_block3772) 
-                stream_CCBRACE.add(CCBRACE360)
+                CCBRACE373 = self.match(self.input, CCBRACE, self.FOLLOW_CCBRACE_in_policy_block3857) 
+                stream_CCBRACE.add(CCBRACE373)
 
 
                 # AST Rewrite
-                # elements: ID, policy_rule
+                # elements: policy_rule, ID
                 # token labels: 
                 # rule labels: retval
                 # token list labels: 
@@ -11455,8 +11841,8 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 372:57: -> ^( POLICY_ ID ( policy_rule )* )
-                # ProtoCC.g:372:60: ^( POLICY_ ID ( policy_rule )* )
+                # 376:57: -> ^( POLICY_ ID ( policy_rule )* )
+                # ProtoCC.g:376:60: ^( POLICY_ ID ( policy_rule )* )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(POLICY_, "POLICY_")
@@ -11466,7 +11852,7 @@ class ProtoCCParser(Parser):
                 stream_ID.nextNode()
                 )
 
-                # ProtoCC.g:372:73: ( policy_rule )*
+                # ProtoCC.g:376:73: ( policy_rule )*
                 while stream_policy_rule.hasNext():
                     self._adaptor.addChild(root_1, stream_policy_rule.nextTree())
 
@@ -11515,7 +11901,7 @@ class ProtoCCParser(Parser):
 
 
     # $ANTLR start "policy_file"
-    # ProtoCC.g:374:1: policy_file : ( policy_block )+ -> ^( POL_FILE_ ( policy_block )+ ) ;
+    # ProtoCC.g:378:1: policy_file : ( policy_block )+ -> ^( POL_FILE_ ( policy_block )+ ) ;
     def policy_file(self, ):
         retval = self.policy_file_return()
         retval.start = self.input.LT(1)
@@ -11523,43 +11909,43 @@ class ProtoCCParser(Parser):
 
         root_0 = None
 
-        policy_block361 = None
+        policy_block374 = None
 
         stream_policy_block = RewriteRuleSubtreeStream(self._adaptor, "rule policy_block")
         try:
             try:
-                # ProtoCC.g:374:12: ( ( policy_block )+ -> ^( POL_FILE_ ( policy_block )+ ) )
-                # ProtoCC.g:374:14: ( policy_block )+
+                # ProtoCC.g:378:12: ( ( policy_block )+ -> ^( POL_FILE_ ( policy_block )+ ) )
+                # ProtoCC.g:378:14: ( policy_block )+
                 pass 
-                # ProtoCC.g:374:14: ( policy_block )+
-                cnt59 = 0
-                while True: #loop59
-                    alt59 = 2
-                    LA59_0 = self.input.LA(1)
+                # ProtoCC.g:378:14: ( policy_block )+
+                cnt61 = 0
+                while True: #loop61
+                    alt61 = 2
+                    LA61_0 = self.input.LA(1)
 
-                    if (LA59_0 == 126) :
-                        alt59 = 1
+                    if (LA61_0 == 128) :
+                        alt61 = 1
 
 
-                    if alt59 == 1:
-                        # ProtoCC.g:374:14: policy_block
+                    if alt61 == 1:
+                        # ProtoCC.g:378:14: policy_block
                         pass 
-                        self._state.following.append(self.FOLLOW_policy_block_in_policy_file3790)
-                        policy_block361 = self.policy_block()
+                        self._state.following.append(self.FOLLOW_policy_block_in_policy_file3875)
+                        policy_block374 = self.policy_block()
 
                         self._state.following.pop()
-                        stream_policy_block.add(policy_block361.tree)
+                        stream_policy_block.add(policy_block374.tree)
 
 
 
                     else:
-                        if cnt59 >= 1:
-                            break #loop59
+                        if cnt61 >= 1:
+                            break #loop61
 
-                        eee = EarlyExitException(59, self.input)
+                        eee = EarlyExitException(61, self.input)
                         raise eee
 
-                    cnt59 += 1
+                    cnt61 += 1
 
 
                 # AST Rewrite
@@ -11577,14 +11963,14 @@ class ProtoCCParser(Parser):
 
 
                 root_0 = self._adaptor.nil()
-                # 375:2: -> ^( POL_FILE_ ( policy_block )+ )
-                # ProtoCC.g:375:5: ^( POL_FILE_ ( policy_block )+ )
+                # 379:2: -> ^( POL_FILE_ ( policy_block )+ )
+                # ProtoCC.g:379:5: ^( POL_FILE_ ( policy_block )+ )
                 root_1 = self._adaptor.nil()
                 root_1 = self._adaptor.becomeRoot(
                 self._adaptor.createFromType(POL_FILE_, "POL_FILE_")
                 , root_1)
 
-                # ProtoCC.g:375:17: ( policy_block )+
+                # ProtoCC.g:379:17: ( policy_block )+
                 if not (stream_policy_block.hasNext()):
                     raise RewriteEarlyExitException()
 
@@ -11628,353 +12014,366 @@ class ProtoCCParser(Parser):
 
  
 
-    FOLLOW_119_in_internal_event_function750 = frozenset([1])
-    FOLLOW_const_decl_in_document1078 = frozenset([1, 4, 6, 19, 27, 33, 49, 51, 65, 68, 74, 100, 102, 104, 119])
-    FOLLOW_init_hw_in_document1082 = frozenset([1, 4, 6, 19, 27, 33, 49, 51, 65, 68, 74, 100, 102, 104, 119])
-    FOLLOW_arch_block_in_document1086 = frozenset([1, 4, 6, 19, 27, 33, 49, 51, 65, 68, 74, 100, 102, 104, 119])
-    FOLLOW_expressions_in_document1090 = frozenset([1, 4, 6, 19, 27, 33, 49, 51, 65, 68, 74, 100, 102, 104, 119])
-    FOLLOW_policy_file_in_document1098 = frozenset([1])
-    FOLLOW_int_decl_in_declarations1109 = frozenset([1])
-    FOLLOW_bool_decl_in_declarations1113 = frozenset([1])
-    FOLLOW_state_decl_in_declarations1117 = frozenset([1])
-    FOLLOW_data_decl_in_declarations1121 = frozenset([1])
-    FOLLOW_id_decl_in_declarations1125 = frozenset([1])
-    FOLLOW_CONSTANT_in_const_decl1137 = frozenset([49])
-    FOLLOW_ID_in_const_decl1139 = frozenset([56])
-    FOLLOW_INT_in_const_decl1141 = frozenset([1])
-    FOLLOW_INTID_in_int_decl1163 = frozenset([82])
-    FOLLOW_range_in_int_decl1165 = frozenset([49])
-    FOLLOW_ID_in_int_decl1167 = frozenset([42, 93])
-    FOLLOW_EQUALSIGN_in_int_decl1170 = frozenset([56])
-    FOLLOW_INT_in_int_decl1172 = frozenset([42, 93])
-    FOLLOW_SEMICOLON_in_int_decl1176 = frozenset([1])
-    FOLLOW_BOOLID_in_bool_decl1204 = frozenset([49])
-    FOLLOW_ID_in_bool_decl1206 = frozenset([42, 93])
-    FOLLOW_EQUALSIGN_in_bool_decl1209 = frozenset([14])
-    FOLLOW_BOOL_in_bool_decl1211 = frozenset([42, 93])
-    FOLLOW_SEMICOLON_in_bool_decl1215 = frozenset([1])
-    FOLLOW_STATE_in_state_decl1242 = frozenset([49])
-    FOLLOW_ID_in_state_decl1244 = frozenset([93])
-    FOLLOW_SEMICOLON_in_state_decl1246 = frozenset([1])
-    FOLLOW_DATA_in_data_decl1265 = frozenset([49])
-    FOLLOW_ID_in_data_decl1267 = frozenset([93])
-    FOLLOW_SEMICOLON_in_data_decl1269 = frozenset([1])
-    FOLLOW_set_decl_in_id_decl1288 = frozenset([78, 95])
-    FOLLOW_NID_in_id_decl1291 = frozenset([49])
-    FOLLOW_ID_in_id_decl1293 = frozenset([42, 93])
-    FOLLOW_EQUALSIGN_in_id_decl1296 = frozenset([49, 95])
-    FOLLOW_set_decl_in_id_decl1298 = frozenset([49, 95])
-    FOLLOW_ID_in_id_decl1301 = frozenset([42, 93])
-    FOLLOW_SEMICOLON_in_id_decl1305 = frozenset([1])
-    FOLLOW_SET_in_set_decl1342 = frozenset([82])
-    FOLLOW_OEBRACE_in_set_decl1344 = frozenset([49, 56])
-    FOLLOW_val_range_in_set_decl1346 = frozenset([23])
-    FOLLOW_CEBRACE_in_set_decl1348 = frozenset([1])
-    FOLLOW_OEBRACE_in_range1371 = frozenset([49, 56])
-    FOLLOW_val_range_in_range1373 = frozenset([35])
-    FOLLOW_DOT_in_range1375 = frozenset([35])
-    FOLLOW_DOT_in_range1377 = frozenset([49, 56])
-    FOLLOW_val_range_in_range1379 = frozenset([23])
-    FOLLOW_CEBRACE_in_range1381 = frozenset([1])
-    FOLLOW_ARRAY_in_array_decl1430 = frozenset([82])
-    FOLLOW_range_in_array_decl1432 = frozenset([1])
-    FOLLOW_FIFO_in_fifo_decl1442 = frozenset([82])
-    FOLLOW_range_in_fifo_decl1444 = frozenset([1])
-    FOLLOW_network_block_in_init_hw1454 = frozenset([1])
-    FOLLOW_machines_in_init_hw1458 = frozenset([1])
-    FOLLOW_message_block_in_init_hw1462 = frozenset([1])
-    FOLLOW_object_expr_in_object_block1473 = frozenset([93])
-    FOLLOW_SEMICOLON_in_object_block1475 = frozenset([1])
-    FOLLOW_object_id_in_object_expr1490 = frozenset([1])
-    FOLLOW_object_func_in_object_expr1494 = frozenset([1])
-    FOLLOW_ID_in_object_id1505 = frozenset([1])
-    FOLLOW_ID_in_object_func1522 = frozenset([35])
-    FOLLOW_DOT_in_object_func1524 = frozenset([49, 78])
-    FOLLOW_object_idres_in_object_func1526 = frozenset([1, 80])
-    FOLLOW_OBRACE_in_object_func1529 = frozenset([21, 24, 49])
-    FOLLOW_object_expr_in_object_func1531 = frozenset([21, 24, 49])
-    FOLLOW_COMMA_in_object_func1535 = frozenset([49])
-    FOLLOW_object_expr_in_object_func1537 = frozenset([21, 24])
-    FOLLOW_CBRACE_in_object_func1541 = frozenset([1, 80])
-    FOLLOW_cache_block_in_machines1610 = frozenset([1])
-    FOLLOW_dir_block_in_machines1614 = frozenset([1])
-    FOLLOW_mem_block_in_machines1618 = frozenset([1])
-    FOLLOW_CACHE_in_cache_block1633 = frozenset([81])
-    FOLLOW_OCBRACE_in_cache_block1635 = frozenset([15, 22, 29, 57, 78, 95, 102])
-    FOLLOW_declarations_in_cache_block1637 = frozenset([15, 22, 29, 57, 78, 95, 102])
-    FOLLOW_CCBRACE_in_cache_block1640 = frozenset([49, 95])
-    FOLLOW_objset_decl_in_cache_block1642 = frozenset([49, 95])
-    FOLLOW_ID_in_cache_block1645 = frozenset([93])
-    FOLLOW_SEMICOLON_in_cache_block1647 = frozenset([1])
-    FOLLOW_DIR_in_dir_block1688 = frozenset([81])
-    FOLLOW_OCBRACE_in_dir_block1690 = frozenset([15, 22, 29, 57, 78, 95, 102])
-    FOLLOW_declarations_in_dir_block1692 = frozenset([15, 22, 29, 57, 78, 95, 102])
-    FOLLOW_CCBRACE_in_dir_block1695 = frozenset([49, 95])
-    FOLLOW_objset_decl_in_dir_block1697 = frozenset([49, 95])
-    FOLLOW_ID_in_dir_block1700 = frozenset([93])
-    FOLLOW_SEMICOLON_in_dir_block1702 = frozenset([1])
-    FOLLOW_MEM_in_mem_block1743 = frozenset([81])
-    FOLLOW_OCBRACE_in_mem_block1745 = frozenset([15, 22, 29, 57, 78, 95, 102])
-    FOLLOW_declarations_in_mem_block1747 = frozenset([15, 22, 29, 57, 78, 95, 102])
-    FOLLOW_CCBRACE_in_mem_block1750 = frozenset([49, 95])
-    FOLLOW_objset_decl_in_mem_block1752 = frozenset([49, 95])
-    FOLLOW_ID_in_mem_block1755 = frozenset([93])
-    FOLLOW_SEMICOLON_in_mem_block1757 = frozenset([1])
-    FOLLOW_SET_in_objset_decl1799 = frozenset([82])
-    FOLLOW_OEBRACE_in_objset_decl1801 = frozenset([49, 56])
-    FOLLOW_val_range_in_objset_decl1803 = frozenset([23])
-    FOLLOW_CEBRACE_in_objset_decl1805 = frozenset([1])
-    FOLLOW_NETWORK_in_network_block1831 = frozenset([81])
-    FOLLOW_OCBRACE_in_network_block1833 = frozenset([22, 124, 131])
-    FOLLOW_network_element_in_network_block1835 = frozenset([22, 124, 131])
-    FOLLOW_CCBRACE_in_network_block1838 = frozenset([93])
-    FOLLOW_SEMICOLON_in_network_block1840 = frozenset([1])
-    FOLLOW_element_type_in_network_element1883 = frozenset([49])
-    FOLLOW_ID_in_network_element1885 = frozenset([93])
-    FOLLOW_SEMICOLON_in_network_element1887 = frozenset([1])
-    FOLLOW_ID_in_network_send1908 = frozenset([35])
-    FOLLOW_DOT_in_network_send1910 = frozenset([130, 143])
-    FOLLOW_send_function_in_network_send1912 = frozenset([80])
-    FOLLOW_OBRACE_in_network_send1914 = frozenset([49])
-    FOLLOW_ID_in_network_send1916 = frozenset([21])
-    FOLLOW_CBRACE_in_network_send1918 = frozenset([93])
-    FOLLOW_SEMICOLON_in_network_send1920 = frozenset([1])
-    FOLLOW_ID_in_network_bcast1940 = frozenset([35])
-    FOLLOW_DOT_in_network_bcast1942 = frozenset([116, 135])
-    FOLLOW_bcast_function_in_network_bcast1944 = frozenset([80])
-    FOLLOW_OBRACE_in_network_bcast1946 = frozenset([49])
-    FOLLOW_ID_in_network_bcast1948 = frozenset([21])
-    FOLLOW_CBRACE_in_network_bcast1950 = frozenset([93])
-    FOLLOW_SEMICOLON_in_network_bcast1952 = frozenset([1])
-    FOLLOW_ID_in_network_mcast1972 = frozenset([35])
-    FOLLOW_DOT_in_network_mcast1974 = frozenset([121, 141])
-    FOLLOW_mcast_function_in_network_mcast1976 = frozenset([80])
-    FOLLOW_OBRACE_in_network_mcast1978 = frozenset([49])
-    FOLLOW_ID_in_network_mcast1980 = frozenset([24])
-    FOLLOW_COMMA_in_network_mcast1982 = frozenset([49])
-    FOLLOW_ID_in_network_mcast1984 = frozenset([21])
-    FOLLOW_CBRACE_in_network_mcast1986 = frozenset([93])
-    FOLLOW_SEMICOLON_in_network_mcast1988 = frozenset([1])
-    FOLLOW_MSG_in_message_block2018 = frozenset([49])
-    FOLLOW_ID_in_message_block2020 = frozenset([81])
-    FOLLOW_OCBRACE_in_message_block2022 = frozenset([15, 22, 29, 57, 78, 95, 102])
-    FOLLOW_declarations_in_message_block2024 = frozenset([15, 22, 29, 57, 78, 95, 102])
-    FOLLOW_CCBRACE_in_message_block2027 = frozenset([93])
-    FOLLOW_SEMICOLON_in_message_block2029 = frozenset([1])
-    FOLLOW_ID_in_message_constr2051 = frozenset([80])
-    FOLLOW_OBRACE_in_message_constr2053 = frozenset([14, 21, 24, 49, 56, 78])
-    FOLLOW_message_expr_in_message_constr2055 = frozenset([14, 21, 24, 49, 56, 78])
-    FOLLOW_COMMA_in_message_constr2059 = frozenset([14, 49, 56, 78])
-    FOLLOW_message_expr_in_message_constr2061 = frozenset([21, 24])
-    FOLLOW_CBRACE_in_message_constr2065 = frozenset([1])
-    FOLLOW_object_expr_in_message_expr2087 = frozenset([1])
-    FOLLOW_set_func_in_message_expr2091 = frozenset([1])
-    FOLLOW_INT_in_message_expr2095 = frozenset([1])
-    FOLLOW_BOOL_in_message_expr2099 = frozenset([1])
-    FOLLOW_NID_in_message_expr2103 = frozenset([1])
-    FOLLOW_set_func_in_set_block2121 = frozenset([93])
-    FOLLOW_SEMICOLON_in_set_block2123 = frozenset([1])
-    FOLLOW_ID_in_set_func2138 = frozenset([35])
-    FOLLOW_DOT_in_set_func2140 = frozenset([134, 136, 138, 139, 140, 144])
-    FOLLOW_set_function_types_in_set_func2142 = frozenset([80])
-    FOLLOW_OBRACE_in_set_func2144 = frozenset([21, 49])
-    FOLLOW_set_nest_in_set_func2146 = frozenset([21, 49])
-    FOLLOW_CBRACE_in_set_func2149 = frozenset([1])
-    FOLLOW_set_func_in_set_nest2187 = frozenset([1])
-    FOLLOW_object_expr_in_set_nest2191 = frozenset([1])
-    FOLLOW_internal_event_func_in_internal_event_block2209 = frozenset([93])
-    FOLLOW_SEMICOLON_in_internal_event_block2211 = frozenset([1])
-    FOLLOW_internal_event_function_in_internal_event_func2225 = frozenset([80])
-    FOLLOW_OBRACE_in_internal_event_func2227 = frozenset([49])
-    FOLLOW_ID_in_internal_event_func2229 = frozenset([21])
-    FOLLOW_CBRACE_in_internal_event_func2231 = frozenset([1])
-    FOLLOW_ARCH_in_arch_block2255 = frozenset([49])
-    FOLLOW_ID_in_arch_block2257 = frozenset([81])
-    FOLLOW_OCBRACE_in_arch_block2259 = frozenset([22, 89, 98])
-    FOLLOW_arch_body_in_arch_block2261 = frozenset([22])
-    FOLLOW_CCBRACE_in_arch_block2263 = frozenset([1])
-    FOLLOW_stable_def_in_arch_body2285 = frozenset([1, 89, 98])
-    FOLLOW_process_block_in_arch_body2289 = frozenset([1, 89, 98])
-    FOLLOW_STABLE_in_stable_def2299 = frozenset([81])
-    FOLLOW_OCBRACE_in_stable_def2301 = frozenset([49])
-    FOLLOW_ID_in_stable_def2303 = frozenset([22, 24])
-    FOLLOW_COMMA_in_stable_def2306 = frozenset([49])
-    FOLLOW_ID_in_stable_def2308 = frozenset([22, 24])
-    FOLLOW_CCBRACE_in_stable_def2312 = frozenset([1])
-    FOLLOW_PROC_in_process_block2331 = frozenset([80])
-    FOLLOW_process_trans_in_process_block2333 = frozenset([81])
-    FOLLOW_OCBRACE_in_process_block2335 = frozenset([4, 11, 22, 49, 51, 100, 102, 104, 119])
-    FOLLOW_process_expr_in_process_block2337 = frozenset([4, 11, 22, 49, 51, 100, 102, 104, 119])
-    FOLLOW_CCBRACE_in_process_block2340 = frozenset([1])
-    FOLLOW_OBRACE_in_process_trans2366 = frozenset([49])
-    FOLLOW_ID_in_process_trans2368 = frozenset([24])
-    FOLLOW_COMMA_in_process_trans2370 = frozenset([4, 45, 49])
-    FOLLOW_process_events_in_process_trans2372 = frozenset([21, 24])
-    FOLLOW_process_finalstate_in_process_trans2374 = frozenset([21, 24])
-    FOLLOW_CBRACE_in_process_trans2377 = frozenset([1])
-    FOLLOW_COMMA_in_process_finalstate2400 = frozenset([49, 102])
-    FOLLOW_process_finalident_in_process_finalstate2402 = frozenset([1])
-    FOLLOW_expressions_in_process_expr2455 = frozenset([1])
-    FOLLOW_network_send_in_process_expr2459 = frozenset([1])
-    FOLLOW_network_mcast_in_process_expr2463 = frozenset([1])
-    FOLLOW_network_bcast_in_process_expr2467 = frozenset([1])
-    FOLLOW_transaction_in_process_expr2470 = frozenset([1])
-    FOLLOW_AWAIT_in_transaction2480 = frozenset([81])
-    FOLLOW_OCBRACE_in_transaction2482 = frozenset([22, 106])
-    FOLLOW_trans_in_transaction2484 = frozenset([22, 106])
-    FOLLOW_CCBRACE_in_transaction2487 = frozenset([1])
-    FOLLOW_WHEN_in_trans2507 = frozenset([49])
-    FOLLOW_ID_in_trans2509 = frozenset([32])
-    FOLLOW_DDOT_in_trans2511 = frozenset([1, 4, 11, 17, 49, 51, 76, 100, 102, 104, 119])
-    FOLLOW_trans_body_in_trans2513 = frozenset([1, 4, 11, 17, 49, 51, 76, 100, 102, 104, 119])
-    FOLLOW_expressions_in_trans_body2546 = frozenset([1])
-    FOLLOW_next_trans_in_trans_body2550 = frozenset([1])
-    FOLLOW_next_break_in_trans_body2554 = frozenset([1])
-    FOLLOW_transaction_in_trans_body2558 = frozenset([1])
-    FOLLOW_network_send_in_trans_body2562 = frozenset([1])
-    FOLLOW_network_mcast_in_trans_body2566 = frozenset([1])
-    FOLLOW_network_bcast_in_trans_body2570 = frozenset([1])
-    FOLLOW_NEXT_in_next_trans2588 = frozenset([81])
-    FOLLOW_OCBRACE_in_next_trans2590 = frozenset([22, 106])
-    FOLLOW_trans_in_next_trans2592 = frozenset([22, 106])
-    FOLLOW_CCBRACE_in_next_trans2595 = frozenset([1])
-    FOLLOW_BREAK_in_next_break2616 = frozenset([93])
-    FOLLOW_SEMICOLON_in_next_break2618 = frozenset([1])
-    FOLLOW_assignment_in_expressions2634 = frozenset([1])
-    FOLLOW_conditional_in_expressions2638 = frozenset([1])
-    FOLLOW_object_block_in_expressions2642 = frozenset([1])
-    FOLLOW_set_block_in_expressions2646 = frozenset([1])
-    FOLLOW_internal_event_block_in_expressions2650 = frozenset([1])
-    FOLLOW_msg_stall_in_expressions2654 = frozenset([1])
-    FOLLOW_set_access_in_expressions2658 = frozenset([1])
-    FOLLOW_undefine_in_expressions2662 = frozenset([1])
-    FOLLOW_process_finalident_in_assignment2669 = frozenset([42])
-    FOLLOW_EQUALSIGN_in_assignment2671 = frozenset([14, 49, 56, 78])
-    FOLLOW_assign_types_in_assignment2673 = frozenset([93])
-    FOLLOW_SEMICOLON_in_assignment2675 = frozenset([1])
-    FOLLOW_object_expr_in_assign_types2697 = frozenset([1])
-    FOLLOW_message_constr_in_assign_types2701 = frozenset([1])
-    FOLLOW_math_op_in_assign_types2705 = frozenset([1])
-    FOLLOW_set_func_in_assign_types2709 = frozenset([1])
-    FOLLOW_INT_in_assign_types2713 = frozenset([1])
-    FOLLOW_BOOL_in_assign_types2717 = frozenset([1])
-    FOLLOW_NID_in_assign_types2721 = frozenset([1])
-    FOLLOW_val_range_in_math_op2732 = frozenset([67, 83])
-    FOLLOW_set_in_math_op2734 = frozenset([49, 56])
-    FOLLOW_val_range_in_math_op2742 = frozenset([1])
-    FOLLOW_STALL_in_msg_stall2748 = frozenset([93])
-    FOLLOW_SEMICOLON_in_msg_stall2750 = frozenset([1])
-    FOLLOW_ACCESS_in_set_access2762 = frozenset([93])
-    FOLLOW_SEMICOLON_in_set_access2764 = frozenset([1])
-    FOLLOW_UNDEF_in_undefine2778 = frozenset([49])
-    FOLLOW_ID_in_undefine2780 = frozenset([93])
-    FOLLOW_SEMICOLON_in_undefine2782 = frozenset([1])
-    FOLLOW_if_stmt_in_conditional2799 = frozenset([1])
-    FOLLOW_ifnot_stmt_in_conditional2803 = frozenset([1])
-    FOLLOW_IF_in_if_stmt2822 = frozenset([14, 49, 56, 78, 80])
-    FOLLOW_cond_comb_in_if_stmt2824 = frozenset([81])
-    FOLLOW_OCBRACE_in_if_stmt2826 = frozenset([4, 11, 17, 22, 49, 51, 100, 102, 104, 119])
-    FOLLOW_if_expression_in_if_stmt2828 = frozenset([22])
-    FOLLOW_CCBRACE_in_if_stmt2830 = frozenset([1, 37])
-    FOLLOW_ELSE_in_if_stmt2837 = frozenset([81])
-    FOLLOW_OCBRACE_in_if_stmt2841 = frozenset([4, 11, 17, 22, 49, 51, 100, 102, 104, 119])
-    FOLLOW_else_expression_in_if_stmt2843 = frozenset([22])
-    FOLLOW_CCBRACE_in_if_stmt2845 = frozenset([1, 37])
-    FOLLOW_IF_in_ifnot_stmt2951 = frozenset([73])
-    FOLLOW_NEG_in_ifnot_stmt2953 = frozenset([14, 49, 56, 78, 80])
-    FOLLOW_cond_comb_in_ifnot_stmt2955 = frozenset([81])
-    FOLLOW_OCBRACE_in_ifnot_stmt2957 = frozenset([4, 11, 17, 22, 49, 51, 100, 102, 104, 119])
-    FOLLOW_if_expression_in_ifnot_stmt2959 = frozenset([22])
-    FOLLOW_CCBRACE_in_ifnot_stmt2961 = frozenset([1, 37])
-    FOLLOW_ELSE_in_ifnot_stmt2968 = frozenset([81])
-    FOLLOW_OCBRACE_in_ifnot_stmt2972 = frozenset([4, 11, 17, 22, 49, 51, 100, 102, 104, 119])
-    FOLLOW_else_expression_in_ifnot_stmt2974 = frozenset([22])
-    FOLLOW_CCBRACE_in_ifnot_stmt2976 = frozenset([1, 37])
-    FOLLOW_exprwbreak_in_if_expression3077 = frozenset([1, 4, 11, 17, 49, 51, 100, 102, 104, 119])
-    FOLLOW_exprwbreak_in_else_expression3092 = frozenset([1, 4, 11, 17, 49, 51, 100, 102, 104, 119])
-    FOLLOW_expressions_in_exprwbreak3107 = frozenset([1])
-    FOLLOW_network_send_in_exprwbreak3111 = frozenset([1])
-    FOLLOW_network_mcast_in_exprwbreak3115 = frozenset([1])
-    FOLLOW_network_bcast_in_exprwbreak3119 = frozenset([1])
-    FOLLOW_transaction_in_exprwbreak3123 = frozenset([1])
-    FOLLOW_next_break_in_exprwbreak3127 = frozenset([1])
-    FOLLOW_cond_rel_in_cond_comb3141 = frozenset([1, 110, 145])
-    FOLLOW_combinatorial_operator_in_cond_comb3144 = frozenset([14, 49, 56, 78, 80])
-    FOLLOW_cond_rel_in_cond_comb3146 = frozenset([1, 110, 145])
-    FOLLOW_OBRACE_in_cond_rel3163 = frozenset([14, 49, 56, 78, 80])
-    FOLLOW_cond_sel_in_cond_rel3166 = frozenset([1, 21])
-    FOLLOW_CBRACE_in_cond_rel3168 = frozenset([1, 21])
-    FOLLOW_cond_type_expr_in_cond_sel3192 = frozenset([1, 109, 111, 112, 113, 114, 115])
-    FOLLOW_relational_operator_in_cond_sel3195 = frozenset([14, 49, 56, 78])
-    FOLLOW_cond_type_expr_in_cond_sel3197 = frozenset([1, 109, 111, 112, 113, 114, 115])
-    FOLLOW_cond_types_in_cond_type_expr3217 = frozenset([1, 67, 71, 83])
-    FOLLOW_set_in_cond_type_expr3220 = frozenset([14, 49, 56, 78])
-    FOLLOW_cond_types_in_cond_type_expr3232 = frozenset([1, 67, 71, 83])
-    FOLLOW_object_expr_in_cond_types3253 = frozenset([1])
-    FOLLOW_set_func_in_cond_types3257 = frozenset([1])
-    FOLLOW_INT_in_cond_types3261 = frozenset([1])
-    FOLLOW_BOOL_in_cond_types3265 = frozenset([1])
-    FOLLOW_NID_in_cond_types3269 = frozenset([1])
-    FOLLOW_policy_op_type_in_policy_op3301 = frozenset([1, 145])
-    FOLLOW_145_in_policy_op3304 = frozenset([123, 127, 128, 132])
-    FOLLOW_policy_op_type_in_policy_op3306 = frozenset([1, 145])
-    FOLLOW_133_in_policy_op3323 = frozenset([1])
-    FOLLOW_policy_data_type_in_policy_data3401 = frozenset([1, 145])
-    FOLLOW_145_in_policy_data3404 = frozenset([117, 118, 122, 123, 125])
-    FOLLOW_policy_data_type_in_policy_data3406 = frozenset([1, 145])
-    FOLLOW_133_in_policy_data3423 = frozenset([1])
-    FOLLOW_policy_coh_type_in_policy_coh3493 = frozenset([1, 145])
-    FOLLOW_145_in_policy_coh3496 = frozenset([137, 142])
-    FOLLOW_policy_coh_type_in_policy_coh3498 = frozenset([1, 145])
-    FOLLOW_133_in_policy_coh3515 = frozenset([1])
-    FOLLOW_ID_in_label_state3572 = frozenset([80])
-    FOLLOW_OBRACE_in_label_state3574 = frozenset([123, 127, 128, 132, 133])
-    FOLLOW_policy_op_in_label_state3576 = frozenset([24])
-    FOLLOW_COMMA_in_label_state3578 = frozenset([117, 118, 122, 123, 125, 133])
-    FOLLOW_policy_data_in_label_state3580 = frozenset([24])
-    FOLLOW_COMMA_in_label_state3582 = frozenset([133, 137, 142])
-    FOLLOW_policy_coh_in_label_state3584 = frozenset([21])
-    FOLLOW_CBRACE_in_label_state3586 = frozenset([1])
-    FOLLOW_ID_in_label_message3610 = frozenset([80])
-    FOLLOW_OBRACE_in_label_message3612 = frozenset([123, 127, 128, 132, 133])
-    FOLLOW_policy_op_in_label_message3614 = frozenset([24])
-    FOLLOW_COMMA_in_label_message3616 = frozenset([117, 118, 122, 123, 125, 133])
-    FOLLOW_policy_data_in_label_message3618 = frozenset([24])
-    FOLLOW_COMMA_in_label_message3620 = frozenset([133, 137, 142])
-    FOLLOW_policy_coh_in_label_message3622 = frozenset([21])
-    FOLLOW_CBRACE_in_label_message3624 = frozenset([1])
-    FOLLOW_DATA_in_data_rule3648 = frozenset([80])
-    FOLLOW_OBRACE_in_data_rule3650 = frozenset([49])
-    FOLLOW_label_state_in_data_rule3652 = frozenset([21])
-    FOLLOW_CBRACE_in_data_rule3654 = frozenset([93])
-    FOLLOW_SEMICOLON_in_data_rule3656 = frozenset([1])
-    FOLLOW_120_in_local_rule3673 = frozenset([80])
-    FOLLOW_OBRACE_in_local_rule3675 = frozenset([49])
-    FOLLOW_label_state_in_local_rule3677 = frozenset([24])
-    FOLLOW_COMMA_in_local_rule3679 = frozenset([49])
-    FOLLOW_label_message_in_local_rule3681 = frozenset([24])
-    FOLLOW_COMMA_in_local_rule3683 = frozenset([49])
-    FOLLOW_label_state_in_local_rule3685 = frozenset([21])
-    FOLLOW_CBRACE_in_local_rule3687 = frozenset([93])
-    FOLLOW_SEMICOLON_in_local_rule3689 = frozenset([1])
-    FOLLOW_129_in_rule3710 = frozenset([80])
-    FOLLOW_OBRACE_in_rule3712 = frozenset([49])
-    FOLLOW_label_state_in_rule3714 = frozenset([24])
-    FOLLOW_COMMA_in_rule3716 = frozenset([49])
-    FOLLOW_label_message_in_rule3718 = frozenset([24])
-    FOLLOW_COMMA_in_rule3720 = frozenset([49])
-    FOLLOW_label_state_in_rule3722 = frozenset([21])
-    FOLLOW_CBRACE_in_rule3724 = frozenset([93])
-    FOLLOW_SEMICOLON_in_rule3726 = frozenset([1])
-    FOLLOW_data_rule_in_policy_rule3748 = frozenset([1])
-    FOLLOW_local_rule_in_policy_rule3752 = frozenset([1])
-    FOLLOW_rule_in_policy_rule3756 = frozenset([1])
-    FOLLOW_126_in_policy_block3763 = frozenset([49])
-    FOLLOW_ID_in_policy_block3765 = frozenset([81])
-    FOLLOW_OCBRACE_in_policy_block3767 = frozenset([22, 29, 120, 129])
-    FOLLOW_policy_rule_in_policy_block3769 = frozenset([22, 29, 120, 129])
-    FOLLOW_CCBRACE_in_policy_block3772 = frozenset([1])
-    FOLLOW_policy_block_in_policy_file3790 = frozenset([1, 126])
+    FOLLOW_121_in_internal_event_function757 = frozenset([1])
+    FOLLOW_const_decl_in_document1085 = frozenset([1, 4, 6, 19, 27, 33, 50, 52, 66, 69, 75, 102, 104, 106, 121])
+    FOLLOW_init_hw_in_document1089 = frozenset([1, 4, 6, 19, 27, 33, 50, 52, 66, 69, 75, 102, 104, 106, 121])
+    FOLLOW_arch_block_in_document1093 = frozenset([1, 4, 6, 19, 27, 33, 50, 52, 66, 69, 75, 102, 104, 106, 121])
+    FOLLOW_expressions_in_document1097 = frozenset([1, 4, 6, 19, 27, 33, 50, 52, 66, 69, 75, 102, 104, 106, 121])
+    FOLLOW_policy_file_in_document1105 = frozenset([1])
+    FOLLOW_int_decl_in_declarations1116 = frozenset([1])
+    FOLLOW_bool_decl_in_declarations1120 = frozenset([1])
+    FOLLOW_state_decl_in_declarations1124 = frozenset([1])
+    FOLLOW_data_decl_in_declarations1128 = frozenset([1])
+    FOLLOW_id_decl_in_declarations1132 = frozenset([1])
+    FOLLOW_CONSTANT_in_const_decl1144 = frozenset([50])
+    FOLLOW_ID_in_const_decl1146 = frozenset([57])
+    FOLLOW_INT_in_const_decl1148 = frozenset([1])
+    FOLLOW_INTID_in_int_decl1170 = frozenset([83])
+    FOLLOW_range_in_int_decl1172 = frozenset([50])
+    FOLLOW_ID_in_int_decl1174 = frozenset([42, 95])
+    FOLLOW_EQUALSIGN_in_int_decl1177 = frozenset([57])
+    FOLLOW_INT_in_int_decl1179 = frozenset([42, 95])
+    FOLLOW_SEMICOLON_in_int_decl1183 = frozenset([1])
+    FOLLOW_BOOLID_in_bool_decl1211 = frozenset([50])
+    FOLLOW_ID_in_bool_decl1213 = frozenset([42, 95])
+    FOLLOW_EQUALSIGN_in_bool_decl1216 = frozenset([14])
+    FOLLOW_BOOL_in_bool_decl1218 = frozenset([42, 95])
+    FOLLOW_SEMICOLON_in_bool_decl1222 = frozenset([1])
+    FOLLOW_STATE_in_state_decl1249 = frozenset([50])
+    FOLLOW_ID_in_state_decl1251 = frozenset([95])
+    FOLLOW_SEMICOLON_in_state_decl1253 = frozenset([1])
+    FOLLOW_DATA_in_data_decl1272 = frozenset([50])
+    FOLLOW_ID_in_data_decl1274 = frozenset([95])
+    FOLLOW_SEMICOLON_in_data_decl1276 = frozenset([1])
+    FOLLOW_set_decl_in_id_decl1295 = frozenset([79, 97])
+    FOLLOW_NID_in_id_decl1298 = frozenset([50])
+    FOLLOW_ID_in_id_decl1300 = frozenset([42, 95])
+    FOLLOW_EQUALSIGN_in_id_decl1303 = frozenset([50, 97])
+    FOLLOW_set_decl_in_id_decl1305 = frozenset([50, 97])
+    FOLLOW_ID_in_id_decl1308 = frozenset([42, 95])
+    FOLLOW_SEMICOLON_in_id_decl1312 = frozenset([1])
+    FOLLOW_SET_in_set_decl1349 = frozenset([83])
+    FOLLOW_OEBRACE_in_set_decl1351 = frozenset([50, 57])
+    FOLLOW_val_range_in_set_decl1353 = frozenset([23])
+    FOLLOW_CEBRACE_in_set_decl1355 = frozenset([1])
+    FOLLOW_OEBRACE_in_range1378 = frozenset([50, 57])
+    FOLLOW_val_range_in_range1380 = frozenset([35])
+    FOLLOW_DOT_in_range1382 = frozenset([35])
+    FOLLOW_DOT_in_range1384 = frozenset([50, 57])
+    FOLLOW_val_range_in_range1386 = frozenset([23])
+    FOLLOW_CEBRACE_in_range1388 = frozenset([1])
+    FOLLOW_ARRAY_in_array_decl1437 = frozenset([83])
+    FOLLOW_range_in_array_decl1439 = frozenset([1])
+    FOLLOW_FIFO_in_fifo_decl1449 = frozenset([83])
+    FOLLOW_range_in_fifo_decl1451 = frozenset([1])
+    FOLLOW_network_block_in_init_hw1461 = frozenset([1])
+    FOLLOW_machines_in_init_hw1465 = frozenset([1])
+    FOLLOW_message_block_in_init_hw1469 = frozenset([1])
+    FOLLOW_object_expr_in_object_block1480 = frozenset([95])
+    FOLLOW_SEMICOLON_in_object_block1482 = frozenset([1])
+    FOLLOW_object_id_in_object_expr1497 = frozenset([1])
+    FOLLOW_object_func_in_object_expr1501 = frozenset([1])
+    FOLLOW_ID_in_object_id1512 = frozenset([1])
+    FOLLOW_ID_in_object_func1529 = frozenset([35])
+    FOLLOW_DOT_in_object_func1531 = frozenset([50, 79])
+    FOLLOW_object_idres_in_object_func1533 = frozenset([1, 81])
+    FOLLOW_OBRACE_in_object_func1536 = frozenset([21, 24, 50])
+    FOLLOW_object_expr_in_object_func1538 = frozenset([21, 24, 50])
+    FOLLOW_COMMA_in_object_func1542 = frozenset([50])
+    FOLLOW_object_expr_in_object_func1544 = frozenset([21, 24])
+    FOLLOW_CBRACE_in_object_func1548 = frozenset([1, 81])
+    FOLLOW_function_call_in_function_call_block1596 = frozenset([95])
+    FOLLOW_SEMICOLON_in_function_call_block1598 = frozenset([1])
+    FOLLOW_ID_in_function_call1613 = frozenset([81])
+    FOLLOW_OBRACE_in_function_call1615 = frozenset([21])
+    FOLLOW_CBRACE_in_function_call1617 = frozenset([1])
+    FOLLOW_cache_block_in_machines1657 = frozenset([1])
+    FOLLOW_dir_block_in_machines1661 = frozenset([1])
+    FOLLOW_mem_block_in_machines1665 = frozenset([1])
+    FOLLOW_CACHE_in_cache_block1680 = frozenset([82])
+    FOLLOW_OCBRACE_in_cache_block1682 = frozenset([15, 22, 29, 58, 79, 97, 104])
+    FOLLOW_declarations_in_cache_block1684 = frozenset([15, 22, 29, 58, 79, 97, 104])
+    FOLLOW_CCBRACE_in_cache_block1687 = frozenset([50, 97])
+    FOLLOW_objset_decl_in_cache_block1689 = frozenset([50, 97])
+    FOLLOW_ID_in_cache_block1692 = frozenset([95])
+    FOLLOW_SEMICOLON_in_cache_block1694 = frozenset([1])
+    FOLLOW_DIR_in_dir_block1735 = frozenset([82])
+    FOLLOW_OCBRACE_in_dir_block1737 = frozenset([15, 22, 29, 58, 79, 97, 104])
+    FOLLOW_declarations_in_dir_block1739 = frozenset([15, 22, 29, 58, 79, 97, 104])
+    FOLLOW_CCBRACE_in_dir_block1742 = frozenset([50, 97])
+    FOLLOW_objset_decl_in_dir_block1744 = frozenset([50, 97])
+    FOLLOW_ID_in_dir_block1747 = frozenset([95])
+    FOLLOW_SEMICOLON_in_dir_block1749 = frozenset([1])
+    FOLLOW_MEM_in_mem_block1790 = frozenset([82])
+    FOLLOW_OCBRACE_in_mem_block1792 = frozenset([15, 22, 29, 58, 79, 97, 104])
+    FOLLOW_declarations_in_mem_block1794 = frozenset([15, 22, 29, 58, 79, 97, 104])
+    FOLLOW_CCBRACE_in_mem_block1797 = frozenset([50, 97])
+    FOLLOW_objset_decl_in_mem_block1799 = frozenset([50, 97])
+    FOLLOW_ID_in_mem_block1802 = frozenset([95])
+    FOLLOW_SEMICOLON_in_mem_block1804 = frozenset([1])
+    FOLLOW_SET_in_objset_decl1846 = frozenset([83])
+    FOLLOW_OEBRACE_in_objset_decl1848 = frozenset([50, 57])
+    FOLLOW_val_range_in_objset_decl1850 = frozenset([23])
+    FOLLOW_CEBRACE_in_objset_decl1852 = frozenset([1])
+    FOLLOW_NETWORK_in_network_block1878 = frozenset([82])
+    FOLLOW_OCBRACE_in_network_block1880 = frozenset([22, 126, 133])
+    FOLLOW_network_element_in_network_block1882 = frozenset([22, 126, 133])
+    FOLLOW_CCBRACE_in_network_block1885 = frozenset([95])
+    FOLLOW_SEMICOLON_in_network_block1887 = frozenset([1])
+    FOLLOW_element_type_in_network_element1930 = frozenset([50])
+    FOLLOW_ID_in_network_element1932 = frozenset([95])
+    FOLLOW_SEMICOLON_in_network_element1934 = frozenset([1])
+    FOLLOW_ID_in_network_send1955 = frozenset([35])
+    FOLLOW_DOT_in_network_send1957 = frozenset([132, 146])
+    FOLLOW_send_function_in_network_send1959 = frozenset([81])
+    FOLLOW_OBRACE_in_network_send1961 = frozenset([50])
+    FOLLOW_ID_in_network_send1963 = frozenset([21])
+    FOLLOW_CBRACE_in_network_send1965 = frozenset([95])
+    FOLLOW_SEMICOLON_in_network_send1967 = frozenset([1])
+    FOLLOW_ID_in_network_bcast1987 = frozenset([35])
+    FOLLOW_DOT_in_network_bcast1989 = frozenset([118, 138])
+    FOLLOW_bcast_function_in_network_bcast1991 = frozenset([81])
+    FOLLOW_OBRACE_in_network_bcast1993 = frozenset([50])
+    FOLLOW_ID_in_network_bcast1995 = frozenset([21])
+    FOLLOW_CBRACE_in_network_bcast1997 = frozenset([95])
+    FOLLOW_SEMICOLON_in_network_bcast1999 = frozenset([1])
+    FOLLOW_ID_in_network_mcast2019 = frozenset([35])
+    FOLLOW_DOT_in_network_mcast2021 = frozenset([123, 144])
+    FOLLOW_mcast_function_in_network_mcast2023 = frozenset([81])
+    FOLLOW_OBRACE_in_network_mcast2025 = frozenset([50])
+    FOLLOW_ID_in_network_mcast2027 = frozenset([24])
+    FOLLOW_COMMA_in_network_mcast2029 = frozenset([50])
+    FOLLOW_ID_in_network_mcast2031 = frozenset([21])
+    FOLLOW_CBRACE_in_network_mcast2033 = frozenset([95])
+    FOLLOW_SEMICOLON_in_network_mcast2035 = frozenset([1])
+    FOLLOW_MSG_in_message_block2065 = frozenset([50])
+    FOLLOW_ID_in_message_block2067 = frozenset([82])
+    FOLLOW_OCBRACE_in_message_block2069 = frozenset([15, 22, 29, 58, 79, 97, 104])
+    FOLLOW_declarations_in_message_block2071 = frozenset([15, 22, 29, 58, 79, 97, 104])
+    FOLLOW_CCBRACE_in_message_block2074 = frozenset([95])
+    FOLLOW_SEMICOLON_in_message_block2076 = frozenset([1])
+    FOLLOW_ID_in_message_constr2098 = frozenset([81])
+    FOLLOW_OBRACE_in_message_constr2100 = frozenset([14, 21, 24, 50, 57, 79])
+    FOLLOW_message_expr_in_message_constr2102 = frozenset([14, 21, 24, 50, 57, 79])
+    FOLLOW_COMMA_in_message_constr2106 = frozenset([14, 50, 57, 79])
+    FOLLOW_message_expr_in_message_constr2108 = frozenset([21, 24])
+    FOLLOW_CBRACE_in_message_constr2112 = frozenset([1])
+    FOLLOW_object_expr_in_message_expr2134 = frozenset([1])
+    FOLLOW_set_func_in_message_expr2138 = frozenset([1])
+    FOLLOW_INT_in_message_expr2142 = frozenset([1])
+    FOLLOW_BOOL_in_message_expr2146 = frozenset([1])
+    FOLLOW_NID_in_message_expr2150 = frozenset([1])
+    FOLLOW_set_func_in_set_block2168 = frozenset([95])
+    FOLLOW_SEMICOLON_in_set_block2170 = frozenset([1])
+    FOLLOW_ID_in_set_func2185 = frozenset([35])
+    FOLLOW_DOT_in_set_func2187 = frozenset([137, 139, 141, 142, 143, 147])
+    FOLLOW_set_function_types_in_set_func2189 = frozenset([81])
+    FOLLOW_OBRACE_in_set_func2191 = frozenset([21, 50])
+    FOLLOW_set_nest_in_set_func2193 = frozenset([21, 50])
+    FOLLOW_CBRACE_in_set_func2196 = frozenset([1])
+    FOLLOW_set_func_in_set_nest2234 = frozenset([1])
+    FOLLOW_object_expr_in_set_nest2238 = frozenset([1])
+    FOLLOW_internal_event_func_in_internal_event_block2256 = frozenset([95])
+    FOLLOW_SEMICOLON_in_internal_event_block2258 = frozenset([1])
+    FOLLOW_internal_event_function_in_internal_event_func2272 = frozenset([81])
+    FOLLOW_OBRACE_in_internal_event_func2274 = frozenset([50])
+    FOLLOW_ID_in_internal_event_func2276 = frozenset([21])
+    FOLLOW_CBRACE_in_internal_event_func2278 = frozenset([1])
+    FOLLOW_ARCH_in_arch_block2302 = frozenset([50])
+    FOLLOW_ID_in_arch_block2304 = frozenset([82])
+    FOLLOW_OCBRACE_in_arch_block2306 = frozenset([22, 91, 100])
+    FOLLOW_arch_body_in_arch_block2308 = frozenset([22])
+    FOLLOW_CCBRACE_in_arch_block2310 = frozenset([1])
+    FOLLOW_stable_def_in_arch_body2332 = frozenset([1, 91, 100])
+    FOLLOW_process_block_in_arch_body2336 = frozenset([1, 91, 100])
+    FOLLOW_STABLE_in_stable_def2346 = frozenset([82])
+    FOLLOW_OCBRACE_in_stable_def2348 = frozenset([50])
+    FOLLOW_ID_in_stable_def2350 = frozenset([22, 24])
+    FOLLOW_COMMA_in_stable_def2353 = frozenset([50])
+    FOLLOW_ID_in_stable_def2355 = frozenset([22, 24])
+    FOLLOW_CCBRACE_in_stable_def2359 = frozenset([1])
+    FOLLOW_PROC_in_process_block2378 = frozenset([81])
+    FOLLOW_process_trans_in_process_block2380 = frozenset([82])
+    FOLLOW_OCBRACE_in_process_block2382 = frozenset([4, 11, 22, 50, 52, 102, 104, 106, 121])
+    FOLLOW_process_expr_in_process_block2384 = frozenset([4, 11, 22, 50, 52, 102, 104, 106, 121])
+    FOLLOW_CCBRACE_in_process_block2387 = frozenset([1])
+    FOLLOW_OBRACE_in_process_trans2413 = frozenset([50])
+    FOLLOW_ID_in_process_trans2415 = frozenset([24])
+    FOLLOW_COMMA_in_process_trans2417 = frozenset([4, 45, 50])
+    FOLLOW_process_events_in_process_trans2419 = frozenset([21, 24])
+    FOLLOW_process_finalstate_in_process_trans2421 = frozenset([21, 24])
+    FOLLOW_CBRACE_in_process_trans2424 = frozenset([1])
+    FOLLOW_COMMA_in_process_finalstate2447 = frozenset([50, 104])
+    FOLLOW_process_finalident_in_process_finalstate2449 = frozenset([1])
+    FOLLOW_expressions_in_process_expr2502 = frozenset([1])
+    FOLLOW_network_send_in_process_expr2506 = frozenset([1])
+    FOLLOW_network_mcast_in_process_expr2510 = frozenset([1])
+    FOLLOW_network_bcast_in_process_expr2514 = frozenset([1])
+    FOLLOW_transaction_in_process_expr2517 = frozenset([1])
+    FOLLOW_AWAIT_in_transaction2527 = frozenset([82])
+    FOLLOW_OCBRACE_in_transaction2529 = frozenset([22, 108])
+    FOLLOW_trans_in_transaction2531 = frozenset([22, 108])
+    FOLLOW_CCBRACE_in_transaction2534 = frozenset([1])
+    FOLLOW_WHEN_in_trans2554 = frozenset([50])
+    FOLLOW_ID_in_trans2556 = frozenset([32])
+    FOLLOW_DDOT_in_trans2558 = frozenset([1, 4, 11, 17, 50, 52, 77, 102, 104, 106, 121])
+    FOLLOW_trans_body_in_trans2560 = frozenset([1, 4, 11, 17, 50, 52, 77, 102, 104, 106, 121])
+    FOLLOW_expressions_in_trans_body2593 = frozenset([1])
+    FOLLOW_next_trans_in_trans_body2597 = frozenset([1])
+    FOLLOW_next_break_in_trans_body2601 = frozenset([1])
+    FOLLOW_transaction_in_trans_body2605 = frozenset([1])
+    FOLLOW_network_send_in_trans_body2609 = frozenset([1])
+    FOLLOW_network_mcast_in_trans_body2613 = frozenset([1])
+    FOLLOW_network_bcast_in_trans_body2617 = frozenset([1])
+    FOLLOW_NEXT_in_next_trans2635 = frozenset([82])
+    FOLLOW_OCBRACE_in_next_trans2637 = frozenset([22, 108])
+    FOLLOW_trans_in_next_trans2639 = frozenset([22, 108])
+    FOLLOW_CCBRACE_in_next_trans2642 = frozenset([1])
+    FOLLOW_BREAK_in_next_break2663 = frozenset([95])
+    FOLLOW_SEMICOLON_in_next_break2665 = frozenset([1])
+    FOLLOW_assignment_in_expressions2681 = frozenset([1])
+    FOLLOW_conditional_in_expressions2685 = frozenset([1])
+    FOLLOW_object_block_in_expressions2689 = frozenset([1])
+    FOLLOW_function_call_block_in_expressions2693 = frozenset([1])
+    FOLLOW_set_block_in_expressions2697 = frozenset([1])
+    FOLLOW_internal_event_block_in_expressions2701 = frozenset([1])
+    FOLLOW_msg_stall_in_expressions2705 = frozenset([1])
+    FOLLOW_set_access_in_expressions2709 = frozenset([1])
+    FOLLOW_undefine_in_expressions2713 = frozenset([1])
+    FOLLOW_process_finalident_in_assignment2720 = frozenset([42])
+    FOLLOW_EQUALSIGN_in_assignment2722 = frozenset([14, 50, 57, 79])
+    FOLLOW_assign_types_in_assignment2724 = frozenset([95])
+    FOLLOW_SEMICOLON_in_assignment2726 = frozenset([1])
+    FOLLOW_object_expr_in_assign_types2748 = frozenset([1])
+    FOLLOW_message_constr_in_assign_types2752 = frozenset([1])
+    FOLLOW_math_op_in_assign_types2756 = frozenset([1])
+    FOLLOW_set_func_in_assign_types2760 = frozenset([1])
+    FOLLOW_INT_in_assign_types2764 = frozenset([1])
+    FOLLOW_BOOL_in_assign_types2768 = frozenset([1])
+    FOLLOW_NID_in_assign_types2772 = frozenset([1])
+    FOLLOW_val_range_in_math_op2783 = frozenset([68, 84])
+    FOLLOW_set_in_math_op2785 = frozenset([50, 57])
+    FOLLOW_val_range_in_math_op2793 = frozenset([1])
+    FOLLOW_STALL_in_msg_stall2799 = frozenset([95])
+    FOLLOW_SEMICOLON_in_msg_stall2801 = frozenset([1])
+    FOLLOW_ACCESS_in_set_access2813 = frozenset([95])
+    FOLLOW_SEMICOLON_in_set_access2815 = frozenset([1])
+    FOLLOW_UNDEF_in_undefine2829 = frozenset([50])
+    FOLLOW_ID_in_undefine2831 = frozenset([95])
+    FOLLOW_SEMICOLON_in_undefine2833 = frozenset([1])
+    FOLLOW_if_stmt_in_conditional2850 = frozenset([1])
+    FOLLOW_ifnot_stmt_in_conditional2854 = frozenset([1])
+    FOLLOW_IF_in_if_stmt2873 = frozenset([14, 50, 57, 79, 81])
+    FOLLOW_cond_comb_in_if_stmt2875 = frozenset([82])
+    FOLLOW_OCBRACE_in_if_stmt2877 = frozenset([4, 11, 17, 22, 50, 52, 102, 104, 106, 121])
+    FOLLOW_if_expression_in_if_stmt2879 = frozenset([22])
+    FOLLOW_CCBRACE_in_if_stmt2881 = frozenset([1, 37])
+    FOLLOW_ELSE_in_if_stmt2888 = frozenset([82])
+    FOLLOW_OCBRACE_in_if_stmt2892 = frozenset([4, 11, 17, 22, 50, 52, 102, 104, 106, 121])
+    FOLLOW_else_expression_in_if_stmt2894 = frozenset([22])
+    FOLLOW_CCBRACE_in_if_stmt2896 = frozenset([1, 37])
+    FOLLOW_IF_in_ifnot_stmt3002 = frozenset([74])
+    FOLLOW_NEG_in_ifnot_stmt3004 = frozenset([14, 50, 57, 79, 81])
+    FOLLOW_cond_comb_in_ifnot_stmt3006 = frozenset([82])
+    FOLLOW_OCBRACE_in_ifnot_stmt3008 = frozenset([4, 11, 17, 22, 50, 52, 102, 104, 106, 121])
+    FOLLOW_if_expression_in_ifnot_stmt3010 = frozenset([22])
+    FOLLOW_CCBRACE_in_ifnot_stmt3012 = frozenset([1, 37])
+    FOLLOW_ELSE_in_ifnot_stmt3019 = frozenset([82])
+    FOLLOW_OCBRACE_in_ifnot_stmt3023 = frozenset([4, 11, 17, 22, 50, 52, 102, 104, 106, 121])
+    FOLLOW_else_expression_in_ifnot_stmt3025 = frozenset([22])
+    FOLLOW_CCBRACE_in_ifnot_stmt3027 = frozenset([1, 37])
+    FOLLOW_exprwbreak_in_if_expression3128 = frozenset([1, 4, 11, 17, 50, 52, 102, 104, 106, 121])
+    FOLLOW_exprwbreak_in_else_expression3143 = frozenset([1, 4, 11, 17, 50, 52, 102, 104, 106, 121])
+    FOLLOW_expressions_in_exprwbreak3158 = frozenset([1])
+    FOLLOW_network_send_in_exprwbreak3162 = frozenset([1])
+    FOLLOW_network_mcast_in_exprwbreak3166 = frozenset([1])
+    FOLLOW_network_bcast_in_exprwbreak3170 = frozenset([1])
+    FOLLOW_transaction_in_exprwbreak3174 = frozenset([1])
+    FOLLOW_next_break_in_exprwbreak3178 = frozenset([1])
+    FOLLOW_cond_rel_in_cond_comb3192 = frozenset([1, 112, 148])
+    FOLLOW_combinatorial_operator_in_cond_comb3195 = frozenset([14, 50, 57, 79, 81])
+    FOLLOW_cond_rel_in_cond_comb3197 = frozenset([1, 112, 148])
+    FOLLOW_OBRACE_in_cond_rel3214 = frozenset([14, 50, 57, 79, 81])
+    FOLLOW_cond_sel_in_cond_rel3217 = frozenset([1, 21])
+    FOLLOW_CBRACE_in_cond_rel3219 = frozenset([1, 21])
+    FOLLOW_cond_type_expr_in_cond_sel3243 = frozenset([1, 111, 113, 114, 115, 116, 117])
+    FOLLOW_relational_operator_in_cond_sel3246 = frozenset([14, 50, 57, 79])
+    FOLLOW_cond_type_expr_in_cond_sel3248 = frozenset([1, 111, 113, 114, 115, 116, 117])
+    FOLLOW_cond_types_in_cond_type_expr3268 = frozenset([1, 68, 72, 84])
+    FOLLOW_set_in_cond_type_expr3271 = frozenset([14, 50, 57, 79])
+    FOLLOW_cond_types_in_cond_type_expr3283 = frozenset([1, 68, 72, 84])
+    FOLLOW_object_expr_in_cond_types3304 = frozenset([1])
+    FOLLOW_set_func_in_cond_types3308 = frozenset([1])
+    FOLLOW_INT_in_cond_types3312 = frozenset([1])
+    FOLLOW_BOOL_in_cond_types3316 = frozenset([1])
+    FOLLOW_NID_in_cond_types3320 = frozenset([1])
+    FOLLOW_policy_op_type_in_policy_op3352 = frozenset([1, 148])
+    FOLLOW_148_in_policy_op3355 = frozenset([125, 129, 130, 134])
+    FOLLOW_policy_op_type_in_policy_op3357 = frozenset([1, 148])
+    FOLLOW_135_in_policy_op3374 = frozenset([1])
+    FOLLOW_policy_data_type_in_policy_data3452 = frozenset([1, 148])
+    FOLLOW_148_in_policy_data3455 = frozenset([119, 120, 124, 125, 127])
+    FOLLOW_policy_data_type_in_policy_data3457 = frozenset([1, 148])
+    FOLLOW_135_in_policy_data3474 = frozenset([1])
+    FOLLOW_policy_coh_type_in_policy_coh3544 = frozenset([1, 148])
+    FOLLOW_148_in_policy_coh3547 = frozenset([140, 145])
+    FOLLOW_policy_coh_type_in_policy_coh3549 = frozenset([1, 148])
+    FOLLOW_135_in_policy_coh3566 = frozenset([1])
+    FOLLOW_ID_in_label_state3623 = frozenset([81])
+    FOLLOW_OBRACE_in_label_state3625 = frozenset([125, 129, 130, 134, 135])
+    FOLLOW_policy_op_in_label_state3627 = frozenset([24])
+    FOLLOW_COMMA_in_label_state3629 = frozenset([119, 120, 124, 125, 127, 135])
+    FOLLOW_policy_data_in_label_state3631 = frozenset([24])
+    FOLLOW_COMMA_in_label_state3633 = frozenset([135, 140, 145])
+    FOLLOW_policy_coh_in_label_state3635 = frozenset([21])
+    FOLLOW_CBRACE_in_label_state3637 = frozenset([1])
+    FOLLOW_ID_in_label_message3661 = frozenset([81])
+    FOLLOW_OBRACE_in_label_message3663 = frozenset([125, 129, 130, 134, 135])
+    FOLLOW_policy_op_in_label_message3665 = frozenset([24])
+    FOLLOW_COMMA_in_label_message3667 = frozenset([119, 120, 124, 125, 127, 135])
+    FOLLOW_policy_data_in_label_message3669 = frozenset([24])
+    FOLLOW_COMMA_in_label_message3671 = frozenset([135, 140, 145])
+    FOLLOW_policy_coh_in_label_message3673 = frozenset([21])
+    FOLLOW_CBRACE_in_label_message3675 = frozenset([1])
+    FOLLOW_DATA_in_data_rule3699 = frozenset([81])
+    FOLLOW_OBRACE_in_data_rule3701 = frozenset([50])
+    FOLLOW_label_state_in_data_rule3703 = frozenset([21])
+    FOLLOW_CBRACE_in_data_rule3705 = frozenset([95])
+    FOLLOW_SEMICOLON_in_data_rule3707 = frozenset([1])
+    FOLLOW_122_in_local_rule3724 = frozenset([81])
+    FOLLOW_OBRACE_in_local_rule3726 = frozenset([50])
+    FOLLOW_label_state_in_local_rule3728 = frozenset([24])
+    FOLLOW_COMMA_in_local_rule3730 = frozenset([50])
+    FOLLOW_label_message_in_local_rule3732 = frozenset([24])
+    FOLLOW_COMMA_in_local_rule3734 = frozenset([50])
+    FOLLOW_label_state_in_local_rule3736 = frozenset([21])
+    FOLLOW_CBRACE_in_local_rule3738 = frozenset([95])
+    FOLLOW_SEMICOLON_in_local_rule3740 = frozenset([1])
+    FOLLOW_136_in_rule_action3760 = frozenset([42])
+    FOLLOW_EQUALSIGN_in_rule_action3762 = frozenset([82])
+    FOLLOW_OCBRACE_in_rule_action3764 = frozenset([4, 22, 50, 52, 102, 104, 106, 121])
+    FOLLOW_expressions_in_rule_action3766 = frozenset([4, 22, 50, 52, 102, 104, 106, 121])
+    FOLLOW_CCBRACE_in_rule_action3769 = frozenset([1])
+    FOLLOW_131_in_rule3785 = frozenset([81])
+    FOLLOW_OBRACE_in_rule3787 = frozenset([50])
+    FOLLOW_label_state_in_rule3789 = frozenset([24])
+    FOLLOW_COMMA_in_rule3791 = frozenset([50])
+    FOLLOW_label_message_in_rule3793 = frozenset([24])
+    FOLLOW_COMMA_in_rule3795 = frozenset([50])
+    FOLLOW_label_state_in_rule3797 = frozenset([21, 24])
+    FOLLOW_COMMA_in_rule3800 = frozenset([136])
+    FOLLOW_rule_action_in_rule3802 = frozenset([21])
+    FOLLOW_CBRACE_in_rule3806 = frozenset([95])
+    FOLLOW_SEMICOLON_in_rule3808 = frozenset([1])
+    FOLLOW_data_rule_in_policy_rule3833 = frozenset([1])
+    FOLLOW_local_rule_in_policy_rule3837 = frozenset([1])
+    FOLLOW_rule_in_policy_rule3841 = frozenset([1])
+    FOLLOW_128_in_policy_block3848 = frozenset([50])
+    FOLLOW_ID_in_policy_block3850 = frozenset([82])
+    FOLLOW_OCBRACE_in_policy_block3852 = frozenset([22, 29, 122, 131])
+    FOLLOW_policy_rule_in_policy_block3854 = frozenset([22, 29, 122, 131])
+    FOLLOW_CCBRACE_in_policy_block3857 = frozenset([1])
+    FOLLOW_policy_block_in_policy_file3875 = frozenset([1, 128])
 
 
 

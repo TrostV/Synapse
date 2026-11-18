@@ -48,11 +48,12 @@ from Algorithms.HeteroGen.ClassHHDirArchitecture import HHDirArchitecture
 from Algorithms.ProtoAlgoNetworkx.ProtoNetworkxBase import ProtoNetworkxBase
 from Algorithms.Synapse.Labeling import FORWARD, READ_ACCESSES, REQUEST, ProtocolLabels
 from Algorithms.Synapse.Labels import Data, Label, LabelPattern, Op
-from Algorithms.Synapse.Policy import Policy
+from Algorithms.Synapse.Policy import Policy, Rule
 from DataObjects.Architecture.ClassFlatArchitecture import FlatArchitecture
 from DataObjects.ClassLevel import Level
 from DataObjects.FlowDataTypes.ClassBaseAccess import Access, BaseAccess, Evict
 from DataObjects.FlowDataTypes.ClassEvent import Event
+from Parser.CopyReducedCommonTree import copy_tree
 from DataObjects.FlowDataTypes.ClassMessage import BaseMessage, Message
 from DataObjects.States.ClassCompoundState import CompoundState
 from DataObjects.States.ClassStatev2 import State_v2
@@ -60,7 +61,15 @@ from DataObjects.Transitions.ClassTransitionv2 import Transition_v2
 from Debug.Monitor.ClassDebug import Debug
 from Debug.Monitor.ProtoCCTable import ProtoCCTablePrinter
 from Parser.ProtoCCcomTreeFct import toStringList
+from third_party.antlr3.tree import CommonTree
 
+
+def append_action(trace: List[Transition_v2], action: List[CommonTree] | None) -> List[Transition_v2]:
+    """Append the action of a rule to the last transition of a trace."""
+    if action:
+        trace[-1] = trace[-1].deepcopy_trans()
+        trace[-1].operations.extend(action)
+    return trace
 
 class SynthesisError(Exception):
     """The policy and the protocols are incompatible (Sec. VI-B)."""
@@ -304,10 +313,14 @@ class SynapseDirArchitecture(HHDirArchitecture):
                     if not silent:
                         if client_label.data == Data.NP:
                             chosen = self._assume_initial_variables(chosen)
-                        transitions += self._in_compound(chosen, client_state, guard)
+                        out = self._in_compound(chosen, client_state, guard)
                     else:
-                        transitions += self.det_sort_state_graph(
+                        out = self.det_sort_state_graph(
                             self.nest_graphs(self._client_graph(client_state, [silent]), chosen))
+                    if len(out) == 0:
+                        Debug.pwarning(f"Trying to add a empty transition, likely a bug.")
+                        continue
+                    transitions += append_action(out, rule.action)
                     continue
 
             plan = self.client_process(client_state, guard, request, rule.final, candidates)
@@ -320,7 +333,8 @@ class SynapseDirArchitecture(HHDirArchitecture):
             for client_graph, chosen in plan:
                 nested = self.nest_graphs(client_graph, chosen)
                 self._nest_races(nested, manager_state, client_state)
-                transitions += self.det_sort_state_graph(nested)
+                out = self.det_sort_state_graph(nested)
+                transitions += append_action(out, rule.action)
         return self._valid_generated_transitions(transitions)
 
     def _nest_races(self, nested: MultiDiGraph, manager_state: State_v2, client_state: State_v2):
@@ -981,14 +995,17 @@ class SynapseClientArchitecture():
                             Debug.pwarning(f"Encountered the non-stable state {final} when processing {roots[0].guard}. THIS IS A BUG.")
                             continue
                         if rule.final.matches(self.labels.state_labels[final]):
-                            processed.append(trace)
+                            processed.append(append_action(trace, rule.action))
                             continue
                         completed = self._complete_to_policy(trace, rule.final)
+                        
+                        
                         if completed is None:
                             raise SynthesisError(
                                 f"Incompatible first-level policy: {rule} requires {state} + {request_label}, "
                                 f"but the core transaction ends in {final} and has no matching eviction")
-                        processed.append(completed)
+                        
+                        processed.append(append_action(completed, rule.action))
 
                     processed_transitions = [transition for trace in processed for transition in trace]
                     result = self.client.gen_graph(processed_transitions)

@@ -107,7 +107,7 @@ tokens {
 	POLICY_OP_;
 	POLICY_DATA_; 
 	POLICY_COH_;
-
+	POLICY_ACTION_;
 }
 
 /*
@@ -364,9 +364,10 @@ data_rule: 'Data' OBRACE label_state CBRACE SEMICOLON
 local_rule: 'Local' OBRACE label_state COMMA label_message COMMA label_state CBRACE SEMICOLON
 	-> ^(LOCAL_RULE_ label_state label_message label_state);
 
+rule_action: 'action' EQUALSIGN OCBRACE expressions* CCBRACE -> ^(POLICY_ACTION_ expressions*);
 
-rule: 'Rule' OBRACE label_state COMMA label_message COMMA label_state CBRACE SEMICOLON
-   -> ^(RULE_ label_state label_message label_state);
+rule: 'Rule' OBRACE label_state COMMA label_message COMMA label_state (COMMA rule_action)? CBRACE SEMICOLON
+   -> ^(RULE_ label_state label_message label_state rule_action?);
 
 policy_rule: data_rule | local_rule | rule;
 policy_block : 'Policy' ID OCBRACE policy_rule* CCBRACE -> ^(POLICY_ ID policy_rule*);
