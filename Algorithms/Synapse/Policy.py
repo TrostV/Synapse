@@ -75,7 +75,7 @@ class Rule:
         if rule_tree.type == ProtoCCParser.LOCAL_RULE_:
             local = True
         elif not rule_tree.type == ProtoCCParser.RULE_:
-            return None
+            raise ValueError(f"Expected a rule, got {rule_tree.toStringTree()}")
 
         children = rule_tree.getChildren()
         start_tree, msg_tree, final_tree = children[0], children[1], children[2]
@@ -87,7 +87,7 @@ class Rule:
         action = action_tree.getChildren() if action_tree is not None else None
 
         if start is None or msg is None or final is None: 
-            return None     
+            raise ValueError(f"Failed to parse rule {rule_tree.toStringTree()}")
 
         return Rule(start, msg, final, f"Rule({start}, {msg}, {final})", local, action)
 
@@ -128,9 +128,17 @@ class Policy:
         policies: List[Policy] = []
     
         with open(path) as f:
-            tokens = CommonTokenStream(ProtoCCLexer.ProtoCCLexer(InputStream(f)))
-        parser = ProtoCCParser.ProtoCCParser(tokens)
+            input = InputStream(f)
+            input.name = str(path)
+        lexer  = ProtoCCLexer.ProtoCCLexer(input)
+        parser = ProtoCCParser.ProtoCCParser(CommonTokenStream(lexer))
+
+        
         file_tree = parser.document().tree
+
+        if parser.getNumberOfSyntaxErrors() + lexer.getNumberOfSyntaxErrors() > 0:
+            raise RuntimeError(f"Failed to parse {path}: {parser.getNumberOfSyntaxErrors()} syntax errors. See synapse.log for more info")
+        
         if file_tree is None:
             return None # Empty file
 
