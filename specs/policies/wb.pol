@@ -1,0 +1,6 @@
+Policy WB {
+  // Store hit: keep data (possibly acquire permission) and store
+  Rule( S(_, P , _), M(Wr, Dirty, _), S(RdWr, Dirty, _) );
+  // Store miss: fetch data and permission, then store
+  Rule( S(_, NP, _), M(Wr, Dirty, _), S(_   , Dirty, _) );
+}

@@ -1,0 +1,15 @@
+// This is the base policy.
+// It should be combined with either WB for classical write-back or WT/WT_S for write-through
+Policy Base {
+
+  // Read miss: fetch data and retain permission
+  // Note: Rd as a final permission just means that the final state can read not that it can't write. 
+  // Thus a MESI E state is covered by this
+  Rule(S(None, NP, _), M(Rd, None, _), S(Rd, P, _)); 
+  
+  // Read hit: keep data and permission
+  Rule(S(Rd, P, _), M(Rd, None, _), S(Rd, P, _));
+
+  // Other messages: just let the protocol do what it wants.
+  Rule(S(_, _, _), M(_, _, _), S(_, _, _));
+}

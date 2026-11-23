@@ -10,10 +10,10 @@ server:
         nodes:
           - memory: {capacity: 2GiB}
           - directory: {protocol: MESI}
-          - LLC: {protocol: MESI, policy: WB_INCL, capacity: 2MiB}
+          - LLC: {protocol: MESI, policy: [Base, WB], capacity: 2MiB}
           - core:
               count: 2
               nodes:
-                - L1: {policy: WB_INCL, capacity: 64KiB}
+                - L1: {policy: [Base, WB], capacity: 64KiB}
         interconnect: {connects: [directory, LLC, core], type: crossbar, latency: 5ns}
   interconnect: {connects: [socket], type: ring, latency: 15ns}

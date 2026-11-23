@@ -181,6 +181,22 @@ class Policy:
 
         return policies
 
+    @staticmethod
+    def join(policies: List[Policy]) -> Policy: 
+        if not policies or len(policies) == 0:
+            raise ValueError("Cannot join an empty list of policies")
+        elif len(policies) == 1:
+            return policies[0]
+        name = "+".join(pol.name for pol in policies)
+        rules = []
+        data_rule: LabelPattern | None = None
+        for pol in policies:
+            rules.extend(pol.rules)
+            if pol.data is not None:
+                if data_rule is not None:
+                    raise ValueError(f"Cannot join policies {name} because they have conflicting Data( ... ) directives")
+                data_rule = pol.data
+        return Policy(name, rules, data_rule)
 
 def load_policy(path: Path, name: Optional[str] = None) -> Policy:
     """Loads the policy `name` of a file (the only one of the file if no name is given)."""

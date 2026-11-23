@@ -1,0 +1,12 @@
+// Two different write-through policies:
+// WT: the classical write-through: after a store write data back and move to an Invalid state
+// WT_V: a write-through that keeps the just written data in a Clean state
+Policy WT {
+  // Store miss and hit: fetch data and/or permission if needed
+  // Store data and immediately write it back, dropping both data and permission
+  Rule( S(_, _, _), M(Wr, Dirty, _), S(_, NP, _) );
+}
+
+Policy WT_V {
+  Rule( S(_, _, _), M(Wr, Dirty, _), S(Rd, Clean, _) );
+}

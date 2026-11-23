@@ -156,7 +156,9 @@ def backend_options(topology: Topology) -> BackendOptions:
 
 
 def load_policies(topology: Topology) -> List[Policy]:
-    return [load_policy(path, name) for path, name in topology.policy_chain()]
+    # First gather all policies then combine them level wise
+    all_pols = [[load_policy(path, name) for path, name in policies] for policies in topology.policy_chain()]
+    return [Policy.join(pols) for pols in all_pols]
 
 
 STATE_ORDER = "ISFEOM"
@@ -182,7 +184,7 @@ def compose(topology: Topology) -> Tuple[List[Level], List[Optional[Level]], Lis
     """Synthesizes the controllers of the topology: the levels of its protocols (load_levels),
     each synthesized controller being the directory of a manager level, and the warnings."""
     policies = load_policies(topology)
-    l1_policy = load_policy(*topology.hierarchy[0].policy) if topology.hierarchy[0].policy else None
+    l1_policy = Policy.join([load_policy(path, name) for path, name in topology.hierarchy[0].policy]) if topology.hierarchy[0].policy else None
     managers, clients = load_levels(topology.protocol_chain(), local_protocols(topology, policies))
     warnings: List[str] = []
     for i, policy in enumerate(policies):

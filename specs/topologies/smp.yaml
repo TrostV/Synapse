@@ -6,7 +6,7 @@ socket:
   nodes:
     - memory: {capacity: 8GiB}
     - directory: {protocol: MESI}
-    - LLC: {protocol: MESI, policy: WB_INCL, capacity: 2MiB}
+    - LLC: {protocol: MESI, policy: [Base, WB], capacity: 2MiB}
     - core:
         count: 8
         nodes:

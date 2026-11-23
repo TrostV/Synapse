@@ -121,7 +121,7 @@ class Node:
         self.children: List["Node"] = []    # of a cluster
         self.given: set = set()             # the parameters the topology writes (not defaults)
         self.protocol: Optional[Path] = None    # of a controller: the protocol it manages
-        self.policy: Optional[Tuple[Path, str]] = None  # of a synthesized controller: (file, name)
+        self.policy: Optional[List[Tuple[Path, str]]] = None  # of a synthesized controller: (file, name)
 
     def __repr__(self):
         return f"{self.kind} {self.name}"
@@ -198,7 +198,7 @@ class Topology:
             self.name = _check_name(_check_value(document["name"], str, "name"), "name")
         else:
             self.name = "_".join([path.stem for path in self.protocol_chain()]
-                                 + list(dict.fromkeys(name for _, name in self.policy_chain()))
+                                 + list(dict.fromkeys(name for ts in self.policy_chain() for _, name in ts))
                                  + ([self.system] if self.system else []))
             _check_name(self.name, "the name made of the protocols, the policies and system")
 
@@ -503,7 +503,7 @@ class Topology:
         """The protocol files from the first-level cache's to the directory's."""
         return [controller.protocol for controller in self.hierarchy[1:]]
 
-    def policy_chain(self) -> List[Tuple[Path, str]]:
+    def policy_chain(self) -> List[List[Tuple[Path, str]]]:
         """(file, policy name) of each synthesized controller, from the lowest."""
         return [controller.policy for controller in self.intermediates]
 
@@ -517,10 +517,10 @@ class Topology:
         for index, controller in enumerate(self.hierarchy):
             above = self.hierarchy[index + 1].protocol.stem if controller is not self.hierarchy[-1] else None
             if controller in self.intermediates:
-                roles = f"{controller.protocol.stem} x {above}, policy {controller.policy[1]}"
+                roles = f"{controller.protocol.stem} x {above}, policy {'+'.join([name for _, name in controller.policy])}"
             else:
                 roles = above or controller.protocol.stem
-                roles = f"{above}, policy {controller.policy[1]}" if above else controller.protocol.stem
+                roles = f"{above}, policy {'+'.join([name for _, name in controller.policy])}" if above else controller.protocol.stem
             count = controller.instances * controller.slices
             sliced = ""
             if controller.slices > 1:
@@ -554,7 +554,7 @@ class Topology:
             return {"controller": controller.name, "machine": self.machine(controller),
                     "manages_with": _shown(controller.protocol) if controller.protocol else None,
                     "client_of": _shown(parent.protocol) if parent else None,
-                    "policy": {"file": _shown(controller.policy[0]), "policy": controller.policy[1]}
+                    "policy": [{"file": _shown(pol[0]), "policy": pol[1]} for pol in controller.policy]
                     if controller.policy else None,
                     "instances": controller.instances, "slices": controller.slices}
 
@@ -729,7 +729,7 @@ def _check_value(value: Any, expected: Any, where: str) -> Any:
         if isinstance(value, bool) or not isinstance(value, int) or value < 1:
             raise TopologyError(f"{where}: '{value}' is not a positive integer")
         return value
-    if not isinstance(value, str) or not value:
+    if not isinstance(value, (str, List)) or not value:
         raise TopologyError(f"{where}: expected a name, not {value!r}")
     return value
 
@@ -743,26 +743,38 @@ def _find_file(filename: str, directories: Sequence[Path], where: str) -> Path:
     raise TopologyError(f"{where}: {filename} not found in {', '.join(str(c.parent) for c in candidates)}")
 
 
-def _find_policy(reference: str, directories: Sequence[Path], where: str) -> Tuple[Path, str]:
+def _find_policy(reference: str|List[str], directories: Sequence[Path], where: str) -> List[Tuple[Path, str]]:
     """A policy by name (WB_INCL: the policy files are searched for it), by file and name
     (caching.pol:WB_INCL), or by file (the only policy of the file)."""
-    filename, separator, name = reference.partition(":")
-    if separator or filename.endswith(".pol"):
-        path = _find_file(filename, directories, where)
-        declared = _POLICY_DECLARATION.findall(path.read_text())
-        if not name:
-            if len(declared) != 1:
-                raise TopologyError(f"{where}: {path.name} defines {', '.join(declared)}: write {filename}:NAME")
-            name = declared[0]
-        if name not in declared:
-            raise TopologyError(f"{where}: {path.name} has no policy {name} ({', '.join(declared)})")
-        return path, name
-    for directory in directories:
-        found = [path for path in sorted(Path(directory).glob("*.pol"))
-                 if reference in _POLICY_DECLARATION.findall(path.read_text())]
-        if len(found) > 1:
-            raise TopologyError(f"{where}: {', '.join(path.name for path in found)} all define {reference}: "
-                                f"write FILE:{reference}")
-        if found:
-            return found[0].resolve(), reference
-    raise TopologyError(f"{where}: no policy file defines {reference} (in {', '.join(map(str, directories))})")
+    if isinstance(reference, list):
+        policies = reference
+    else:
+        policies = reference.split('+')
+    out = []
+    for pol in policies: 
+        filename, separator, name = pol.partition(":")
+        if separator or filename.endswith(".pol"):
+            path = _find_file(filename, directories, where)
+            declared = _POLICY_DECLARATION.findall(path.read_text())
+            if not name:
+                if len(declared) != 1:
+                    raise TopologyError(f"{where}: {path.name} defines {', '.join(declared)}: write {filename}:NAME")
+                name = declared[0]
+            if name not in declared:
+                raise TopologyError(f"{where}: {path.name} has no policy {name} ({', '.join(declared)})")
+            out.append((path, name))
+            continue
+
+        for directory in directories:
+            found = [path for path in sorted(Path(directory).glob("*.pol"))
+                    if pol in _POLICY_DECLARATION.findall(path.read_text())]
+            if len(found) > 1:
+                raise TopologyError(f"{where}: {', '.join(path.name for path in found)} all define {pol}: "
+                                    f"write FILE:{pol}")
+            if found:
+                out.append((found[0].resolve(), pol))
+                break
+        else: # for else is a weird Python thing: basically execute if no break was encountered
+            raise TopologyError(f"{where}: no policy file defines {pol} (in {', '.join(map(str, directories))})")
+
+    return out

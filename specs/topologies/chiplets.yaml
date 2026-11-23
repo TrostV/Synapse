@@ -2,7 +2,7 @@
 # with a shared memory pool. Each chiplet holds a slice of the directory and a slice of the shared
 # LLC; the LLC slices own contiguous address ranges. Runs in alloy-gem5 (gem5 v20), whose
 # sequencer gives the cores release consistency.
-name: MESIRC_MESI_WB_INCL       # MESIRC: the release-consistent cores
+name: Chiplets
 simulator: alloy-gem5-v20
 
 fabric:
@@ -14,12 +14,12 @@ fabric:
         count: 8
         nodes:
           - directory: {protocol: MESI}
-          - LLC: {protocol: MESI, policy: WB_INCL, capacity: 2MiB, shared: true, slice_select: range,
+          - LLC: {protocol: MESI, policy: [Base, WB], capacity: 2MiB, shared: true, slice_select: range,
                   transitions_per_cycle: 16}
           - core:
               count: 8
               type: TimingSimpleCPU
               nodes:
-                - L1: {policy: WB_INCL, capacity: 64KiB, associativity: 2, transitions_per_cycle: 8}
+                - L1: {policy: [Base, WB], capacity: 64KiB, associativity: 2, transitions_per_cycle: 8}
         interconnect: {connects: [directory, LLC, core], type: star, latency: 10ns}
   interconnect: {connects: [memory_pool, chiplet], type: star, latency: 25ns, flit_size: 16B}
