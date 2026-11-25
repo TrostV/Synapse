@@ -173,7 +173,7 @@ class Policy:
                     case _: # Shouldn't happen, the parser should have rejected the file.
                         raise ValueError(f"Unexpected rule type {rule_tree.type} in policy {name} in {path}")
 
-            if len(rules) == 0:
+            if len(rules) == 0 and data_rule is None:
                 Debug.pwarning(f"Policy {name} in {path} has no rules!")
 
             pol = Policy(name, rules, data_rule)
