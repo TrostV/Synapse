@@ -166,7 +166,7 @@ class Policy:
 
                         data_rule = LabelPattern.parse(rule_tree.getChild(0))
                     case ProtoCCParser.LOCAL_RULE_:
-                        l_rule = Rule.parse(rule_tree.getChild(0))
+                        l_rule = Rule.parse(rule_tree)
                         if l_rule:
                             rules.append(l_rule)
 
