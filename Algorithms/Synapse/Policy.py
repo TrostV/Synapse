@@ -174,7 +174,7 @@ class Policy:
                         raise ValueError(f"Unexpected rule type {rule_tree.type} in policy {name} in {path}")
 
             if len(rules) == 0:
-                Debug.pwaring(f"Policy {name} in {path} has no rules!")
+                Debug.pwarning(f"Policy {name} in {path} has no rules!")
 
             pol = Policy(name, rules, data_rule)
             policies.append(pol)
