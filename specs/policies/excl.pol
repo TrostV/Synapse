@@ -1,0 +1,4 @@
+Policy EXCL {
+  // Store data only while no child holds copy: is in (None, NP, _) state
+  Data( S(None, NP, _) );
+}
